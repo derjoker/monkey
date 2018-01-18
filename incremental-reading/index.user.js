@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Incremental Reading
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.2.0
 // @description  Read. Recite.
 // @description:en  Read. Recite.
 // @author       Feng Ya
@@ -18,5 +18,12 @@
 
   $('.highlight').click(function() {
     $(this).toggleClass('mask');
+  });
+
+  $('body').keyup(function(event) {
+    // key: h (72)
+    if (event.which === 72) {
+      $('.highlight').toggleClass('mask');
+    }
   });
 })();
