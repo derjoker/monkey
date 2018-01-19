@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Incremental Reading
 // @namespace    http://tampermonkey.net/
-// @version      0.5.0
+// @version      0.6.0
 // @description  Read. Recite.
 // @description:en  Read. Recite.
 // @author       Feng Ya
@@ -19,6 +19,8 @@
   let cntClick = 0;
 
   $('body').click(function(event) {
+    if (event.target.nodeName !== 'BODY') return;
+
     // Instapaper: Remove Note
     if ($('div.highlight_popover.reveal').length > 0) return;
 
