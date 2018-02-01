@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Incremental Reading
 // @namespace    http://tampermonkey.net/
-// @version      0.7.0
+// @version      0.7.1
 // @description  Read. Recite.
 // @description:en  Read. Recite.
 // @author       Feng Ya
@@ -18,30 +18,12 @@
 
   $('.highlight').addClass('mask');
 
-  let cntClick = 0;
-
   $('body').click(function(event) {
     if (event.target.nodeName !== 'BODY') return;
 
     // Instapaper: Remove Note
     if ($('div.highlight_popover.reveal').length > 0) return;
 
-    cntClick++;
-    setTimeout(function() {
-      if (cntClick === 1) {
-        $('.highlight').toggleClass('mask');
-      }
-      cntClick = 0;
-    }, 200);
-  });
-
-  $('body').keyup(function(event) {
-    // disable during input
-    if ($('div.ipnote-popover.showing').length > 0) return;
-
-    // key: h (72)
-    if (event.which === 72) {
-      $('.highlight').toggleClass('mask');
-    }
+    $('.highlight').toggleClass('mask');
   });
 })();
