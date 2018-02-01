@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Incremental Reading
 // @namespace    http://tampermonkey.net/
-// @version      0.6.0
+// @version      0.7.0
 // @description  Read. Recite.
 // @description:en  Read. Recite.
 // @author       Feng Ya
@@ -15,6 +15,8 @@
   // Your code here...
 
   GM_addStyle('.mask {background-color: black !important;}');
+
+  $('.highlight').addClass('mask');
 
   let cntClick = 0;
 
