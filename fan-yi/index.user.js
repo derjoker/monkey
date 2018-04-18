@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fan Yi
 // @namespace    derjoker
-// @version      0.2.1
+// @version      0.3.0
 // @description  Recite.
 // @description:en  Recite.
 // @author       Feng Ya
@@ -23,18 +23,35 @@
   }
   `);
 
-  function transform(el, percent) {
-    const html = el.textContent.replace(regex, match => {
+  const regex = /[\wäöüß]+/gi;
+
+  function replace(node, percent) {
+    const html = node.textContent.replace(regex, match => {
       return Math.random() > percent
         ? match
         : `<span class="highlight mask">${match}</span>`;
     });
-    el.innerHTML = html;
+    // ELEMENT_NODE
+    if (node.nodeType === 1) {
+      node.innerHTML = html;
+      return node.outerHTML;
+    }
+    // TEXT_NODE
+    if (node.nodeType === 3) return html;
+
+    return '';
   }
 
-  const regex = /[\wäöüß]+/gi;
+  function transform(el, percent) {
+    // const clone = el.cloneNode(true);
+    // console.log(clone.childNodes);
 
-  // console.log(location);
+    const childNodes = [];
+    el.childNodes.forEach(child => {
+      childNodes.push(replace(child, percent));
+    });
+    el.innerHTML = childNodes.join('');
+  }
 
   if (
     location.href ===
