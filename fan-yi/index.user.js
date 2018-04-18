@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Fan Yi
 // @namespace    derjoker
-// @version      0.1.0
+// @version      0.2.0
 // @description  Recite.
 // @description:en  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/drafts/blob/master/deutsch/fanyi.md
+// @match        https://github.com/derjoker/900/blob/master/Deutsch.md
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -24,17 +25,37 @@
 
   const regex = /[\wäöüß]+/gi;
 
-  document.querySelectorAll('article > h2').forEach(h2 => {
-    const p = h2.nextSibling.nextSibling;
-    const html = p.textContent.replace(regex, match => {
-      return Math.random() > 0.6
-        ? match
-        : `<span class="highlight mask">${match}</span>`;
-    });
-    p.innerHTML = html;
-  });
+  // console.log(location);
 
-  document.body.addEventListener('dblclick', event => {
+  if (
+    location.href ===
+    'https://github.com/derjoker/drafts/blob/master/deutsch/fanyi.md'
+  ) {
+    document.querySelectorAll('article > h2').forEach(h2 => {
+      const p = h2.nextSibling.nextSibling;
+      const html = p.textContent.replace(regex, match => {
+        return Math.random() > 0.6
+          ? match
+          : `<span class="highlight mask">${match}</span>`;
+      });
+      p.innerHTML = html;
+    });
+  }
+
+  if (
+    location.href === 'https://github.com/derjoker/900/blob/master/Deutsch.md'
+  ) {
+    document.querySelectorAll('li > p').forEach(p => {
+      const html = p.textContent.replace(regex, match => {
+        return Math.random() > 0.3
+          ? match
+          : `<span class="highlight mask">${match}</span>`;
+      });
+      p.innerHTML = html;
+    });
+  }
+
+  document.body.addEventListener('click', event => {
     document.querySelectorAll('.highlight').forEach(highlight => {
       highlight.classList.toggle('mask');
     });
