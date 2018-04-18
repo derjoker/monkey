@@ -2,8 +2,7 @@
 // @name         Fan Yi
 // @namespace    derjoker
 // @version      0.1.0
-// @description  Fan Yi
-// @description:en  Fan Yi
+// @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/drafts/blob/master/deutsch/fanyi.md
 // @grant        GM_addStyle
