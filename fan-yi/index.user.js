@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fan Yi
 // @namespace    derjoker
-// @version      0.3.1
+// @version      0.3.2
 // @description  Recite.
 // @description:en  Recite.
 // @author       Feng Ya
@@ -26,6 +26,7 @@
   const regex = /[\wäöüß]+/gi;
 
   function replace(node, percent) {
+    if (node.nodeType === 1) percent = 0.6;
     const html = node.textContent.replace(regex, match => {
       return Math.random() > percent
         ? match
