@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fan Yi
 // @namespace    derjoker
-// @version      0.3.0
+// @version      0.3.1
 // @description  Recite.
 // @description:en  Recite.
 // @author       Feng Ya
@@ -67,7 +67,7 @@
     location.href === 'https://github.com/derjoker/900/blob/master/Deutsch.md'
   ) {
     document.querySelectorAll('li > p').forEach(p => {
-      transform(p, 0.3);
+      transform(p, 0.2);
     });
   }
 
