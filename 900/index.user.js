@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.1.0
+// @version      0.1.1
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -13,6 +13,9 @@
 
   // Your code here...
   GM_addStyle(`
+  .card-container {
+    font-size: 1.6em;
+  }
   .highlight {
     background: rgba(255, 242, 51, 0.298);
   }
