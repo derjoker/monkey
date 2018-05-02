@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.3.1
+// @version      0.4.0
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -20,6 +20,10 @@
   GM_addStyle(`
   .card-container {
     font-size: 1.6em;
+    text-align: center;
+    margin-top: 0.6em;
+    padding: 0.8em;
+    border: black 1px solid;
   }
   .highlight {
     background: rgba(255, 242, 51, 0.298);
@@ -62,13 +66,13 @@
 
   const items = document.querySelectorAll('li > p');
 
-  const article = document.querySelector('article');
-  article.insertAdjacentHTML(
+  const file = document.querySelector('.file');
+  file.insertAdjacentHTML(
     'beforebegin',
     '<section class="card-container"></section>'
   );
 
-  article.style.display = 'none';
+  file.style.display = 'none';
 
   const container = document.querySelector('.card-container');
   container.innerHTML = `
