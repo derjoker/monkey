@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.2.1
+// @version      0.2.2
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -107,6 +107,7 @@
   });
 
   document.body.addEventListener('keydown', event => {
+    event.preventDefault();
     if (event.key === 'n' || event.key === 'j') next();
     if (event.key === 'p' || event.key === 'k') prev();
     if (event.key === ' ') toggle();
