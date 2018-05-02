@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.2.4
+// @version      0.3.0
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -10,6 +10,10 @@
 
 (function() {
   'use strict';
+
+  const LOCAL_INDEX = 'LOCAL_INDEX';
+
+  const localIndex = parseInt(window.localStorage.getItem(LOCAL_INDEX), 10);
 
   // Your code here...
   GM_addStyle(`
@@ -75,6 +79,8 @@
   const card = document.querySelector('.card');
 
   function display(index) {
+    window.localStorage.setItem(LOCAL_INDEX, index);
+
     const item = items[(index + items.length) % items.length];
     const clone = item.cloneNode(true);
     card.innerHTML = '';
@@ -82,7 +88,7 @@
     transform(clone, 0.2);
   }
 
-  let index = 0;
+  let index = localIndex >= 0 ? localIndex : 0;
 
   function next() {
     index += 1;
