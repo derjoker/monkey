@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.3.0
+// @version      0.3.1
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -11,11 +11,12 @@
 (function() {
   'use strict';
 
+  // Your code here...
+
   const LOCAL_INDEX = 'LOCAL_INDEX';
 
   const localIndex = parseInt(window.localStorage.getItem(LOCAL_INDEX), 10);
 
-  // Your code here...
   GM_addStyle(`
   .card-container {
     font-size: 1.6em;
