@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.2.2
+// @version      0.2.3
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -27,7 +27,7 @@
   const regex = /[\wäöüß]+/gi;
 
   function replace(node, percent) {
-    if (node.nodeType === 1) percent = 0.6;
+    if (node.nodeType === 1) percent = 1;
     const html = node.textContent.replace(regex, match => {
       return Math.random() > percent
         ? match
