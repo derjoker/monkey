@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.1.1
+// @version      0.2.0
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -94,16 +94,21 @@
     display(index);
   }
 
-  display(index);
-
-  container.addEventListener('click', event => {
+  function toggle() {
     document.querySelectorAll('.highlight').forEach(highlight => {
       highlight.classList.toggle('mask');
     });
+  }
+
+  display(index);
+
+  container.addEventListener('click', event => {
+    toggle();
   });
 
   document.body.addEventListener('keydown', event => {
     if (event.key === 'n') next();
     if (event.key === 'p') prev();
+    if (event.key === ' ') toggle();
   });
 })();
