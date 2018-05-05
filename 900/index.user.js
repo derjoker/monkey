@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.4.0
+// @version      0.5.0
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -24,6 +24,10 @@
     margin-top: 0.6em;
     padding: 0.8em;
     border: black 1px solid;
+  }
+  .card > div {
+    font-size: 0.6em;
+    padding: 0.8em;
   }
   .highlight {
     background: rgba(255, 242, 51, 0.298);
@@ -88,7 +92,7 @@
 
     const item = items[(index + items.length) % items.length];
     const clone = item.cloneNode(true);
-    card.innerHTML = '';
+    card.innerHTML = `<div>${index}/${items.length}</div>`;
     card.appendChild(clone);
     transform(clone, 0.2);
   }
