@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.5.0
+// @version      0.5.1
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -88,11 +88,12 @@
   const card = document.querySelector('.card');
 
   function display(index) {
-    window.localStorage.setItem(LOCAL_INDEX, index);
+    const _index = (index + items.length) % items.length;
+    window.localStorage.setItem(LOCAL_INDEX, _index);
 
-    const item = items[(index + items.length) % items.length];
+    const item = items[_index];
     const clone = item.cloneNode(true);
-    card.innerHTML = `<div>${index}/${items.length}</div>`;
+    card.innerHTML = `<div>${_index + 1}/${items.length}</div>`;
     card.appendChild(clone);
     transform(clone, 0.2);
   }
