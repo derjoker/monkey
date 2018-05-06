@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.5.1
+// @version      0.6.0
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -76,8 +76,6 @@
     '<section class="card-container"></section>'
   );
 
-  file.style.display = 'none';
-
   const container = document.querySelector('.card-container');
   container.innerHTML = `
   <div class="prev"></div>
@@ -88,12 +86,12 @@
   const card = document.querySelector('.card');
 
   function display(index) {
-    const _index = (index + items.length) % items.length;
-    window.localStorage.setItem(LOCAL_INDEX, _index);
+    index = (index + items.length) % items.length;
+    window.localStorage.setItem(LOCAL_INDEX, index);
 
-    const item = items[_index];
+    const item = items[index];
     const clone = item.cloneNode(true);
-    card.innerHTML = `<div>${_index + 1}/${items.length}</div>`;
+    card.innerHTML = `<div>${index + 1}/${items.length}</div>`;
     card.appendChild(clone);
     transform(clone, 0.2);
   }
@@ -116,7 +114,32 @@
     });
   }
 
+  let mode = false;
+
+  function toggleMode() {
+    mode = !mode;
+
+    if (mode) {
+      file.style.display = 'none';
+      container.style.display = '';
+    } else {
+      file.style.display = '';
+      container.style.display = 'none';
+      items[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
+      });
+    }
+  }
+
   display(index);
+  container.style.display = 'none';
+  items[index].scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+    inline: 'center',
+  });
 
   container.addEventListener('click', event => {
     toggle();
@@ -124,6 +147,9 @@
 
   document.body.addEventListener('keydown', event => {
     event.preventDefault();
+    if (event.key === 'x') toggleMode();
+
+    if (!mode) return;
     if (event.key === 'n' || event.key === 'j') next();
     if (event.key === 'p' || event.key === 'k') prev();
     if (event.key === 'r') display(index);
