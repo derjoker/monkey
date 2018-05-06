@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.6.0
+// @version      0.7.0
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -143,6 +143,14 @@
 
   container.addEventListener('click', event => {
     toggle();
+  });
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', event => {
+      index = i;
+      display(index);
+      toggleMode();
+    });
   });
 
   document.body.addEventListener('keydown', event => {
