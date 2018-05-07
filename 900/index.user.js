@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.7.1
+// @version      0.7.2
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -125,21 +125,13 @@
     } else {
       file.style.display = '';
       container.style.display = 'none';
-      items[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'center',
-      });
+      items[index].scrollIntoView();
     }
   }
 
   display(index);
   container.style.display = 'none';
-  items[index].scrollIntoView({
-    behavior: 'smooth',
-    block: 'center',
-    inline: 'center',
-  });
+  items[index].scrollIntoView();
 
   container.addEventListener('click', event => {
     toggle();
