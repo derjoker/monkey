@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         900
 // @namespace    derjoker
-// @version      0.7.0
+// @version      0.7.1
 // @description  Recite.
 // @author       Feng Ya
 // @match        https://github.com/derjoker/900/blob/master/Deutsch.md
@@ -154,13 +154,27 @@
   });
 
   document.body.addEventListener('keydown', event => {
-    event.preventDefault();
-    if (event.key === 'x') toggleMode();
+    if (event.key === 'x') {
+      event.preventDefault();
+      toggleMode();
+    }
 
     if (!mode) return;
-    if (event.key === 'n' || event.key === 'j') next();
-    if (event.key === 'p' || event.key === 'k') prev();
-    if (event.key === 'r') display(index);
-    if (event.key === ' ') toggle();
+    if (event.key === 'n' || event.key === 'j') {
+      event.preventDefault();
+      next();
+    }
+    if (event.key === 'p' || event.key === 'k') {
+      event.preventDefault();
+      prev();
+    }
+    if (event.key === 'r') {
+      event.preventDefault();
+      display(index);
+    }
+    if (event.key === ' ') {
+      event.preventDefault();
+      toggle();
+    }
   });
 })();
