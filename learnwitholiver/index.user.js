@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         learnwitholiver
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Flashcards
 // @author       Feng Ya
 // @match        https://www.learnwitholiver.com/*
@@ -29,6 +29,9 @@
     max-width: 600px;
     font-size: 36px;
     text-align: center;
+  }
+  #dashboard > div.index {
+    font-size: 12px;
   }
   .cloze {
     background: rgba(255, 242, 51, 0.298);
@@ -92,7 +95,7 @@
     });
 
     function show() {
-      current = normalize(current);
+      current = normalize(current, trs.length);
       storage.setItem(pathname, current);
       const tr = trs[current];
 
@@ -102,6 +105,7 @@
       dashboard.innerHTML = `
       <div class='cloze mask'>${front}</div>
       <div>${back}</div>
+      <div class='index'>${current + 1}/${trs.length}</div>
       `;
     }
 
@@ -128,7 +132,7 @@
   }
 
   function normalize(index, len) {
-    if (index > len) return index % len;
+    if (index >= len) return index % len;
     if (index < 0) return index % len + len;
     return index;
   }
