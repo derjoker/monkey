@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Print Code
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.2.0
 // @description  Print.
 // @author       Feng Ya
 // @match        https://github.com/*
@@ -32,6 +32,15 @@
     const header = document.querySelector('div.file-header')
 
     header.style.display = 'none'
+
+    const css = document.createElement('style')
+    css.type = 'text/css'
+    css.innerHTML = `
+    .file { width: 210mm; }
+    .blob-code { line-height: 1.2; }
+    .blob-code-inner { font-size: 12pt; }
+    `
+    document.head.appendChild(css)
 
     document.querySelectorAll('body > div').forEach(div => {
       div.style.display = 'none'
