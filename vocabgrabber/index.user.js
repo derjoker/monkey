@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabgrabber
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @description  Select All/Half Words
 // @author       You
 // @match        https://www.vocabulary.com/lists/vocabgrabber
@@ -21,15 +21,15 @@
     )
 
     const select10 = $('div.menu-item[data-action="select"][data-count="10"]')
-    select10.attr('data-count', (count / 10).toFixed())
-    select10.text('Select First 10%')
+    select10.attr('data-count', (count / 4).toFixed())
+    select10.text('Select First 25%')
 
     const select25 = $('div.menu-item[data-action="select"][data-count="25"]')
-    select25.attr('data-count', (count / 4).toFixed())
-    select25.text('Select First 25%')
+    select25.attr('data-count', (count / 2).toFixed())
+    select25.text('Select First 50%')
 
     const select50 = $('div.menu-item[data-action="select"][data-count="50"]')
-    select50.attr('data-count', (count / 2).toFixed())
-    select50.text('Select First 50%')
+    select50.attr('data-count', count.toFixed())
+    select50.text('Select All Words')
   })
 })()
