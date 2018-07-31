@@ -1,0 +1,49 @@
+// ==UserScript==
+// @name         Vocabulary
+// @namespace    http://tampermonkey.net/
+// @version      0.2.0
+// @description  Tweaks in Vocabulary
+// @author       Feng Ya
+// @match        https://www.vocabulary.com/*
+// @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js
+// @grant        none
+// ==/UserScript==
+
+/* global $ */
+
+;(function () {
+  'use strict'
+  // Your code here...
+  // console.log(window.location)
+  const pathname = window.location.pathname
+
+  if (pathname === '/lists/vocabgrabber') {
+    $('button.ss-settings').click(function () {
+      const count = parseInt(
+        $('div.resultsonly > h1:nth-child(1) > span:nth-child(1)').text(),
+        10
+      )
+
+      const select10 = $('div.menu-item[data-action="select"][data-count="10"]')
+      select10.attr('data-count', (count / 4).toFixed())
+      select10.text('Select First 25%')
+
+      const select25 = $('div.menu-item[data-action="select"][data-count="25"]')
+      select25.attr('data-count', (count / 2).toFixed())
+      select25.text('Select First 50%')
+
+      const select50 = $('div.menu-item[data-action="select"][data-count="50"]')
+      select50.attr('data-count', count.toFixed())
+      select50.text('Select All Words')
+    })
+  }
+
+  if (pathname.startsWith('/dictionary')) {
+    $('body').keydown(function (event) {
+      // console.log(event)
+      if (event.target.nodeName !== 'INPUT') {
+        $('input').focus()
+      }
+    })
+  }
+})()
