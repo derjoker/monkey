@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.2
+// @version      0.6.3
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -18,6 +18,7 @@
     audioSupport && audioSupport.parentNode.removeChild(audioSupport)
 
     document.body.addEventListener('keydown', event => {
+      // console.log(event)
       const tools = document.querySelector('div.wordtools')
       const hidden = tools && tools.classList.contains('hidden')
 
@@ -29,7 +30,11 @@
         }
       }
 
-      if (event.target.nodeName !== 'INPUT') {
+      if (event.target.nodeName === 'INPUT') {
+        if (event.key === 'Escape') {
+          document.querySelector('input#search').blur()
+        }
+      } else {
         switch (event.key) {
           case 'a':
             lookup(0)
