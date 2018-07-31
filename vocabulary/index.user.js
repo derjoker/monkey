@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.4.0
+// @version      0.4.1
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -48,7 +48,11 @@
     })
   }
 
-  if (pathname === '/' || pathname === '/play/') {
+  if (
+    pathname === '/' ||
+    pathname === '/play/' ||
+    (pathname.startsWith('/lists') && pathname.endsWith('practice'))
+  ) {
     function changeAccessKey () {
       document.querySelectorAll('div.active div.choices > a').forEach(a => {
         const key = a.getAttribute('accesskey')
