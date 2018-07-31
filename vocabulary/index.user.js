@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.0
+// @version      0.6.1
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -14,8 +14,8 @@
   'use strict'
   // Your code here...
   window.onload = function () {
-    const audio = document.querySelector('div.audio_support')
-    audio && audio.parentNode.removeChild(audio)
+    const audioSupport = document.querySelector('div.audio_support')
+    audioSupport && audioSupport.parentNode.removeChild(audioSupport)
 
     document.body.addEventListener('keydown', event => {
       const tools = document.querySelector('div.wordtools')
@@ -55,7 +55,10 @@
           break
         case 'l':
           if (!hidden) {
-            document.querySelector('div.tools > a.listen').click()
+            const audio =
+              document.querySelector('div.tools > a.listen') ||
+              document.querySelector('a.audio')
+            audio && audio.click()
           }
           break
       }
