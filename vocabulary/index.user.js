@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.3
+// @version      0.6.4
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -16,60 +16,60 @@
   window.onload = function () {
     const audioSupport = document.querySelector('div.audio_support')
     audioSupport && audioSupport.parentNode.removeChild(audioSupport)
-
-    document.body.addEventListener('keydown', event => {
-      // console.log(event)
-      const tools = document.querySelector('div.wordtools')
-      const hidden = tools && tools.classList.contains('hidden')
-
-      function lookup (index) {
-        if (!hidden) {
-          const lookups = document.querySelectorAll('div.selected div.lookup')
-          // console.log(lookups)
-          lookups.length && lookups[index].click()
-        }
-      }
-
-      if (event.target.nodeName === 'INPUT') {
-        if (event.key === 'Escape') {
-          document.querySelector('input#search').blur()
-        }
-      } else {
-        switch (event.key) {
-          case 'a':
-            lookup(0)
-            break
-          case 's':
-            lookup(1)
-            break
-          case 'd':
-            lookup(2)
-            break
-          case 'f':
-            lookup(3)
-            break
-
-          case 'i':
-            event.preventDefault()
-            document.querySelector('input#search').focus()
-            break
-
-          case 'j':
-            document.querySelector('button.next').click()
-            break
-
-          case 'l':
-            if (!hidden) {
-              const audio =
-                document.querySelector('div.tools > a.listen') ||
-                document.querySelector('a.audio')
-              audio && audio.click()
-            }
-            break
-        }
-      }
-    })
   }
+
+  document.body.addEventListener('keydown', event => {
+    // console.log(event)
+    const tools = document.querySelector('div.wordtools')
+    const hidden = tools && tools.classList.contains('hidden')
+
+    function lookup (index) {
+      if (!hidden) {
+        const lookups = document.querySelectorAll('div.selected div.lookup')
+        // console.log(lookups)
+        lookups.length && lookups[index].click()
+      }
+    }
+
+    if (event.target.nodeName === 'INPUT') {
+      if (event.key === 'Escape') {
+        document.querySelector('input#search').blur()
+      }
+    } else {
+      switch (event.key) {
+        case 'a':
+          lookup(0)
+          break
+        case 's':
+          lookup(1)
+          break
+        case 'd':
+          lookup(2)
+          break
+        case 'f':
+          lookup(3)
+          break
+
+        case 'i':
+          event.preventDefault()
+          document.querySelector('input#search').focus()
+          break
+
+        case 'j':
+          document.querySelector('button.next').click()
+          break
+
+        case 'l':
+          if (!hidden) {
+            const audio =
+              document.querySelector('div.tools > a.listen') ||
+              document.querySelector('a.audio')
+            audio && audio.click()
+          }
+          break
+      }
+    }
+  })
 
   // console.log(window.location)
   const pathname = window.location.pathname
