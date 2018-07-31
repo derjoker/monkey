@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.4.2
+// @version      0.4.3
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
 // @grant        none
 // ==/UserScript==
+
+/* global MutationObserver */
 
 ;(function () {
   'use strict'
@@ -59,28 +61,6 @@
       }
     })
 
-    function changeAccessKey () {
-      document.querySelectorAll('div.active div.choices > a').forEach(a => {
-        const key = a.getAttribute('accesskey')
-        switch (key) {
-          case '1A':
-            a.setAttribute('accesskey', '1A')
-            break
-          case '2B':
-            a.setAttribute('accesskey', '2S')
-            break
-          case '3C':
-            a.setAttribute('accesskey', '3D')
-            break
-          case '4D':
-            a.setAttribute('accesskey', '4F')
-            break
-          default:
-            break
-        }
-      })
-    }
-
     const target = document.querySelector('div#challenge')
     // console.log(target)
     const config = { childList: true, subtree: true }
@@ -95,5 +75,27 @@
     }
     const observer = new MutationObserver(callback)
     observer.observe(target, config)
+  }
+
+  function changeAccessKey () {
+    document.querySelectorAll('div.active div.choices > a').forEach(a => {
+      const key = a.getAttribute('accesskey')
+      switch (key) {
+        case '1A':
+          a.setAttribute('accesskey', '1A')
+          break
+        case '2B':
+          a.setAttribute('accesskey', '2S')
+          break
+        case '3C':
+          a.setAttribute('accesskey', '3D')
+          break
+        case '4D':
+          a.setAttribute('accesskey', '4F')
+          break
+        default:
+          break
+      }
+    })
   }
 })()
