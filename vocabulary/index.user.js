@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.4.3
+// @version      0.5.0
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -13,6 +13,28 @@
 ;(function () {
   'use strict'
   // Your code here...
+  window.onload = function () {
+    const audio = document.querySelector('div.audio_support')
+    audio && audio.parentNode.removeChild(audio)
+
+    document.body.addEventListener('keydown', event => {
+      switch (event.key) {
+        case 'i':
+          if (event.target.nodeName !== 'INPUT') {
+            event.preventDefault()
+            document.querySelector('input#search').focus()
+          }
+          break
+        case 'j':
+          document.querySelector('button.next').click()
+          break
+        case 'l':
+          document.querySelector('div.tools > a.listen').click()
+          break
+      }
+    })
+  }
+
   // console.log(window.location)
   const pathname = window.location.pathname
 
@@ -41,26 +63,11 @@
       })
   }
 
-  if (pathname.startsWith('/dictionary')) {
-    document.body.addEventListener('keydown', event => {
-      // console.log(event)
-      if (event.target.nodeName !== 'INPUT') {
-        document.querySelector('input#search').focus()
-      }
-    })
-  }
-
   if (
     pathname === '/' ||
     pathname === '/play/' ||
     (pathname.startsWith('/lists') && pathname.endsWith('practice'))
   ) {
-    document.body.addEventListener('keydown', event => {
-      if (event.key === 'j') {
-        document.querySelector('button.next').click()
-      }
-    })
-
     const target = document.querySelector('div#challenge')
     // console.log(target)
     const config = { childList: true, subtree: true }
