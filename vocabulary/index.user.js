@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.5.0
+// @version      0.5.1
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -29,7 +29,13 @@
           document.querySelector('button.next').click()
           break
         case 'l':
-          document.querySelector('div.tools > a.listen').click()
+          if (
+            !document
+              .querySelector('div.wordtools')
+              .classList.contains('hidden')
+          ) {
+            document.querySelector('div.tools > a.listen').click()
+          }
           break
       }
     })
