@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.3.0
+// @version      0.3.1
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -41,7 +41,7 @@
 
   if (pathname.startsWith('/dictionary')) {
     document.body.addEventListener('keydown', event => {
-      console.log(event)
+      // console.log(event)
       if (event.target.nodeName !== 'INPUT') {
         document.querySelector('input#search').focus()
       }
