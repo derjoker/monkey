@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.1
+// @version      0.6.2
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -29,38 +29,39 @@
         }
       }
 
-      switch (event.key) {
-        case 'a':
-          lookup(0)
-          break
-        case 's':
-          lookup(1)
-          break
-        case 'd':
-          lookup(2)
-          break
-        case 'f':
-          lookup(3)
-          break
+      if (event.target.nodeName !== 'INPUT') {
+        switch (event.key) {
+          case 'a':
+            lookup(0)
+            break
+          case 's':
+            lookup(1)
+            break
+          case 'd':
+            lookup(2)
+            break
+          case 'f':
+            lookup(3)
+            break
 
-        case 'i':
-          if (event.target.nodeName !== 'INPUT') {
+          case 'i':
             event.preventDefault()
             document.querySelector('input#search').focus()
-          }
-          break
+            break
 
-        case 'j':
-          document.querySelector('button.next').click()
-          break
-        case 'l':
-          if (!hidden) {
-            const audio =
-              document.querySelector('div.tools > a.listen') ||
-              document.querySelector('a.audio')
-            audio && audio.click()
-          }
-          break
+          case 'j':
+            document.querySelector('button.next').click()
+            break
+
+          case 'l':
+            if (!hidden) {
+              const audio =
+                document.querySelector('div.tools > a.listen') ||
+                document.querySelector('a.audio')
+              audio && audio.click()
+            }
+            break
+        }
       }
     })
   }
