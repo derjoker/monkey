@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.4
+// @version      0.6.5
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -124,15 +124,19 @@
     document.querySelectorAll('div.active div.choices > a').forEach(a => {
       const key = a.getAttribute('accesskey')
       switch (key) {
+        case '1':
         case '1A':
           a.setAttribute('accesskey', '1A')
           break
+        case '2':
         case '2B':
           a.setAttribute('accesskey', '2S')
           break
+        case '3':
         case '3C':
           a.setAttribute('accesskey', '3D')
           break
+        case '4':
         case '4D':
           a.setAttribute('accesskey', '4F')
           break
