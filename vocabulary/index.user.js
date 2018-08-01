@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.7
+// @version      0.6.8
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -16,10 +16,11 @@
   window.onload = function () {
     const audioSupport = document.querySelector('div.audio_support')
     audioSupport && audioSupport.parentNode.removeChild(audioSupport)
-
-    const input = document.querySelector('input#search')
-    input && input.blur()
   }
+
+  // dictionary
+  const input = document.querySelector('input#search')
+  input && input.blur()
 
   document.body.addEventListener('keydown', event => {
     // console.log(event)
