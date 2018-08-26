@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.9
+// @version      0.6.10
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -20,10 +20,24 @@
 
   // dictionary
   const input = document.querySelector('input#search')
-  input && input.blur()
+
+  if (input) {
+    input.blur()
+    input.addEventListener('keydown', event => {
+      // console.log(event.key)
+      switch (event.key) {
+        case 'Escape':
+        case 'Enter':
+          input.blur()
+          break
+      }
+    })
+  }
 
   document.body.addEventListener('keydown', event => {
     // console.log(event)
+    if (event.target.nodeName === 'INPUT') return
+
     const tools = document.querySelector('div.wordtools')
     const hidden = tools && tools.classList.contains('hidden')
 
@@ -35,52 +49,46 @@
       }
     }
 
-    if (event.target.nodeName === 'INPUT') {
-      if (event.key === 'Escape') {
-        document.querySelector('input#search').blur()
-      }
-    } else {
-      switch (event.key) {
-        case 'a':
-          lookup(0)
-          break
-        case 's':
-          lookup(1)
-          break
-        case 'd':
-          lookup(2)
-          break
-        case 'f':
-          lookup(3)
-          break
+    switch (event.key) {
+      case 'a':
+        lookup(0)
+        break
+      case 's':
+        lookup(1)
+        break
+      case 'd':
+        lookup(2)
+        break
+      case 'f':
+        lookup(3)
+        break
 
-        case 'i':
-          event.preventDefault()
-          document.querySelector('input#search').focus()
-          break
+      case 'i':
+        event.preventDefault()
+        document.querySelector('input#search').focus()
+        break
 
-        case 'j':
-          document.querySelector('button.next').click()
-          break
+      case 'j':
+        document.querySelector('button.next').click()
+        break
 
-        case 'l':
-          const learn = document.querySelector('button.learn')
-          learn && learn.click()
-          break
+      case 'l':
+        const learn = document.querySelector('button.learn')
+        learn && learn.click()
+        break
 
-        case 'o':
-          if (!hidden) {
-            const audio =
-              document.querySelector('div.tools > a.listen') ||
-              document.querySelector('a.audio')
-            audio && audio.click()
-          }
-          break
+      case 'o':
+        if (!hidden) {
+          const audio =
+            document.querySelector('div.tools > a.listen') ||
+            document.querySelector('a.audio')
+          audio && audio.click()
+        }
+        break
 
-        case 'Backspace':
-          window.history.back()
-          break
-      }
+      case 'Backspace':
+        window.history.back()
+        break
     }
   })
 
