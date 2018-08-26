@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary
 // @namespace    http://tampermonkey.net/
-// @version      0.6.8
+// @version      0.6.9
 // @description  Tweaks in Vocabulary
 // @author       Feng Ya
 // @match        https://www.vocabulary.com/*
@@ -64,6 +64,11 @@
           break
 
         case 'l':
+          const learn = document.querySelector('button.learn')
+          learn && learn.click()
+          break
+
+        case 'o':
           if (!hidden) {
             const audio =
               document.querySelector('div.tools > a.listen') ||
@@ -72,9 +77,8 @@
           }
           break
 
-        case 'o':
-          const learn = document.querySelector('button.learn')
-          learn && learn.click()
+        case 'Backspace':
+          window.history.back()
           break
       }
     }
