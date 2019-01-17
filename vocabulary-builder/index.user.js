@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary Builder
 // @namespace    derjoker
-// @version      0.0.1
+// @version      0.0.2
 // @description  Vocabulary to Anki Cards.
 // @author       Feng Ya
 // @match        https://www.duden.de/rechtschreibung/*
@@ -26,6 +26,51 @@
       .replace(/\u00AD/g, '')
 
     const section = $('h2:contains("Bedeutungsübersicht")').parents('section')
+
+    section.find('div.entry').each((_, entry) => {
+      const clone = $(entry).clone()
+      clone.find('figure').remove()
+      clone.find('.term-section').remove()
+      const definition = clone.text().trim()
+
+      $(entry)
+        .find('.term-section')
+        .each((_, el) => {
+          const b = $(el).find('h3:contains("Beispiel") + span')
+          b.prepend(
+            $('<input type="checkbox" />').data('kvb', {
+              definition,
+              example: b.text().trim()
+            })
+          )
+
+          const w = $(el).find(
+            'h3:contains("Wendungen, Redensarten, Sprichwörter") + span'
+          )
+          const clone = w.parent().clone()
+          clone.find('h3').remove()
+          w.prepend(
+            $('<input type="checkbox" />').data('kvb', {
+              definition,
+              example: clone.text().trim()
+            })
+          )
+
+          $(el)
+            .find('ul > li')
+            .each((_, li) => {
+              const example = $(li)
+                .text()
+                .trim()
+              $(li).prepend(
+                $('<input type="checkbox" />').data('kvb', {
+                  definition,
+                  example
+                })
+              )
+            })
+        })
+    })
 
     section.find('ol > li > a').each((_, a) => {
       const definition = $(a)
