@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vocabulary Builder
 // @namespace    derjoker
-// @version      0.0.2
+// @version      0.0.3
 // @description  Vocabulary to Anki Cards.
 // @author       Feng Ya
 // @match        https://www.duden.de/rechtschreibung/*
@@ -13,6 +13,43 @@
 
   // Your code here...
   /* global $ */
+
+  const NAME = 'kvb'
+
+  // storage
+  function storage () {
+    function add (key, value) {
+      window.localStorage.setItem(key, value)
+    }
+
+    function remove (key) {
+      window.localStorage.removeItem(key)
+    }
+
+    function keys () {
+      const keys = []
+      for (let i = 0; i < window.localStorage.length; i++) {
+        const key = window.localStorage.key(i)
+        if (key.startsWith(`<div name="${NAME}">`)) keys.push(key)
+      }
+      return keys
+    }
+
+    function items () {
+      return keys().map(key => [key, window.localStorage.getItem(key)])
+    }
+
+    function clear () {
+      keys().forEach(key => {
+        window.localStorage.removeItem(key)
+      })
+    }
+
+    return { add, remove, items, clear }
+  }
+
+  // dictionary
+
   const host = window.location.host
   console.log(host)
 
@@ -118,13 +155,99 @@
     })
   }
 
-  $('input:checkbox').click(event => {
-    const data = $(event.target).data('kvb')
-    console.log(host, stem, word, data)
-    if (event.target.checked) {
-      // Add
-    } else {
-      // Remove
+  if (stem) {
+    const s = storage()
+
+    $('input:checkbox').click(event => {
+      const data = $(event.target).data('kvb')
+      console.log(word, data)
+      const front = `<div name="${NAME}"><h2>${word}</h2><p>${
+        data.example
+      }</p></div>`
+      const back = `<p>${data.definition}</p>`
+      if (event.target.checked) {
+        // Add
+        s.add(front, back)
+      } else {
+        // Remove
+        s.remove(front)
+      }
+    })
+
+    const save = $('<button>Save</button>').click(() => {
+      const items = s.items()
+      const csv = new CsvWriter()
+      const encodedUri =
+        'data:text/csv;charset=utf-8,' +
+        encodeURIComponent(csv.arrayToCSV(items))
+      // window.open(encodedUri)
+
+      const w = window.open(null, 'CSV')
+      w.location.href = encodedUri
+
+      // $('input:checked').each((_, el) => {
+      //   $(el).click()
+      // })
+      // s.clear()
+    })
+
+    $('body').prepend(save)
+  }
+
+  // CSV Writer
+  function CsvWriter (del, enc) {
+    this.del = del || ',' // CSV Delimiter
+    this.enc = enc || '"' // CSV Enclosure
+
+    // Convert Object to CSV column
+    this.escapeCol = function (col) {
+      if (isNaN(col)) {
+        // is not boolean or numeric
+        if (!col) {
+          // is null or undefined
+          col = ''
+        } else {
+          // is string or object
+          col = String(col)
+          if (col.length > 0) {
+            // use regex to test for del, enc, \r or \n
+            // if(new RegExp( '[' + this.del + this.enc + '\r\n]' ).test(col)) {
+
+            // escape inline enclosure
+            col = col.split(this.enc).join(this.enc + this.enc)
+
+            // wrap with enclosure
+            col = this.enc + col + this.enc
+          }
+        }
+      }
+      return col
     }
-  })
+
+    // Convert an Array of columns into an escaped CSV row
+    this.arrayToRow = function (arr) {
+      var arr2 = arr.slice(0)
+
+      var i
+
+      var ii = arr2.length
+      for (i = 0; i < ii; i++) {
+        arr2[i] = this.escapeCol(arr2[i])
+      }
+      return arr2.join(this.del)
+    }
+
+    // Convert a two-dimensional Array into an escaped multi-row CSV
+    this.arrayToCSV = function (arr) {
+      var arr2 = arr.slice(0)
+
+      var i
+
+      var ii = arr2.length
+      for (i = 0; i < ii; i++) {
+        arr2[i] = this.arrayToRow(arr2[i])
+      }
+      return arr2.join('\r\n')
+    }
+  }
 })()
