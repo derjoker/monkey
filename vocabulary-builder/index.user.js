@@ -1,18 +1,19 @@
 // ==UserScript==
 // @name         Vocabulary Builder
 // @namespace    derjoker
-// @version      0.0.3
+// @version      0.0.4
 // @description  Vocabulary to Anki Cards.
 // @author       Feng Ya
 // @match        https://www.duden.de/rechtschreibung/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require      https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js
 // ==/UserScript==
 
 ;(function () {
   'use strict'
 
   // Your code here...
-  /* global $ */
+  /* global $ _ */
 
   const NAME = 'kvb'
 
@@ -161,10 +162,10 @@
     $('input:checkbox').click(event => {
       const data = $(event.target).data('kvb')
       console.log(word, data)
-      const front = `<div name="${NAME}"><h2>${word}</h2><p>${
+      const front = `<div name="${NAME}"><h2>${word}</h2><p>${_.escape(
         data.example
-      }</p></div>`
-      const back = `<p>${data.definition}</p>`
+      )}</p></div>`
+      const back = `<p>${_.escape(data.definition)}</p>`
       if (event.target.checked) {
         // Add
         s.add(front, back)
