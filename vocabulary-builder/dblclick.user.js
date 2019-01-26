@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Double Click
 // @namespace    derjoker
-// @version      0.0.1
+// @version      0.0.2
 // @description  Double Click to Search (Lookup)
 // @author       Feng Ya
 // @match        https://www.duden.de/*
+// @match        https://derjoker.github.io/vocabulary-builder/*
 // @grant        none
 // ==/UserScript==
 
@@ -18,7 +19,7 @@
   const engines = {
     'www.duden.de': 'https://www.duden.de/suchen/dudenonline/'
   }
-  const engine = engines[host]
+  const engine = engines[host] || 'https://www.duden.de/suchen/dudenonline/'
 
   window.addEventListener('dblclick', function () {
     var selection =
