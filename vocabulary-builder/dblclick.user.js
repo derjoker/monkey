@@ -5,6 +5,7 @@
 // @description  Double Click to Search (Lookup)
 // @author       Feng Ya
 // @match        https://www.duden.de/*
+// @match        https://de.wikipedia.org/*
 // @match        https://www.mydealz.de/*
 // @match        https://derjoker.github.io/vocabulary-builder/*
 // @grant        none
