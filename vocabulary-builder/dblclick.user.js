@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Double Click
 // @namespace    derjoker
-// @version      0.0.3
+// @version      0.0.4
 // @description  Double Click to Search (Lookup)
 // @author       Feng Ya
 // @match        https://www.duden.de/*
 // @match        https://de.wikipedia.org/*
+// @match        https://*.fandom.com/de/*
 // @match        https://www.mydealz.de/*
 // @match        https://derjoker.github.io/vocabulary-builder/*
 // @grant        none
