@@ -4,6 +4,7 @@
 // @version      0.0.5
 // @description  Double Click to Search (Lookup)
 // @author       Feng Ya
+// @match        https://*.langenscheidt.com/*
 // @match        https://www.duden.de/*
 // @match        https://de.wikipedia.org/*
 // @match        https://*.fandom.com/de/*
@@ -21,9 +22,10 @@
   // console.log(host)
 
   const engines = {
+    'de.langenscheidt.com': 'https://de.langenscheidt.com/deutsch-englisch/',
     'www.duden.de': 'https://www.duden.de/suchen/dudenonline/'
   }
-  const engine = engines[host] || 'https://www.duden.de/suchen/dudenonline/'
+  const engine = engines[host] || 'https://de.langenscheidt.com/deutsch-englisch/'
 
   window.addEventListener('dblclick', function () {
     var selection =
