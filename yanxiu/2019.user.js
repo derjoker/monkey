@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         jsyx
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.1.0
 // @description  Jiao Shi Yan Xiu
 // @author       DJ
 // @match        http://jsyx.zje.net.cn:8066/*
