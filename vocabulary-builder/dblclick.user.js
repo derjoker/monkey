@@ -1,20 +1,19 @@
 // ==UserScript==
 // @name         Double Click
 // @namespace    derjoker
-// @version      0.0.5
+// @version      0.0.6
 // @description  Double Click to Search (Lookup)
 // @author       Feng Ya
 // @match        https://*.langenscheidt.com/*
 // @match        https://www.duden.de/*
-// @match        https://de.wikipedia.org/*
-// @match        https://*.fandom.com/de/*
-// @match        https://www.mydealz.de/*
-// @match        https://www.apple.com/de/*
-// @match        https://derjoker.github.io/vocabulary-builder/*
+// @match        https://de.*/*
+// @match        https://*.de/*
+// @match        https://*/de/*
+// @match        https://getpocket.com/read/*
 // @grant        none
 // ==/UserScript==
 
-;(function () {
+; (function () {
   'use strict'
 
   // Your code here...
