@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Double Click
 // @namespace    derjoker
-// @version      0.0.6
+// @version      0.0.7
 // @description  Double Click to Search (Lookup)
 // @author       Feng Ya
-// @match        https://*.langenscheidt.com/*
 // @match        https://www.duden.de/*
+// @match        https://de.langenscheidt.com/*
 // @match        https://de.*/*
 // @match        https://*.de/*
 // @match        https://*/de/*
@@ -13,18 +13,13 @@
 // @grant        none
 // ==/UserScript==
 
-; (function () {
+;(function () {
   'use strict'
 
   // Your code here...
-  const host = window.location.host
-  // console.log(host)
+  console.log('Double Click')
 
-  const engines = {
-    'de.langenscheidt.com': 'https://de.langenscheidt.com/deutsch-englisch/',
-    'www.duden.de': 'https://www.duden.de/suchen/dudenonline/'
-  }
-  const engine = engines[host] || 'https://de.langenscheidt.com/deutsch-englisch/'
+  const engine = 'https://www.duden.de/suchen/dudenonline/'
 
   window.addEventListener('dblclick', function () {
     var selection =
