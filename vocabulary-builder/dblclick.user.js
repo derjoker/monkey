@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Click
 // @namespace    derjoker
-// @version      0.1.0
+// @version      0.1.1
 // @description  Double Click to Lookup in Online Dictionary
 // @author       Feng Ya
 // @match        *://*/*
@@ -12,25 +12,28 @@
   'use strict'
 
   // Your code here...
-  console.log('Double Click')
+  console.log('Double Click v' + GM_info.script.version)
 
   const engines = {
     en: 'https://www.merriam-webster.com/dictionary/',
     de: 'https://www.duden.de/suchen/dudenonline/'
   }
 
-  let domain = 'en'
-  const splits = location.href.split(/\W/)
-  if (splits.indexOf('de') > -1) domain = 'de'
+  const htmlLang = document.querySelector('html').lang
 
-  const engine = engines[domain]
+  window.addEventListener('dblclick', event => {
+    console.log(event.path)
+    console.log(event.path.map(node => node.lang))
+    const langs = event.path.map(node => node.lang)
+      .filter(lang => Boolean(lang))
+    const lang = htmlLang === 'en' ? langs[0] : htmlLang
+    const engine = engines[lang] || engines.en
 
-  window.addEventListener('dblclick', function () {
-    var selection =
+    const selection =
       window.getSelection() ||
       document.getSelection() ||
       document.selection.createRange()
-    var link = engine + selection
+    const link = engine + selection
     console.log(link)
     window.open(link)
   })
