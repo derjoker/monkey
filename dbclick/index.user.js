@@ -19,12 +19,12 @@
     de: 'https://www.duden.de/suchen/dudenonline/'
   }
 
-  const htmlLang = document.querySelector('html').lang
+  const htmlLang = document.querySelector('html').lang.slice(0, 2)
 
   window.addEventListener('dblclick', event => {
     console.log(event.path)
     console.log(event.path.map(node => node.lang))
-    const langs = event.path.map(node => node.lang)
+    const langs = event.path.map(node => node.lang.slice(0, 2))
       .filter(lang => Boolean(lang))
     const lang = htmlLang === 'en' ? langs[0] : htmlLang
     const engine = engines[lang] || engines.en
