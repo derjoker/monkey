@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Click
 // @namespace    derjoker
-// @version      0.1.2
+// @version      0.1.3
 // @description  Double Click to Lookup in Online Dictionary
 // @author       Feng Ya
 // @match        *://*/*
@@ -24,8 +24,9 @@
   window.addEventListener('dblclick', event => {
     console.log(event.path)
     console.log(event.path.map(node => node.lang))
-    const langs = event.path.map(node => node.lang.slice(0, 2))
+    const langs = event.path.map(node => node.lang)
       .filter(lang => Boolean(lang))
+      .map(lang => lang.slice(0, 2))
     const lang = htmlLang === 'en' ? langs[0] : htmlLang
     const engine = engines[lang] || engines.en
 
