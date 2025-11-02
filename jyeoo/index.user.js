@@ -5,6 +5,7 @@
 // @description  Dark Mode & PPT
 // @author       derjoker
 // @match        https://www.jyeoo.com/math2/paper/detail/*
+// @match        https://www.jyeoo.com/math2/report/detail/*
 // @require      https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs/dist/pptxgen.bundle.js
 // @require      https://html2canvas.hertzen.com/dist/html2canvas.min.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=jyeoo.com
