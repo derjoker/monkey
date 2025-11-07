@@ -176,15 +176,21 @@
 
     if (questionElement) {
       try {
-        // 使用html2canvas截图
+        // 使用html2canvas截图，忽略div.pt2_area元素
         const canvas = await html2canvas(questionElement, {
-          scale: 2, // 提高截图质量
+          scale: 2,
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#FFFFFF',
-          logging: false,
-          width: questionElement.offsetWidth,
-          height: questionElement.offsetHeight
+          logging: true,
+          onclone: function (clonedDoc) {
+            // 在克隆的文档中手动移除pt2_area元素
+            const elementsToRemove = clonedDoc.querySelectorAll('[class*="pt2_area"]');
+            elementsToRemove.forEach(el => {
+              console.log('移除元素:', el);
+              el.remove();
+            });
+          }
         });
 
         // 将canvas转换为base64图片
