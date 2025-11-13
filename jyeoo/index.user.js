@@ -485,12 +485,12 @@
 
   function addTitleSlide(pres, title, questionCount) {
     const slide = pres.addSlide();
-    slide.background = { color: 'F8F9FA' };
+    slide.background = { color: '#FFFFFF' };
 
     slide.addText(title || '题目集', {
       x: 0.5, y: 1.5, w: '90%', h: 2.0,
       fontSize: 28, bold: true, align: 'center',
-      color: '2C3E50', fontFace: '微软雅黑'
+      color: '#006FFF', fontFace: '微软雅黑'
     });
   }
 
