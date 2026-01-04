@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         jy_script
 // @namespace    http://tampermonkey.net/
-// @version      2025-10-30
+// @version      2026-01-04
 // @description  Dark Mode & PPT
 // @author       derjoker
 // @match        https://www.jyeoo.com/math2/paper/detail/*
@@ -106,42 +106,50 @@
       pres.rtlMode = false;
 
       // 提取题目信息
+      // 提取题目信息
       const paperTitle = extractPaperTitle();
-      const questions = extractQuestions();
+      const items = extractQuestions();
+      const questionCount = items.filter(i => i.type === 'question').length;
 
-      console.log(`找到 ${questions.length} 个题目`);
+      console.log(`找到 ${items.length} 个项目 (${questionCount} 个题目)`);
 
-      if (questions.length === 0) {
+      if (items.length === 0) {
         alert('未找到题目内容，请检查页面结构。\n可以尝试刷新页面或检查题目是否已加载。');
         resetButton();
         return;
       }
 
       // 添加标题页
-      addTitleSlide(pres, paperTitle, questions.length);
+      addTitleSlide(pres, paperTitle, items.length);
 
       // 显示进度
       if (btn) {
-        btn.innerHTML = `⏳ 截图处理中 (0/${questions.length})`;
+        btn.innerHTML = `⏳ 处理中 (0/${items.length})`;
       }
 
-      // 为每个题目创建截图并添加到PPT
-      for (let i = 0; i < questions.length; i++) {
-        const question = questions[i];
+      // 为每个项目创建截图并添加到PPT
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
 
         // 更新进度
         if (btn) {
-          btn.innerHTML = `⏳ 截图处理中 (${i + 1}/${questions.length})`;
+          btn.innerHTML = `⏳ 处理中 (${i + 1}/${items.length})`;
         }
 
-        console.log(`处理第 ${i + 1} 题截图...`);
+        if (item.type === 'section') {
+          console.log(`添加章节页面: ${item.text}`);
+          addSectionSlide(pres, item.text);
+          continue;
+        }
+
+        console.log(`处理第 ${i + 1} 个项目截图...`);
 
         try {
-          await addQuestionSlideWithScreenshot(pres, question, i + 1, questions.length);
+          await addQuestionSlideWithScreenshot(pres, item, i + 1, items.length);
         } catch (error) {
-          console.error(`第 ${i + 1} 题截图失败:`, error);
+          console.error(`项目 ${i + 1} 截图失败:`, error);
           // 如果截图失败，使用文本模式
-          addQuestionSlide(pres, question, i + 1, questions.length);
+          addQuestionSlide(pres, item, i + 1, items.length);
         }
       }
 
@@ -153,7 +161,7 @@
       pres.writeFile({ fileName: fileName });
 
       console.log('截图PPT生成完成！文件名:', fileName);
-      alert(`截图PPT生成完成！\n共 ${questions.length} 页题目截图\n文件名: ${fileName}`);
+      alert(`截图PPT生成完成！\n共 ${items.length} 页题目截图\n文件名: ${fileName}`);
 
       // 恢复按钮状态
       resetButton();
@@ -250,6 +258,8 @@
   }
 
   function findQuestionElement(question) {
+    if (question.element) return question.element;
+
     // 根据存储的选择器信息查找元素
     if (question.selector && question.index) {
       const elements = document.querySelectorAll(question.selector);
@@ -300,23 +310,28 @@
       pres.rtlMode = false;
 
       // 提取题目信息
+      // 提取题目信息
       const paperTitle = extractPaperTitle();
-      const questions = extractQuestions();
+      const items = extractQuestions();
 
-      console.log(`找到 ${questions.length} 个题目`);
+      console.log(`找到 ${items.length} 个项目`);
 
-      if (questions.length === 0) {
-        alert('未找到题目内容，请检查页面结构。\n可以尝试刷新页面或检查题目是否已加载。');
+      if (items.length === 0) {
+        alert('未找到内容。');
         resetButton();
         return;
       }
 
       // 添加标题页
-      addTitleSlide(pres, paperTitle, questions.length);
+      addTitleSlide(pres, paperTitle, items.length);
 
-      // 为每个题目创建一页
-      questions.forEach((question, index) => {
-        addQuestionSlide(pres, question, index + 1, questions.length);
+      // 为每个项目创建一页
+      items.forEach((item, index) => {
+        if (item.type === 'section') {
+          addSectionSlide(pres, item.text);
+        } else {
+          addQuestionSlide(pres, item, index + 1, items.length);
+        }
       });
 
       // 生成文件名（清理非法字符）
@@ -327,7 +342,7 @@
       pres.writeFile({ fileName: fileName });
 
       console.log('文本PPT生成完成！文件名:', fileName);
-      alert(`文本PPT生成完成！\n共 ${questions.length} 页题目\n文件名: ${fileName}`);
+      alert(`文本PPT生成完成！\n共 ${items.length} 页题目\n文件名: ${fileName}`);
 
       // 恢复按钮状态
       resetButton();
@@ -400,10 +415,12 @@
             const questionText = extractQuestionText(element);
             if (questionText && questionText.length > 15) {
               questions.push({
+                type: 'question',
                 text: questionText,
                 html: element.innerHTML,
                 index: questions.length + 1,
-                selector: selector
+                selector: selector,
+                element: element
               });
               console.log(`添加题目 ${questions.length}:`, questionText.substring(0, 50) + '...');
             }
@@ -426,18 +443,52 @@
           const questionText = extractQuestionText(element);
           if (questionText && questionText.length > 20) {
             questions.push({
+              type: 'question',
               text: questionText,
               html: element.innerHTML,
               index: questions.length + 1,
-              selector: 'smart-detection'
+              selector: 'smart-detection',
+              element: element
             });
           }
         }
       });
     }
 
-    console.log('最终找到题目数量:', questions.length);
-    return questions;
+    // 提取章节标题 (Sections)
+    const sections = [];
+    document.querySelectorAll('h3.ques-type').forEach(element => {
+      if (isElementVisible(element)) {
+        sections.push({
+          type: 'section',
+          text: element.textContent.trim(),
+          element: element
+        });
+      }
+    });
+
+    // 合并并按DOM顺序排序
+    const items = [...questions, ...sections];
+    items.sort((a, b) => {
+      if (a.element && b.element) {
+        return (a.element.compareDocumentPosition(b.element) & 4) ? -1 : 1;
+      }
+      return 0;
+    });
+
+    console.log(`最终找到项目数量: ${items.length} (题目: ${questions.length}, 章节: ${sections.length})`);
+    return items;
+  }
+
+  function addSectionSlide(pres, title) {
+    const slide = pres.addSlide();
+    slide.background = { color: '#FFFFFF' };
+
+    slide.addText(title, {
+      x: 0.5, y: '40%', w: '90%', h: 1.5,
+      fontSize: 32, bold: true, align: 'center',
+      color: '#E91E63', fontFace: '微软雅黑'
+    });
   }
 
   function isElementVisible(element) {
