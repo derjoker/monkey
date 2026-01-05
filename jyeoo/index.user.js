@@ -170,7 +170,7 @@
 
       // 生成文件名（清理非法字符）
       const cleanTitle = paperTitle ? paperTitle.replace(/[<>:"/\\|?*]/g, '_') : 'jyeoo_questions';
-      const fileName = `${cleanTitle}_截图_${new Date().getTime()}.pptx`;
+      const fileName = `${cleanTitle}.pptx`;
 
       // 下载PPT
       pres.writeFile({ fileName: fileName });
@@ -534,9 +534,14 @@
     const sections = [];
     document.querySelectorAll('h3.ques-type').forEach(element => {
       if (isElementVisible(element)) {
+        let text = element.textContent.trim();
+        // 移除 "一." 或 "1." 等前缀 以及 "（共X题）" 后缀
+        text = text.replace(/^[一二三四五六七八九十0-9]+[．.]\s*/, '')
+          .replace(/\s*（[^）]*）$/, '');
+
         sections.push({
           type: 'section',
-          text: element.textContent.trim(),
+          text: text,
           element: element
         });
       }
