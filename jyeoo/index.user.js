@@ -151,6 +151,21 @@
           // 如果截图失败，使用文本模式
           addQuestionSlide(pres, item, i + 1, items.length);
         }
+
+        // 尝试获取并添加解析页
+        if (item.solutionUrl) {
+          console.log(`获取解析: ${item.solutionUrl}`);
+          try {
+            const solutionImgData = await captureSolutionImageFromIframe(item.solutionUrl);
+            if (solutionImgData) {
+              await addSolutionSlideWithScreenshot(pres, solutionImgData, i + 1);
+            } else {
+              console.warn(`无法解析解答内容: ${item.solutionUrl}`);
+            }
+          } catch (err) {
+            console.error(`获取解析失败: ${err.message}`);
+          }
+        }
       }
 
       // 生成文件名（清理非法字符）
@@ -253,6 +268,63 @@
         fontFace: '宋体',
         align: 'left',
         valign: 'top'
+      });
+    }
+  }
+
+  async function addSolutionSlideWithScreenshot(pres, imageData, index) {
+    const slide = pres.addSlide();
+    slide.background = { color: 'FFFFFF' };
+
+    // 添加"解析"标题
+    // slide.addText(`题目 ${index} 解析`, {
+    //   x: 0.5, y: 0.3, w: '90%', h: 0.5,
+    //   fontSize: 14, color: 'E91E63', bold: true
+    // });
+
+    try {
+      if (!imageData) throw new Error("No image data provided");
+
+      // 计算图片尺寸，类似addQuestionSlideWithScreenshot
+      // 假设图片已经是合适的大小，或者我们需要根据图片的原始宽高比来计算
+      // 由于ImageData是base64，我们无法直接得知宽高，除非创建一个Image对象
+      // 但这里我们假设canvas截图时的宽度是固定的 (iframe宽)
+
+      const imgObj = await new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = imageData;
+      });
+
+      const pageWidth = 13.33;
+      const pageHeight = 7.5;
+      const maxHeight = 7.0; // 增加最大高度，利用标题空间
+      const aspectRatio = imgObj.width / imgObj.height;
+
+      let imgWidth = pageWidth;
+      let imgHeight = pageWidth / aspectRatio;
+
+      if (imgHeight > maxHeight) {
+        imgHeight = maxHeight;
+        imgWidth = maxHeight * aspectRatio;
+      }
+
+      const xPos = (pageWidth - imgWidth) / 2;
+      const yPos = 0.2; // 上移图片
+
+      slide.addImage({
+        data: imageData,
+        x: xPos,
+        y: yPos,
+        w: imgWidth,
+        h: imgHeight
+      });
+
+    } catch (e) {
+      console.error('解析截图失败', e);
+      slide.addText("解析截图加载失败", {
+        x: 0.5, y: 1.0, w: '90%', h: 5.0, fontSize: 12, color: '333333'
       });
     }
   }
@@ -413,6 +485,8 @@
         elements.forEach((element, index) => {
           if (isElementVisible(element)) {
             const questionText = extractQuestionText(element);
+            const solutionUrl = extractSolutionUrl(element); // New helper
+
             if (questionText && questionText.length > 15) {
               questions.push({
                 type: 'question',
@@ -420,9 +494,10 @@
                 html: element.innerHTML,
                 index: questions.length + 1,
                 selector: selector,
-                element: element
+                element: element,
+                solutionUrl: solutionUrl
               });
-              console.log(`添加题目 ${questions.length}:`, questionText.substring(0, 50) + '...');
+              console.log(`添加题目 ${questions.length}:`, questionText.substring(0, 50) + '...', solutionUrl ? '[含解析]' : '');
             }
           }
         });
@@ -554,12 +629,129 @@
         const line = lines[i];
         truncatedLines.push(line);
         lineCount++;
+        lineCount++;
+        if (lineCount >= maxLines) break; // Fix logic to break correctly
         if (line.trim().endsWith('。') || line.trim().endsWith('．')) break;
       }
       lines = truncatedLines;
       lines.push('...（题目内容过长，已截断）');
     }
     return lines.join('\n');
+  }
+
+  function extractSolutionUrl(element) {
+    // 在题目元素内部或其父/兄弟容器中查找"解析"链接
+    // 常见结构: question -> .. -> .fieldtip-right -> a (text='解析')
+    // 或者在 fieldset 中
+
+    let container = element;
+    // 向上找几层以防万一
+    for (let i = 0; i < 3; i++) {
+      if (!container) break;
+      const link = container.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
+      if (link && link.textContent.includes('解析')) return link.href;
+
+      // 另一种可能的位置
+      const link2 = container.querySelector('a[onclick*="showDetail"]');
+      if (link2) return link2.href;
+
+      container = container.parentElement;
+    }
+    return null;
+  }
+
+  async function captureSolutionImageFromIframe(url) {
+    return new Promise((resolve, reject) => {
+      console.log('开始通过iframe抓取解析:', url);
+
+      const iframe = document.createElement('iframe');
+      iframe.style.position = 'fixed';
+      iframe.style.left = '-9999px';
+      iframe.style.top = '0';
+      iframe.style.width = '1200px';
+      iframe.style.height = '1200px';
+      iframe.style.zIndex = '-9999';
+      iframe.style.opacity = '0';
+      iframe.src = url;
+
+      document.body.appendChild(iframe);
+
+      // 设置超时，防止无限等待
+      const timeoutId = setTimeout(() => {
+        cleanup();
+        console.warn('iframe加载超时:', url);
+        resolve(null);
+      }, 15000); // 15秒超时
+
+      function cleanup() {
+        clearTimeout(timeoutId);
+        if (iframe.parentNode) {
+          iframe.parentNode.removeChild(iframe);
+        }
+      }
+
+      iframe.onload = async () => {
+        try {
+          console.log('iframe加载完成，等待渲染...');
+          // 等待MathJax和样式渲染
+          await new Promise(r => setTimeout(r, 2000));
+
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+          // 查找目标元素: 仅 .pt6 (解答)
+          // 注意：在详情页中，结构可能略有不同，但通常也是 .pt6
+          // 我们查找包含"解答"的 .pt-title 的父级，或者直接找 .pt6
+          const targetElement = iframeDoc.querySelector('fieldset.quesborder .pt6') ||
+            iframeDoc.querySelector('.pt6');
+
+          if (!targetElement) {
+            console.warn('iframe中未找到目标元素 (.pt6)');
+            cleanup();
+            resolve(null);
+            return;
+          }
+
+          // 截图
+          console.log('开始截图iframe内容...');
+          html2canvas(targetElement, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#FFFFFF',
+            window: iframe.contentWindow, // 关键：使用iframe的window上下文
+            logging: false,
+            onclone: (clonedDoc) => {
+              const el = clonedDoc.querySelector('.pt6');
+              if (el) {
+                el.style.padding = "20px";
+                // 移除干扰元素
+                el.querySelectorAll('script, iframe, .point-video, em').forEach(e => e.remove());
+              }
+            }
+          }).then(canvas => {
+            const dataUrl = canvas.toDataURL('image/png');
+            console.log('解析截图成功');
+            cleanup();
+            resolve(dataUrl);
+          }).catch(e => {
+            console.error('html2canvas截图失败:', e);
+            cleanup();
+            resolve(null);
+          });
+
+        } catch (err) {
+          console.error('iframe处理出错:', err);
+          cleanup();
+          resolve(null);
+        }
+      };
+
+      iframe.onerror = (e) => {
+        console.error('iframe加载失败:', e);
+        cleanup();
+        resolve(null);
+      };
+    });
   }
 
   console.log('Jyeoo PPT截图生成器已加载');
