@@ -38,12 +38,13 @@
     // Global state for images in current conversion
     let imagesToDownload = new Map(); // url -> filename
 
-    function convertPage() {
+    async function convertPage() {
         const questions = document.querySelectorAll('fieldset.quesborder');
         let typstContent = '';
+        imagesToDownload.clear();
         
         // Header
-        typstContent += `#import "/conf.typ": *\n`;
+        typstContent += `#import "/conf.typ": \*\n`;
         typstContent += `#show: conf-rules\n`;
         
         const titleEl = document.querySelector('h1.paper-title');
@@ -54,23 +55,47 @@
             typstContent += convertQuestion(q);
         });
 
-        // Debug: Check fflate loading
         if (typeof fflate === 'undefined') {
             alert("Error: fflate library not loaded!");
             console.error("fflate is undefined");
             return;
         }
 
-        console.log("Zipping with fflate (sync)...");
+        console.log(`Conversion done. Found ${imagesToDownload.size} images. Downloading...`);
         
         try {
-            // Prepare Zip Data Structure
-            // fflate expects { "filename": Uint8Array, "folder/": { ... } }
             const zipData = {};
-            
-            // Add .typ file
-            // Note: fflate.strToU8 converts string to Uint8Array (UTF-8)
             zipData[title + ".typ"] = fflate.strToU8(typstContent);
+
+            // Download images
+            const imagePromises = Array.from(imagesToDownload.entries()).map(([url, filename]) => {
+                return new Promise((resolve, reject) => {
+                    GM_xmlhttpRequest({
+                        method: "GET",
+                        url: url,
+                        responseType: "arraybuffer", // Important: ArrayBuffer for fflate
+                        onload: function(response) {
+                            if (response.status === 200) {
+                                // Add to zipData under images/ folder
+                                const uint8Array = new Uint8Array(response.response);
+                                zipData["images/" + filename] = uint8Array;
+                                resolve();
+                            } else {
+                                console.error("Failed to download image:", url);
+                                resolve(); // Resolve anyway to continue
+                            }
+                        },
+                        onerror: function(err) {
+                            console.error("Error downloading image:", url, err);
+                            resolve();
+                        }
+                    });
+                });
+            });
+
+            await Promise.all(imagePromises);
+
+            console.log("All images downloaded. Zipping...");
             
             // Synchronous Zip Generation
             const zipped = fflate.zipSync(zipData);
@@ -88,6 +113,7 @@
 
     function convertQuestion(fieldset) {
         let content = '';
+        let questionImages = []; // Store images found in this question
         
         // 1. Question Text (.pt1)
         const pt1 = fieldset.querySelector('.pt1');
@@ -97,7 +123,7 @@
             const qseq = clone.querySelector('.qseq');
             if (qseq) qseq.remove();
             
-            let text = traverse(clone);
+            let text = traverse(clone, questionImages);
             // Fallback regex in case qseq wasn't there but numbering exists in text
             text = text.replace(/^\s*\d+[．.、]\s*/, '');
             content += text.trim();
@@ -110,7 +136,9 @@
             const labels = pt2.querySelectorAll('.selectoption label');
             labels.forEach(label => {
                 // Extract label (A., B., etc) and content
-                let optText = parseContent(label);
+                let optText = parseContent(label); // Options usually don't have main images, but if so, traverse handles them?
+                // Note: parseContent calls traverse(clone). We need to fix parseContent signature too if we want to support images in options.
+                // But typically options just have text/math. Let's keep parseContent simple or update it.
                 // Enhanced regex for options: A., A．, A、
                 optText = optText.replace(/^[A-D][．.、]\s*/, '').trim();
                 options.push(`[${optText}]`);
@@ -126,6 +154,11 @@
                 content += `\n#choices(\n  (${options.join(', ')}),\n  colNum: ${colNum}\n)`;
             }
         }
+        
+        // Append images at the bottom
+        if (questionImages.length > 0) {
+            content += '\n' + questionImages.join('\n');
+        }
 
         // Wrap in #example
         return `#example[\n${content}\n#answer-block(10em)\n]\n\n`;
@@ -134,10 +167,10 @@
     function parseContent(element) {
         // Clone to avoid modifying DOM
         const clone = element.cloneNode(true);
-        return traverse(clone);
+        return traverse(clone, []); // Pass empty array if we don't care, or handle option images later
     }
 
-    function traverse(node) {
+    function traverse(node, imageList) {
         if (node.nodeType === Node.TEXT_NODE) {
             // Main text: normalize AND escape
             let text = node.textContent;
@@ -159,11 +192,23 @@
 
         // Images
         if (node.tagName === 'IMG') {
-            // Check if it's an adapt image or icon, maybe skip? 
-            // For now, keep question images.
             const src = node.src;
-            if (src && !src.includes('icon') && !src.includes('button')) {
-                 return `\n#image("${src}", width: 25%)\n`;
+            if (src && !src.includes('icon') && !src.includes('button')) { // Ignore icons
+                 // Generate local filename
+                 let filename = src.substring(src.lastIndexOf('/') + 1);
+                 // Cleanup filename (remove query params)
+                 filename = filename.split('?')[0];
+                 // Ensure extension
+                 if (!filename.includes('.')) filename += '.png';
+                 
+                 // Add to map
+                 imagesToDownload.set(src, filename);
+                 
+                 // Add code to list instead of returning it directly
+                 if (imageList) {
+                     imageList.push(`#image("images/${filename}", width: 25%)`);
+                 }
+                 return ''; // Return empty string so it doesn't appear in text flow
             }
             return '';
         }
@@ -172,7 +217,7 @@
         if (node.tagName === 'BR' || node.tagName === 'DIV' || node.tagName === 'P') {
             let res = '';
             for (let child of node.childNodes) {
-                res += traverse(child);
+                res += traverse(child, imageList);
             }
             if (node.tagName !== 'SPAN') res += '\n'; // Add newline for block elements
             return res;
@@ -181,7 +226,7 @@
         // Default recursion
         let result = '';
         for (let child of node.childNodes) {
-            result += traverse(child);
+            result += traverse(child, imageList);
         }
         return result;
     }
