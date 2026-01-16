@@ -6,8 +6,9 @@
 // @author       derjoker
 // @match        https://www.jyeoo.com/math2/paper/detail/*
 // @match        https://www.jyeoo.com/math2/report/detail/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=jyeoo.com
-// @grant        none
+// @require      https://unpkg.com/fflate@0.8.2/umd/index.js
+// @require      https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (function() {
@@ -42,7 +43,7 @@
         let typstContent = '';
         
         // Header
-        typstContent += `#import "/conf.typ": \*\n`;
+        typstContent += `#import "/conf.typ": *\n`;
         typstContent += `#show: conf-rules\n`;
         
         const titleEl = document.querySelector('h1.paper-title');
@@ -53,17 +54,35 @@
             typstContent += convertQuestion(q);
         });
 
-        console.log(typstContent);
-        // Copy to clipboard fallback if GM_setClipboard not available/working
-        if (typeof GM_setClipboard !== 'undefined') {
-            GM_setClipboard(typstContent);
-            alert('Typst content copied to clipboard!');
-        } else {
-            navigator.clipboard.writeText(typstContent).then(() => {
-                alert('Typst content copied to clipboard!');
-            }, () => {
-                alert('Failed to copy. Check console for output.');
-            });
+        // Debug: Check fflate loading
+        if (typeof fflate === 'undefined') {
+            alert("Error: fflate library not loaded!");
+            console.error("fflate is undefined");
+            return;
+        }
+
+        console.log("Zipping with fflate (sync)...");
+        
+        try {
+            // Prepare Zip Data Structure
+            // fflate expects { "filename": Uint8Array, "folder/": { ... } }
+            const zipData = {};
+            
+            // Add .typ file
+            // Note: fflate.strToU8 converts string to Uint8Array (UTF-8)
+            zipData[title + ".typ"] = fflate.strToU8(typstContent);
+            
+            // Synchronous Zip Generation
+            const zipped = fflate.zipSync(zipData);
+            
+            // Save
+            const blob = new Blob([zipped], {type: "application/zip"});
+            saveAs(blob, title + ".zip");
+            alert("Download started!");
+            
+        } catch (e) {
+            console.error("Error generating zip:", e);
+            alert("Error generating zip: " + e.message);
         }
     }
 
