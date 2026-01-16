@@ -232,7 +232,11 @@
             try {
                 const solutionContent = await fetchQuestionDetail(solutionUrl);
                 if (solutionContent) {
-                    content += `\n\n#solution[\n${solutionContent}\n]`;
+                    // Clean up solution prefix: "【解答】解: ", "【解答】", "解："
+                    let cleanContent = solutionContent.replace(/^[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '');
+                    cleanContent = cleanContent.replace(/^[\s\n]*解[:：][\s\n]*/, '');
+                    
+                    content += `\n\n#solution[\n${cleanContent}\n]`;
                 }
             } catch (e) {
                 console.error("Failed to fetch solution:", solutionUrl, e);
