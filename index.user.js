@@ -16,7 +16,7 @@
 
     // UI Integration
     const btn = document.createElement('button');
-    btn.innerText = 'To Typst (Zip)';
+    btn.innerText = 'To Typst';
     btn.id = 'export-typst-btn';
     btn.style.position = 'fixed';
     btn.style.bottom = '20px'; // Changed from top: 10px
@@ -54,7 +54,7 @@
 
         if (headers.length > 0) {
             // Section-based extraction
-            headers.forEach(header => {
+            for (const header of headers) {
                 let sectionTitle = header.innerText.trim();
                 // Clean up title:
                 // 1. Remove leading numbering (e.g., "1.", "一、")
@@ -81,16 +81,16 @@
                     }
                 }
                 
-                questions.forEach(q => {
-                    typstContent += convertQuestion(q);
-                });
-            });
+                const questionPromises = questions.map(async q => await convertQuestion(q));
+                const results = await Promise.all(questionPromises);
+                results.forEach(r => typstContent += r);
+            }
         } else {
             // Fallback: No sections, just all questions
             const questions = document.querySelectorAll('fieldset.quesborder');
-            questions.forEach(q => {
-                typstContent += convertQuestion(q);
-            });
+            const questionPromises = Array.from(questions).map(async q => await convertQuestion(q));
+            const results = await Promise.all(questionPromises);
+            results.forEach(r => typstContent += r);
         }
 
         console.log(`Conversion done. Found ${imagesToDownload.size} images. Downloading...`);
@@ -99,6 +99,9 @@
             const zipData = {};
             zipData[title + ".typ"] = fflate.strToU8(typstContent);
 
+            // Create images folder object
+            const imagesFolder = {};
+            
             // Download images
             const imagePromises = Array.from(imagesToDownload.entries()).map(([url, filename]) => {
                 return new Promise((resolve, reject) => {
@@ -108,9 +111,9 @@
                         responseType: "arraybuffer", // Important: ArrayBuffer for fflate
                         onload: function(response) {
                             if (response.status === 200) {
-                                // Add to zipData under images/ folder
+                                // Add to imagesFolder
                                 const uint8Array = new Uint8Array(response.response);
-                                zipData["images/" + filename] = uint8Array;
+                                imagesFolder[filename] = uint8Array;
                                 resolve();
                             } else {
                                 console.error("Failed to download image:", url);
@@ -126,6 +129,12 @@
             });
 
             await Promise.all(imagePromises);
+            
+            // Allow images folder only if not empty, otherwise fflate might prefer conditional?
+            // Actually simply adding it to zipData works:
+            if (Object.keys(imagesFolder).length > 0) {
+                zipData["images"] = imagesFolder;
+            }
 
             console.log("All images downloaded. Zipping...");
             
@@ -143,9 +152,14 @@
         }
     }
 
-    function convertQuestion(fieldset) {
+    async function convertQuestion(fieldset) {
         let content = '';
-        let questionImages = []; // Store images found in this question
+        
+        // Extract solution URL early
+        const solutionUrl = extractSolutionUrl(fieldset);
+        if (solutionUrl) {
+            content += `// ${solutionUrl}\n`;
+        }
         
         // 1. Question Text (.pt1)
         const pt1 = fieldset.querySelector('.pt1');
@@ -155,7 +169,7 @@
             const qseq = clone.querySelector('.qseq');
             if (qseq) qseq.remove();
             
-            let text = traverse(clone, questionImages);
+            let text = traverse(clone);
             // Fallback regex in case qseq wasn't there but numbering exists in text
             text = text.replace(/^\s*\d+[．.、]\s*/, '');
             content += text.trim();
@@ -168,9 +182,7 @@
             const labels = pt2.querySelectorAll('.selectoption label');
             labels.forEach(label => {
                 // Extract label (A., B., etc) and content
-                let optText = parseContent(label); // Options usually don't have main images, but if so, traverse handles them?
-                // Note: parseContent calls traverse(clone). We need to fix parseContent signature too if we want to support images in options.
-                // But typically options just have text/math. Let's keep parseContent simple or update it.
+                let optText = parseContent(label);
                 // Enhanced regex for options: A., A．, A、
                 optText = optText.replace(/^[A-D][．.、]\s*/, '').trim();
                 options.push(`[${optText}]`);
@@ -187,13 +199,64 @@
             }
         }
         
-        // Append images at the bottom
-        if (questionImages.length > 0) {
-            content += '\n' + questionImages.join('\n');
+        // 3. Solution / Analysis
+        if (solutionUrl) {
+            try {
+                const solutionContent = await fetchQuestionDetail(solutionUrl);
+                if (solutionContent) {
+                    content += `\n\n#solution[\n${solutionContent}\n]`;
+                }
+            } catch (e) {
+                console.error("Failed to fetch solution:", solutionUrl, e);
+            }
         }
 
         // Wrap in #example
-        return `#example[\n${content}\n#answer-block(10em)\n]\n\n`;
+        return `#example[\n${content}\n]\n\n`;
+    }
+
+    function extractSolutionUrl(element) {
+        let container = element;
+        // Strategy: Search inside fieldset first
+        let link = container.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
+        if (link && link.innerText.includes('解析')) return link.href;
+
+        // Search siblings if not in fieldset
+        if (container.parentElement) {
+             link = container.parentElement.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
+             if (link && link.innerText.includes('解析')) return link.href;
+        }
+
+        return null;
+    }
+    
+    function fetchQuestionDetail(url) {
+        return new Promise((resolve) => {
+             GM_xmlhttpRequest({
+                method: "GET",
+                url: url,
+                onload: function(response) {
+                    if (response.status === 200) {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = response.responseText;
+                        
+                        // Look for .pt6 (Analysis content)
+                        const pt6 = tempDiv.querySelector('.pt6');
+                        if (pt6) {
+                            // Recursively traverse
+                            resolve(traverse(pt6));
+                        } else {
+                            resolve(null);
+                        }
+                    } else {
+                        resolve(null);
+                    }
+                },
+                onerror: function() {
+                    resolve(null);
+                }
+            });
+        });
     }
 
     function parseContent(element) {
@@ -202,7 +265,7 @@
         return traverse(clone, []); // Pass empty array if we don't care, or handle option images later
     }
 
-    function traverse(node, imageList) {
+    function traverse(node) {
         if (node.nodeType === Node.TEXT_NODE) {
             // Main text: normalize AND escape
             let text = node.textContent;
@@ -236,11 +299,8 @@
                  // Add to map
                  imagesToDownload.set(src, filename);
                  
-                 // Add code to list instead of returning it directly
-                 if (imageList) {
-                     imageList.push(`#image("images/${filename}", width: 25%)`);
-                 }
-                 return ''; // Return empty string so it doesn't appear in text flow
+                 // Return typst image code using local path
+                 return ` #image("images/${filename}", width: 25%) `;
             }
             return '';
         }
@@ -249,7 +309,7 @@
         if (node.tagName === 'BR' || node.tagName === 'DIV' || node.tagName === 'P') {
             let res = '';
             for (let child of node.childNodes) {
-                res += traverse(child, imageList);
+                res += traverse(child);
             }
             if (node.tagName !== 'SPAN') res += '\n'; // Add newline for block elements
             return res;
@@ -258,7 +318,7 @@
         // Default recursion
         let result = '';
         for (let child of node.childNodes) {
-            result += traverse(child, imageList);
+            result += traverse(child);
         }
         return result;
     }
