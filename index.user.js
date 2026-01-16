@@ -39,104 +39,129 @@
     let imagesToDownload = new Map(); // url -> filename
 
     async function convertPage() {
-        // Questions extraction logic based on sections
-        const headers = document.querySelectorAll('h3.ques-type');
-        let typstContent = '';
-        imagesToDownload.clear();
-        
-        // Header
-        typstContent += `#import "/conf.typ": \*\n`;
-        typstContent += `#show: conf-rules\n`;
-        
-        const titleEl = document.querySelector('h1.paper-title');
-        const title = titleEl ? titleEl.innerText.trim() : 'Exported Questions';
-        typstContent += `#title[${title}]\n\n`;
+        // UI Feedback
+        const originalBtnText = btn.innerText;
+        btn.innerText = 'Initializing...';
+        btn.disabled = true;
+        btn.style.backgroundColor = '#7f8c8d'; // Grey out
 
-        if (headers.length > 0) {
-            // Section-based extraction
-            for (const header of headers) {
-                let sectionTitle = header.innerText.trim();
-                // Clean up title:
-                // 1. Remove leading numbering (e.g., "1.", "一、")
-                sectionTitle = sectionTitle.replace(/^[\d一二三四五六七八九十]+\s*[、．.]\s*/, '');
-                // 2. Remove trailing info (e.g., "（共5小题）", "(共5题)")
-                sectionTitle = sectionTitle.replace(/\s*[（\(].*?共.*?题.*?[）\)]$/, '');
-                
-                typstContent += `= ${sectionTitle}\n\n`;
-
-                let questions = [];
-                let nextNode = header.nextElementSibling;
-                
-                // Case 1: Questions in a UL immediately following
-                if (nextNode && nextNode.tagName === 'UL') {
-                    const fieldsets = nextNode.querySelectorAll('fieldset.quesborder');
-                    fieldsets.forEach(fs => questions.push(fs));
-                } else {
-                    // Case 2: Questions are siblings
-                    while (nextNode && !nextNode.classList.contains('ques-type')) {
-                        if (nextNode.tagName === 'FIELDSET' && nextNode.classList.contains('quesborder')) {
-                            questions.push(nextNode);
+        try {
+            // Questions extraction logic based on sections
+            const headers = document.querySelectorAll('h3.ques-type');
+            const totalQuestions = document.querySelectorAll('fieldset.quesborder').length;
+            let processedCount = 0;
+            
+            let typstContent = '';
+            imagesToDownload.clear();
+            
+            // Header
+            typstContent += `#import "/conf.typ": \*\n`;
+            typstContent += `#show: conf-rules\n`;
+            
+            const titleEl = document.querySelector('h1.paper-title');
+            const title = titleEl ? titleEl.innerText.trim() : 'Exported Questions';
+            typstContent += `#title[${title}]\n\n`;
+    
+            if (headers.length > 0) {
+                // Section-based extraction
+                for (const header of headers) {
+                    let sectionTitle = header.innerText.trim();
+                    sectionTitle = sectionTitle.replace(/^[\d一二三四五六七八九十]+\s*[、．.]\s*/, '');
+                    sectionTitle = sectionTitle.replace(/\s*[（\(].*?共.*?题.*?[）\)]$/, '');
+                    
+                    typstContent += `= ${sectionTitle}\n\n`;
+    
+                    let questions = [];
+                    let nextNode = header.nextElementSibling;
+                    
+                    // Case 1: Questions in a UL immediately following
+                    if (nextNode && nextNode.tagName === 'UL') {
+                        const fieldsets = nextNode.querySelectorAll('fieldset.quesborder');
+                        fieldsets.forEach(fs => questions.push(fs));
+                    } else {
+                        // Case 2: Questions are siblings
+                        while (nextNode && !nextNode.classList.contains('ques-type')) {
+                            if (nextNode.tagName === 'FIELDSET' && nextNode.classList.contains('quesborder')) {
+                                questions.push(nextNode);
+                            }
+                            nextNode = nextNode.nextElementSibling;
                         }
-                        nextNode = nextNode.nextElementSibling;
                     }
+                    
+                    const questionPromises = questions.map(async q => {
+                        const res = await convertQuestion(q);
+                        processedCount++;
+                        btn.innerText = `Converting... (${processedCount}/${totalQuestions})`;
+                        return res;
+                    });
+                    const results = await Promise.all(questionPromises);
+                    results.forEach(r => typstContent += r);
                 }
-                
-                const questionPromises = questions.map(async q => await convertQuestion(q));
+            } else {
+                // Fallback: No sections, just all questions
+                const questions = document.querySelectorAll('fieldset.quesborder');
+                const questionPromises = Array.from(questions).map(async q => {
+                    const res = await convertQuestion(q);
+                    processedCount++;
+                    btn.innerText = `Converting... (${processedCount}/${totalQuestions})`;
+                    return res;
+                });
                 const results = await Promise.all(questionPromises);
                 results.forEach(r => typstContent += r);
             }
-        } else {
-            // Fallback: No sections, just all questions
-            const questions = document.querySelectorAll('fieldset.quesborder');
-            const questionPromises = Array.from(questions).map(async q => await convertQuestion(q));
-            const results = await Promise.all(questionPromises);
-            results.forEach(r => typstContent += r);
-        }
-
-        console.log(`Conversion done. Found ${imagesToDownload.size} images. Downloading...`);
-        
-        try {
+    
+            console.log(`Conversion done. Found ${imagesToDownload.size} images. Downloading...`);
+            
             const zipData = {};
             zipData[title + ".typ"] = fflate.strToU8(typstContent);
-
+    
             // Create images folder object
             const imagesFolder = {};
             
-            // Download images
-            const imagePromises = Array.from(imagesToDownload.entries()).map(([url, filename]) => {
-                return new Promise((resolve, reject) => {
-                    GM_xmlhttpRequest({
-                        method: "GET",
-                        url: url,
-                        responseType: "arraybuffer", // Important: ArrayBuffer for fflate
-                        onload: function(response) {
-                            if (response.status === 200) {
-                                // Add to imagesFolder
-                                const uint8Array = new Uint8Array(response.response);
-                                imagesFolder[filename] = uint8Array;
+            if (imagesToDownload.size > 0) {
+                btn.innerText = `Downloading Images (0/${imagesToDownload.size})`;
+                let imgCount = 0;
+                
+                // Download images
+                const imagePromises = Array.from(imagesToDownload.entries()).map(([url, filename]) => {
+                    return new Promise((resolve, reject) => {
+                        GM_xmlhttpRequest({
+                            method: "GET",
+                            url: url,
+                            responseType: "arraybuffer", // Important: ArrayBuffer for fflate
+                            onload: function(response) {
+                                imgCount++;
+                                btn.innerText = `Downloading Images (${imgCount}/${imagesToDownload.size})`;
+                                if (response.status === 200) {
+                                    // Add to imagesFolder
+                                    const uint8Array = new Uint8Array(response.response);
+                                    imagesFolder[filename] = uint8Array;
+                                    resolve();
+                                } else {
+                                    console.error("Failed to download image:", url);
+                                    resolve(); // Resolve anyway to continue
+                                }
+                            },
+                            onerror: function(err) {
+                                imgCount++;
+                                console.error("Error downloading image:", url, err);
                                 resolve();
-                            } else {
-                                console.error("Failed to download image:", url);
-                                resolve(); // Resolve anyway to continue
                             }
-                        },
-                        onerror: function(err) {
-                            console.error("Error downloading image:", url, err);
-                            resolve();
-                        }
+                        });
                     });
                 });
-            });
-
-            await Promise.all(imagePromises);
-            
-            // Allow images folder only if not empty, otherwise fflate might prefer conditional?
-            // Actually simply adding it to zipData works:
-            if (Object.keys(imagesFolder).length > 0) {
-                zipData["images"] = imagesFolder;
+    
+                await Promise.all(imagePromises);
+                
+                if (Object.keys(imagesFolder).length > 0) {
+                    zipData["images"] = imagesFolder;
+                }
             }
-
+    
             console.log("All images downloaded. Zipping...");
+            btn.innerText = 'Zipping...';
+            
+            await new Promise(r => setTimeout(r, 100)); // Yield to UI
             
             // Synchronous Zip Generation
             const zipped = fflate.zipSync(zipData);
@@ -144,11 +169,14 @@
             // Save
             const blob = new Blob([zipped], {type: "application/zip"});
             saveAs(blob, title + ".zip");
-            alert("Download started!");
             
         } catch (e) {
             console.error("Error generating zip:", e);
             alert("Error generating zip: " + e.message);
+        } finally {
+            btn.innerText = originalBtnText;
+            btn.disabled = false;
+            btn.style.backgroundColor = '#2c3e50';
         }
     }
 
