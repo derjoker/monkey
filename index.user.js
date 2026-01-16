@@ -39,7 +39,8 @@
     let imagesToDownload = new Map(); // url -> filename
 
     async function convertPage() {
-        const questions = document.querySelectorAll('fieldset.quesborder');
+        // Questions extraction logic based on sections
+        const headers = document.querySelectorAll('h3.ques-type');
         let typstContent = '';
         imagesToDownload.clear();
         
@@ -51,14 +52,45 @@
         const title = titleEl ? titleEl.innerText.trim() : 'Exported Questions';
         typstContent += `#title[${title}]\n\n`;
 
-        questions.forEach(q => {
-            typstContent += convertQuestion(q);
-        });
+        if (headers.length > 0) {
+            // Section-based extraction
+            headers.forEach(header => {
+                let sectionTitle = header.innerText.trim();
+                // Clean up title:
+                // 1. Remove leading numbering (e.g., "1.", "一、")
+                sectionTitle = sectionTitle.replace(/^[\d一二三四五六七八九十]+\s*[、．.]\s*/, '');
+                // 2. Remove trailing info (e.g., "（共5小题）", "(共5题)")
+                sectionTitle = sectionTitle.replace(/\s*[（\(].*?共.*?题.*?[）\)]$/, '');
+                
+                typstContent += `= ${sectionTitle}\n\n`;
 
-        if (typeof fflate === 'undefined') {
-            alert("Error: fflate library not loaded!");
-            console.error("fflate is undefined");
-            return;
+                let questions = [];
+                let nextNode = header.nextElementSibling;
+                
+                // Case 1: Questions in a UL immediately following
+                if (nextNode && nextNode.tagName === 'UL') {
+                    const fieldsets = nextNode.querySelectorAll('fieldset.quesborder');
+                    fieldsets.forEach(fs => questions.push(fs));
+                } else {
+                    // Case 2: Questions are siblings
+                    while (nextNode && !nextNode.classList.contains('ques-type')) {
+                        if (nextNode.tagName === 'FIELDSET' && nextNode.classList.contains('quesborder')) {
+                            questions.push(nextNode);
+                        }
+                        nextNode = nextNode.nextElementSibling;
+                    }
+                }
+                
+                questions.forEach(q => {
+                    typstContent += convertQuestion(q);
+                });
+            });
+        } else {
+            // Fallback: No sections, just all questions
+            const questions = document.querySelectorAll('fieldset.quesborder');
+            questions.forEach(q => {
+                typstContent += convertQuestion(q);
+            });
         }
 
         console.log(`Conversion done. Found ${imagesToDownload.size} images. Downloading...`);
