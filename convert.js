@@ -285,7 +285,11 @@ function traverse(node) {
         return '';
     }
 
-    if (node.tagName === 'BR' || node.tagName === 'DIV' || node.tagName === 'P') {
+    if (node.tagName === 'BR') {
+        return '\n\n';
+    }
+
+    if (node.tagName === 'DIV' || node.tagName === 'P') {
         let res = '';
         for (let child of node.childNodes) {
             res += traverse(child);
