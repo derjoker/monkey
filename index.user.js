@@ -8,6 +8,7 @@
 // @match        https://www.jyeoo.com/math2/report/detail/*
 // @require      https://unpkg.com/fflate@0.8.2/umd/index.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js
+// @icon         https://www.jyeoo.com/api/photo/62956866
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
