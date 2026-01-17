@@ -15,36 +15,93 @@
 (function() {
     'use strict';
 
-    // UI Integration
-    const btn = document.createElement('button');
-    btn.innerText = 'To Typst';
-    btn.id = 'export-typst-btn';
-    btn.style.position = 'fixed';
-    btn.style.bottom = '20px'; // Changed from top: 10px
-    btn.style.right = '20px';  // Changed from right: 10px
-    btn.style.zIndex = '9999';
-    btn.style.padding = '10px 20px';
-    btn.style.backgroundColor = '#2c3e50'; // Dark blue instead of bright blue
-    btn.style.color = 'white';
-    btn.style.border = 'none';
-    btn.style.borderRadius = '5px';
-    btn.style.cursor = 'pointer';
-    btn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
-    btn.style.display = 'flex';
-    btn.style.alignItems = 'center';
-    btn.style.justifyContent = 'center';
-    btn.onclick = convertPage;
-    document.body.appendChild(btn);
+    // UI Integration: Sidebar Button
+    // Structure based on div.qrcode-side
+    /*
+    <div class="qrcode-side" style="bottom: 100px; cursor: pointer;">
+        <div class="show-paper prelative">
+            <i class="p-new-icon p-new-icon-01 p-new-icon-01-01"></i>
+            <p class="c999">To Typst</p>
+        </div>
+    </div>
+    */
+
+    const btnWrapper = document.createElement('div');
+    btnWrapper.className = 'qrcode-side';
+    
+    // Position above 'Share' (分享)
+    // Default fallback
+    let bottomPos = 245; 
+    const shareBtn = Array.from(document.querySelectorAll('.qrcode-side')).find(el => el.innerText.includes('分享'));
+    if (shareBtn) {
+        const shareBottom = parseInt(shareBtn.style.bottom || '173', 10);
+        if (!isNaN(shareBottom)) {
+            bottomPos = shareBottom + 70; // Add height + margin (approx 70px)
+        }
+    }
+    btnWrapper.style.bottom = bottomPos + 'px';
+    
+    btnWrapper.style.cursor = 'pointer';
+    btnWrapper.id = 'export-typst-wrapper';
+
+    const inner = document.createElement('div');
+    inner.className = 'show-paper prelative';
+    inner.style.textAlign = 'center'; 
+    inner.style.padding = '5px 0 2px 0'; // Reduced bottom padding
+    inner.style.backgroundColor = '#fff'; 
+    inner.style.borderRadius = '4px';     
+    inner.style.width = '100%';           // Use full width of parent
+    inner.style.margin = '0 auto';  
+    // inner.style.width = '60px';        // Removed fixed width
+
+    const icon = document.createElement('i');
+    icon.className = 'icon i-download';
+    icon.style.display = 'block';     
+    icon.style.margin = '5px auto 0'; // Center and add top margin
+    // icon.style.fontSize = '28px';  // Ineffective for sprites
+    icon.style.transform = 'scale(1.25)';
+    icon.style.transformOrigin = 'center center';
+    // If it's a sprite, this font-size might affect spacing but not image. 
+    // We assume 'icon' class sets inline-block. We force block.
+
+    const text = document.createElement('p');
+    text.className = 'c999';
+    text.innerText = 'Typst';         
+    text.style.margin = '12px 0 0 0';  
+    text.style.fontSize = '12px';     
+    text.style.lineHeight = '1.2';
+    // Fix overflow: enforce width and wrapping
+    text.style.width = '100%';
+    text.style.boxSizing = 'border-box';
+    text.style.padding = '0';
+    text.style.whiteSpace = 'pre-wrap'; // Allow wrapping
+    text.style.wordBreak = 'break-word'; // Break words if needed
+    text.style.overflow = 'hidden';      // Clip just in case
+
+    inner.appendChild(icon);
+    inner.appendChild(text);
+    btnWrapper.appendChild(inner);
+
+    btnWrapper.onclick = convertPage;
+    document.body.appendChild(btnWrapper);
+    
+    // Reference for progress updates - we will update the TEXT element
+    const btn = text; 
+    // Note: The click handler is on the wrapper, but the progress logic updates `btn.innerText`.
+    // So 'btn' variable now points to the text paragraph.
 
     // Global state for images in current conversion
     let imagesToDownload = new Map(); // url -> filename
 
     async function convertPage() {
         // UI Feedback
-        const originalBtnText = btn.innerText;
-        btn.innerText = 'Initializing...';
-        btn.disabled = true;
-        btn.style.backgroundColor = '#7f8c8d'; // Grey out
+        // btn is now the <p> text element. btnWrapper is the container.
+        const originalText = btn.innerText;
+        btn.innerText = 'Init...';
+        
+        // Disable interaction
+        btnWrapper.style.pointerEvents = 'none';
+        btnWrapper.style.opacity = '0.6';
 
         try {
             // Questions extraction logic based on sections
@@ -92,7 +149,7 @@
                     const questionPromises = questions.map(async q => {
                         const res = await convertQuestion(q);
                         processedCount++;
-                        btn.innerText = `Converting... (${processedCount}/${totalQuestions})`;
+                        btn.innerText = `${processedCount}/${totalQuestions}`; // Shortened status
                         return res;
                     });
                     const results = await Promise.all(questionPromises);
@@ -104,7 +161,7 @@
                 const questionPromises = Array.from(questions).map(async q => {
                     const res = await convertQuestion(q);
                     processedCount++;
-                    btn.innerText = `Converting... (${processedCount}/${totalQuestions})`;
+                    btn.innerText = `${processedCount}/${totalQuestions}`; // Shortened status
                     return res;
                 });
                 const results = await Promise.all(questionPromises);
@@ -120,7 +177,7 @@
             const imagesFolder = {};
             
             if (imagesToDownload.size > 0) {
-                btn.innerText = `Downloading Images (0/${imagesToDownload.size})`;
+                btn.innerText = `Img 0/${imagesToDownload.size}`;
                 let imgCount = 0;
                 
                 // Download images
@@ -132,7 +189,7 @@
                             responseType: "arraybuffer", // Important: ArrayBuffer for fflate
                             onload: function(response) {
                                 imgCount++;
-                                btn.innerText = `Downloading Images (${imgCount}/${imagesToDownload.size})`;
+                                btn.innerText = `Img ${imgCount}/${imagesToDownload.size}`;
                                 if (response.status === 200) {
                                     // Add to imagesFolder
                                     const uint8Array = new Uint8Array(response.response);
@@ -175,9 +232,9 @@
             console.error("Error generating zip:", e);
             alert("Error generating zip: " + e.message);
         } finally {
-            btn.innerText = originalBtnText;
-            btn.disabled = false;
-            btn.style.backgroundColor = '#2c3e50';
+            btn.innerText = originalText;
+            btnWrapper.style.pointerEvents = 'auto'; // Re-enable interaction
+            btnWrapper.style.opacity = '1';
         }
     }
 
