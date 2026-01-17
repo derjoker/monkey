@@ -285,6 +285,27 @@ function traverse(node) {
         return '';
     }
 
+    if (node.tagName === 'TABLE') {
+        const rows = Array.from(node.querySelectorAll('tr'));
+        if (rows.length === 0) return '';
+        
+        let maxCols = 0;
+        const cells = [];
+        
+        rows.forEach(row => {
+            const cols = Array.from(row.querySelectorAll('td, th'));
+            if (cols.length > maxCols) maxCols = cols.length;
+            cols.forEach(col => {
+                let cellContent = traverse(col).trim();
+                cells.push(`[${cellContent}]`);
+            });
+        });
+
+        if (maxCols === 0) return '';
+        
+        return `\n#table(\n  columns: ${maxCols},\n  align: center + horizon,\n  ${cells.join(', ')}\n)\n`;
+    }
+
     if (node.tagName === 'BR') {
         return '\n\n';
     }
