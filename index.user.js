@@ -359,7 +359,7 @@
         if (node.nodeType === Node.TEXT_NODE) {
             // Main text: normalize AND escape
             let text = node.textContent;
-            text = text.replace(/([#$\[\]])/g, '\\$1'); // Escape Typst special chars
+            text = text.replace(/([#$\[\]*])/g, '\\$1'); // Escape Typst special chars including *
             return normalizeText(text);
         }
         
