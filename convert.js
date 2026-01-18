@@ -333,6 +333,14 @@ function traverse(node) {
         return [{ text: `_(${innerContent})`, isMath: true }];
     }
 
+    // New Request: Handle quizPutTag -> #blank, sanwser -> delete
+    if (node.classList && node.classList.contains('quizPutTag')) {
+        return [{ text: ' #blank ', isMath: false }];
+    }
+    if (node.classList && node.classList.contains('sanwser')) {
+        return [];
+    }
+
     // Block elements break math merging usually, but we handle via segments
     if (node.tagName === 'DIV' || node.tagName === 'P') {
         let segments = [];

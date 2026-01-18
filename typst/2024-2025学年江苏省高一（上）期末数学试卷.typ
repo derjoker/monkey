@@ -98,9 +98,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/4nAMD1Uy55TLf9jUMGl26p8tWqDOws8Qo2b4pD9nLmAEPkUAr1wnpY
-已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$ ．甲: 当 $x in ( 0 , ( pi )/(4 ) )$ 时, 函数 $f(x)$ 单调递减; 乙: 函数 $f(x)$ 的图象关于直线 $x = ( pi )/(3 )$ 对称; 丙: 函数 $y=f(x)$ 图象的一个对称中心为 $( ( pi )/(6 ) , 0 )$ ．甲、乙、丙三人对函数 $f(x)$ 的论述中有且只有一人正确, 则 $theta =$ 
- $( pi )/(3 )$ 
-．
+已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$ ．甲: 当 $x in ( 0 , ( pi )/(4 ) )$ 时, 函数 $f(x)$ 单调递减; 乙: 函数 $f(x)$ 的图象关于直线 $x = ( pi )/(3 )$ 对称; 丙: 函数 $y=f(x)$ 图象的一个对称中心为 $( ( pi )/(6 ) , 0 )$ ．甲、乙、丙三人对函数 $f(x)$ 的论述中有且只有一人正确, 则 $theta =$ #blank ．
 
 #solution[
 由正切函数型函数的单调性和对称轴可知, 只有丙同学的论述正确, 
@@ -284,9 +282,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/92CG40V4ebFaBnS5HJhroB2F6LdV1Hcu3j4A2ZZlWepWNYsZoanrYu
-已知函数 $f ( x ) = sin ( omega x + phi ) ( omega > 0 , 0 < phi < ( pi )/(2 ) )$ 图象的一个对称中心是 $( - ( pi )/(8 ) , 0 )$ , 一条对称轴是直线 $x = ( pi )/(8 )$ 且 $f(x)$ 在区间 $( 0 , ( pi )/(8 ) )$ 上有且仅有两个零点, 则 $omega =$ 
- $18$ 
-．
+已知函数 $f ( x ) = sin ( omega x + phi ) ( omega > 0 , 0 < phi < ( pi )/(2 ) )$ 图象的一个对称中心是 $( - ( pi )/(8 ) , 0 )$ , 一条对称轴是直线 $x = ( pi )/(8 )$ 且 $f(x)$ 在区间 $( 0 , ( pi )/(8 ) )$ 上有且仅有两个零点, 则 $omega =$ #blank ．
 
 #solution[
 函数 $f ( x ) = sin ( omega x + phi ) ( omega > 0 , 0 < phi < ( pi )/(2 ) )$ 图象的一个对称中心是 $( - ( pi )/(8 ) , 0 )$ , 
@@ -486,9 +482,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7ySlN2h60YFVpTuiTJ7CUW4p3wlH0pAH979JaNP6RSatCRYAB8UUng
-设 $t$ 为实数, 已知函数 $f ( x ) = ln ( x + sqrt(√ x 2 + 1 ) ) , g ( x ) = 4 x + t dot.op 2 x$ , 若存在实数 $a,b$ 同时满足 $f(a)+f(b)=0$ 和 $g(a)+g(b)=0$ , 则实数 $t$ 的取值范围是 
- $(- infinity , -1]$ 
-．
+设 $t$ 为实数, 已知函数 $f ( x ) = ln ( x + sqrt(√ x 2 + 1 ) ) , g ( x ) = 4 x + t dot.op 2 x$ , 若存在实数 $a,b$ 同时满足 $f(a)+f(b)=0$ 和 $g(a)+g(b)=0$ , 则实数 $t$ 的取值范围是 #blank ．
 
 #solution[
 $f ( x ) = ln ( x + sqrt(x 2 + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(x 2 + 1 ) )$ , 
@@ -714,11 +708,7 @@ $because f(x)=x^(1-ln x)$ ⇒ $ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/52eFe0aMaiVzcrtaT7qAps1CFbP4gDnEOR2GQOvzZPUf8HQW4172rQ
-已知函数 $f ( x ) = cases(x + (4 )/(x ) - 4 "," x > 0, | (1 )/(3 x ) - 4 | "," x <= 0)$ 若存在实数 $t,$ 使得方程 $f(x)-t=0$ 有 $4$ 个不同的实数根 $x_(1)$ , $x_(2)$ , $x_(3)$ , $x_(4)$ , 且 $x_(1)<x_(2)<x_(3)<x_(4).$ 则 $t$ 的取值范围为 
- $(0, 3]$ 
-, $(3 x 2 - 2 x 1 )/(x 3 + x 4 )$ 的取值范围为 
- $(1, 7]$ 
-．
+已知函数 $f ( x ) = cases(x + (4 )/(x ) - 4 "," x > 0, | (1 )/(3 x ) - 4 | "," x <= 0)$ 若存在实数 $t,$ 使得方程 $f(x)-t=0$ 有 $4$ 个不同的实数根 $x_(1)$ , $x_(2)$ , $x_(3)$ , $x_(4)$ , 且 $x_(1)<x_(2)<x_(3)<x_(4).$ 则 $t$ 的取值范围为 #blank , $(3 x 2 - 2 x 1 )/(x 3 + x 4 )$ 的取值范围为 #blank ．
 
 #solution[
 画出函数 $f ( x ) = cases(x + (4 )/(x ) - 4 "," x > 0, | (1 )/(3 x ) - 4 | "," x <= 0)$ 的图象如图所示．
@@ -928,11 +918,7 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/766G9eM65vkCRTgiHW4tcS1BClaljLGRl0emZ3IBBupft6kU653O2S
-若关于 $x$ 的不等式 $x^(2)-2 m x+3 m-2<0$ 的解集为 $(x_(1)$ , $x_(2))$ , 且 $x_(1)>1$ , 则 $m$ 的取值范围为 
- $(2, + infinity )$ 
-, $4 x_(1)+x_(2)$ 的最小值是 
- $(19 )/(2 )$ 
-．
+若关于 $x$ 的不等式 $x^(2)-2 m x+3 m-2<0$ 的解集为 $(x_(1)$ , $x_(2))$ , 且 $x_(1)>1$ , 则 $m$ 的取值范围为 #blank , $4 x_(1)+x_(2)$ 的最小值是 #blank ．
 
 #solution[
 令 $f(x)=x^(2)-2 m x+3 m-2$ , 开口向上, 
@@ -1170,11 +1156,7 @@ $f ( x ) = (m x + n )/(x 2 + 4 )$ 是奇函数, 则 $f(0)=0$ , 解得 $n=0$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/86SHf4FX60NXIu9KCe55GJ6JnEXwUmU8LHfBrsEb0maIHYZJt0as1w
-对于任意实数 $x,$ 符号 $[x]$ 表示“不超过 $x$ 的最大整数”, 如 $[1]=1$ , $[-1.1]=-2$ , $[2.5]=2$ , 则 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=$ 
- $208$ 
-; 若函数 $f(x)=sin|x|+|sin x|$ , 则 $y=[f(x)-1]+[f(-x)+1]$ 的值域为 
- ${0, 2, 4}$ 
-．
+对于任意实数 $x,$ 符号 $[x]$ 表示“不超过 $x$ 的最大整数”, 如 $[1]=1$ , $[-1.1]=-2$ , $[2.5]=2$ , 则 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=$ #blank ; 若函数 $f(x)=sin|x|+|sin x|$ , 则 $y=[f(x)-1]+[f(-x)+1]$ 的值域为 #blank ．
 
 #solution[
 令 $y=[k]$ , 则有: 
@@ -1398,11 +1380,7 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/51yo6aBnc6qLyKcm8VMyITakrLUZsTaqw59Ij92i3pDm41LsaesIbo
-已知幂函数 $f(x)=(m^(2)+m-1)x^(m)(m in R)$ 是偶函数, 则 $m=$ 
- $-2$ 
-, 设 $g ( x ) = f ( x ) + f ( (1 )/(x ) )$ , 若对于任意 $x(x in R, x != 0)$ , $k g(x^(2))+g(x) <= 0$ , 则实数 $k$ 的最大值为 
- $-1$ 
-．
+已知幂函数 $f(x)=(m^(2)+m-1)x^(m)(m in R)$ 是偶函数, 则 $m=$ #blank , 设 $g ( x ) = f ( x ) + f ( (1 )/(x ) )$ , 若对于任意 $x(x in R, x != 0)$ , $k g(x^(2))+g(x) <= 0$ , 则实数 $k$ 的最大值为 #blank ．
 
 #solution[
 由幂函数 $f(x)$ 是偶函数, 则有 $m^(2)+m-1=1$ , 解得 $m=-2$ 或 $1$ , 
@@ -1708,9 +1686,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/4cploel33mcs5q4Uwt61WI2uZQoIxSCoiY00ticZGXhEz5T2u2FVrc
-若正实数 $x,y$ 满足 $(1 )/(e 2 x ) - (e y )/(e ) = 2 x + y - 1$ , 则 $(1 )/(y ) + (y )/(x )$ 的最小值 
- $1 + 2 sqrt(2 )$ 
-．
+若正实数 $x,y$ 满足 $(1 )/(e 2 x ) - (e y )/(e ) = 2 x + y - 1$ , 则 $(1 )/(y ) + (y )/(x )$ 的最小值 #blank ．
 
 #solution[
 因为 $(1 )/(e 2 x ) - (e y )/(e ) = 2 x + y - 1$ , 变形为 $e^(-2 x)-2 x=e^(y-1)+y-1$ , 
@@ -1928,9 +1904,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8MdVz8HgfPvvj4ClReALWFa3JXUApImXDEfWeEy4xoFq7Sn8wfakQy
-将余弦函数 $y=cos x$ 的图象向左平移 $( pi )/(3 )$ 个单位, 再将函数图象上所有点的横坐标变为原来的 $(1 )/( omega ) ( omega > 0 )$ 得到函数 $f(x)$ 的图象, 若 $f(x)$ 在区间 $[0, pi ]$ 上恰有 $1$ 个最小值和 $3$ 个零点, 则 $omega$ 的取值范围为 
- $[ (13 )/(6 ) , (8 )/(3 ) )$ 
-．
+将余弦函数 $y=cos x$ 的图象向左平移 $( pi )/(3 )$ 个单位, 再将函数图象上所有点的横坐标变为原来的 $(1 )/( omega ) ( omega > 0 )$ 得到函数 $f(x)$ 的图象, 若 $f(x)$ 在区间 $[0, pi ]$ 上恰有 $1$ 个最小值和 $3$ 个零点, 则 $omega$ 的取值范围为 #blank ．
 
 #solution[
 由于余弦函数 $y=cos x$ 的图象向左平移 $( pi )/(3 )$ 个单位, 可得 $y = cos ( x + ( pi )/(3 ) )$ , 再将函数图象上所有点的横坐标变为原来的 $(1 )/( omega ) ( omega > 0 )$ , 可得 $f ( x ) = cos ( omega x + ( pi )/(3 ) )$ , 
@@ -2118,9 +2092,7 @@ $(1)g(x)$ 为 $[1, + infinity )$ 上的增函数, 证明如下:
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6Purj8nG45cVrbjuGBZDVJ2bc2jDsEX3006XyF1RqVIoaiHyg73hXE
-设函数 $f ( x ) = cases(x 2 - 2 a x "," x < 0, (1 )/(e x ) - 1 "," x >= 0)$ , 若不等式 $f(x) >= a$ 对 $∀x in R$ 恒成立．则实数 $a$ 的值为 
- $-1$ 
-．
+设函数 $f ( x ) = cases(x 2 - 2 a x "," x < 0, (1 )/(e x ) - 1 "," x >= 0)$ , 若不等式 $f(x) >= a$ 对 $∀x in R$ 恒成立．则实数 $a$ 的值为 #blank ．
 
 #solution[
 当 $x >= 0$ , $- 1 < f ( x ) = (1 )/(e x ) - 1 <= 0$ , 因此 $f(x)_(min) <= -1$ , 
@@ -2358,9 +2330,7 @@ $(1)$ 如果选①, 由于函数 $f(x)$ 的定义域为 $(-1, 1)$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6VN4G0lD52vjqMLIkLLqGQ051xnyqVA3Mz9yCQ7VbCYKlHaLLedAn2
-若 $alpha in ( ( pi )/(2 ) , pi )$ , 且 $3 cos 2 alpha = cos ( ( pi )/(4 ) + alpha )$ , 则 $sin 2 alpha =$ 
- $- (17 )/(18 )$ 
-．
+若 $alpha in ( ( pi )/(2 ) , pi )$ , 且 $3 cos 2 alpha = cos ( ( pi )/(4 ) + alpha )$ , 则 $sin 2 alpha =$ #blank ．
 
 #solution[
 $3 cos 2 alpha = cos ( ( pi )/(4 ) + alpha )$ , 
@@ -2546,9 +2516,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7EuKd8DK8J72byfqgw8YjM86jyguY8Lc1y7yYAyZfTb0g2WgdfaRMm
-已知函数 $f ( x ) = (8 )/(2 x + 4 )$ , $g ( x ) = (1 )/(2 ) sin pi x + 1$ , 若 $y=f(x)$ 的图象与 $y=g(x)$ 的图象的交点分别为 $(x_(1)$ , $y_(1))$ , $(x_(2)$ , $y_(2))$ , $⋯$ , $(x_(n)$ , $y_(n))$ , 则 $x_(1)+x_(2)+⋯+x_(n)=$ 
- $10$ 
-．
+已知函数 $f ( x ) = (8 )/(2 x + 4 )$ , $g ( x ) = (1 )/(2 ) sin pi x + 1$ , 若 $y=f(x)$ 的图象与 $y=g(x)$ 的图象的交点分别为 $(x_(1)$ , $y_(1))$ , $(x_(2)$ , $y_(2))$ , $⋯$ , $(x_(n)$ , $y_(n))$ , 则 $x_(1)+x_(2)+⋯+x_(n)=$ #blank ．
 
 #solution[
 因为函数 $f ( x ) = (8 )/(2 x + 4 )$ 在 $R$ 上单调递减, 当 $x <= 0$ 时, $f ( x ) >= f ( 0 ) = (8 )/(5 ) > (3 )/(2 )$ , 
