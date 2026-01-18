@@ -1601,7 +1601,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 )
 
 #solution[
-#image("dumb.png", width: 25%) 解: 作 $D E tack.t A B$ 于 $E$ , 连接 $B D$ , 如图所示: 
+#image("dumb.png", width: 25%) 作 $D E tack.t A B$ 于 $E$ , 连接 $B D$ , 如图所示: 
 
 因为 $A B$ 为直径, 所以 $angle A D B=90$ °, 
 
@@ -1933,7 +1933,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
  $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．], [#align(center + horizon, image("dumb.png", width: 100%))])
 
 #solution[
-#image("dumb.png", width: 25%) 解: $(1)$ 过点 $A$ 作 $A B$ , $A C$ 垂直于 $O A$ , $O B$ , 垂足为 $B$ , $C$ , 
+#image("dumb.png", width: 25%) $(1)$ 过点 $A$ 作 $A B$ , $A C$ 垂直于 $O A$ , $O B$ , 垂足为 $B$ , $C$ , 
 
 则 $A B=O C=5$ , $A C=O B=5sqrt(3 )$ , $angle O E F= angle F C A= theta$ , 
 

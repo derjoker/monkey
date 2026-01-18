@@ -323,8 +323,8 @@
             try {
                 const solutionContent = await fetchQuestionDetail(solutionUrl);
                 if (solutionContent) {
-                    let cleanContent = solutionContent.replace(/^[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '');
-                    cleanContent = cleanContent.replace(/^[\s\n]*解[:：][\s\n]*/, '');
+                    let cleanContent = solutionContent.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
+                    cleanContent = cleanContent.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
                     
                     content += `\n\n#solution[\n${cleanContent}\n]`;
                 }

@@ -263,7 +263,7 @@ async function convertQuestion(fieldset) {
                     const pt6 = solutionDoc.querySelector('.pt6');
                     if (pt6) {
                         let solText = renderSegments(traverse(pt6));
-                        solText = solText.replace(/^[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '').replace(/^[\s\n]*解[:：][\s\n]*/, '');
+                        solText = solText.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1').replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
                         content += `\n\n#solution[\n${solText}\n]`;
                     }
                 } else {
