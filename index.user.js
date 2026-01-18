@@ -250,15 +250,51 @@
         // 1. Question Text (.pt1)
         const pt1 = fieldset.querySelector('.pt1');
         if (pt1) {
-            // Clone and remove sequence number (.qseq) to avoid regex guessing
             const clone = pt1.cloneNode(true);
             const qseq = clone.querySelector('.qseq');
             if (qseq) qseq.remove();
-            
-            let text = traverse(clone);
-            // Fallback regex in case qseq wasn't there but numbering exists in text
-            text = text.replace(/^\s*\d+[．.、]\s*/, '');
-            content += text.trim();
+
+            // Check for floating image
+            const floatingImg = Array.from(clone.children).find(child => 
+                child.tagName === 'IMG' && 
+                (child.style.float === 'right' || child.style.float === 'left')
+            );
+
+            if (floatingImg) {
+                 const floatDir = floatingImg.style.float;
+                 const src = floatingImg.src;
+                 
+                 if (src && !src.includes('icon') && !src.includes('button')) {
+                     let filename = src.substring(src.lastIndexOf('/') + 1);
+                     filename = filename.split('?')[0];
+                     if (!filename.includes('.')) filename += '.png';
+                     
+                     imagesToDownload.set(src, filename);
+                     
+                     floatingImg.remove();
+                     
+                     let text = renderSegments(traverse(clone));
+                     text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+                     
+                     const imgTypst = `#align(center + horizon, image("images/${filename}", width: 100%))`;
+                     
+                     if (floatDir === 'right') {
+                         content += `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
+                     } else {
+                         content += `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
+                     }
+                 } else {
+                     floatingImg.remove(); 
+                     let text = renderSegments(traverse(clone));
+                     text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+                     content += text;
+                 }
+            } else {
+                let text = renderSegments(traverse(clone));
+                // Remove question index
+                text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '');
+                content += text.trim();
+            }
         }
 
         // 2. Options (.pt2)
@@ -267,15 +303,12 @@
             const options = [];
             const labels = pt2.querySelectorAll('.selectoption label');
             labels.forEach(label => {
-                // Extract label (A., B., etc) and content
                 let optText = parseContent(label);
-                // Enhanced regex for options: A., A．, A、
-                optText = optText.replace(/^[A-D][．.、]\s*/, '').trim();
+                optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、]\s*/, '').trim();
                 options.push(`[${optText}]`);
             });
 
             if (options.length > 0) {
-                // Heuristic for columns
                 const totalLength = options.reduce((sum, opt) => sum + opt.length, 0);
                 let colNum = 4;
                 if (totalLength > 60) colNum = 1;
@@ -290,7 +323,6 @@
             try {
                 const solutionContent = await fetchQuestionDetail(solutionUrl);
                 if (solutionContent) {
-                    // Clean up solution prefix: "【解答】解: ", "【解答】", "解："
                     let cleanContent = solutionContent.replace(/^[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '');
                     cleanContent = cleanContent.replace(/^[\s\n]*解[:：][\s\n]*/, '');
                     
@@ -301,7 +333,6 @@
             }
         }
 
-        // Wrap in #example
         return `#example[\n${content}\n]\n\n`;
     }
 
@@ -333,8 +364,7 @@
                         // Look for .pt6 (Analysis content)
                         const pt6 = tempDiv.querySelector('.pt6');
                         if (pt6) {
-                            // Recursively traverse
-                            resolve(traverse(pt6));
+                            resolve(renderSegments(traverse(pt6)));
                         } else {
                             resolve(null);
                         }
@@ -350,246 +380,358 @@
     }
 
     function parseContent(element) {
-        // Clone to avoid modifying DOM
         const clone = element.cloneNode(true);
-        return traverse(clone, []); // Pass empty array if we don't care, or handle option images later
+        return renderSegments(traverse(clone, []));
     }
 
     function traverse(node) {
         if (node.nodeType === Node.TEXT_NODE) {
-            // Main text: normalize AND escape
-            let text = node.textContent;
-            text = text.replace(/([#$\[\]*])/g, '\\$1'); // Escape Typst special chars including *
-            return normalizeText(text);
+            return segmentizeText(node.textContent);
         }
         
-        if (node.nodeType !== Node.ELEMENT_NODE) return '';
+        if (node.nodeType !== Node.ELEMENT_NODE) return [];
 
-        // Handle specific elements
-        
-        // Hidden elements
-        if (node.style.display === 'none') return '';
+        if (node.style.display === 'none') return [];
 
         // MathJye
         if (node.classList.contains('MathJye') || node.getAttribute('mathtag') === 'math') {
-            return ` $${parseMath(node)}$ `; // Add spaces for safety
+            const mathContent = parseMath(node);
+            return [{ text: mathContent, isMath: true }];
         }
 
         // Images
         if (node.tagName === 'IMG') {
             const src = node.src;
-            if (src && !src.includes('icon') && !src.includes('button')) { // Ignore icons
-                 // Generate local filename
+            if (src && !src.includes('icon') && !src.includes('button')) {
                  let filename = src.substring(src.lastIndexOf('/') + 1);
-                 // Cleanup filename (remove query params)
                  filename = filename.split('?')[0];
-                 // Ensure extension
                  if (!filename.includes('.')) filename += '.png';
-                 
-                 // Add to map
                  imagesToDownload.set(src, filename);
                  
-                 // Return typst image code using local path
-                 return ` #image("images/${filename}", width: 25%) `;
+                 return [{ text: ` #image("images/${filename}", width: 25%) `, isMath: false }];
             }
-            return '';
+            return [];
         }
 
-        // Line breaks
-        if (node.tagName === 'BR' || node.tagName === 'DIV' || node.tagName === 'P') {
-            let res = '';
+        if (node.tagName === 'TABLE') {
+            const rows = Array.from(node.querySelectorAll('tr'));
+            if (rows.length === 0) return [];
+            
+            let maxCols = 0;
+            const cells = [];
+            
+            rows.forEach(row => {
+                const cols = Array.from(row.querySelectorAll('td, th'));
+                if (cols.length > maxCols) maxCols = cols.length;
+                cols.forEach(col => {
+                    let cellSegments = traverse(col);
+                    let cellContent = renderSegments(cellSegments).trim();
+                    cells.push(`[${cellContent}]`);
+                });
+            });
+
+            if (maxCols === 0) return [];
+            
+            return [{ 
+                text: `\n#table(\n  columns: ${maxCols},\n  align: center + horizon,\n  ${cells.join(', ')}\n)\n`,
+                isMath: false 
+            }];
+        }
+
+        if (node.tagName === 'BR') {
+            return [{ text: '\n\n', isMath: false }];
+        }
+
+        // SUP/SUB: Treat as math segments that can merge
+        if (node.tagName === 'SUP') {
+            let segments = [];
             for (let child of node.childNodes) {
-                res += traverse(child);
+                segments = segments.concat(traverse(child));
             }
-            if (node.tagName !== 'SPAN') res += '\n'; // Add newline for block elements
-            return res;
+            const innerContent = renderSegmentsRaw(segments);
+            return [{ text: `^(${innerContent})`, isMath: true }];
         }
 
-        // Default recursion
-        let result = '';
+        if (node.tagName === 'SUB') {
+            let segments = [];
+            for (let child of node.childNodes) {
+                segments = segments.concat(traverse(child));
+            }
+            const innerContent = renderSegmentsRaw(segments);
+            return [{ text: `_(${innerContent})`, isMath: true }];
+        }
+
+        if (node.classList && node.classList.contains('quizPutTag')) {
+            return [{ text: ' #blank ', isMath: false }];
+        }
+        if (node.classList && node.classList.contains('sanwser')) {
+            return [];
+        }
+
+        // Block elements
+        if (node.tagName === 'DIV' || node.tagName === 'P') {
+            let segments = [];
+            for (let child of node.childNodes) {
+                segments = segments.concat(traverse(child));
+            }
+            if (node.tagName !== 'SPAN') {
+                 segments.push({ text: '\n', isMath: false });
+            }
+            return segments;
+        }
+
+        let segments = [];
         for (let child of node.childNodes) {
-            result += traverse(child);
+            segments = segments.concat(traverse(child));
         }
-        return result;
+        return segments;
+    }
+
+    function segmentizeText(text) {
+        if (!text) return [];
+
+        text = preprocessText(text);
+
+        const mapping = new Map();
+        let puaCode = 0xE000;
+        
+        text = text.replace(/(\(\s+\))|(_+)/g, (match) => {
+            const char = String.fromCharCode(puaCode++);
+            mapping.set(char, match);
+            return char;
+        });
+
+        const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF]+)|([\.\,\:\;])/g;
+        
+        let lastIndex = 0;
+        let match;
+        const segments = [];
+        let bracketDepth = 0;
+        
+        while ((match = tokenRegex.exec(text)) !== null) {
+            if (match.index > lastIndex) {
+                const txt = text.slice(lastIndex, match.index);
+                segments.push({ text: normalizeText(txt), isMath: false });
+            }
+            
+            if (match[1]) {
+                const original = mapping.get(match[1]);
+                if (original.includes('(')) segments.push({ text: ' #parentheses ', isMath: false });
+                else if (original.includes('_')) segments.push({ text: ' #blank ', isMath: false });
+            } else if (match[2]) {
+                const m = match[2];
+                for (const char of m) {
+                    if ('([{'.includes(char)) bracketDepth++;
+                    else if (')]}'.includes(char)) bracketDepth = Math.max(0, bracketDepth - 1);
+                }
+
+                 if (m.startsWith('http') || m.startsWith('//') || m.startsWith('www')) {
+                     segments.push({ text: m, isMath: false });
+                 } else {
+                     segments.push({ text: processMathText(m), isMath: true });
+                 }
+            } else if (match[3]) {
+                const p = match[3];
+                if (bracketDepth > 0) {
+                     segments.push({ text: p, isMath: true });
+                } else {
+                    const nextChar = text[tokenRegex.lastIndex];
+                    if (nextChar === undefined || /\s/.test(nextChar)) {
+                         segments.push({ text: p, isMath: false });
+                    } else {
+                         segments.push({ text: p, isMath: true });
+                    }
+                }
+            }
+            lastIndex = tokenRegex.lastIndex;
+        }
+        if (lastIndex < text.length) {
+            segments.push({ text: normalizeText(text.slice(lastIndex)), isMath: false });
+        }
+        
+        return segments;
+    }
+
+    function preprocessText(text) {
+        return text.replace(/，/g, ', ')
+                   .replace(/。/g, '. ')
+                   .replace(/：/g, ': ')
+                   .replace(/；/g, '; ')
+                   .replace(/（/g, '(')
+                   .replace(/）/g, ')')
+                   .replace(/？/g, '?')
+                   .replace(/！/g, '!')
+                   .replace(/＞/g, '>')
+                   .replace(/＜/g, '<')
+                   .replace(/•/g, '⋅');
+    }
+
+    function renderSegments(segments) {
+        let result = '';
+        let currentMath = '';
+        
+        const flushMath = () => {
+            if (currentMath) {
+                result += ` $${currentMath.trim()}$ `;
+                currentMath = '';
+            }
+        };
+
+        for (let i = 0; i < segments.length; i++) {
+            const seg = segments[i];
+            
+            if (seg.isMath) {
+                currentMath += seg.text;
+            } else {
+                if (/^\s+$/.test(seg.text)) {
+                     let nextIsMath = false;
+                     for (let j = i + 1; j < segments.length; j++) {
+                         if (segments[j].text) {
+                             if (segments[j].isMath) nextIsMath = true;
+                             break;
+                         }
+                     }
+                     
+                     if (currentMath && nextIsMath) {
+                         currentMath += ' '; 
+                     } else {
+                         flushMath();
+                         result += seg.text;
+                     }
+                } else {
+                    flushMath();
+                    result += seg.text;
+                }
+            }
+        }
+        flushMath();
+        return result.replace(/ +/g, ' ');
+    }
+
+    function renderSegmentsRaw(segments) {
+        return segments.map(s => {
+            if (s.isMath) return s.text;
+            if (/[\u4e00-\u9fa5]/.test(s.text)) {
+                return `"${s.text}"`;
+            }
+            if (!s.text.trim()) return s.text;
+            return `"${s.text}"`;
+        }).join(' ');
     }
 
     function normalizeText(text) {
         if (!text) return '';
-        
-        // 1. Punctuation
-        text = text.replace(/，/g, ', ')
-                   .replace(/。/g, '. ')
-                   .replace(/：/g, ': ')
-                   .replace(/；/g, '; ')
-                   .replace(/（/g, ' (')
-                   .replace(/）/g, ') ')
-                   .replace(/？/g, '?')
-                   .replace(/！/g, '!')
-                   .replace(/＞/g, '\\>') // Escape for Typst text
-                   .replace(/＜/g, '\\<'); // Escape for Typst text
-        
-        // 2. Blanks (_____)
         text = text.replace(/_+/g, ' #blank ');
-        
-        // Handle • (bullet) which might be dot product or separator
-        // If between numbers/vars, likely product.
-        text = text.replace(/•/g, ' $dot$ ');
-        
-        // 3. Parentheses for choices () -> #parentheses
         text = text.replace(/\( +\)/g, ' #parentheses ');
-        text = text.replace(/\(\s*\)/g, ' #parentheses ');
-        
-        // 4. Escape Typst special characters in text mode
-        // Escape #, $, [, ]
-        // Note: We do this AFTER #blank and #parentheses so we don't escape those hashes
-        // But wait, replaceAll will replace the ones we just added?
-        // Strategy: Use a temporary placeholder for our macros or negative lookbehind?
-        // Easier: Escape content chars FIRST, but we haven't processed blanks yet.
-        // Actually, Jyeoo text shouldn't have # usually. 
-        // But [ and ] are common in intervals. $ is rare in text but possible (money).
-        
-        // Let's escape text special chars first, THEN add our macros.
-        // Re-ordering...
-        
-        return text.replace(/\s+/g, ' '); // Clean spaces first
+        text = text.replace(/⋅/g, ' $dot$ ');
+        return text.replace(/\s+/g, ' ');
     }
 
-    // Helper to safely process text before adding macros
-    function safeText(text) {
-         if (!text) return '';
-         // Escape Typst syntax chars: #, $, [, ]
-         text = text.replace(/([#$\[\]])/g, '\\$1');
-         return normalizeText(text); // Apply punctuation/macro logic which might re-add #
-    }
-    
-    // We need to redefine traverse to use safeText for text nodes
-    // NOT normalizeText directly
-    
-    // ... wait, I cannot easily redefine traverse here without changing the whole function structure.
-    // Let's just modify normalizeText to be smart.
-    
-    // Revised normalizeText
-    /*
-    function normalizeText(text) {
+    function processMathText(text) {
         if (!text) return '';
-        
-        // Escape existing special chars
-        text = text.replace(/([#$\[\]])/g, '\\$1');
-        
-        // Restore specific macros if I added them? No, Jyeoo text doesn't have #blank.
-        // Jyeoo has _____.
-        
-        // Punctuation
-        text = text.replace(/，/g, ', ')
-                   .replace(/。/g, '. ')
-                   .replace(/：/g, ': ')
-                   .replace(/；/g, '; ')
-                   .replace(/（/g, ' (')
-                   .replace(/）/g, ') ')
-                   .replace(/？/g, '?')
-                   .replace(/！/g, '!')
-                   .replace(/＞/g, ' > ')
-                   .replace(/＜/g, ' < ');
+        text = preprocessText(text);
 
-        // Blanks
-        text = text.replace(/_+/g, ' #blank ');
+        text = text.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
+        text = text.replace(/([a-z])(?=[A-Z])/g, '$1 ');
+        text = text.replace(/([a-z])(?=[a-z])/g, '$1 ');
+        text = text.replace(/([A-Z])(?=[a-z])/g, '$1 ');
         
-        // Parentheses
-        text = text.replace(/\( +\)/g, ' #parentheses ');
-        text = text.replace(/\(\s*\)/g, ' #parentheses ');
+        text = text.replace(/([0-9])(?=[a-zA-Z])/g, '$1 ');
+        text = text.replace(/([a-zA-Z])(?=[0-9])/g, '$1 ');
 
-        text = text.replace(/\s+/g, ' ');
+        text = text.replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
+                   .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
+                   .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
+                   .replace(/s\s+i\s+n\s+h/g, 'sinh')
+                   .replace(/c\s+o\s+s\s+h/g, 'cosh')
+                   .replace(/t\s+a\s+n\s+h/g, 'tanh')
+                   .replace(/s\s+i\s+n/g, 'sin')
+                   .replace(/c\s+o\s+s/g, 'cos')
+                   .replace(/t\s+a\s+n/g, 'tan')
+                   .replace(/c\s+o\s+t/g, 'cot')
+                   .replace(/l\s+n/g, 'ln')
+                   .replace(/l\s+o\s+g/g, 'log')
+                   .replace(/l\s+g/g, 'lg')
+                   .replace(/l\s+i\s+m/g, 'lim')
+                   .replace(/m\s+a\s+x/g, 'max')
+                   .replace(/m\s+i\s+n/g, 'min')
+                   .replace(/s\s+e\s+c/g, 'sec')
+                   .replace(/c\s+s\s+c/g, 'csc');
+        
+        const map = {
+            '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
+            '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
+            '⊥': 'tack.t', '∥': '//', '△': 'triangle', '∠': 'angle',
+            '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
+            'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
+            'ω': 'omega', 'φ': 'phi', '→': 'arrow',
+            '∞': 'infinity', '∪': 'union', '∩': 'inter', 
+            '∈': 'in', '∉': 'in.not', '⊆': 'subset.eq', '⊂': 'subset', '∅': 'emptyset'
+        };
+
+        for (const [key, val] of Object.entries(map)) {
+            text = text.replaceAll(key, ` ${val} `);
+        }
+        
         return text;
     }
-    */
-    
-    // But parseMath calls text.trim(). Math text shouldn't escape # $ [ ] usually?
-    // Math text goes inside $ ... $. # is not special there. [ ] are delimiters but $...$ protects them?
-    // In Typst math: $ [1, 2] $ is valid. $ #foo $ calls function foo.
-    // So inside parseMath, we should NOT escape #, [, ].
-    // Inside traverse -> text node (body text), we SHOULD escape.
-    
-    // So we need two functions: normalizeBodyText and normalizeMathText.
-    
-    // Updating the code below effectively.
 
     function parseMath(node) {
-        let result = '';
-        if (node.classList && (node.classList.contains('math-letter') || node.classList.contains('math-letter-i') || node.classList.contains('mnormal') || node.classList.contains('mo'))) {
-            let text = node.innerText.trim();
-            if (!text) return '';
+        if (node.classList && node.classList.contains('stretchVBox')) {
+            if (node.querySelector('.brace')) {
+                const rootTable = node.querySelector('table');
+                if (rootTable) {
+                    const getFlatRows = (element) => {
+                        let collected = [];
+                        if (element.tagName === 'TABLE') {
+                            Array.from(element.rows).forEach(row => {
+                                collected = collected.concat(getFlatRows(row));
+                            });
+                        } else if (element.tagName === 'TR') {
+                            const innerTable = element.querySelector('table');
+                            if (innerTable && element.textContent.replace(/\s/g, '') === innerTable.textContent.replace(/\s/g, '')) {
+                                collected = collected.concat(getFlatRows(innerTable));
+                            } else {
+                                collected.push(element);
+                            }
+                        }
+                        return collected;
+                    };
 
-            // Normalize punctuation inside math
-            // DO NOT use normalizeText() here because it escapes < > which are valid in math
-            text = text.replace(/，/g, ', ')
-                   .replace(/。/g, '. ')
-                   .replace(/：/g, ': ')
-                   .replace(/；/g, '; ')
-                   .replace(/（/g, '(') 
-                   .replace(/）/g, ')') 
-                   .replace(/？/g, '?')
-                   .replace(/！/g, '!')
-                   .replace(/＞/g, ' > ')
-                   .replace(/＜/g, ' < ');
+                    const rows = getFlatRows(rootTable);
+                    const caseLines = rows.map(row => {
+                        let lineMath = '';
+                        const td = row.querySelector('td');
+                        if (td) {
+                            const container = td.querySelector('.mrow') || td;
+                            for (let child of container.childNodes) {
+                                if (child.textContent.trim() === '，' || child.textContent.trim() === ',') {
+                                    if (child.classList && child.classList.contains('mo')) {
+                                        lineMath += ' "," ';
+                                        continue;
+                                    }
+                                }
+                                lineMath += parseMath(child) + ' ';
+                            }
+                        }
+                        lineMath = lineMath.trim();
+                        if (lineMath.endsWith('quad')) lineMath = lineMath.substring(0, lineMath.length - 4);
+                        if (lineMath.endsWith('","')) lineMath = lineMath.substring(0, lineMath.length - 3);
+                        if (lineMath.endsWith(',')) lineMath = lineMath.substring(0, lineMath.length - 1);
 
-            // Split multi-letter identifiers
-            // 1. Uppercase sequencies: AC -> A C
-            text = text.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
-            // 2. Lowercase followed by Uppercase: sinA -> sin A
-            text = text.replace(/([a-z])(?=[A-Z])/g, '$1 ');
-            // 3. Lowercase sequences: (mx -> m x)
-            text = text.replace(/([a-z])(?=[a-z])/g, '$1 '); // This might split 'sin' -> 's i n', handled by caller or we need local fix?
-            // Since this function returns `text` immediately, we need the Fix HERE too or rely on the fact that if it's a leaf node "sin", it will be returned as "s i n".
-            // But wait, the re-join logic is at the END of the function (after child traversal).
-            // This return path is EARLY.
-            // So we must fix it here too.
-            
-            // Rejoin functions
-            text = text.replace(/s\s+i\s+n/g, 'sin')
-                       .replace(/c\s+o\s+s/g, 'cos')
-                       .replace(/t\s+a\s+n/g, 'tan')
-                       .replace(/c\s+o\s+t/g, 'cot')
-                       .replace(/s\s+e\s+c/g, 'sec')
-                       .replace(/c\s+s\s+c/g, 'csc')
-                       .replace(/s\s+i\s+n\s+h/g, 'sinh')
-                       .replace(/c\s+o\s+s\s+h/g, 'cosh')
-                       .replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
-                       .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
-                       .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
-                       .replace(/l\s+n/g, 'ln')
-                       .replace(/l\s+o\s+g/g, 'log')
-                       .replace(/l\s+g/g, 'lg')
-                       .replace(/l\s+i\s+m/g, 'lim')
-                       .replace(/m\s+a\s+x/g, 'max')
-                       .replace(/m\s+i\s+n/g, 'min');
-            
-            // Symbol mapping (GLOBAL replacement)
-            const map = {
-                '∵': 'because',
-                '∴': 'therefore',
-                '×': 'times',
-                '⋅': 'dot.op',
-                '≥': '>=',
-                '≤': '<=',
-                '≠': '!=',
-                '≈': 'approx',
-                '⊥': 'tack.t',
-                '∥': '//',
-                '△': 'triangle',
-                '∠': 'angle',
-                '°': 'degree', 
-                'π': 'pi',
-                'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
-                'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
-                'ω': 'omega', 'φ': 'phi',
-                '→': 'arrow',
-            };
+                        return lineMath.trim();
+                    });
 
-            for (const [key, val] of Object.entries(map)) {
-                text = text.replaceAll(key, ` ${val} `);
+                    const validLines = caseLines.filter(l => l && l !== '""' && l.trim() !== '');
+                    return `cases(${validLines.join(', ')})`;
+                }
             }
-            
-            return text;
+        }
+        
+        if (node.classList && (node.classList.contains('math-letter') || node.classList.contains('math-letter-i') || node.classList.contains('mnormal') || node.classList.contains('mo'))) {
+            let text = node.textContent.trim();
+            if (!text) return '';
+            return processMathText(text);
         }
 
         if (node.classList && node.classList.contains('mfrac')) {
@@ -600,7 +742,23 @@
             return `(${nVal})/(${dVal})`;
         }
         
+        if (node.classList && (node.classList.contains('msubsup') || node.classList.contains('msub') || node.classList.contains('msup'))) {
+            let base = '', sub = '', sup = '';
+            for (let child of node.children) {
+                 if (child.classList.contains('msubsupCont')) base = parseMath(child);
+                 if (child.classList.contains('msub')) sub = parseMath(child);
+                 if (child.classList.contains('msup')) sup = parseMath(child);
+            }
+            if (base || sub || sup) {
+                 return `${base}${sub ? `_(${sub})` : ''}${sup ? `^(${sup})` : ''}`;
+            }
+        }
+
         if (node.classList && node.classList.contains('msqrt')) { 
+             const box = node.querySelector('.msqrtBox');
+             if (box) {
+                 return `sqrt(${parseMath(box)})`;
+             }
              return `sqrt(${parseMathChildren(node)})`;
         }
         
@@ -611,64 +769,14 @@
              return `_(${parseMathChildren(node)})`;
         }
         
+        let result = '';
         for (let child of node.childNodes) {
              if (child.nodeType === Node.TEXT_NODE) {
-                 // For text inside math structures, just normalize punctuation/symbols
-                 let t = child.textContent;
-                 t = t.replace(/，/g, ', ')
-                      .replace(/。/g, '. ')
-                      .replace(/：/g, ': ')
-                      .replace(/；/g, '; ')
-                      .replace(/（/g, '(') 
-                      .replace(/）/g, ')') 
-                      .replace(/？/g, '?')
-                      .replace(/！/g, '!')
-                      .replace(/＞/g, ' > ')
-                      .replace(/＜/g, ' < ');
-                 
-                 // Split multi-letter identifiers
-                 t = t.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
-                 t = t.replace(/([a-z])(?=[A-Z])/g, '$1 ');
-                 // Split lowercase sequences (e.g. ab -> a b), risk of splitting functions (log -> l o g) handled by post-process
-                 t = t.replace(/([a-z])(?=[a-z])/g, '$1 ');
-
-                 // Apply map
-                 const map = {
-                    '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
-                    '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
-                    '⊥': 'tack.t', '∥': '//', '△': 'triangle', '∠': 'angle',
-                    '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta',
-                    'γ': 'gamma', 'θ': 'theta', 'λ': 'lambda', 'μ': 'mu',
-                    'ρ': 'rho', 'σ': 'sigma', 'ω': 'omega', 'φ': 'phi', '→': 'arrow'
-                 };
-                 for (const [key, val] of Object.entries(map)) {
-                    t = t.replaceAll(key, ` ${val} `);
-                 }
-                 result += t + ' '; // Add space to separate text nodes
+                 result += processMathText(child.textContent) + ' ';
              } else {
-                 result += parseMath(child) + ' '; // Add space between math elements
+                 result += parseMath(child) + ' '; 
              }
         }
-        
-        // Post-process to rejoin functions that might have been split (l o g -> log)
-        result = result.replace(/s\s+i\s+n/g, 'sin')
-                       .replace(/c\s+o\s+s/g, 'cos')
-                       .replace(/t\s+a\s+n/g, 'tan')
-                       .replace(/c\s+o\s+t/g, 'cot')
-                       .replace(/s\s+e\s+c/g, 'sec')
-                       .replace(/c\s+s\s+c/g, 'csc')
-                       .replace(/s\s+i\s+n\s+h/g, 'sinh')
-                       .replace(/c\s+o\s+s\s+h/g, 'cosh')
-                       .replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
-                       .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
-                       .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
-                       .replace(/l\s+n/g, 'ln')
-                       .replace(/l\s+o\s+g/g, 'log')
-                       .replace(/l\s+g/g, 'lg')
-                       .replace(/l\s+i\s+m/g, 'lim')
-                       .replace(/m\s+a\s+x/g, 'max')
-                       .replace(/m\s+i\s+n/g, 'min');
-
         return result;
     }
 
