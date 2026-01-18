@@ -161,13 +161,56 @@ async function convertQuestion(fieldset) {
         const clone = pt1.cloneNode(true);
         const qseq = clone.querySelector('.qseq');
         if (qseq) qseq.remove();
-        
-        // Traverse and render segments
-        let text = renderSegments(traverse(clone));
-        
-        // Remove question index (e.g. "1.", "$1$.", "1、")
-        text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '');
-        content += text.trim();
+
+        // Check for floating image
+        // Jyeoo often puts image as a direct child with float:right
+        const floatingImg = Array.from(clone.children).find(child => 
+            child.tagName === 'IMG' && 
+            (child.style.float === 'right' || child.style.float === 'left')
+        );
+
+        if (floatingImg) {
+             const floatDir = floatingImg.style.float;
+             const src = floatingImg.src;
+             
+             // Extract filename logic (matches traverse logic)
+             if (src && !src.includes('icon') && !src.includes('button')) {
+                 let filename = src.substring(src.lastIndexOf('/') + 1);
+                 filename = filename.split('?')[0];
+                 if (!filename.includes('.')) filename += '.png';
+                 imagesToDownload.set(src, filename);
+                 
+                 // Remove image from clone so traverse doesn't see it
+                 floatingImg.remove();
+                 
+                 let text = renderSegments(traverse(clone));
+                 text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+                 
+                 // Grid layout: Text (1fr) + Image (25%)
+                 // Use dumb.png as placeholder, user has to download images separately or use a tool
+                 // Use width: 100% inside the cell to fill the column width
+                 const imgTypst = `#align(center + horizon, image("dumb.png", width: 100%))`;
+                 
+                 if (floatDir === 'right') {
+                     content += `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
+                 } else {
+                     content += `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
+                 }
+             } else {
+                 // Image ignored (icon/button), process as normal
+                 floatingImg.remove(); 
+                 let text = renderSegments(traverse(clone));
+                 text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+                 content += text;
+             }
+        } else {
+            // Traverse and render segments
+            let text = renderSegments(traverse(clone));
+            
+            // Remove question index (e.g. "1.", "$1$.", "1、")
+            text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '');
+            content += text.trim();
+        }
     }
 
     // 2. Options (.pt2)

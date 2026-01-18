@@ -6,7 +6,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/60ym28rHetLNTNiTgKE00Se0zVfr6Yjg3z62YCvtbTBREyZM77muHI
-#image("dumb.png", width: 25%) 如图, 摩天轮的半径为 $40 m,$ 摩天轮的中心点 $O$ 距地面的高度为 $50 m,$ 摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处．则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses
+#grid(columns: (1fr, 25%), gutter: 1em, [如图, 摩天轮的半径为 $40 m,$ 摩天轮的中心点 $O$ 距地面的高度为 $50 m,$ 摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处．则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + horizon, image("dumb.png", width: 100%))])
 #choices(
   ([$10 min$], [$12 min$], [$14 min$], [$16 min$]),
   colNum: 2
@@ -1706,11 +1706,11 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/57Sw32aDe9nWMeNPL6nSXGbKZRcfdxTEI0dLOaUxsEBQhEUv99JZ4a
-#image("dumb.png", width: 25%) 如图, 在直角坐标系 $x O y$ 中, 点 $P$ 是单位圆上的动点, 过点 $P$ 作 $x$ 轴的垂线, 垂足为 $M$ , 过 $O$ 作射线交 $M P$ 的延长线于点 $Q$ , 使得 $S_("△" O Q M)=2 S_("△" O P M)$ , 记 $angle M O P= alpha$ , $angle Q O M= beta$ , 且 $alpha in ( 0 , ( pi )/(2 ) )$ ．
+#grid(columns: (1fr, 25%), gutter: 1em, [如图, 在直角坐标系 $x O y$ 中, 点 $P$ 是单位圆上的动点, 过点 $P$ 作 $x$ 轴的垂线, 垂足为 $M$ , 过 $O$ 作射线交 $M P$ 的延长线于点 $Q$ , 使得 $S_("△" O Q M)=2 S_("△" O P M)$ , 记 $angle M O P= alpha$ , $angle Q O M= beta$ , 且 $alpha in ( 0 , ( pi )/(2 ) )$ ．
 
  $(1)$ 若 $sin alpha = (3 )/(5 )$ , 求 $(sin ( - beta ) + cos ( pi - beta ) )/(cos ( ( pi )/(2 ) - beta ) + sin ( (3 pi )/(2 ) + beta ) )$ 的值; 
 
- $(2)$ 已知函数 $f( alpha )=1-2 m-2 m sin alpha -2 cos^(2) alpha$ , $alpha in [ ( pi )/(6 ) , ( pi )/(3 ) ]$ , 记 $f( alpha )$ 的最小值为 $g(m)$ ．若 $g ( m ) = (1 )/(2 )$ , 求 $m$ 的值及此时 $f( alpha )$ 的最大值．
+ $(2)$ 已知函数 $f( alpha )=1-2 m-2 m sin alpha -2 cos^(2) alpha$ , $alpha in [ ( pi )/(6 ) , ( pi )/(3 ) ]$ , 记 $f( alpha )$ 的最小值为 $g(m)$ ．若 $g ( m ) = (1 )/(2 )$ , 求 $m$ 的值及此时 $f( alpha )$ 的最大值．], [#align(center + horizon, image("dumb.png", width: 100%))])
 
 #solution[
 $(1)$ 因为 $sin alpha =(3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $cos alpha =sqrt(1 - sin ^(2 ) alpha ) =(4 )/(5 )$ , 
@@ -1924,13 +1924,13 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6RrXMe7n8CcF7tEFp4NMiC5CnSEW89laLOfK2LO1IVkF06HcSdYGAa
-#image("dumb.png", width: 25%) 现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m,$ 若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角△ $E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
+#grid(columns: (1fr, 25%), gutter: 1em, [现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m,$ 若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角△ $E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
 
  $(1)$ 求渔网长度 $E F$ , 用含有 $theta$ 的式子表示, 并写出定义域; 
 
  $(2)$ 求养殖面积 $S_("△" E O F)$ 的最小值, 及此时的 $theta$ 值; 
 
- $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．
+ $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．], [#align(center + horizon, image("dumb.png", width: 100%))])
 
 #solution[
 #image("dumb.png", width: 25%) 解: $(1)$ 过点 $A$ 作 $A B$ , $A C$ 垂直于 $O A$ , $O B$ , 垂足为 $B$ , $C$ , 
