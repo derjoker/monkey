@@ -536,7 +536,7 @@
                      segments.push({ text: p, isMath: true });
                 } else {
                     const nextChar = text[tokenRegex.lastIndex];
-                    if (nextChar === undefined || /\s/.test(nextChar)) {
+                    if (nextChar === undefined || /\s/.test(nextChar) || /[\u4e00-\u9fa5]/.test(nextChar)) {
                          segments.push({ text: p, isMath: false });
                     } else {
                          segments.push({ text: p, isMath: true });

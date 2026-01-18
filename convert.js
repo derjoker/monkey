@@ -476,7 +476,7 @@ function segmentizeText(text) {
             } else {
                 const nextChar = text[tokenRegex.lastIndex]; // Peek next char
                 // If next char is undefined (EOF) or whitespace, treat as Text Punctuation
-                if (nextChar === undefined || /\s/.test(nextChar)) {
+                if (nextChar === undefined || /\s/.test(nextChar) || /[\u4e00-\u9fa5]/.test(nextChar)) {
                      segments.push({ text: p, isMath: false });
                 } else {
                      // Followed by non-space (e.g. digit, letter), likely math (3.14, f(x,y))
