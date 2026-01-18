@@ -613,28 +613,35 @@ function parseMath(node) {
     if (node.classList && node.classList.contains('stretchVBox')) {
         // Check for brace
         if (node.querySelector('.brace')) {
-            const table = node.querySelector('table');
-            if (table) {
-                const rows = Array.from(table.querySelectorAll('tr'));
+            const rootTable = node.querySelector('table');
+            if (rootTable) {
+                // Recursive function to flatten layout tables preserving order
+                const getFlatRows = (element) => {
+                    let collected = [];
+                    if (element.tagName === 'TABLE') {
+                        Array.from(element.rows).forEach(row => {
+                            collected = collected.concat(getFlatRows(row));
+                        });
+                    } else if (element.tagName === 'TR') {
+                        const innerTable = element.querySelector('table');
+                        // If row simply wraps a table (content identical), flatten down
+                        if (innerTable && element.textContent.replace(/\s/g, '') === innerTable.textContent.replace(/\s/g, '')) {
+                            collected = collected.concat(getFlatRows(innerTable));
+                        } else {
+                            collected.push(element);
+                        }
+                    }
+                    return collected;
+                };
+
+                const rows = getFlatRows(rootTable);
                 const caseLines = rows.map(row => {
                     let lineMath = '';
-                    // Parse row children
-                    // Usually td > mrow > children
-                    // We need to traverse deep or just use parseMathChildren?
-                    // The structure is td > mrow > children.
-                    // parseMathChildren recurses.
-                    // But we want to intercept `，` (full-width comma) to convert to `quad`
-                    
-                    // Let's manually traverse the children of the row to find the content
-                    // The content is usually in the first TD.
                     const td = row.querySelector('td');
                     if (td) {
-                        // Traverse td's children (or mrow's children if wrapped)
                         const container = td.querySelector('.mrow') || td;
                         for (let child of container.childNodes) {
                             if (child.textContent.trim() === '，' || child.textContent.trim() === ',') {
-                                // Separator in cases
-                                // Check if it's an MO
                                 if (child.classList && child.classList.contains('mo')) {
                                     lineMath += ' "," ';
                                     continue;
@@ -643,18 +650,16 @@ function parseMath(node) {
                             lineMath += parseMath(child) + ' ';
                         }
                     }
-                    
-                    // Clean up
-                    // Remove trailing separators (quad or comma or "," )
                     lineMath = lineMath.trim();
                     if (lineMath.endsWith('quad')) lineMath = lineMath.substring(0, lineMath.length - 4);
                     if (lineMath.endsWith('","')) lineMath = lineMath.substring(0, lineMath.length - 3);
                     if (lineMath.endsWith(',')) lineMath = lineMath.substring(0, lineMath.length - 1);
-                    
+
                     return lineMath.trim();
                 });
-                
-                return `cases(${caseLines.join(', ')})`;
+
+                const validLines = caseLines.filter(l => l && l !== '""' && l.trim() !== '');
+                return `cases(${validLines.join(', ')})`;
             }
         }
     }
@@ -672,6 +677,24 @@ function parseMath(node) {
         const nVal = num ? parseMath(num) : '';
         const dVal = den ? parseMath(den) : '';
         return `(${nVal})/(${dVal})`;
+    }
+
+    if (node.classList && (node.classList.contains('msubsup') || node.classList.contains('msub') || node.classList.contains('msup'))) {
+        let base = '', sub = '', sup = '';
+        // Iterate direct children to avoid picking up nested subs/sups
+        for (let child of node.children) {
+             if (child.classList.contains('msubsupCont')) base = parseMath(child);
+             // Handle both msub (wrapper) and inner msub slot? Usually slot.
+             if (child.classList.contains('msub')) sub = parseMath(child);
+             if (child.classList.contains('msup')) sup = parseMath(child);
+        }
+        // If it's a wrapper class but no explicit slots found, maybe fall back?
+        // But MathJye seems consistent.
+        if (!base && !sub && !sup) {
+             // Fallback
+        } else {
+             return `${base}${sub ? `_(${sub})` : ''}${sup ? `^(${sup})` : ''}`;
+        }
     }
     
     if (node.classList && node.classList.contains('msqrt')) { 
