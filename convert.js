@@ -140,9 +140,6 @@ async function runConversion() {
         fs.writeFileSync(outputTypFile, typstContent);
         console.log(`\n\nConversion complete! written to ${outputTypFile}`);
         console.log(`Images found: ${imagesToDownload.size} (Note: Images are not downloaded by this local script, user browser download)`);
-        // TODO: Copy or handle images if they are local? 
-        // If html.user.js saved images, they might be in 'images/' folder relative to html.
-        // We might want to fix paths.
         
     } catch (e) {
         console.error("Error:", e);
@@ -165,8 +162,11 @@ async function convertQuestion(fieldset) {
         const qseq = clone.querySelector('.qseq');
         if (qseq) qseq.remove();
         
-        let text = traverse(clone);
-        text = text.replace(/^\s*\d+[．.、]\s*/, '');
+        // Traverse and render segments
+        let text = renderSegments(traverse(clone));
+        
+        // Remove question index (e.g. "1.", "$1$.", "1、")
+        text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '');
         content += text.trim();
     }
 
@@ -177,7 +177,7 @@ async function convertQuestion(fieldset) {
         const labels = pt2.querySelectorAll('.selectoption label');
         labels.forEach(label => {
             let optText = parseContent(label);
-            optText = optText.replace(/^[A-D][．.、]\s*/, '').trim();
+            optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、]\s*/, '').trim();
             options.push(`[${optText}]`);
         });
 
@@ -200,7 +200,6 @@ async function convertQuestion(fieldset) {
             
             if (id) {
                 // Look for debug/solutions/ID.html
-                // Check multiple possible paths
                 const candidates = [
                     path.join(solutionsDir, id + '.html'),
                     path.join(path.dirname(htmlFile), id + '.html'), // in case flattened
@@ -220,7 +219,7 @@ async function convertQuestion(fieldset) {
                 if (solutionDoc) {
                     const pt6 = solutionDoc.querySelector('.pt6');
                     if (pt6) {
-                        let solText = traverse(pt6);
+                        let solText = renderSegments(traverse(pt6));
                         solText = solText.replace(/^[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '').replace(/^[\s\n]*解[:：][\s\n]*/, '');
                         content += `\n\n#solution[\n${solText}\n]`;
                     }
@@ -250,24 +249,25 @@ function extractSolutionUrl(element) {
 
 function parseContent(element) {
     const clone = element.cloneNode(true);
-    return traverse(clone, []);
+    return renderSegments(traverse(clone, []));
 }
 
+// --- Segmentation Logic ---
+
+// Returns Array<{ text: string, isMath: boolean }>
 function traverse(node) {
     if (node.nodeType === Node.TEXT_NODE) {
-        let text = node.textContent;
-        // Escape special chars
-        text = text.replace(/([#$\[\]*])/g, '\\$1');
-        return normalizeText(text);
+        return segmentizeText(node.textContent);
     }
     
-    if (node.nodeType !== Node.ELEMENT_NODE) return '';
+    if (node.nodeType !== Node.ELEMENT_NODE) return [];
 
-    if (node.style.display === 'none') return '';
+    if (node.style.display === 'none') return [];
 
     // MathJye
     if (node.classList.contains('MathJye') || node.getAttribute('mathtag') === 'math') {
-        return ` $${parseMath(node)}$ `;
+        const mathContent = parseMath(node);
+        return [{ text: mathContent, isMath: true }];
     }
 
     // Images
@@ -279,15 +279,15 @@ function traverse(node) {
              if (!filename.includes('.')) filename += '.png';
              imagesToDownload.set(src, filename);
              
-             // Use dummy image for local debugging
-             return ` #image("dumb.png", width: 25%) `;
+             // Images are not math, and break math context
+             return [{ text: ` #image("dumb.png", width: 25%) `, isMath: false }];
         }
-        return '';
+        return [];
     }
 
     if (node.tagName === 'TABLE') {
         const rows = Array.from(node.querySelectorAll('tr'));
-        if (rows.length === 0) return '';
+        if (rows.length === 0) return [];
         
         let maxCols = 0;
         const cells = [];
@@ -296,118 +296,366 @@ function traverse(node) {
             const cols = Array.from(row.querySelectorAll('td, th'));
             if (cols.length > maxCols) maxCols = cols.length;
             cols.forEach(col => {
-                let cellContent = traverse(col).trim();
+                let cellSegments = traverse(col);
+                let cellContent = renderSegments(cellSegments).trim();
                 cells.push(`[${cellContent}]`);
             });
         });
 
-        if (maxCols === 0) return '';
+        if (maxCols === 0) return [];
         
-        return `\n#table(\n  columns: ${maxCols},\n  align: center + horizon,\n  ${cells.join(', ')}\n)\n`;
+        return [{ 
+            text: `\n#table(\n  columns: ${maxCols},\n  align: center + horizon,\n  ${cells.join(', ')}\n)\n`,
+            isMath: false 
+        }];
     }
 
     if (node.tagName === 'BR') {
-        return '\n\n';
+        return [{ text: '\n\n', isMath: false }];
     }
 
-    if (node.tagName === 'DIV' || node.tagName === 'P') {
-        let res = '';
+    // SUP/SUB: Treat as math segments that can merge
+    if (node.tagName === 'SUP') {
+        let segments = [];
         for (let child of node.childNodes) {
-            res += traverse(child);
+            segments = segments.concat(traverse(child));
         }
-        if (node.tagName !== 'SPAN') res += '\n';
-        return res;
+        const innerContent = renderSegmentsRaw(segments); // defined below
+        return [{ text: `^(${innerContent})`, isMath: true }];
     }
 
-    let result = '';
-    for (let child of node.childNodes) {
-        result += traverse(child);
+    if (node.tagName === 'SUB') {
+        let segments = [];
+        for (let child of node.childNodes) {
+            segments = segments.concat(traverse(child));
+        }
+        const innerContent = renderSegmentsRaw(segments);
+        return [{ text: `_(${innerContent})`, isMath: true }];
     }
-    return result;
+
+    // Block elements break math merging usually, but we handle via segments
+    if (node.tagName === 'DIV' || node.tagName === 'P') {
+        let segments = [];
+        for (let child of node.childNodes) {
+            segments = segments.concat(traverse(child));
+        }
+        if (node.tagName !== 'SPAN') {
+             segments.push({ text: '\n', isMath: false });
+        }
+        return segments;
+    }
+
+    let segments = [];
+    for (let child of node.childNodes) {
+        segments = segments.concat(traverse(child));
+    }
+    return segments;
 }
+
+function segmentizeText(text) {
+    if (!text) return [];
+
+    // 1. Preprocess punctuation (Full-width to Half-width, etc.)
+    text = preprocessText(text);
+
+    // 2. Protect patterns like (   ) and ______
+    // Use PUA codes to protect. E000 range.
+    const mapping = new Map();
+    let puaCode = 0xE000;
+    
+    text = text.replace(/(\(\s+\))|(_+)/g, (match) => {
+        const char = String.fromCharCode(puaCode++); // Unique char for this match
+        mapping.set(char, match);
+        return char;
+    });
+
+    // 3. Regex for math-like text
+    // Includes: Alphanumeric, Greek, Operators, Parens/Brackets, Dot, Comma, etc.
+    // Explicitly add common math symbols.
+    // ALSO include PUA range for protected patterns so they are split out.
+    const mathRegex = /([a-zA-Z0-9\+\-\=\<\>\/\%\.\,\:\;\u0370-\u03FF\(\)\[\]\{\}\|\^\*\~\⋅\uE000-\uF8FF]+)/;
+    
+    // 3. Regex for math-like text
+    // Exclude .,:; from the main block so we can check context
+    // Capturing groups: 1=PUA, 2=DefiniteMath, 3=Punctuation(.,:;)
+    // Added \u2200-\u22FF (Math Operators: infinity, union, element of, etc.)
+    const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF]+)|([\.\,\:\;])/g;
+    
+    let lastIndex = 0;
+    let match;
+    const segments = [];
+    let bracketDepth = 0; // Track depth for context-aware punctuation
+    
+    while ((match = tokenRegex.exec(text)) !== null) {
+        // Text before match?
+        if (match.index > lastIndex) {
+            const txt = text.slice(lastIndex, match.index);
+            segments.push({ text: normalizeText(txt), isMath: false });
+        }
+        
+        if (match[1]) {
+            // PUA (Protected)
+            const original = mapping.get(match[1]);
+            if (original.includes('(')) segments.push({ text: ' #parentheses ', isMath: false });
+            else if (original.includes('_')) segments.push({ text: ' #blank ', isMath: false });
+        } else if (match[2]) {
+            // Definite Math
+            const m = match[2];
+            
+            // Update bracket depth
+            for (const char of m) {
+                if ('([{'.includes(char)) bracketDepth++;
+                else if (')]}'.includes(char)) bracketDepth = Math.max(0, bracketDepth - 1);
+            }
+
+             if (m.startsWith('http') || m.startsWith('//') || m.startsWith('www')) {
+                 segments.push({ text: m, isMath: false });
+             } else {
+                 segments.push({ text: processMathText(m), isMath: true });
+             }
+        } else if (match[3]) {
+            // Punctuation (.,:;)
+            // Check context: 
+            // 1. If inside brackets/parens (depth > 0), treat as Math (intervals, tuples).
+            // 2. Else check whitespace/EOF for Text.
+            const p = match[3];
+            
+            if (bracketDepth > 0) {
+                 segments.push({ text: p, isMath: true });
+            } else {
+                const nextChar = text[tokenRegex.lastIndex]; // Peek next char
+                // If next char is undefined (EOF) or whitespace, treat as Text Punctuation
+                if (nextChar === undefined || /\s/.test(nextChar)) {
+                     segments.push({ text: p, isMath: false });
+                } else {
+                     // Followed by non-space (e.g. digit, letter), likely math (3.14, f(x,y))
+                     segments.push({ text: p, isMath: true });
+                }
+            }
+        }
+        lastIndex = tokenRegex.lastIndex;
+    }
+    // Tail
+    if (lastIndex < text.length) {
+        segments.push({ text: normalizeText(text.slice(lastIndex)), isMath: false });
+    }
+    
+    return segments;
+}
+
+function preprocessText(text) {
+    return text.replace(/，/g, ', ')
+               .replace(/。/g, '. ')
+               .replace(/：/g, ': ')
+               .replace(/；/g, '; ')
+               .replace(/（/g, '(')
+               .replace(/）/g, ')')
+               .replace(/？/g, '?')
+               .replace(/！/g, '!')
+               .replace(/＞/g, '>')
+               .replace(/＜/g, '<')
+               .replace(/•/g, '⋅'); // Convert bullet to dot operator for math matching
+}
+
+function renderSegments(segments) {
+    let result = '';
+    let currentMath = '';
+    
+    const flushMath = () => {
+        if (currentMath) {
+            // Trim to avoid block math (which requires spaces inside $)
+            result += ` $${currentMath.trim()}$ `;
+            currentMath = '';
+        }
+    };
+
+    for (let i = 0; i < segments.length; i++) {
+        const seg = segments[i];
+        
+        if (seg.isMath) {
+            currentMath += seg.text;
+        } else {
+            // Text. Check whitespace merging.
+            if (/^\s+$/.test(seg.text)) {
+                 let nextIsMath = false;
+                 for (let j = i + 1; j < segments.length; j++) {
+                     if (segments[j].text) {
+                         if (segments[j].isMath) nextIsMath = true;
+                         break; // found next non-empty
+                     }
+                 }
+                 
+                 if (currentMath && nextIsMath) {
+                     currentMath += ' '; 
+                 } else {
+                     flushMath();
+                     result += seg.text;
+                 }
+            } else {
+                flushMath();
+                result += seg.text;
+            }
+        }
+    }
+    flushMath();
+    return result.replace(/ +/g, ' ');
+}
+
+// Render segments without wrapping in $, for inside SUP/SUB or other math contexts
+function renderSegmentsRaw(segments) {
+    return segments.map(s => {
+        if (s.isMath) return s.text;
+        // If text contains non-math chars (like Chinese), quote it
+        // Or if it's text, safe to quote always? 
+        // " " -> " ".
+        // "Text" -> "Text".
+        // If it's pure whitespace, quoting might be weird? `" "`. Typst math `" "` is space.
+        // If it's Chinese, definitely quote.
+        if (/[\u4e00-\u9fa5]/.test(s.text)) {
+            return `"${s.text}"`;
+        }
+        // What about English text that isn't math? e.g. "if" inside subscript?
+        // `$x_(if)$`. `if` is var unless quoted.
+        // Safer to quote all non-math text segments?
+        // But what about punctuation that we normalized?
+        // if text is just whitespace, don't quote.
+        if (!s.text.trim()) return s.text;
+        
+        // Quote non-empty text
+        return `"${s.text}"`;
+    }).join(' ');
+}
+
 
 function normalizeText(text) {
     if (!text) return '';
     
-    // Punctuation
-    text = text.replace(/，/g, ', ')
-               .replace(/。/g, '. ')
-               .replace(/：/g, ': ')
-               .replace(/；/g, '; ')
-               .replace(/（/g, ' (')
-               .replace(/）/g, ') ')
-               .replace(/？/g, '?')
-               .replace(/！/g, '!')
-               .replace(/＞/g, '\\>')
-               .replace(/＜/g, '\\<');
-    
-    // Blanks
+    // Parentheses/Blanks are handled by protection logic, but just in case
     text = text.replace(/_+/g, ' #blank ');
-    
-    // Bullet
-    text = text.replace(/•/g, ' $dot$ ');
-    
-    // Parentheses
     text = text.replace(/\( +\)/g, ' #parentheses ');
-    text = text.replace(/\(\s*\)/g, ' #parentheses ');
-    
+
+    // Special markers
+    text = text.replace(/⋅/g, ' $dot$ ');
+
     return text.replace(/\s+/g, ' ');
 }
 
+// Reusable math text processor for text segments AND math nodes
+function processMathText(text) {
+    if (!text) return '';
+
+    // preprocess if not already done (safe to repeat)
+    text = preprocessText(text);
+
+    // variable spacing: split letters
+    text = text.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
+    text = text.replace(/([a-z])(?=[A-Z])/g, '$1 ');
+    text = text.replace(/([a-z])(?=[a-z])/g, '$1 ');
+    text = text.replace(/([A-Z])(?=[a-z])/g, '$1 '); // Asin -> A sin
+    
+    // Split digit-letter and letter-digit
+    text = text.replace(/([0-9])(?=[a-zA-Z])/g, '$1 ');
+    text = text.replace(/([a-zA-Z])(?=[0-9])/g, '$1 ');
+
+    // rejoin functions - ORDER MATTERS! Longest first.
+    text = text.replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
+               .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
+               .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
+               .replace(/s\s+i\s+n\s+h/g, 'sinh')
+               .replace(/c\s+o\s+s\s+h/g, 'cosh')
+               .replace(/t\s+a\s+n\s+h/g, 'tanh') // Added tanh just in case
+               .replace(/s\s+i\s+n/g, 'sin')
+               .replace(/c\s+o\s+s/g, 'cos')
+               .replace(/t\s+a\s+n/g, 'tan')
+               .replace(/c\s+o\s+t/g, 'cot')
+               .replace(/l\s+n/g, 'ln')
+               .replace(/l\s+o\s+g/g, 'log')
+               .replace(/l\s+g/g, 'lg')
+               .replace(/l\s+i\s+m/g, 'lim')
+               .replace(/m\s+a\s+x/g, 'max')
+               .replace(/m\s+i\s+n/g, 'min')
+               .replace(/s\s+e\s+c/g, 'sec')
+               .replace(/c\s+s\s+c/g, 'csc');
+    
+    // Map text representation to Typst symbols
+    const map = {
+        '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
+        '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
+        '⊥': 'tack.t', '∥': '//', '△': 'triangle', '∠': 'angle',
+        '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
+        'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
+        'ω': 'omega', 'φ': 'phi', '→': 'arrow',
+        '∞': 'infinity', '∪': 'union', '∩': 'inter', 
+        '∈': 'in', '∉': 'in.not', '⊆': 'subset.eq', '⊂': 'subset', '∅': 'emptyset'
+    };
+
+    for (const [key, val] of Object.entries(map)) {
+        text = text.replaceAll(key, ` ${val} `);
+    }
+    
+    return text;
+}
+
 function parseMath(node) {
+    // MathJye parsing
+    
     let result = '';
+
+    // Handle Cases / Piecewise (stretchVBox with braces)
+    if (node.classList && node.classList.contains('stretchVBox')) {
+        // Check for brace
+        if (node.querySelector('.brace')) {
+            const table = node.querySelector('table');
+            if (table) {
+                const rows = Array.from(table.querySelectorAll('tr'));
+                const caseLines = rows.map(row => {
+                    let lineMath = '';
+                    // Parse row children
+                    // Usually td > mrow > children
+                    // We need to traverse deep or just use parseMathChildren?
+                    // The structure is td > mrow > children.
+                    // parseMathChildren recurses.
+                    // But we want to intercept `，` (full-width comma) to convert to `quad`
+                    
+                    // Let's manually traverse the children of the row to find the content
+                    // The content is usually in the first TD.
+                    const td = row.querySelector('td');
+                    if (td) {
+                        // Traverse td's children (or mrow's children if wrapped)
+                        const container = td.querySelector('.mrow') || td;
+                        for (let child of container.childNodes) {
+                            if (child.textContent.trim() === '，' || child.textContent.trim() === ',') {
+                                // Separator in cases
+                                // Check if it's an MO
+                                if (child.classList && child.classList.contains('mo')) {
+                                    lineMath += ' "," ';
+                                    continue;
+                                }
+                            }
+                            lineMath += parseMath(child) + ' ';
+                        }
+                    }
+                    
+                    // Clean up
+                    // Remove trailing separators (quad or comma or "," )
+                    lineMath = lineMath.trim();
+                    if (lineMath.endsWith('quad')) lineMath = lineMath.substring(0, lineMath.length - 4);
+                    if (lineMath.endsWith('","')) lineMath = lineMath.substring(0, lineMath.length - 3);
+                    if (lineMath.endsWith(',')) lineMath = lineMath.substring(0, lineMath.length - 1);
+                    
+                    return lineMath.trim();
+                });
+                
+                return `cases(${caseLines.join(', ')})`;
+            }
+        }
+    }
+    
     if (node.classList && (node.classList.contains('math-letter') || node.classList.contains('math-letter-i') || node.classList.contains('mnormal') || node.classList.contains('mo'))) {
         let text = node.textContent.trim();
         if (!text) return '';
-
-        text = text.replace(/，/g, ', ')
-               .replace(/。/g, '. ')
-               .replace(/：/g, ': ')
-               .replace(/；/g, '; ')
-               .replace(/（/g, '(') 
-               .replace(/）/g, ')') 
-               .replace(/？/g, '?')
-               .replace(/！/g, '!')
-               .replace(/＞/g, ' > ')
-               .replace(/＜/g, ' < ');
-
-        text = text.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
-        text = text.replace(/([a-z])(?=[A-Z])/g, '$1 ');
-        text = text.replace(/([a-z])(?=[a-z])/g, '$1 '); // split
-
-        // rejoin
-        text = text.replace(/s\s+i\s+n/g, 'sin')
-                   .replace(/c\s+o\s+s/g, 'cos')
-                   .replace(/t\s+a\s+n/g, 'tan')
-                   .replace(/c\s+o\s+t/g, 'cot')
-                   .replace(/s\s+e\s+c/g, 'sec')
-                   .replace(/c\s+s\s+c/g, 'csc')
-                   .replace(/s\s+i\s+n\s+h/g, 'sinh')
-                   .replace(/c\s+o\s+s\s+h/g, 'cosh')
-                   .replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
-                   .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
-                   .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
-                   .replace(/l\s+n/g, 'ln')
-                   .replace(/l\s+o\s+g/g, 'log')
-                   .replace(/l\s+g/g, 'lg')
-                   .replace(/l\s+i\s+m/g, 'lim')
-                   .replace(/m\s+a\s+x/g, 'max')
-                   .replace(/m\s+i\s+n/g, 'min');
         
-        const map = {
-            '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
-            '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
-            '⊥': 'tack.t', '∥': '//', '△': 'triangle', '∠': 'angle',
-            '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
-            'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
-            'ω': 'omega', 'φ': 'phi', '→': 'arrow',
-        };
-
-        for (const [key, val] of Object.entries(map)) {
-            text = text.replaceAll(key, ` ${val} `);
-        }
-        
-        return text;
+        return processMathText(text);
     }
 
     if (node.classList && node.classList.contains('mfrac')) {
@@ -431,59 +679,13 @@ function parseMath(node) {
     
     for (let child of node.childNodes) {
          if (child.nodeType === Node.TEXT_NODE) {
-             let t = child.textContent;
-             // Basic punctuation math
-             t = t.replace(/，/g, ', ')
-                  .replace(/。/g, '. ')
-                  .replace(/：/g, ': ')
-                  .replace(/；/g, '; ')
-                  .replace(/（/g, '(') 
-                  .replace(/）/g, ')') 
-                  .replace(/？/g, '?')
-                  .replace(/！/g, '!')
-                  .replace(/＞/g, ' > ')
-                  .replace(/＜/g, ' < ');
-             
-             t = t.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
-             t = t.replace(/([a-z])(?=[A-Z])/g, '$1 ');
-             t = t.replace(/([a-z])(?=[a-z])/g, '$1 ');
-
-             const map = {
-                '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
-                '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
-                '⊥': 'tack.t', '∥': '//', '△': 'triangle', '∠': 'angle',
-                '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta',
-                'γ': 'gamma', 'θ': 'theta', 'λ': 'lambda', 'μ': 'mu',
-                'ρ': 'rho', 'σ': 'sigma', 'ω': 'omega', 'φ': 'phi', '→': 'arrow'
-             };
-             for (const [key, val] of Object.entries(map)) {
-                t = t.replaceAll(key, ` ${val} `);
-             }
-             result += t + ' ';
+             // For text nodes inside MathJye, we also process them
+             result += processMathText(child.textContent) + ' ';
          } else {
              result += parseMath(child) + ' '; 
          }
     }
     
-    // Post-process to rejoin functions
-    result = result.replace(/s\s+i\s+n/g, 'sin')
-                   .replace(/c\s+o\s+s/g, 'cos')
-                   .replace(/t\s+a\s+n/g, 'tan')
-                   .replace(/c\s+o\s+t/g, 'cot')
-                   .replace(/s\s+e\s+c/g, 'sec')
-                   .replace(/c\s+s\s+c/g, 'csc')
-                   .replace(/s\s+i\s+n\s+h/g, 'sinh')
-                   .replace(/c\s+o\s+s\s+h/g, 'cosh')
-                   .replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
-                   .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
-                   .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
-                   .replace(/l\s+n/g, 'ln')
-                   .replace(/l\s+o\s+g/g, 'log')
-                   .replace(/l\s+g/g, 'lg')
-                   .replace(/l\s+i\s+m/g, 'lim')
-                   .replace(/m\s+a\s+x/g, 'max')
-                   .replace(/m\s+i\s+n/g, 'min');
-
     return result;
 }
 
