@@ -698,6 +698,10 @@ function parseMath(node) {
     }
     
     if (node.classList && node.classList.contains('msqrt')) { 
+         const box = node.querySelector('.msqrtBox');
+         if (box) {
+             return `sqrt(${parseMath(box)})`;
+         }
          return `sqrt(${parseMathChildren(node)})`;
     }
     

@@ -32,7 +32,7 @@
 // https://www.jyeoo.com/math2/ques/detail/8waPq2S12FZTR88V66IXAc48UPsTbrsVeA6aqasJoOGjd9uXK4TdZo
 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
 #choices(
-  ([当 $x in [-1, 1]$ 时, $f(x)$ 的取值范围为 $[2-a,2+a]$], [$x _(1 ) in [ (3 - sqrt(√ 5 ) )/(2 ) , 1 ]$], [当且仅当 $x >= (3 + sqrt(√ 5 ) )/(2 )$ 时, $f(x) >= 0$ 恒成立], [$(2 x _(2 ) - a )/(a x _(1 ) - x _(1 )^(2 ) ) in [ 0 , sqrt(√ 5 ) ]$]),
+  ([当 $x in [-1, 1]$ 时, $f(x)$ 的取值范围为 $[2-a,2+a]$], [$x _(1 ) in [ (3 - sqrt(5 ) )/(2 ) , 1 ]$], [当且仅当 $x >= (3 + sqrt(5 ) )/(2 )$ 时, $f(x) >= 0$ 恒成立], [$(2 x _(2 ) - a )/(a x _(1 ) - x _(1 )^(2 ) ) in [ 0 , sqrt(5 ) ]$]),
   colNum: 1
 )
 
@@ -212,7 +212,7 @@ $(1)$ 经判断①不是真命题, ②是真命题;
 // https://www.jyeoo.com/math2/ques/detail/6GK0g0Je93RpZAfavhPsboeqO6CUVfxtGGegGcL0qulmnpLyH4NrN2
 若命题“ $∀x>0$ , $(a x-1)(x^(2)-2 a x-1) >= 0$ ”是真命题, 则实数 $a$ 的取值集合为 #parentheses
 #choices(
-  ([${ (sqrt(√ 3 ) )/(3 ) }$], [${ sqrt(√ 3 ) }$], [${ a | a >= (sqrt(√ 3 ) )/(3 ) }$], [${ a | 0 < a <= sqrt(√ 3 ) }$]),
+  ([${ (sqrt(3 ) )/(3 ) }$], [${ sqrt(3 ) }$], [${ a | a >= (sqrt(3 ) )/(3 ) }$], [${ a | 0 < a <= sqrt(3 ) }$]),
   colNum: 1
 )
 
@@ -430,8 +430,8 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 // https://www.jyeoo.com/math2/ques/detail/5M6XZbTTdVuvsaCF9cMPFO1JSHVMO83jwx5AM9IRYJl8cObugeToY4
 设 $f(x)$ 是定义在 $R$ 上的函数, 若 $f(x)+sin x$ 是偶函数, $f(x)+cos x$ 是奇函数, 则 $f ( ( pi )/(4 ) )$ 的值为 #parentheses
 #choices(
-  ([$- sqrt(√ 2 )$], [$sqrt(√ 2 )$], [$- 2 sqrt(√ 2 )$], [$2 sqrt(√ 2 )$]),
-  colNum: 1
+  ([$- sqrt(2 )$], [$sqrt(2 )$], [$- 2 sqrt(2 )$], [$2 sqrt(2 )$]),
+  colNum: 2
 )
 
 #solution[
@@ -482,7 +482,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7ySlN2h60YFVpTuiTJ7CUW4p3wlH0pAH979JaNP6RSatCRYAB8UUng
-设 $t$ 为实数, 已知函数 $f ( x ) = ln ( x + sqrt(√ x ^(2 ) + 1 ) ) , g ( x ) = 4 ^(x ) + t dot.op 2 ^(x )$ , 若存在实数 $a,b$ 同时满足 $f(a)+f(b)=0$ 和 $g(a)+g(b)=0$ , 则实数 $t$ 的取值范围是 #blank ．
+设 $t$ 为实数, 已知函数 $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) ) , g ( x ) = 4 ^(x ) + t dot.op 2 ^(x )$ , 若存在实数 $a,b$ 同时满足 $f(a)+f(b)=0$ 和 $g(a)+g(b)=0$ , 则实数 $t$ 的取值范围是 #blank ．
 
 #solution[
 $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(x ^(2 ) + 1 ) )$ , 
@@ -1416,7 +1416,7 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 
  $(i)$ 若 $S _(O A M B ) = (17 )/(26 )$ , 求 $S$ 和 $tan alpha$ ; 
 
- $(i i)$ 当 $0 < alpha <= ( pi )/(4 )$ 时, 求 $(S )/(S _(O A M B ) )$ 的取值范围 $($ 参考公式 $: sin x + cos x = sqrt(√ 2 ) sin ( x + ( pi )/(4 ) ) )$ ．
+ $(i i)$ 当 $0 < alpha <= ( pi )/(4 )$ 时, 求 $(S )/(S _(O A M B ) )$ 的取值范围 $($ 参考公式 $: sin x + cos x = sqrt(2 ) sin ( x + ( pi )/(4 ) ) )$ ．
 
 #solution[
 $(1)$ 由题意可知 $M(cos alpha , sin alpha )$ , $O T=sin alpha$ , 
@@ -1596,7 +1596,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 // https://www.jyeoo.com/math2/ques/detail/6c3HL7ZAdkXhMJG8pazKtafM1Iol97Yh9t8By6ughUn2mqbdRegF8K
 有一块半径为 $2($ 单位 $: c m)$ 的半圆形钢板, 计划裁剪成等腰梯形 $A B C D$ 的形状, 它的下底 $A B$ 是半圆的直径, 上底 $C D$ 的端点在圆周上．该等腰梯形 $A B C D$ 的周长 $y($ 单位 $: c m)$ 的最大值为 #parentheses
 #choices(
-  ([$4$], [$4 + 4 sqrt(√ 2 )$], [$8$], [$10$]),
+  ([$4$], [$4 + 4 sqrt(2 )$], [$8$], [$10$]),
   colNum: 2
 )
 
@@ -1846,7 +1846,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 // https://www.jyeoo.com/math2/ques/detail/8mEkLdbm5sdSVxKdtHQp1X5KHTseeKd6AGde5QAO0uSAyhKhod4V5k
 若函数 $f(x)+3 e^(x)$ 为奇函数, $f(x)-e^(-x)$ 为偶函数, 下列关于函数 $f(x)$ 的最值说法正确的是 #parentheses
 #choices(
-  ([函数无最值], [只有最大值为 $- 2 sqrt(√ 2 )$], [只有最小值为 $- 2 sqrt(√ 2 )$], [最小值 $- 2 sqrt(√ 2 )$ , 最大值为 $2 sqrt(√ 2 )$]),
+  ([函数无最值], [只有最大值为 $- 2 sqrt(2 )$], [只有最小值为 $- 2 sqrt(2 )$], [最小值 $- 2 sqrt(2 )$ , 最大值为 $2 sqrt(2 )$]),
   colNum: 1
 )
 
@@ -1924,7 +1924,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6RrXMe7n8CcF7tEFp4NMiC5CnSEW89laLOfK2LO1IVkF06HcSdYGAa
-#image("dumb.png", width: 25%) 现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(√ 3 ) m,$ 若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角△ $E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
+#image("dumb.png", width: 25%) 现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m,$ 若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角△ $E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
 
  $(1)$ 求渔网长度 $E F$ , 用含有 $theta$ 的式子表示, 并写出定义域; 
 
@@ -2024,7 +2024,7 @@ $(1)g(x)$ 为 $[1, + infinity )$ 上的增函数, 证明如下:
 // https://www.jyeoo.com/math2/ques/detail/4xCC11IE4TdvzYGkevw6BLdrl3QSUEWIzXd8udQAUxNtGBs61aWOki
 已知函数 $f ( x ) = x + (1 )/(x ) , g ( x ) = 2 x$ , 若存在实数 $x_(1)$ , $x_(2)$ , $x_(3)(0<x_(1)<x_(2)<x_(3))$ , 使得 $f(x_(1))=g(x_(2))=f(x_(3))$ , 则 $f(x_(3)-x_(1))+g(x_(2)-x_(1))$ 的最小值为 #parentheses
 #choices(
-  ([$sqrt(√ 2 )$], [$sqrt(√ 6 )$], [$2 sqrt(√ 2 )$], [$2 sqrt(√ 3 )$]),
+  ([$sqrt(2 )$], [$sqrt(6 )$], [$2 sqrt(2 )$], [$2 sqrt(3 )$]),
   colNum: 2
 )
 
@@ -2300,7 +2300,7 @@ $(1)$ 如果选①, 由于函数 $f(x)$ 的定义域为 $(-1, 1)$ ,
 // https://www.jyeoo.com/math2/ques/detail/5OI1CdKYb9XJhYpvbZhjabc91wkclrvGWZ2ZN3zgyq1XT1gHTb4bFw
 已知 $a>0$ , $b>0$ , 且 $(1 )/(a b ) = 2 - (1 )/(a ) - (1 )/(b )$ , 则 #parentheses
 #choices(
-  ([$a+b$ 的最小值为 $1 + sqrt(√ 3 )$], [$a b$ 的最小值为 $(1 + sqrt(√ 3 ) )/(2 )$], [$b > (1 )/(2 )$], [$a+2 b$ 的最小值为 $(3 )/(2 ) + sqrt(√ 6 )$]),
+  ([$a+b$ 的最小值为 $1 + sqrt(3 )$], [$a b$ 的最小值为 $(1 + sqrt(3 ) )/(2 )$], [$b > (1 )/(2 )$], [$a+2 b$ 的最小值为 $(3 )/(2 ) + sqrt(6 )$]),
   colNum: 1
 )
 
@@ -2388,7 +2388,7 @@ $(1)$ 由已知可得 $f(x)=(( - cos x ) ( - sin x ) ( cos x ) )/(( - sin x ) ( 
 
  $($ Ⅱ $)$ 当 $m=0$ 时, 若不等式 $(4 ^(x ) - 1 )/(2 ^(x ) ) > f [ log _(4 ) ( 2 a + 1 ) ]$ 对任意 $x >= 1$ 恒成立, 求实数 $a$ 的取值范围; 
 
- $($ Ⅲ $)$ 当 $m>0$ 时, 关于 $x$ 的方程 $f [ 8 ( log _(4 ) x ) ^(2 ) + 2 log _(2 ) (1 )/(x ) + (4 )/(m ) - 4 ] = 1$ 在区间 $[1, 2sqrt(√ 2 ) ]$ 上恰有两个不同的实数解, 求实数 $m$ 的取值范围．
+ $($ Ⅲ $)$ 当 $m>0$ 时, 关于 $x$ 的方程 $f [ 8 ( log _(4 ) x ) ^(2 ) + 2 log _(2 ) (1 )/(x ) + (4 )/(m ) - 4 ] = 1$ 在区间 $[1, 2sqrt(2 ) ]$ 上恰有两个不同的实数解, 求实数 $m$ 的取值范围．
 
 #solution[
 $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立, 
