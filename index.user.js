@@ -549,7 +549,7 @@
                  let text = renderSegments(traverse(clone));
                  if (textCleaner) text = textCleaner(text);
                  
-                 const imgTypst = `#align(center + horizon, image("images/${filename}", width: 100%))`;
+                 const imgTypst = `#align(center + top, image("images/${filename}", width: 100%))`;
                  
                  if (floatDir === 'right') {
                      return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;

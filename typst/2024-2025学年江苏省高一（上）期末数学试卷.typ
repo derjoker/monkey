@@ -6,7 +6,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/60ym28rHetLNTNiTgKE00Se0zVfr6Yjg3z62YCvtbTBREyZM77muHI
-#grid(columns: (1fr, 25%), gutter: 1em, [如图, 摩天轮的半径为 $40 m$ ,摩天轮的中心点 $O$ 距地面的高度为 $50 m$ ,摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处．则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + horizon, image("dumb.png", width: 100%))])
+#grid(columns: (1fr, 25%), gutter: 1em, [如图, 摩天轮的半径为 $40 m$ ,摩天轮的中心点 $O$ 距地面的高度为 $50 m$ ,摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处．则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + top, image("dumb.png", width: 100%))])
 #choices(
   ([$10 min$], [$12 min$], [$14 min$], [$16 min$]),
   colNum: 2
@@ -1591,7 +1591,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 当 $x=2$ 时, $y$ 有最大值为 $y_(max)=-(1 )/(2 )$ × $4+2$ × $2+8=10$ ．
 
 故选: $D$ ．
-], [#align(center + horizon, image("dumb.png", width: 100%))])
+], [#align(center + top, image("dumb.png", width: 100%))])
 ]
 ]
 
@@ -1673,7 +1673,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
  $(1)$ 若 $sin alpha = (3 )/(5 )$ , 求 $(sin ( - beta ) + cos ( pi - beta ) )/(cos ( ( pi )/(2 ) - beta ) + sin ( (3 pi )/(2 ) + beta ) )$ 的值; 
 
- $(2)$ 已知函数 $f( alpha )=1-2 m-2 m sin alpha -2 cos^(2) alpha$ , $alpha in [ ( pi )/(6 ) , ( pi )/(3 ) ]$ , 记 $f( alpha )$ 的最小值为 $g(m)$ ．若 $g ( m ) = (1 )/(2 )$ , 求 $m$ 的值及此时 $f( alpha )$ 的最大值．], [#align(center + horizon, image("dumb.png", width: 100%))])
+ $(2)$ 已知函数 $f( alpha )=1-2 m-2 m sin alpha -2 cos^(2) alpha$ , $alpha in [ ( pi )/(6 ) , ( pi )/(3 ) ]$ , 记 $f( alpha )$ 的最小值为 $g(m)$ ．若 $g ( m ) = (1 )/(2 )$ , 求 $m$ 的值及此时 $f( alpha )$ 的最大值．], [#align(center + top, image("dumb.png", width: 100%))])
 
 #solution[
 $(1)$ 因为 $sin alpha =(3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $cos alpha =sqrt(1 - sin ^(2 ) alpha ) =(4 )/(5 )$ , 
@@ -1888,7 +1888,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
  $(2)$ 求养殖面积 $S_("△" E O F)$ 的最小值, 及此时的 $theta$ 值; 
 
- $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．], [#align(center + horizon, image("dumb.png", width: 100%))])
+ $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．], [#align(center + top, image("dumb.png", width: 100%))])
 
 #solution[
 #grid(columns: (1fr, 25%), gutter: 1em, [$(1)$ 过点 $A$ 作 $A B$ , $A C$ 垂直于 $O A$ , $O B$ , 垂足为 $B$ , $C$ , 
@@ -1918,7 +1918,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 当且仅当 $(2 5 cos ^(2 ) theta )/(sin ^(2 ) theta ) =(7 5 sin ^(2 ) theta )/(cos ^(2 ) theta )$ , 即 $tan theta =3 ^(- (1 )/(4 ) )$ 时取等号．
 
 所以两遮阳蓬面积和的最小值为 $(( 100 + 50 sqrt(3 ) ) pi )/(4 )$ ．
-], [#align(center + horizon, image("dumb.png", width: 100%))])
+], [#align(center + top, image("dumb.png", width: 100%))])
 ]
 ]
 
