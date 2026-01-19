@@ -355,8 +355,9 @@
 
         // MathJye
         if (node.classList.contains('MathJye') || node.getAttribute('mathtag') === 'math') {
-            const mathContent = parseMath(node);
-            return [{ text: mathContent, isMath: true }];
+            let mathContent = parseMath(node);
+            // User request: Treat as a whole, add spaces before and after.
+            return [{ text: ' ' + mathContent + ' ', isMath: true }];
         }
 
         // Images

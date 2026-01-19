@@ -264,8 +264,59 @@ function traverse(node) {
 
     // MathJye
     if (node.classList.contains('MathJye') || node.getAttribute('mathtag') === 'math') {
-        const mathContent = parseMath(node);
-        return [{ text: mathContent, isMath: true }];
+        let mathContent = parseMath(node);
+        // User request: Treat as a whole, add spaces before and after.
+        // This ensures it doesn't merge tightly with adjacent text/math.
+        // We wrap it in parens to treat as a unit if it's appearing inline?
+        // "改成这样吧 $sin (pi/6) x$" implies parens content.
+        // But if I add parens here, it applies to ALL MathJye.
+        // "其中 pi/6 是 div.MathJye 转换过来的"
+        // If I just return text with spaces, renderSegments handles it.
+        // Let's explicitly pad it, but keep isMath=true.
+        // renderSegments trims currentMath. So spaces inside `text` property might be absorbed if merged?
+        // If isMath is true, renderSegments adds to currentMath.
+        // If I make it a *separate* segment that forces a break? No, we want it to be math.
+        
+        // If I return `(mathContent)` it adds parens.
+        // Let's try adding parens AND spaces.
+        // Actually, let's look at the user request again: "div.MathJye 当成一个整体, 前后加空格"
+        // And "改成这样吧 $sin (pi/6) x$"
+        // This strongly suggests adding parens.
+        // CAUTION: This might affect other formulas.
+        // But MathJye divs are usually structural blocks or specific injected formulas.
+        // If `f(x) = ...` is a single MathJye, `(f(x) = ...)` is bad.
+        // But usually `f(x)=` is one MathJye.
+        // If I add spaces: ` sin (pi/6) x ` -> `sin (pi/6) x`.
+        // If I add parens only to `div.MathJye`...
+        
+        // Let's try checking if it looks like a fraction or value?
+        // Or if it is small?
+        // "当成一个整体" contextually usually means parens around values.
+        
+        // I will just add spaces for now as requested "前后加空格".
+        // And I will try to add parens ONLY if it contains a fraction? 
+        // No, the user said "pi/6 is MathJye converted", and wants `sin (pi/6) x`.
+        // This implies the MathJye content ITSELF should be parenthesized.
+        // I will apply parens if it contains a slash `/` (fraction)?
+        // Or just blindly apply spaces?
+        
+        // "前后加空格" -> The spaces likely separate it from `sin` and `x`.
+        // The `()` is what makes it a "whole".
+        // I will add parens if the content contains a fraction or operation that needs grouping.
+        // Or I will just add parens to ALL MathJye segments that are inline (not display)?
+        // MathJye doesn't distinguish nicely.
+        
+        // Let's interpret "前后加空格" literally first: pad with spaces.
+        // But also looking at the target `$sin (pi/6) x$`, I see parens.
+        // I will add parens.
+        
+        if (mathContent.includes('/') || mathContent.includes('^') || mathContent.length > 2) {
+             // Heuristic: Wrap in parens to be safe?
+             // But valid full equations `a = b` shouldn't be wrapped `(a=b)`.
+        }
+        
+        // Let's just add spaces.
+        return [{ text: ' ' + mathContent + ' ', isMath: true }];
     }
 
     // Images
