@@ -162,55 +162,8 @@ async function convertQuestion(fieldset) {
         const qseq = clone.querySelector('.qseq');
         if (qseq) qseq.remove();
 
-        // Check for floating image
-        // Jyeoo often puts image as a direct child with float:right
-        const floatingImg = Array.from(clone.children).find(child => 
-            child.tagName === 'IMG' && 
-            (child.style.float === 'right' || child.style.float === 'left')
-        );
-
-        if (floatingImg) {
-             const floatDir = floatingImg.style.float;
-             const src = floatingImg.src;
-             
-             // Extract filename logic (matches traverse logic)
-             if (src && !src.includes('icon') && !src.includes('button')) {
-                 let filename = src.substring(src.lastIndexOf('/') + 1);
-                 filename = filename.split('?')[0];
-                 if (!filename.includes('.')) filename += '.png';
-                 imagesToDownload.set(src, filename);
-                 
-                 // Remove image from clone so traverse doesn't see it
-                 floatingImg.remove();
-                 
-                 let text = renderSegments(traverse(clone));
-                 text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
-                 
-                 // Grid layout: Text (1fr) + Image (25%)
-                 // Use dumb.png as placeholder, user has to download images separately or use a tool
-                 // Use width: 100% inside the cell to fill the column width
-                 const imgTypst = `#align(center + horizon, image("dumb.png", width: 100%))`;
-                 
-                 if (floatDir === 'right') {
-                     content += `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
-                 } else {
-                     content += `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
-                 }
-             } else {
-                 // Image ignored (icon/button), process as normal
-                 floatingImg.remove(); 
-                 let text = renderSegments(traverse(clone));
-                 text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
-                 content += text;
-             }
-        } else {
-            // Traverse and render segments
-            let text = renderSegments(traverse(clone));
-            
-            // Remove question index (e.g. "1.", "$1$.", "1、")
-            text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '');
-            content += text.trim();
-        }
+        // processLayout handles floating images and text extraction
+        content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim());
     }
 
     // 2. Options (.pt2)
@@ -262,8 +215,10 @@ async function convertQuestion(fieldset) {
                 if (solutionDoc) {
                     const pt6 = solutionDoc.querySelector('.pt6');
                     if (pt6) {
-                        let solText = renderSegments(traverse(pt6));
-                        solText = solText.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1').replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
+                        let solText = processLayout(pt6, (t) => {
+                             t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
+                             return t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
+                        });
                         content += `\n\n#solution[\n${solText}\n]`;
                     }
                 } else {
@@ -506,6 +461,34 @@ function preprocessText(text) {
                .replace(/＞/g, '>')
                .replace(/＜/g, '<')
                .replace(/•/g, '⋅'); // Convert bullet to dot operator for math matching
+}
+
+function processLayout(element, textCleaner) {
+    const clone = element.cloneNode(true);
+    const floatingImg = Array.from(clone.children).find(child => 
+        child.tagName === 'IMG' && 
+        (child.style.float === 'right' || child.style.float === 'left')
+    );
+
+    if (floatingImg) {
+         const floatDir = floatingImg.style.float;
+         floatingImg.remove();
+         
+         let text = renderSegments(traverse(clone));
+         if (textCleaner) text = textCleaner(text);
+         
+         const imgTypst = `#align(center + horizon, image("dumb.png", width: 100%))`;
+         
+         if (floatDir === 'right') {
+             return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
+         } else {
+             return `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
+         }
+    } else {
+        let text = renderSegments(traverse(clone));
+        if (textCleaner) text = textCleaner(text);
+        return text.trim();
+    }
 }
 
 function renderSegments(segments) {

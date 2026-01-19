@@ -254,47 +254,7 @@
             const qseq = clone.querySelector('.qseq');
             if (qseq) qseq.remove();
 
-            // Check for floating image
-            const floatingImg = Array.from(clone.children).find(child => 
-                child.tagName === 'IMG' && 
-                (child.style.float === 'right' || child.style.float === 'left')
-            );
-
-            if (floatingImg) {
-                 const floatDir = floatingImg.style.float;
-                 const src = floatingImg.src;
-                 
-                 if (src && !src.includes('icon') && !src.includes('button')) {
-                     let filename = src.substring(src.lastIndexOf('/') + 1);
-                     filename = filename.split('?')[0];
-                     if (!filename.includes('.')) filename += '.png';
-                     
-                     imagesToDownload.set(src, filename);
-                     
-                     floatingImg.remove();
-                     
-                     let text = renderSegments(traverse(clone));
-                     text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
-                     
-                     const imgTypst = `#align(center + horizon, image("images/${filename}", width: 100%))`;
-                     
-                     if (floatDir === 'right') {
-                         content += `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
-                     } else {
-                         content += `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
-                     }
-                 } else {
-                     floatingImg.remove(); 
-                     let text = renderSegments(traverse(clone));
-                     text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim();
-                     content += text;
-                 }
-            } else {
-                let text = renderSegments(traverse(clone));
-                // Remove question index
-                text = text.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '');
-                content += text.trim();
-            }
+            content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim());
         }
 
         // 2. Options (.pt2)
@@ -323,10 +283,7 @@
             try {
                 const solutionContent = await fetchQuestionDetail(solutionUrl);
                 if (solutionContent) {
-                    let cleanContent = solutionContent.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
-                    cleanContent = cleanContent.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
-                    
-                    content += `\n\n#solution[\n${cleanContent}\n]`;
+                    content += `\n\n#solution[\n${solutionContent}\n]`;
                 }
             } catch (e) {
                 console.error("Failed to fetch solution:", solutionUrl, e);
@@ -364,7 +321,10 @@
                         // Look for .pt6 (Analysis content)
                         const pt6 = tempDiv.querySelector('.pt6');
                         if (pt6) {
-                            resolve(renderSegments(traverse(pt6)));
+                            resolve(processLayout(pt6, (t) => {
+                                 t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
+                                 return t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
+                            }));
                         } else {
                             resolve(null);
                         }
@@ -564,6 +524,49 @@
                    .replace(/＞/g, '>')
                    .replace(/＜/g, '<')
                    .replace(/•/g, '⋅');
+    }
+
+    function processLayout(element, textCleaner) {
+        const clone = element.cloneNode(true);
+        const floatingImg = Array.from(clone.children).find(child => 
+            child.tagName === 'IMG' && 
+            (child.style.float === 'right' || child.style.float === 'left')
+        );
+
+        if (floatingImg) {
+             const floatDir = floatingImg.style.float;
+             const src = floatingImg.src;
+             
+             if (src && !src.includes('icon') && !src.includes('button')) {
+                 let filename = src.substring(src.lastIndexOf('/') + 1);
+                 filename = filename.split('?')[0];
+                 if (!filename.includes('.')) filename += '.png';
+                 
+                 imagesToDownload.set(src, filename);
+                 
+                 floatingImg.remove();
+                 
+                 let text = renderSegments(traverse(clone));
+                 if (textCleaner) text = textCleaner(text);
+                 
+                 const imgTypst = `#align(center + horizon, image("images/${filename}", width: 100%))`;
+                 
+                 if (floatDir === 'right') {
+                     return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
+                 } else {
+                     return `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
+                 }
+             } else {
+                 floatingImg.remove(); 
+                 let text = renderSegments(traverse(clone));
+                 if (textCleaner) text = textCleaner(text);
+                 return text.trim();
+             }
+        } else {
+            let text = renderSegments(traverse(clone));
+            if (textCleaner) text = textCleaner(text);
+            return text.trim();
+        }
     }
 
     function renderSegments(segments) {
