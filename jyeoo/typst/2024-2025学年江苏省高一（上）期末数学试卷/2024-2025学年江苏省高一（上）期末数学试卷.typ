@@ -5,7 +5,7 @@
 = 镇江市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6hvTv83cejrB1Ocov80lGxexukoSiZ1SwJ6Y2DgfOIuF166Gk7ukJE
+// https://www.jyeoo.com/math2/ques/detail/78HJx8yse2BILpUFxyNlzue9DYGA6J6prd6SgI8auvuOJYh8x7LQmm
 #grid(columns: (1fr, 25%), gutter: 1em, [如图, 摩天轮的半径为 $40 m$ ,摩天轮的中心点 $O$ 距地面的高度为 $50 m$ ,摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处．则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + top, image("images/72db5b19.png", width: 100%))])
 #choices(
   ([$10 min$], [$12 min$], [$14 min$], [$16 min$]),
@@ -28,7 +28,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8yzu028W2LRjo8wFOwhHax4Ip2qQMRO2sn6D3fZIfI8Mu2Cw14aUmu
+// https://www.jyeoo.com/math2/ques/detail/5hSAu28W2FZeq6kwAymlws4udEzYong3Z36XJc8AUuUuFXrdB43wq8
 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
 #choices(
   ([当 $x in [-1, 1]$ 时, $f(x)$ 的取值范围为 $[2-a,2+a]$], [$x _(1 ) in [ (3 - sqrt(5 ) )/(2 ) , 1 ]$], [当且仅当 $x >= (3 + sqrt(5 ) )/(2 )$ 时, $f(x) >= 0$ 恒成立], [$(2 x _(2 ) - a )/(a x _(1 ) - x _(1 )^(2 ) ) in [ 0 , sqrt(5 ) ]$]),
@@ -95,7 +95,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8FB9C1LW5c3qKjdTkEQvbM8ZXJcLtFywrtbicsPACaQUcPsB41VtoW
+// https://www.jyeoo.com/math2/ques/detail/80dle1DS5UhpQHviUbneSX809jDp7wbihpb3Ur6OhWxFuTLCD16okq
 已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$ ．甲: 当 $x in ( 0 , ( pi )/(4 ) )$ 时, 函数 $f(x)$ 单调递减; 乙: 函数 $f(x)$ 的图象关于直线 $x = ( pi )/(3 )$ 对称; 丙: 函数 $y=f(x)$ 图象的一个对称中心为 $( ( pi )/(6 ) , 0 )$ ．甲、乙、丙三人对函数 $f(x)$ 的论述中有且只有一人正确, 则 $theta =$ #blank ．
 
 #solution[
@@ -108,7 +108,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7sTSt3NPeVTsHjoC4sWWVBfclTdsYzH1w5aYiXV5TUiNuqOkTe7bu4
+// https://www.jyeoo.com/math2/ques/detail/6dxHZ3BQeS9iGg2ZwqFNfYfS5ZwVaR51araFFls12Fd4ibDXJeFpFw
 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ ; ② $f ( - ( pi )/(6 ) ) = 0$ ; ③对任意的 $x in R$ , $f ( x ) <= f ( ( pi )/(12 ) )$ ．请从这三个条件中任选一个将下面的题目补充完整, 并解答该题．
 
 已知函数 $f ( x ) = sin ( omega x + ( pi )/(3 ) ) ( 0 < omega < 3 )$ , 且满足 #blank ．
@@ -155,7 +155,7 @@ $(1)$ 若选①: 函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离�
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/4h3o93v59rD8EkhCC420FX6F0Am3pG6Ai42ychGahQQydVelS7kFqy
+// https://www.jyeoo.com/math2/ques/detail/7ZQtV3Ok9zvNyBC5BukamF6MPHaBpr9RHK2oHp5stnK0wMNsY7HdFg
 著名的“悬链线拱桥问题”与数学中的双曲函数相关．函数 $f(x)= (e ^(x ) - e ^(- x ) )/(2 )$ 叫做双曲正弦函数, 函数 $g(x)= (e ^(x ) + e ^(- x ) )/(2 )$ 叫做双曲余弦函数, 其中 $e approx 2.71828$ …是自然对数的底数．
 
  $(1)$ 下列两个命题中至少有一个为真命题, 并证明其中的一个真命题: 
@@ -204,7 +204,7 @@ $(1)$ 经判断①不是真命题, ②是真命题;
 = 南京市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7a6QM0fY9h4nzWGVgzegireA4PusHNEYY1e9jxDNwVvctaaDz4iQiW
+// https://www.jyeoo.com/math2/ques/detail/8UWZp0Gr9GXVNpBAbbIid3eArh2ec40HqLecDnRdWPmzJHsKk4yajA
 若命题“ $∀x>0$ , $(a x-1)(x^(2)-2 a x-1) >= 0$ ”是真命题, 则实数 $a$ 的取值集合为 #parentheses
 #choices(
   ([${ (sqrt(3 ) )/(3 ) }$], [${ sqrt(3 ) }$], [${ a | a >= (sqrt(3 ) )/(3 ) }$], [${ a | 0 < a <= sqrt(3 ) }$]),
@@ -233,7 +233,7 @@ $(1)$ 经判断①不是真命题, ②是真命题;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8VGMmf899THnkcvP0eSj778FN1G7apVEkN7PPSzAU8g181RPndUYXw
+// https://www.jyeoo.com/math2/ques/detail/5sG4RfPE9t9UM5sUHHmY0F8xhcKb1VFXaS71PK8BQZXghdQUtd3Uzg
 函数 $f(x)$ 满足: $∀x in R$ , $f(x+1)f(x)=2$ ．已知当 $x in [0, 1)$ 时, $f(x)=2^(x)$ , 则 #parentheses
 #choices(
   ([$f(1)=1$], [$f(x)$ 为周期函数], [$f(x)$ 为偶函数], [方程 $f ( x ) = (x )/(3 )$ 恰有 $3$ 个解]),
@@ -245,7 +245,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 
 则 $f(1)f(0)=2$ , 即 $f(1)= (2 )/(f ( 0 ) ) = (2 )/(2 ^(0 ) ) = 2$ , 故 $A$ 错误; 
 
- $B$ : 由 $f(x+1)f(x)=2$ ⇒ $f(x) != 0$ , 
+ $B$ : 由 $f(x+1)f(x)=2 => f(x) != 0$ , 
 
 所以由 $f(x+1)f(x)=2$ , 
 
@@ -253,7 +253,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 
 故 $f(x+2)=f(x)$ , 故 $B$ 正确; 
 
- $C$ : $x in [-1, 0)$ 时, $f ( x + 1 ) f ( x ) = 2 ⇒ f ( x ) = (2 )/(f ( x + 1 ) ) = (2 )/(2 ^(x + 1 ) ) = 2 ^(- x )$ , 而 $f(0)=1$ , 
+ $C$ : $x in [-1, 0)$ 时, $f ( x + 1 ) f ( x ) = 2 => f ( x ) = (2 )/(f ( x + 1 ) ) = (2 )/(2 ^(x + 1 ) ) = 2 ^(- x )$ , 而 $f(0)=1$ , 
 
 显然当 $x in [-1, 1]$ 时, 函数 $f(x)$ 为偶函数, 
 
@@ -274,7 +274,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/81LMp0gDeTneFBZyA90sxY2EJplGHV0RC54SVNV05ArsGROUUaFQQa
+// https://www.jyeoo.com/math2/ques/detail/92JGh0dhejnCMQyGtvky3K2dm0CUL82uuM4xiX3Ns3D0DQLhNaJ7sO
 已知函数 $f ( x ) = sin ( omega x + phi ) ( omega > 0 , 0 < phi < ( pi )/(2 ) )$ 图象的一个对称中心是 $( - ( pi )/(8 ) , 0 )$ , 一条对称轴是直线 $x = ( pi )/(8 )$ 且 $f(x)$ 在区间 $( 0 , ( pi )/(8 ) )$ 上有且仅有两个零点, 则 $omega =$ #blank ．
 
 #solution[
@@ -305,7 +305,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/87TMw6Gr2bdBhm03VMaOlD4rTSOQ8CoL2jaiYchZVZ5pCqYe05BWDo
+// https://www.jyeoo.com/math2/ques/detail/8Gwj76EE2936lGwzeX5uUG45tbobFCx8tmaMtFXSg8VNLJ69057Fo0
 已知函数 $f(x)=A sin( omega x+ phi )(A>0, omega >0, - pi < phi <0)$ 图象上相邻的一个最高点和一个最低点分别为 $( (5 pi )/(12 ) , 2 ) , ( (11 pi )/(12 ) , - 2 )$ ．
 
  $(1)$ 求 $f(x)$ 的解析式; 
@@ -319,13 +319,13 @@ $(1)$ 由已知可得该函数的最小正周期为 $T = 2 ( (11 pi )/(12 ) - (5
 
  又因为 $omega >0$ , 
 
-所以 $T = 2 ( (11 pi )/(12 ) - (5 pi )/(12 ) ) = (2 pi )/( omega ) ⇒ omega = 2 ⇒ f ( x ) = 2 sin ( 2 x + phi )$ , 
+所以 $T = 2 ( (11 pi )/(12 ) - (5 pi )/(12 ) ) = (2 pi )/( omega ) => omega = 2 => f ( x ) = 2 sin ( 2 x + phi )$ , 
 
-把 $( (5 pi )/(12 ) , 2 )$ 代入解析式中, 得 $f ( x ) = 2 sin ( 2 times (5 pi )/(12 ) + phi ) = 2 ⇒ (5 pi )/(6 ) + phi = 2 k pi + ( pi )/(2 ) ( k in Z ) ⇒ phi = 2 k pi - ( pi )/(3 ) ( k in Z )$ , 
+把 $( (5 pi )/(12 ) , 2 )$ 代入解析式中, 得 $f ( x ) = 2 sin ( 2 times (5 pi )/(12 ) + phi ) = 2 => (5 pi )/(6 ) + phi = 2 k pi + ( pi )/(2 ) ( k in Z ) => phi = 2 k pi - ( pi )/(3 ) ( k in Z )$ , 
 
 又因为 $- pi < phi <0$ , 所以令 $k=0$ , 即 $phi = - ( pi )/(3 )$ , 所以 $f ( x ) = 2 sin ( 2 x - ( pi )/(3 ) )$ ; 
 
- $(2) - ( pi )/(2 ) + 2 m pi <= 2 x - ( pi )/(3 ) <= ( pi )/(2 ) + 2 m pi ( m in Z ) ⇒ - ( pi )/(12 ) + m pi <= x <= (5 pi )/(12 ) + m pi ( m in Z )$ , 
+ $(2) - ( pi )/(2 ) + 2 m pi <= 2 x - ( pi )/(3 ) <= ( pi )/(2 ) + 2 m pi ( m in Z ) => - ( pi )/(12 ) + m pi <= x <= (5 pi )/(12 ) + m pi ( m in Z )$ , 
 
 令 $m=0$ , 得 $- ( pi )/(12 ) <= x <= (5 pi )/(12 )$ , 所以 $x in [ - ( pi )/(12 ) , (5 pi )/(12 ) ]$ , 而 $x in [0, pi ]$ , 
 
@@ -350,7 +350,7 @@ $(1)$ 由已知可得该函数的最小正周期为 $T = 2 ( (11 pi )/(12 ) - (5
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5TpVU7eNf8njAqcA1mvdOQ3bzH8rICeDim1FDVRdZGEcL58Krf7n8q
+// https://www.jyeoo.com/math2/ques/detail/8pbRE7q7f1Rrd8nJPuEsCY3atlOMKRU3Ea1yyYxlM4wwAUETlfq0WG
 设函数 $f(x)$ 在非空数集 $M$ 上的取值集合为 $N$ ．若 $N subset.eq M$ , 则称 $f(x)$ 为 $M$ 上的“ $T$ 函数”．
 
  $(1)$ 判断 $f(x)=sin 2 x$ 是否为 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$ 函数”, 并说明理由; 
@@ -368,7 +368,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 因此函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$ 函数”; 
 
- $(2)$ 证明: 根据 $(9 )/(1 + 2 ^(x ) ) - 1 > 0 ⇒ x < 3$ , 
+ $(2)$ 证明: 根据 $(9 )/(1 + 2 ^(x ) ) - 1 > 0 => x < 3$ , 
 
 由于函数 $y = (9 )/(1 + 2 ^(x ) ) - 1$ 是实数集上的减函数, 函数 $y=log_(2)x$ 是正实数集上的增函数, 
 
@@ -378,11 +378,11 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 因此 $[f(b), f(a)] subset.eq [a,b]$ , 
 
-所以有 $cases(f ( a ) <= b, f ( b ) >= a) ⇒ cases(l o g _(2 ) ( (9 )/(1 + 2 ^(a ) ) - 1 ) <= b, l o g _(2 ) ( (9 )/(1 + 2 ^(b ) ) - 1 ) <= a) ⇒ cases((9 )/(1 + 2 ^(a ) ) - 1 <= 2 ^(b ), (9 )/(1 + 2 ^(b ) ) - 1 <= 2 ^(a )) ⇒ cases(( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) >= 9, ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) <= 9) ⇒ ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) = 9 ⇒ 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) + 1 = 9 ⇒ 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) = 8 ⇒ 2 sqrt(2 ^(a ) dot.op 2 ^(b ) ) + 2 ^(a + b ) <= 8$ 
+所以有 $cases(f ( a ) <= b, f ( b ) >= a) => cases(l o g _(2 ) ( (9 )/(1 + 2 ^(a ) ) - 1 ) <= b, l o g _(2 ) ( (9 )/(1 + 2 ^(b ) ) - 1 ) <= a) => cases((9 )/(1 + 2 ^(a ) ) - 1 <= 2 ^(b ), (9 )/(1 + 2 ^(b ) ) - 1 <= 2 ^(a )) => cases(( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) >= 9, ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) <= 9) => ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) = 9 => 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) + 1 = 9 => 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) = 8 => 2 sqrt(2 ^(a ) dot.op 2 ^(b ) ) + 2 ^(a + b ) <= 8$ 
 
 当且仅当 $a=b$ 时取等号, 而 $a<b<3$ , 因此 $2 sqrt(2 ^(a ) dot.op 2 ^(b ) ) + 2 ^(a + b ) < 8$ , 
 
- $⇒ ( sqrt(2 ^(a + b ) ) + 4 ) ( sqrt(2 ^(a + b ) ) - 2 ) < 0 ⇒ sqrt(2 ^(a + b ) ) - 2 < 0 ⇒ 2 ^(a + b ) < 4 ⇒ a + b < 2$ ．
+ $=> ( sqrt(2 ^(a + b ) ) + 4 ) ( sqrt(2 ^(a + b ) ) - 2 ) < 0 => sqrt(2 ^(a + b ) ) - 2 < 0 => 2 ^(a + b ) < 4 => a + b < 2$ ．
 
  $(3)f(x)=(x-a)^(2)+b$ 的对称轴为 $x=a$ ,
 
@@ -390,7 +390,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 最大值为 $f(0)$ , $f(1)$ 中大的数, 记为 $max{f(0), f(1)}$ 
 
-因此有 $cases(f ( a ) >= 0, max { f ( 0 ) "," f ( 1 ) <= 1 })$ , 所以 $cases(b >= 0, a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b <= 1) ⇒ cases(- a ^(2 ) + 1 >= 0, - a ^(2 ) + 2 a >= 0) ⇒ 0 <= a <= 1$ , 
+因此有 $cases(f ( a ) >= 0, max { f ( 0 ) "," f ( 1 ) <= 1 })$ , 所以 $cases(b >= 0, a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b <= 1) => cases(- a ^(2 ) + 1 >= 0, - a ^(2 ) + 2 a >= 0) => 0 <= a <= 1$ , 
 
 而 $0<a<1$ , 因此 $0<a<1$ ; 
 
@@ -398,7 +398,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 如果 $f(x)=(x-a)^(2)+b$ 为 $[0, 1]$ 上的“ $T$ 函数”, 
 
-那么有 $cases(f ( 0 ) >= 0, f ( 1 ) <= 1)$ , 所以 $cases(a ^(2 ) + b >= 0, ( a - 1 ) ^(2 ) + b <= 1) ⇒ cases(a ^(2 ) + b >= 0, - ( a - 1 ) ^(2 ) - b >= - 1) ⇒ a ^(2 ) - a ^(2 ) + 2 a - 1 >= - 1 ⇒ a >= 0$ , 
+那么有 $cases(f ( 0 ) >= 0, f ( 1 ) <= 1)$ , 所以 $cases(a ^(2 ) + b >= 0, ( a - 1 ) ^(2 ) + b <= 1) => cases(a ^(2 ) + b >= 0, - ( a - 1 ) ^(2 ) - b >= - 1) => a ^(2 ) - a ^(2 ) + 2 a - 1 >= - 1 => a >= 0$ , 
 
 而 $a <= 0$ , 因此 $a=0$ , 所以存在 $a=0$ , 使得 $f(x)=(x-a)^(2)+b$ 为 $[0, 1]$ 上的“ $T$ 函数”; 
 
@@ -406,7 +406,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 如果 $f(x)=(x-a)^(2)+b$ 为 $[0, 1]$ 上的“ $T$ 函数”, 
 
-那么 $cases(f ( 0 ) <= 1, f ( 1 ) >= 0)$ , 所以 $cases(a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b >= 0) ⇒ cases(a ^(2 ) + b <= 1, - ( a - 1 ) ^(2 ) - b <= 0) ⇒ a ^(2 ) + b - ( a - 1 ) ^(2 ) - b <= 1 ⇒ a <= 1$ , 
+那么 $cases(f ( 0 ) <= 1, f ( 1 ) >= 0)$ , 所以 $cases(a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b >= 0) => cases(a ^(2 ) + b <= 1, - ( a - 1 ) ^(2 ) - b <= 0) => a ^(2 ) + b - ( a - 1 ) ^(2 ) - b <= 1 => a <= 1$ , 
 
 而 $a >= 1$ , 因此 $a=1$ ．
 
@@ -417,7 +417,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 = 南师附中
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7kSOibqGdsnBMAdRb7cYoo1QkgKwd8I3385jcWtBlAq9b4LvMeNjEW
+// https://www.jyeoo.com/math2/ques/detail/6WXn8b8vdemiiBIMNsi4XX1x7ZBOMxTp4h5Dq2L4zQG272dJXe8ERE
 设 $f(x)$ 是定义在 $R$ 上的函数, 若 $f(x)+sin x$ 是偶函数, $f(x)+cos x$ 是奇函数, 则 $f ( ( pi )/(4 ) )$ 的值为 #parentheses
 #choices(
   ([$- sqrt(2 )$], [$sqrt(2 )$], [$- 2 sqrt(2 )$], [$2 sqrt(2 )$]),
@@ -440,7 +440,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/56hwsdvceRLIJcIsAgcFDD9d1Cz4jpEZKG5I0ENGgM2lSP6mia9Fom
+// https://www.jyeoo.com/math2/ques/detail/8Nn6Ydt2en0oKGDcIgjVJZ9qYNeadS3MBc5OIH4MxtPfjq1qIaYsYS
 已知定义在 $R$ 上的函数 $f(x)$ 满足: $f ( 1 ) = (1 )/(4 ) , f ( x + y ) + f ( x - y ) = 4 f ( x ) f ( y )$ , 则 #parentheses
 #choices(
   ([$f ( 0 ) = (1 )/(2 )$], [$f(x)$ 为偶函数], [$f(x)$ 的图象关于直线 $x=2$ 对称], [$f(x+6)=f(x)$]),
@@ -452,7 +452,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 因为 $f(1)= (1 )/(4 )$ , 所以 $f ( 0 ) = (1 )/(2 )$ , 故 $A$ 正确; 
 
-令 $x=0$ , 得 $f(y)+f(-y)=2 f(y)$ ⇒ $f(-y)=f(y)$ , 故 $B$ 正确
+令 $x=0$ , 得 $f(y)+f(-y)=2 f(y) => f(-y)=f(y)$ , 故 $B$ 正确
 
 令 $x=y=1$ , 得 $f ( 2 ) = - (1 )/(4 )$ .再令 $x=2$ , $y=1$ 得 $f ( 3 ) = - (1 )/(2 ) != f ( 1 )$ , 故 $C$ 错误; 
 
@@ -469,7 +469,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7ocnY2k20ynmUVlnXLOKHe47AHXT2qeU9M9CqevVXCMTBv6cR8FBDs
+// https://www.jyeoo.com/math2/ques/detail/7LomO2su0djRcjB6aFI5JR4BiHG5gPYnob9jtOgOduwkY3JAi80fuC
 设 $t$ 为实数, 已知函数 $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) ) , g ( x ) = 4 ^(x ) + t dot.op 2 ^(x )$ , 若存在实数 $a,b$ 同时满足 $f(a)+f(b)=0$ 和 $g(a)+g(b)=0$ , 则实数 $t$ 的取值范围是 #blank ．
 
 #solution[
@@ -492,7 +492,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6FlY88GVdxG34ZXaNMFgkQ7jptGtWfEhsjcudgzhMQ2oowtvs46B8K
+// https://www.jyeoo.com/math2/ques/detail/65A4U8aMdcn5gRQE41BItc7EWiY2gxvit1ctBS93wlFhthqSY4mvxo
 设 $a$ 为实数, 已知函数 $f(x)=x^(2)-x|x-a|-2 a$ .
 
  $(1)$ 若 $f(x)$ 是 $R$ 上的单调函数, 求 $a$ 的取值范围; 
@@ -545,7 +545,7 @@ $(1) because f ( x ) = cases(2 x ^(2 ) - a x - 2 a "," x < a, a x - 2 a "," x >=
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6Nv0747z0K6IddtOtew3e63LvlEsjMJibP8yIBZm8otN4RcKE0FHWK
+// https://www.jyeoo.com/math2/ques/detail/6wARt4KZ0GiAnD0gsCUw5836WvpcNCQNvQ82uULza7Ki2ViTF0rYsy
 若函数 $f(x)$ 和 $g(x)$ 的零点相同, 则称 $f(x)$ 和 $g(x)$ 是“ $Z$ 函数对”．
 
  $(1)$ 已知 $x in [0, + infinity )$ , 判断 $f(x)=2^(x)+x-2$ 与 $g ( x ) = cos x - (1 )/(2 ) x$ 是否为“ $Z$ 函数对”, 并说明理由; 
@@ -561,7 +561,7 @@ $(1)$ 不是, 理由如下:
 
 所以函数 $f(x)=2^(x)+x-2$ 是实数集上的增函数, 
 
-因为 $f(0)f(1)=(-1)$ × $1<0$ , 
+因为 $f(0)f(1)=(-1) times 1<0$ , 
 
 所以函数 $f(x)$ 在 $(0, 1)$ 上有唯一零点, 
 
@@ -630,7 +630,7 @@ $(1)$ 不是, 理由如下:
 = 金陵中学
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6AN8W6fE7Veq1ZBJ8aswZvaFilVu0XyhoP2SHIgKGH3cwbdqg6zB1U
+// https://www.jyeoo.com/math2/ques/detail/8yZ8Y6Og7CrVOBraZzS30MawscxfmAR0eC26ZIcSDIMhrP0G46sw08
 函数 $f(x)=x^(1-ln x)$ , $x in (1, e)$ 的最大值为 #parentheses
 #choices(
   ([$e^(2)$], [$e$], [$e ^((1 )/(2 ) )$], [$e ^((1 )/(4 ) )$]),
@@ -638,11 +638,11 @@ $(1)$ 不是, 理由如下:
 )
 
 #solution[
-$because f(x)=x^(1-ln x)$ ⇒ $ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ , 
+$because f(x)=x^(1-ln x) => ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ , 
 
-⇒ $(f ′ ( x ) )/(f ( x ) ) = (1 )/(x ) - (2 ln x )/(x )$ ⇒ $f ′ ( x ) = x ^(1 - ln x ) dot.op (1 - 2 ln x )/(x ) = ( 1 - 2 ln x ) x ^(- ln x )$ , 
+ $=> (f ′ ( x ) )/(f ( x ) ) = (1 )/(x ) - (2 ln x )/(x ) => f ′ ( x ) = x ^(1 - ln x ) dot.op (1 - 2 ln x )/(x ) = ( 1 - 2 ln x ) x ^(- ln x )$ , 
 
- $f$ ′ $(x)>0$ ⇒ $1-2 ln x>0$ ⇒ $0 < x < sqrt(e )$ , 
+ $f$ ′ $(x)>0 => 1-2 ln x>0 => 0 < x < sqrt(e )$ , 
 
  $therefore f(x)$ 在 $(1, sqrt(e ) )$ 上单调递增, 在 $( sqrt(e )$ , $e)$ 上单调递减, 
 
@@ -653,7 +653,7 @@ $because f(x)=x^(1-ln x)$ ⇒ $ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5PXjHcANey9uvHGzXiT7Yi3XV9C6Me4k3R9joxahP3YQCves57J95k
+// https://www.jyeoo.com/math2/ques/detail/8nwPIczCegI5exesR12m2H3QOoFmDtw4vO9I9KPTkNssnJPuC79DRA
 已知函数 $f(x)$ 的定义域为 $R$ , 对任意 $a,b in R$ , 都有 $f(a)f(b)=f(a+b)$ , 当 $x>0$ 时, $0<f(x)<1$ , 且 $f(0) != 0$ , 则 #parentheses
 #choices(
   ([$∀x in R$ , 都有 $f ( - x ) = - (1 )/(f ( x ) )$], [当 $x<0$ 时, $f(x)>1$], [$f(x)$ 是减函数], [若 $f ( 3 ) = (1 )/(2 )$ , 则不等式 $f ( 2 t ^(2 ) ) > (f ( 5 t ) )/(16 )$ 的解集为 $( - (3 )/(2 ) , 4 )$]),
@@ -690,7 +690,7 @@ $because f(x)=x^(1-ln x)$ ⇒ $ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6ZLK30utaQj2cm57sFC2kM1h3yQQzg71Wc2OjZm6s04jYlWdi1q8jw
+// https://www.jyeoo.com/math2/ques/detail/8Zb3B0Oxa3V6YDqVVgBOcQ158Rjc6V6z0N2JvpdcQJk26Yjfz1Pa9Q
 已知函数 $f ( x ) = cases(x + (4 )/(x ) - 4 "," x > 0, | (1 )/(3 ^(x ) ) - 4 | "," x <= 0)$ 若存在实数 $t$ ,使得方程 $f(x)-t=0$ 有 $4$ 个不同的实数根 $x_(1)$ , $x_(2)$ , $x_(3)$ , $x_(4)$ , 且 $x_(1)<x_(2)<x_(3)<x_(4)$ .则 $t$ 的取值范围为 #blank , $(3 ^(x _(2 ) - 2 x _(1 ) ) )/(x _(3 ) + x _(4 ) )$ 的取值范围为 #blank ．
 
 #solution[
@@ -729,7 +729,7 @@ $because f(x)=x^(1-ln x)$ ⇒ $ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/4nnIKbMNeqoGmwNCoCZEMDaUxeF7tvFPCH3Z2a6VQ1GcmJf5Vbk59U
+// https://www.jyeoo.com/math2/ques/detail/5ganTb6Ke4rszqJFLNUbLtasj8IMw3GMrJ3iXEFnmnwKI7EQCbaIUK
 已知函数 $f ( x ) = (3 ^(x ) - 1 )/(2 ( 3 ^(x - 1 ) - 1 ) )$ ．
 
  $(1)$ 计算 $f(0)$ , $f(2)$ 的值; 
@@ -768,7 +768,7 @@ $(1)$ 根据题意, 函数 $f ( x ) = (3 ^(x ) - 1 )/(2 ( 3 ^(x - 1 ) - 1 ) )$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8otl6aMe1tc5ZhQl4wywi41Qpok42lugJefcctPZpaO3ANCDG2irB2
+// https://www.jyeoo.com/math2/ques/detail/78MhLauH1h2iDIP5ZC790W1Wa6O9u5MRgmfRKtRZnnjDmUGjk2bmbo
 设函数 $f(x)$ 的定义域为 $D$ , 若存在 $x in D$ , 使得 $f(x)=-x$ 成立, 则称 $x$ 为 $f(x)$ 的一个“准不动点”．已知函数 $f ( x ) = l o g _((1 )/(2 ) ) ( 4 ^(x ) - a dot.op 2 ^(x + 1 ) + 2 )$ ．
 
  $(1)$ 若 $a=1$ , 求 $f(x)$ 的准不动点; 
@@ -837,8 +837,8 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 = 泰州市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/73hpk4kx2bmXxb0q6rGfPe7hwLk0UwTuan1YDUUPXAU9DqT4cfdXhg
-已知函数 $f ( x ) = (e ^(2 x ) )/(e ^(x ) - 1 )$ , 若 $a=tan 1$ °, $b=-tan 136$ °, $c=tan 241$ °, 则 #parentheses
+// https://www.jyeoo.com/math2/ques/detail/5x06K4di2j3v5FjS4omL4x73hOY6nboGFV1XCXSLm9PR0QYcyfohtI
+已知函数 $f ( x ) = (e ^(2 x ) )/(e ^(x ) - 1 )$ , 若 $a=tan 1 degree$ , $b=-tan 136 degree$ , $c=tan 241 degree$ , 则 #parentheses
 #choices(
   ([$f(a)<f(c)<f(b)$], [$f(b)<f(c)<f(a)$], [$f(b)<f(a)<f(c)$], [$f(c)<f(b)<f(a)$]),
   colNum: 1
@@ -851,9 +851,9 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 
 所以根据对勾函数的性质可得 $f(x)$ 在 $(0, ln 2)$ 上单调递减, 在 $(ln 2, + infinity )$ 上单调递增, 
 
-又 $a=tan 1$ ° $approx 0$ , $b=-tan 136$ ° $=tan 44$ ° $approx 1$ , $c=tan 241$ ° $=tan 61$ ° $approx sqrt(3 )$ , 
+又 $a=tan 1 degree approx 0$ , $b=-tan 136 degree =tan 44 degree approx 1$ , $c=tan 241 degree =tan 61 degree approx sqrt(3 )$ , 
 
-所以 $f(a)$ → $+ infinity$ , $f(b)<f(c)$ , 
+所以 $f(a) arrow + infinity$ , $f(b)<f(c)$ , 
 
 所以 $f(b)<f(c)<f(a)$ ．
 
@@ -862,7 +862,7 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7jjrSf2k4HUKTr43rreTSy12MLx0lFvyfU3JL2UU2OtXm87c7bCDNg
+// https://www.jyeoo.com/math2/ques/detail/4vj1MfGE46fRYVOOVqg6xc18fnO2XhE8973N8WdQYyCczNj6Obd7dg
 已知函数 $f(x)=cos( omega x+ phi )( omega >0, phi in R)$ 满足 $f(a)=f(a+2)= (1 )/(2 )$ , 且 $f(x)$ 在 $(a,a+2)$ 上有最小值, 无最大值, 则下列结论正确的是 #parentheses
 #choices(
   ([函数 $f(x)$ 的图象关于直线 $x=a+1$ 对称], [$f(x)$ 的最小正周期为 $4$], [当 $a=0$ 时, 函数 $f(x)$ 在每一个闭区间 $[ 6 k - 2 , 6 k - (1 )/(2 ) ] ( k in Z )$ 上单调递增], [$f(x)$ 在 $(0, 2025)$ 上恰有 $1350$ 个零点]),
@@ -895,7 +895,7 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8WM4neiO5Ppc58b82OL0xu1QIJgBzTRxjBeHwLFcr6MSADuky5PNKK
+// https://www.jyeoo.com/math2/ques/detail/7lJKIeSJ5R59pCkxNG4sAW1LlJ3bIjMyFIeBLDr50sEA5EINx5vOCm
 若关于 $x$ 的不等式 $x^(2)-2 m x+3 m-2<0$ 的解集为 $(x_(1)$ , $x_(2))$ , 且 $x_(1)>1$ , 则 $m$ 的取值范围为 #blank , $4 x_(1)+x_(2)$ 的最小值是 #blank ．
 
 #solution[
@@ -936,7 +936,7 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7tGP92G3evVeKiVGtGB14L5STzz9aUA1IJ9gNWrckt7ssnSR6daH1U
+// https://www.jyeoo.com/math2/ques/detail/6ag9e2sJeamt8Nd72qj4dr53GTKFgLax3c9EMHNMWLWtJrVcZdFpvk
 已知函数 $f(x)=log_(2)(4^(x)+a dot.op 2^(x)+4)$ , 其中 $a in R$ ．
 
  $(1)$ 当 $a=-5$ 时, 求 $f(x)$ 的定义域; 
@@ -997,8 +997,8 @@ $(1)$ 当 $a=-5$ 时, $f ( x ) = log _(2 ) ( 4 ^(x ) - 5 dot.op 2 ^(x ) + 4 )$ �
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/61KAT3moc9aICBVJV1wHE64a9sBjPZ5HCU7uN4LQ7MQlQwTWrfUICm
-若两个集合 $A$ 和 $B$ 之间存在一一对应关系 $f$ : $A$ → $B$ , 则称 $A$ 和 $B$ 等势, 记为 $A$ ～ $B$ ．例如: 若集合 $A$ 为整数集, 集合 $B$ 为偶数集, 因为存在 $A$ 和 $B$ 之间的一一对应关系 $f$ : $x$ → $2 x$ ,所以 $A$ ～ $B$ ．
+// https://www.jyeoo.com/math2/ques/detail/5eY9v3C9cPCCMu0aIP0o5J4myuY3B2nNnq7UOapOuvBP6ExDifHTLU
+若两个集合 $A$ 和 $B$ 之间存在一一对应关系 $f$ : $A arrow B$ , 则称 $A$ 和 $B$ 等势, 记为 $A$ ～ $B$ ．例如: 若集合 $A$ 为整数集, 集合 $B$ 为偶数集, 因为存在 $A$ 和 $B$ 之间的一一对应关系 $f$ : $x arrow 2 x$ ,所以 $A$ ～ $B$ ．
 
  $(1)$ 判断集合 $A={x|0<x<1}$ 和集合 $B={x|x>1}$ 是否等势, 并说明理由; 
 
@@ -1068,7 +1068,7 @@ $(1)$ 因为集合 $A$ , $B$ 之间存在一一对应关系 $f : x arrow (1 )/(x
 = 南通市+丹阳市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7QRtP6q4eBNa8GOXr7xSMA7Mxl9pXWj84XfDsy4RQHe7lOv0ycdXua
+// https://www.jyeoo.com/math2/ques/detail/4hXQK6iOeECCKVyBNwjWEz7SpDpVR6InXxf2tlEzuuQ78hik2cZ7L6
 若函数 $f ( x ) = cases(( 3 a - 1 ) x - 2 "," ( x < 1 ), l o g _(2 a ) x "," ( x >= 1 ))$ 的值域为 $(- infinity , 0]$ , 则实数 $a$ 的取值范围是 #parentheses
 #choices(
   ([$[ (1 )/(3 ) , (1 )/(2 ) )$], [$( (1 )/(3 ) , (1 )/(2 ) )$], [$( (1 )/(2 ) , 1 ]$], [$[ (1 )/(3 ) , 1 ]$]),
@@ -1095,7 +1095,7 @@ $(1)$ 因为集合 $A$ , $B$ 之间存在一一对应关系 $f : x arrow (1 )/(x
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/59qro1vF2oli2xrpOjIdC1b1GtU896eXIp7mSAnS0r6M9AG9q0JWKW
+// https://www.jyeoo.com/math2/ques/detail/5h2TQ1uq2LT1sKP7NNPIqObjmDqkHce0KH7uIFqrh6Y0lqgme0bHzU
 若函数 $f(x)= (m x + n )/(x ^(2 ) + 4 ) (m,n in R)$ 是 $R$ 上的奇函数, 且 $f(1)= (4 )/(5 )$ , 则下列说法正确的有 #parentheses
 #choices(
   ([$n=0$], [$f(2^(0 . 2))>f(3^(0 . 2))$], [函数 $f(x)$ 的最大值为 $1$], [若实数 $a,b in (0, 2)$ , 且满足 $f(a)+f(b-2)=0$ , 则 $(3 b ^(2 ) + 4 )/(a b )$ 的最小值为 $6$]),
@@ -1128,7 +1128,7 @@ $f ( x ) = (m x + n )/(x ^(2 ) + 4 )$ 是奇函数, 则 $f(0)=0$ , 解得 $n=0$ 
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/78ZK04fM6AvzrVnmtN5WOb6U6h9OjQwAsffdj6Ua7Ucka5WRD0PdLc
+// https://www.jyeoo.com/math2/ques/detail/80PvO4aJ6KVVIZJLDSUiF569ruMNTTJ0kSfn6TGtM0IDEEdz70dmWe
 对于任意实数 $x$ ,符号 $[x]$ 表示“不超过 $x$ 的最大整数”, 如 $[1]=1$ , $[-1.1]=-2$ , $[2.5]=2$ , 则 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=$ #blank ; 若函数 $f(x)=sin|x|+|sin x|$ , 则 $y=[f(x)-1]+[f(-x)+1]$ 的值域为 #blank ．
 
 #solution[
@@ -1148,7 +1148,7 @@ $f ( x ) = (m x + n )/(x ^(2 ) + 4 )$ 是奇函数, 则 $f(0)=0$ , 解得 $n=0$ 
 
  $k=81$ 时, $n=4$ , 
 
-故 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=2$ × $0+6$ × $1+18$ × $2+54$ × $3+4=208$ ; 
+故 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=2 times 0+6 times 1+18 times 2+54 times 3+4=208$ ; 
 
 作出函数 $f(x)$ 的图像, 
 
@@ -1167,7 +1167,7 @@ $f ( x ) = (m x + n )/(x ^(2 ) + 4 )$ 是奇函数, 则 $f(0)=0$ , 解得 $n=0$ 
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/81jNYb2Yau7kPh4jscciL4f9k5cyMJuNDq9rFiUmCo2Gx7O6sfV1Jw
+// https://www.jyeoo.com/math2/ques/detail/85r16bJZa4xXG6UcYKeTmSfvV3Y5yoDsZ89jHWajcaGPFz52HfvXRg
 意大利著名画家达 $dot.op$ 芬奇将两端固定的项链在重力的作用下自然下垂所形成的曲线称为“悬链线”．双曲余弦函数 $cosh x= (e ^(x ) + e ^(- x ) )/(2 )$ 是一种特殊的悬链线函数, 其相应的双曲正弦函数为 $sinh x= (e ^(x ) - e ^(- x ) )/(2 )$ , 记函数 $f(x)= (sinh x )/(cosh x )$ ．
 
  $(1)$ 判断函数 $f(x)$ 的奇偶性并予以证明; 
@@ -1203,14 +1203,14 @@ $(1)f(x)$ 为奇函数, 证明如下:
 
 令 $g(t)=-4 t^(2)+4 t+2$ , 则 $g(t)$ 的图象开口向下, 对称轴为 $t= (1 )/(2 )$ , 
 
-所以 $g(t)_(max)=g( (1 )/(2 ) )=-4$ × $(1 )/(4 ) +4$ × $(1 )/(2 ) +2=3$ , 
+所以 $g(t)_(max)=g( (1 )/(2 ) )=-4 times (1 )/(4 ) +4 times (1 )/(2 ) +2=3$ , 
 
 所以 $m >= 3$ , 即 $m$ 的取值范围是 $[3, + infinity )$ ．
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7WVQF7lz9BEcquXY6CsUEScvh7WewGZcppeCuu8eadrMKKeqnahZgG
+// https://www.jyeoo.com/math2/ques/detail/8rLqj7AE9rC140kzyudGsucECGKaYamLHfeBVMzz8ZHnUktkpa4FRg
 已知函数 $f ( x ) = 2 sin ( omega x + phi ) ( omega > 0 , | phi | < ( pi )/(2 ) )$ , 其图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ , 且经过点 $(0, 1)$ ．
 
  $(1)$ 求函数 $f(x)$ 的解析式; 
@@ -1287,7 +1287,7 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 = 南通海门市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7ygla5yweghKkckmIeUaPubCSw01O0khPP9s2ZfdXTo41ZsCBa4f1E
+// https://www.jyeoo.com/math2/ques/detail/789f15ydeLyJlliu2pq3FBbsxfshUvH1Nn9XjwNdj29fTtB7EazMx6
 若函数 $f ( x ) = sin ( omega x + ( pi )/(6 ) ) ( omega > 0 )$ 的图象关于 $x = (2 pi )/(3 )$ 对称, 且 $f(x)$ 在区间 $( 0 , ( pi )/(3 ) )$ 上单调递增, 则 $f ( x + (2 pi )/(3 ) ) =$ #parentheses
 #choices(
   ([$cos (x )/(2 )$], [$sin ( (x )/(2 ) + (5 pi )/(6 ) )$], [$sin ( 2 x + (5 pi )/(6 ) )$], [$-cos 2 x$]),
@@ -1314,15 +1314,15 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8VZZK3LD8QmspvoLFNd7OIapqEAYya5vqKfDlDJZpJQlKsisKbpMNk
-在△ $A B C$ 中, $angle A C B=90$ °, $B C+2 A C=1$ , 则 #parentheses
+// https://www.jyeoo.com/math2/ques/detail/8wRr83Q48cLMXCF89LC8RLa9msWX9pxoLLfL4uRyDLTXfiOdTbLMDw
+在 $triangle A B C$ 中, $angle A C B=90 degree$ , $B C+2 A C=1$ , 则 #parentheses
 #choices(
-  ([$0 < A C < (1 )/(2 )$], [$A B$ 的长可能为 $(2 )/(5 )$], [△ $A B C$ 的面积的最大值为 $(1 )/(16 )$], [$(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B )$]),
+  ([$0 < A C < (1 )/(2 )$], [$A B$ 的长可能为 $(2 )/(5 )$], [$triangle A B C$ 的面积的最大值为 $(1 )/(16 )$], [$(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B )$]),
   colNum: 1
 )
 
 #solution[
-对于选项 $A$ : 根据 $B C+2 A C=1$ ⇒ $0<2 A C<1$ ⇒ $0 < A C < (1 )/(2 )$ , 因此选项 $A$ 正确; 
+对于选项 $A$ : 根据 $B C+2 A C=1 => 0<2 A C<1 => 0 < A C < (1 )/(2 )$ , 因此选项 $A$ 正确; 
 
 对于选项 $B$ : 由于 $A B^(2)=A C^(2)+B C^(2)=A C^(2)+(1-2 A C)^(2)=5 A C^(2)-4 A C+1$ , $0 < A C < (1 )/(2 )$ ．
 
@@ -1330,13 +1330,13 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 
 因此 $A B >= (sqrt(5 ) )/(5 ) > (2 )/(5 )$ , 因此 $A B = (2 )/(5 )$ 不可能成立, 因此选项 $B$ 错误; 
 
-对于选项 $C$ : 由于 $1 = B C + 2 A C >= 2 sqrt(B C dot.op 2 A C )$ ⇒ $A C dot.op B C <= (1 )/(8 ) ($ 当且仅当 $B C = 2 A C = (1 )/(2 )$ , 即 $B C = (1 )/(2 )$ , $A C = (1 )/(4 )$ 时取等号 $)$ ．
+对于选项 $C$ : 由于 $1 = B C + 2 A C >= 2 sqrt(B C dot.op 2 A C ) => A C dot.op B C <= (1 )/(8 ) ($ 当且仅当 $B C = 2 A C = (1 )/(2 )$ , 即 $B C = (1 )/(2 )$ , $A C = (1 )/(4 )$ 时取等号 $)$ ．
 
 因此 $S _( triangle A B C ) = (1 )/(2 ) times A C times B C <= (1 )/(16 )$ , 因此选项 $C$ 正确; 
 
-对于选项 $D$ : 由于三角形 $A B C$ 为直角三角形, 且 $angle A C B=90$ °, 因此 $sin B = (A C )/(A B )$ , $sin A = (B C )/(A B )$ , 
+对于选项 $D$ : 由于三角形 $A B C$ 为直角三角形, 且 $angle A C B=90 degree$ , 因此 $sin B = (A C )/(A B )$ , $sin A = (B C )/(A B )$ , 
 
-又由于 $(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B )$ ⇔ $(2 A B )/(B C ) + (A B )/(A C ) >= (2 )/(A B )$ ⇔ $(2 A B ^(2 ) )/(B C ) + (A B ^(2 ) )/(A C ) >= 2$ ⇔ $(2 ( A C ^(2 ) + B C ^(2 ) ) )/(B C ) + (A C ^(2 ) + B C ^(2 ) )/(A C ) >= 2$ ．
+又由于 $(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B ) ⇔ (2 A B )/(B C ) + (A B )/(A C ) >= (2 )/(A B ) ⇔ (2 A B ^(2 ) )/(B C ) + (A B ^(2 ) )/(A C ) >= 2 ⇔ (2 ( A C ^(2 ) + B C ^(2 ) ) )/(B C ) + (A C ^(2 ) + B C ^(2 ) )/(A C ) >= 2$ ．
 
 因为 $(2 ( A C ^(2 ) + B C ^(2 ) ) )/(B C ) >= (2 times 2 A C dot.op B C )/(B C ) = 4 A C$ , $(A C ^(2 ) + B C ^(2 ) )/(A C ) >= (2 A C dot.op B C )/(A C ) = 2 B C .($ 当且仅当 $A C = B C = (1 )/(3 )$ 时取等号 $)$ 
 
@@ -1347,7 +1347,7 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/78TSfahEccBb34K8OLPljja9VaL2HajYl091kgsmwqCwnzzJNeiRTU
+// https://www.jyeoo.com/math2/ques/detail/68v45aDLcdjBE4mZTgm6VFasBzFbrcnKUo9tq5f5r2l6YsaqbehCYS
 已知幂函数 $f(x)=(m^(2)+m-1)x^(m)(m in R)$ 是偶函数, 则 $m=$ #blank , 设 $g ( x ) = f ( x ) + f ( (1 )/(x ) )$ , 若对于任意 $x(x in R, x != 0)$ , $k g(x^(2))+g(x) <= 0$ , 则实数 $k$ 的最大值为 #blank ．
 
 #solution[
@@ -1374,12 +1374,12 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/661DtdxM8f6mKJ0DJFOxRv9VJmpVbJFmOqdXW2wlnDb7WTuly8InE8
+// https://www.jyeoo.com/math2/ques/detail/6MFQodCV81hlj8fEBIKjf89ZvQYhBaPJy9dQkK3M3ptgtwc7a8HCYy
 在平面直角坐标系 $x O y$ 中, 圆心在坐标原点的单位圆与 $x$ 轴正半轴、 $y$ 轴正半轴分别交于点 $A$ 、 $B$ , 锐角 $alpha$ 的终边与单位圆交于点 $M$ , 过 $M$ 作 $y$ 轴的垂线交 $y$ 轴于点 $T$ , 延长 $T M$ 至点 $N$ , 使得 $M$ 为 $T N$ 的中点．
 
  $(1)$ 若 $cos alpha = (1 )/(3 )$ , 求 $sin angle O N T$ ; 
 
- $(2)$ 设△ $O N T$ 的面积为 $S$ , 四边形 $O A M B$ 的面积为 $S_(O A M B)$ ．
+ $(2)$ 设 $triangle O N T$ 的面积为 $S$ , 四边形 $O A M B$ 的面积为 $S_(O A M B)$ ．
 
  $(i)$ 若 $S _(O A M B ) = (17 )/(26 )$ , 求 $S$ 和 $tan alpha$ ; 
 
@@ -1396,7 +1396,7 @@ $(1)$ 由题意可知 $M(cos alpha , sin alpha )$ , $O T=sin alpha$ ,
 
  $therefore$ 在直角三角形 $O N T$ 中 $sin angle O N T = (O T )/(O N ) = (O T )/(sqrt(O T ^(2 ) + T N ^(2 ) ) ) = (sin alpha )/(sqrt(s i n ^(2 ) alpha + 4 c o s ^(2 ) alpha ) ) = ((2 sqrt(2 ) )/(3 ) )/(3 ) = (sqrt(6 ) )/(3 )$ ; 
 
- $(2)$ △ $O N T$ 的面积 $S = (1 )/(2 ) O T times T N = (1 )/(2 ) sin alpha times 2 cos alpha = sin alpha cos alpha$ , 
+ $(2) triangle O N T$ 的面积 $S = (1 )/(2 ) O T times T N = (1 )/(2 ) sin alpha times 2 cos alpha = sin alpha cos alpha$ , 
 
  $(i) because S _(O A M B ) = S _( triangle O A M ) + S _( triangle O B M ) = (1 )/(2 ) O A times sin alpha + (1 )/(2 ) O B times cos alpha = (1 )/(2 ) ( sin alpha + cos alpha )$ , 
 
@@ -1465,7 +1465,7 @@ $(1)$ 由题意可知 $M(cos alpha , sin alpha )$ , $O T=sin alpha$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8q4wzawF3UYriE2iYKozrJcglhhqzOtHHW2ezNSnxRPCS5yhPaiMQC
+// https://www.jyeoo.com/math2/ques/detail/7e6CBa9p3lobnRJuxQHVlBcl587g0eQe5W2C91WzlWZRTcNzma5dA0
 对于函数 $y=f(x)$ , 若实数 $x_(0)$ 满足 $f(x_(0))f(x_(0)+H)=M$ , 其中 $H$ , $M$ 为非零实数, 则称 $x_(0)$ 为 $f(x)$ 的一个“ $H-M-$ 泊点”．
 
  $(1)$ 已知任意实数 $x$ 都是函数 $f(x)$ 的“ $1-1-$ 泊点”, 若 $f(1)=2025$ , 求 $f(2025)$ ; 
@@ -1481,7 +1481,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 因此 $f(x)$ 为周期为 $2$ 的周期函数, 
 
-因此 $f(2025)=f(2$ × $1012+1)=f(1)=2025$ ．
+因此 $f(2025)=f(2 times 1012+1)=f(1)=2025$ ．
 
  $(2)$ 因为 $∃ x _(0 ) in ( 0 , ( pi )/(2 ) )$ 是 $g(x)$ 的“ $( pi )/(2 ) -M-$ 泊点”, 
 
@@ -1503,7 +1503,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 ①当 $x>0$ 时, 则 $x+1>1$ , 
 
-因此 $2^(2 x)$ × $2^(2(x+1))=1$ , 因此 $2^(4 x+2)=1$ , 因此 $x = - (1 )/(2 ) < 0$ , 舍去; 
+因此 $2^(2 x) times 2^(2(x+1))=1$ , 因此 $2^(4 x+2)=1$ , 因此 $x = - (1 )/(2 ) < 0$ , 舍去; 
 
 ②当 $-1<x<0$ 时, 因此 $(1 )/(2 ^(x + 1 ) + t ) times 2 ^(2 ( x + 1 ) ) = 1$ , 
 
@@ -1511,7 +1511,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 ③当 $x<-1$ 时, $x+1<0$ , 
 
-因此 $(1 )/(2 ^(x + 1 ) + t ) times (1 )/(2 ^(x + 2 ) + t ) = 1$ , 因此 $2$ × $2^(2(x+1))+(2^(x+1)+2^(x+2))t+t^(2)-1=0(**)$ ; 
+因此 $(1 )/(2 ^(x + 1 ) + t ) times (1 )/(2 ^(x + 2 ) + t ) = 1$ , 因此 $2 times 2^(2(x+1))+(2^(x+1)+2^(x+2))t+t^(2)-1=0(**)$ ; 
 
 依据条件, $(**)$ 和 $(*)$ 共有 $2$ 个不同实数解; 
 
@@ -1558,7 +1558,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 = 南通如皋市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5ps92767dmwHgwGCnAXxmHfS5GRWxG4IQ38PS8UfIHyIawereeshLE
+// https://www.jyeoo.com/math2/ques/detail/5JJHa71wdTZ5WDDN4Gqh6dfeRVS8JAQji18bTJBAIMK3R5e8eeBdVw
 有一块半径为 $2($ 单位 $: c m)$ 的半圆形钢板, 计划裁剪成等腰梯形 $A B C D$ 的形状, 它的下底 $A B$ 是半圆的直径, 上底 $C D$ 的端点在圆周上．该等腰梯形 $A B C D$ 的周长 $y($ 单位 $: c m)$ 的最大值为 #parentheses
 #choices(
   ([$4$], [$4 + 4 sqrt(2 )$], [$8$], [$10$]),
@@ -1568,17 +1568,17 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 #solution[
 #grid(columns: (1fr, 25%), gutter: 1em, [作 $D E tack.t A B$ 于 $E$ , 连接 $B D$ , 如图所示: 
 
-因为 $A B$ 为直径, 所以 $angle A D B=90$ °, 
+因为 $A B$ 为直径, 所以 $angle A D B=90 degree$ , 
 
-在 $R t$ △ $A D B$ 与 $R t$ △ $A E D$ 中, $angle A D B=90$ ° $= angle A E D$ , $angle B A D= angle D A E$ , 
+在 $R t triangle A D B$ 与 $R t triangle A E D$ 中, $angle A D B=90 degree = angle A E D$ , $angle B A D= angle D A E$ , 
 
-所以 $R t$ △ $A D B∽R t$ △ $A E D$ , 
+所以 $R t triangle A D B∽R t triangle A E D$ , 
 
 所以 $(A D )/(A B ) = (A E )/(A D )$ , 即 $A E= (A D ^(2 ) )/(A B )$ ．
 
 设 $A D=x,A B=4$ , 所以 $A E= (x ^(2 ) )/(4 )$ , 
 
-所以 $C D=4-2$ × $(x ^(2 ) )/(4 ) =4- (x ^(2 ) )/(2 )$ , 
+所以 $C D=4-2 times (x ^(2 ) )/(4 ) =4- (x ^(2 ) )/(2 )$ , 
 
 所以 $y=4+x+4- (x ^(2 ) )/(2 ) +x=- (1 )/(2 ) x^(2)+2 x+8$ , 
 
@@ -1588,7 +1588,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 故所求的函数为 $y=- (1 )/(2 ) x^(2)+2 x+8$ , 其中 $0<x<2 sqrt(2 )$ ．
 
-当 $x=2$ 时, $y$ 有最大值为 $y_(max)=- (1 )/(2 )$ × $4+2$ × $2+8=10$ ．
+当 $x=2$ 时, $y$ 有最大值为 $y_(max)=- (1 )/(2 ) times 4+2 times 2+8=10$ ．
 
 故选: $D$ ．
 ], [#align(center + top, image("images/27e26c4c.png", width: 100%))])
@@ -1596,7 +1596,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8n5gR9Redfg8n7fElOd0GcdbdNKTTvvY08afhHqghKfpu5b9n1TZ6u
+// https://www.jyeoo.com/math2/ques/detail/8aBpd9Aydex1P10GxkmuPldYDcBPtFTt1Ea542UKJqYKEdRio1yp4y
 对于函数 $f ( x ) = 2 sin ( omega x + ( pi )/(6 ) ) + 1 ( omega >0)$ , 下列说法正确的是 #parentheses
 #choices(
   ([当 $omega =2$ 时, 函数 $f(x)$ 在 $( ( pi )/(6 ) , (2 pi )/(3 ) )$ 上有且只有一个零点], [若函数 $f(x)$ 在 $[ ( pi )/(6 ) , (2 pi )/(3 ) ]$ 单调递增, 则 $omega$ 的取值范围为 $( 0 , (1 )/(2 ) ]$], [若函数 $f(x)$ 在 $x=x_(1)$ 时取最小值, 在 $x=x_(2)$ 时取最大值, 且 $| x _(1 ) - x _(2 ) | _(min ) = ( pi )/(2 )$ , 则 $f ( (5 pi )/(6 ) - x ) + f ( x ) = 0$], [将函数 $f(x)$ 图象向左平移 $( pi )/(6 )$ 个单位得到 $g(x)$ 的图象, 若 $g(x)$ 为偶函数, 则 $omega$ 的最小值为 $2$]),
@@ -1649,7 +1649,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7fdDhe8g3RatYWp4INxlWQ225pp9imzO3B0u30HBKSUxoGwVA2zkKO
+// https://www.jyeoo.com/math2/ques/detail/4cXlJeaj3ZnHts5ijcQl9k292LAobn55sJ0h9ISDQYavt0Jlr2W2W8
 若正实数 $x,y$ 满足 $(1 )/(e ^(2 x ) ) - (e ^(y ) )/(e ) = 2 x + y - 1$ , 则 $(1 )/(y ) + (y )/(x )$ 的最小值 #blank ．
 
 #solution[
@@ -1668,8 +1668,8 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6nvnw2egeNcZR9BYBL2DwIbsrTB0O5PDOYdX9em72vfBEUskg94vK4
-#grid(columns: (1fr, 25%), gutter: 1em, [如图, 在直角坐标系 $x O y$ 中, 点 $P$ 是单位圆上的动点, 过点 $P$ 作 $x$ 轴的垂线, 垂足为 $M$ , 过 $O$ 作射线交 $M P$ 的延长线于点 $Q$ , 使得 $S_("△" O Q M)=2 S_("△" O P M)$ , 记 $angle M O P= alpha$ , $angle Q O M= beta$ , 且 $alpha in ( 0 , ( pi )/(2 ) )$ ．
+// https://www.jyeoo.com/math2/ques/detail/4bmyp2YmeLXCShBKslxF78b01gxWT3CJMXdNc9IR8ZPpUSZGT9Gf9U
+#grid(columns: (1fr, 25%), gutter: 1em, [如图, 在直角坐标系 $x O y$ 中, 点 $P$ 是单位圆上的动点, 过点 $P$ 作 $x$ 轴的垂线, 垂足为 $M$ , 过 $O$ 作射线交 $M P$ 的延长线于点 $Q$ , 使得 $S_( triangle O Q M)=2 S_( triangle O P M)$ , 记 $angle M O P= alpha$ , $angle Q O M= beta$ , 且 $alpha in ( 0 , ( pi )/(2 ) )$ ．
 
  $(1)$ 若 $sin alpha = (3 )/(5 )$ , 求 $(sin ( - beta ) + cos ( pi - beta ) )/(cos ( ( pi )/(2 ) - beta ) + sin ( (3 pi )/(2 ) + beta ) )$ 的值; 
 
@@ -1680,7 +1680,7 @@ $(1)$ 因为 $sin alpha = (3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $co
 
 由三角函数的定义可得 $P(cos alpha , sin alpha )=( (4 )/(5 )$ , $(3 )/(5 ) )$ , 
 
-又 $S_("△" O Q M)=2 S_("△" O P M)$ , 即 $(1 )/(2 ) |O M| dot.op |Q M|=2$ × $(1 )/(2 ) |O M||P M|$ , 得 $|Q M|=2|P M|$ , 
+又 $S_( triangle O Q M)=2 S_( triangle O P M)$ , 即 $(1 )/(2 ) |O M| dot.op |Q M|=2 times (1 )/(2 ) |O M||P M|$ , 得 $|Q M|=2|P M|$ , 
 
 所以 $Q( (4 )/(5 )$ , $(6 )/(5 ) )$ , 即 $|Q M|= (6 )/(5 )$ , 所以 $|O Q|= sqrt(| O M | ^(2 ) + | Q M | ^(2 ) ) = sqrt(( (4 )/(5 ) ) ^(2 ) + ( (6 )/(5 ) ) ^(2 ) ) = (2 sqrt(13 ) )/(5 )$ , 
 
@@ -1694,11 +1694,11 @@ $(1)$ 因为 $sin alpha = (3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $co
 
 所以原函数化为 $y=2 t^(2)-2 m t-2 m-1$ , 对称轴为 $t= (m )/(2 )$ , 
 
-当 $(m )/(2 ) <= (1 )/(2 )$ , 即 $m <= 1$ 时, $g(m)=2$ × $( (1 )/(2 ) ) ^(2 ) -m-2 m-1=-3 m- (1 )/(2 )$ ; 
+当 $(m )/(2 ) <= (1 )/(2 )$ , 即 $m <= 1$ 时, $g(m)=2 times ( (1 )/(2 ) ) ^(2 ) -m-2 m-1=-3 m- (1 )/(2 )$ ; 
 
-当 $(1 )/(2 ) < (m )/(2 ) < (sqrt(3 ) )/(2 )$ , 即 $1<m< sqrt(3 )$ 时, $g(m)=2$ × $(m ^(2 ) )/(4 ) -2 m dot.op (m )/(2 ) -2 m-1=- (1 )/(2 ) m^(2)-2 m-1$ ; 
+当 $(1 )/(2 ) < (m )/(2 ) < (sqrt(3 ) )/(2 )$ , 即 $1<m< sqrt(3 )$ 时, $g(m)=2 times (m ^(2 ) )/(4 ) -2 m dot.op (m )/(2 ) -2 m-1=- (1 )/(2 ) m^(2)-2 m-1$ ; 
 
-当 $(m )/(2 ) >= (sqrt(3 ) )/(2 )$ , 即 $m >= sqrt(3 )$ 时, $g(m)=2$ × $(3 )/(4 ) -2 m dot.op (sqrt(3 ) )/(2 ) -2 m-1=- sqrt(3 ) m-2 m+ (1 )/(2 )$ , 
+当 $(m )/(2 ) >= (sqrt(3 ) )/(2 )$ , 即 $m >= sqrt(3 )$ 时, $g(m)=2 times (3 )/(4 ) -2 m dot.op (sqrt(3 ) )/(2 ) -2 m-1=- sqrt(3 ) m-2 m+ (1 )/(2 )$ , 
 
 综上, $g(m)= cases(- 3 m - (1 )/(2 ) "," m <= 1, - (1 )/(2 ) m ^(2 ) - 2 m - 1 "," 1 < m < sqrt(3 ), - sqrt(3 ) m - 2 m + (1 )/(2 ) "," m >= sqrt(3 ))$ , 
 
@@ -1714,14 +1714,14 @@ $(1)$ 因为 $sin alpha = (3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $co
 
 此时 $y=2 t^(2)+ (2 )/(3 ) t- (1 )/(3 )$ , $t in [ (1 )/(2 )$ , $(sqrt(3 ) )/(2 ) ]$ , 对称轴为 $t= (m )/(2 ) =- (1 )/(6 )$ , 
 
-所以当 $t= (sqrt(3 ) )/(2 )$ 时, $y_(max)=2$ × $(3 )/(4 ) + (2 )/(3 )$ × $(sqrt(3 ) )/(2 ) - (1 )/(3 ) = (7 + 2 sqrt(3 ) )/(6 )$ , 
+所以当 $t= (sqrt(3 ) )/(2 )$ 时, $y_(max)=2 times (3 )/(4 ) + (2 )/(3 ) times (sqrt(3 ) )/(2 ) - (1 )/(3 ) = (7 + 2 sqrt(3 ) )/(6 )$ , 
 
 即此时 $f( alpha )$ 的最大值为 $(7 + 2 sqrt(3 ) )/(6 )$ ．
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/79d3ldOH5M206LLi3c2k7wek12bMbB8q71cDKbb23Y5AB29C1ergbw
+// https://www.jyeoo.com/math2/ques/detail/6hokAd3Q589OHVzdFjf4yee6G3bmKwKdwbcFiA6JzKe9tGs3QeYBwO
 已知函数 $f(x)$ 为奇函数, $g(x)$ 为偶函数, 且满足 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数．
 
  $(1)$ 求函数 $f(x)$ , $g(x)$ 的解析式; 
@@ -1804,7 +1804,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 = 盐城市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6978HdYJ5iLn3XufjgUOwO5hIKIO3oXFVZdNG0Km6eQqkVrX6dHW4G
+// https://www.jyeoo.com/math2/ques/detail/7ZzQgdhA5TcR1t3sVn03jr5IDIDGEmFXu8dwE0ZaCLjrzHcx2dHbsW
 若函数 $f(x)+3 e^(x)$ 为奇函数, $f(x)-e^(-x)$ 为偶函数, 下列关于函数 $f(x)$ 的最值说法正确的是 #parentheses
 #choices(
   ([函数无最值], [只有最大值为 $- 2 sqrt(2 )$], [只有最小值为 $- 2 sqrt(2 )$], [最小值 $- 2 sqrt(2 )$ , 最大值为 $2 sqrt(2 )$]),
@@ -1833,7 +1833,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8y2bTcCeeDe3fB6KNBhUvLb6n0hiLpn0z73k7r11HZuxPM5AL4njdI
+// https://www.jyeoo.com/math2/ques/detail/6JXauceZesTcv9cMdXP9CnbXsjUfmGhcmx3lWUA6ZZsoBVY7E4aGae
 已知定义域为 ${x|x != 4 k+2, k in Z}$ 的函数 $f(x)$ 满足 $f ( x + 1 ) = (1 + f ( x ) )/(1 - f ( x ) )$ , $f(2 x-2)$ 为奇函数, 则下列说法正确的有 #parentheses
 #choices(
   ([$f(x)$ 关于 $(-2, 0)$ 对称], [$f(x)$ 的周期为 $2$], [$f(x)$ 为奇函数], [若 $f(1)=1$ , 则 $f(2023)=-1$]),
@@ -1855,14 +1855,14 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 所以 $f(-4-x)=-f(x+4)$ , 即 $f(-x)=-f(x)$ , 所以 $f(x)$ 为奇函数, 故 $C$ 正确; 
 
-若 $f(1)=1$ , 则根据 $f(x)$ 是周期为 $4$ 的周期函数以及 $f(x)$ 为奇函数, 有 $f(2023)=f(4$ × $506-1)=f(-1)=-f(1)=-1$ , 故 $D$ 正确．
+若 $f(1)=1$ , 则根据 $f(x)$ 是周期为 $4$ 的周期函数以及 $f(x)$ 为奇函数, 有 $f(2023)=f(4 times 506-1)=f(-1)=-f(1)=-1$ , 故 $D$ 正确．
 
 故选: $A C D$ ．
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/4pTIc8vbfu9BbES9OFjqACaFkN8treSbMRfOJraJjiHv8wdrwfMHVg
+// https://www.jyeoo.com/math2/ques/detail/96UFF89Sf0XqW55qtxQn6faW2rC3wCkoI0fUHngjLLrUoo50mfZ0im
 将余弦函数 $y=cos x$ 的图象向左平移 $( pi )/(3 )$ 个单位, 再将函数图象上所有点的横坐标变为原来的 $(1 )/( omega ) ( omega > 0 )$ 得到函数 $f(x)$ 的图象, 若 $f(x)$ 在区间 $[0, pi ]$ 上恰有 $1$ 个最小值和 $3$ 个零点, 则 $omega$ 的取值范围为 #blank ．
 
 #solution[
@@ -1881,12 +1881,12 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6A7FXerp8JizKsgKBxSxIS5sJaYs9LEbCrfChIChwIHFsuMHhdqMc4
-#grid(columns: (1fr, 25%), gutter: 1em, [现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m$ ,若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角△ $E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
+// https://www.jyeoo.com/math2/ques/detail/8RSYxe0R8jVy3XMvZSAVwT5XtNEPIVRgSZfQPnzwgnFm4JPLkdJAYq
+#grid(columns: (1fr, 25%), gutter: 1em, [现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m$ ,若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角 $triangle E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
 
  $(1)$ 求渔网长度 $E F$ , 用含有 $theta$ 的式子表示, 并写出定义域; 
 
- $(2)$ 求养殖面积 $S_("△" E O F)$ 的最小值, 及此时的 $theta$ 值; 
+ $(2)$ 求养殖面积 $S_( triangle E O F)$ 的最小值, 及此时的 $theta$ 值; 
 
  $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．], [#align(center + top, image("images/003e703e.png", width: 100%))])
 
@@ -1903,11 +1903,11 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 所以 $O E=O B+B E=5 sqrt(3 ) + (5 )/(tan theta )$ , $O F=O C+C F=5+5 sqrt(3 ) tan theta$ , 
 
-所以 $S_("△" E O F)= (1 )/(2 ) O E dot.op O F= (1 )/(2 )$ × $(5 sqrt(3 ) + (5 )/(tan theta ) )$ × $(5+5 sqrt(3 ) tan theta ) = (1 )/(2 )$ × $(50 sqrt(3 ) +75 tan theta + (25 )/(tan theta ) ) >= (1 )/(2 )$ × $(50 sqrt(3 ) +2 sqrt(75 tan theta dot.op (25 )/(tan theta ) ) ) = (1 )/(2 )$ × $(50 sqrt(3 ) +50 sqrt(3 ) )=50 sqrt(3 )$ , 
+所以 $S_( triangle E O F)= (1 )/(2 ) O E dot.op O F= (1 )/(2 ) times (5 sqrt(3 ) + (5 )/(tan theta ) ) times (5+5 sqrt(3 ) tan theta ) = (1 )/(2 ) times (50 sqrt(3 ) +75 tan theta + (25 )/(tan theta ) ) >= (1 )/(2 ) times (50 sqrt(3 ) +2 sqrt(75 tan theta dot.op (25 )/(tan theta ) ) ) = (1 )/(2 ) times (50 sqrt(3 ) +50 sqrt(3 ) )=50 sqrt(3 )$ , 
 
 当且仅当 $75 tan theta = (25 )/(tan theta )$ , 即 $tan theta = (sqrt(3 ) )/(3 )$ , $theta = ( pi )/(6 )$ 时取等号, 
 
-所以养殖面积 $S_("△" E O F)$ 的最小值为 $50 sqrt(3 )$ , 及此时的 $theta = ( pi )/(6 )$ ．
+所以养殖面积 $S_( triangle E O F)$ 的最小值为 $50 sqrt(3 )$ , 及此时的 $theta = ( pi )/(6 )$ ．
 
  $(3)$ 因为 $A E= (A B )/(sin theta ) = (5 )/(sin theta )$ , $A F= (A C )/(cos theta ) = (5 sqrt(3 ) )/(cos theta )$ , 
 
@@ -1923,7 +1923,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5vehm70f5tq3diK68AcQJ55kofogLuWuQMbQyWTtZZ1q9cSBM4sHE8
+// https://www.jyeoo.com/math2/ques/detail/94PMr7ic5lqKskG9DAdV6l5f2OpsaKgiUhbDn6aas7PwDGWtU4RdgG
 定义: 对于函数 $f_(1)(x)$ , $f_(2)(x)$ , $g(x)$ , 若存在实数 $a_(1)$ , $a_(2)$ 使得 $g(x)=a_(1)f_(1)(x)+a_(2)f_(2)(x)$ , 则称 $g(x)$ 为 $f_(1)(x)$ , $f_(2)(x)$ 的生成函数．
 
  $(1)$ 设 $f_(1)(x)=x$ , $f _(2 ) ( x ) = (1 )/(x )$ , $a_(1)=a_(2)=1$ , 判断并证明生成函数 $g(x)$ 在 $[1, + infinity )$ 的单调性; 
@@ -1978,7 +1978,7 @@ $(1)g(x)$ 为 $[1, + infinity )$ 上的增函数, 证明如下:
 = 苏州市
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7oyOL1DK4aemvgFoVaqPdpdE35ZLaI5ggBdIl0xCW3hFDBPm2akwAy
+// https://www.jyeoo.com/math2/ques/detail/72myJ1vC4kWoPi5aA2RK5wdQLjlEF9hn58d9wBtdFhGHYxfEhaNi5Y
 已知函数 $f ( x ) = x + (1 )/(x ) , g ( x ) = 2 x$ , 若存在实数 $x_(1)$ , $x_(2)$ , $x_(3)(0<x_(1)<x_(2)<x_(3))$ , 使得 $f(x_(1))=g(x_(2))=f(x_(3))$ , 则 $f(x_(3)-x_(1))+g(x_(2)-x_(1))$ 的最小值为 #parentheses
 #choices(
   ([$sqrt(2 )$], [$sqrt(6 )$], [$2 sqrt(2 )$], [$2 sqrt(3 )$]),
@@ -2017,7 +2017,7 @@ $(1)g(x)$ 为 $[1, + infinity )$ 上的增函数, 证明如下:
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8oKmi8cf1gbhdaktSNOKYU6DRpBA6c8vcveev8aw4e3pQKG0bfXBIm
+// https://www.jyeoo.com/math2/ques/detail/6QRnU8Hx1wshSZiFe4pxrd673gZoXfTpzreiETlvGYMBCis4jfJ4mO
 已知定义在 $R$ 上的函数 $f(x)$ 满足 $f(x+y)=f(x)+f(y)-2$ , $f(x)$ 不是常数函数, 则 #parentheses
 #choices(
   ([$f(0)=2$], [$f(x)$ 是增函数], [$f(x)$ 的图象关于直线 $x=2$ 对称], [$f(x)$ 的图象关于点 $(0, 2)$ 对称]),
@@ -2046,7 +2046,7 @@ $(1)g(x)$ 为 $[1, + infinity )$ 上的增函数, 证明如下:
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8lhD180l4AMpX3Jl028ZlU2i9Aw83fXtb56pHoUliCoS4sj8Q7sqvo
+// https://www.jyeoo.com/math2/ques/detail/6tHmV8RS4JK86crQzCOc3v2yds07gVdD0o6lojzNAwmUmb1IN7Bp2W
 设函数 $f ( x ) = cases(x ^(2 ) - 2 a x "," x < 0, (1 )/(e ^(x ) ) - 1 "," x >= 0)$ , 若不等式 $f(x) >= a$ 对 $∀x in R$ 恒成立．则实数 $a$ 的值为 #blank ．
 
 #solution[
@@ -2067,7 +2067,7 @@ $(1)g(x)$ 为 $[1, + infinity )$ 上的增函数, 证明如下:
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/85iVf4AS5oFoqnr9ahxw81f15WMkcuMv9I9dTSPmzLzCvikn638KkC
+// https://www.jyeoo.com/math2/ques/detail/5NEA84b85FCi385okiVrTZfi5BsoypDUyu90Y9g5YIb12h9pp3pVMu
 已知函数 $f(x)=4^(x)+a|2^(x)-1|(a in R)$ ．
 
  $(1)$ 当 $a=2$ 时, 求方程 $f(x)=6$ 的解; 
@@ -2126,7 +2126,7 @@ $(1)$ 当 $a=2$ 时, 函数 $f(x)=(2^(x))^(2)+2|2^(x)-1|$ ．
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/81JJy7qhbNfM5duLvMnm0C5rVUoMDp9U6sbvsBCV3FlAeSJ8EfeHku
+// https://www.jyeoo.com/math2/ques/detail/7Ttf47vibnnO1nfNXKjVDK5z1LvpR6fbIwbcXKoGoYcNBLrFbfBflY
 已知函数 $f(x)=log_(a)(1-x)+m log_(a)(1+x)(a>0$ 且 $a != 1)$ ．请从以下两个条件中选择一个作为已知．解答下面的问题．
 
 条件①: $f(x)+f(-x)=0$ ; 条件②: $f(x)-f(-x)=0$ ．
@@ -2219,7 +2219,7 @@ $(1)$ 如果选①, 由于函数 $f(x)$ 的定义域为 $(-1, 1)$ ,
 = 无锡市天一中学
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7J4Zv95DfUGWT3aQCs8q8N1hwh1gH19ZTK0EuEacNCf6LCQvX1jz8K
+// https://www.jyeoo.com/math2/ques/detail/85hQF9JXfpjw2WVpbvDsFU1fyAOBeDYtGf0NZaoHodLSCkKrq1xsUS
 已知函数 $f ( x ) = cases(| x + 1 | - 1 "," x in ( - infinity "," 0 ), ln ( x + 1 ) "," x in [ 0 "," + infinity ))$ , $g(x)=x^(2)-4 x-4$ ．设 $b in R$ , 若存在 $a in R$ , 使得 $f(a)+g(b)=0$ , 则实数 $b$ 的取值范围是 #parentheses
 #choices(
   ([$[-1, 5]$], [$(- infinity , -1] union [5, + infinity )$], [$[-1, + infinity )$], [$(- infinity , 5]$]),
@@ -2248,7 +2248,7 @@ $(1)$ 如果选①, 由于函数 $f(x)$ 的定义域为 $(-1, 1)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7KAKQdeqb45yrPK0PxYG9BccdNRHxx8Bbq2IlRFuMgjAMuqzPbyaI4
+// https://www.jyeoo.com/math2/ques/detail/8ps77dFsbvFIMMjQxFNfxqcanbZG6N3yrL2KU3JjqCayp3AtQbEvmi
 已知 $a>0$ , $b>0$ , 且 $(1 )/(a b ) = 2 - (1 )/(a ) - (1 )/(b )$ , 则 #parentheses
 #choices(
   ([$a+b$ 的最小值为 $1 + sqrt(3 )$], [$a b$ 的最小值为 $(1 + sqrt(3 ) )/(2 )$], [$b > (1 )/(2 )$], [$a+2 b$ 的最小值为 $(3 )/(2 ) + sqrt(6 )$]),
@@ -2279,7 +2279,7 @@ $(1)$ 如果选①, 由于函数 $f(x)$ 的定义域为 $(-1, 1)$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6AXtg02C58IwfwRAfCZutB04GQ8ep9ir9R95g9GuW8f2L1jVFeoc0e
+// https://www.jyeoo.com/math2/ques/detail/7kPOq0PA5EWRmknuQZQOf80SuRBDIxPOuv913LoM9wLsrLgSfego1w
 若 $alpha in ( ( pi )/(2 ) , pi )$ , 且 $3 cos 2 alpha = cos ( ( pi )/(4 ) + alpha )$ , 则 $sin 2 alpha =$ #blank ．
 
 #solution[
@@ -2300,7 +2300,7 @@ $3 cos 2 alpha = cos ( ( pi )/(4 ) + alpha )$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6d8Bv8o46jQPa3NtN6kED97fqq5oIEUem57WlwG8Oj7i6r1a9fd6Q4
+// https://www.jyeoo.com/math2/ques/detail/8rqRA8Qz6nb1ahbubUwJry75kOoumcbQr37ReT3lv6itcDUVjf8wMK
 已知 $f(x)= (cos ( 2023 pi - x ) cos ( (3 pi )/(2 ) - x ) sin ( x + ( pi )/(2 ) ) )/(2 )$ ．
 
  $(1)$ 化简函数 $f(x)$ ; 
@@ -2329,7 +2329,7 @@ $(1)$ 由已知可得 $f(x)= (( - cos x ) ( - sin x ) ( cos x ) )/(( - sin x ) (
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8HFTS7SZ6TXTZP1EljDzcj2FAGpQDwobPKeRS6X5rdKzEXhVB0rPHM
+// https://www.jyeoo.com/math2/ques/detail/5TROX7R66QRrShEJnv8sDE2JMddhc8P87uecge5RrXtuyvGVN0FzQe
 已知函数 $f ( x ) = log _(2 ) ( 4 ^(x ) + 1 ) + m x$ ．
 
  $($ Ⅰ $)$ 若 $f(x)$ 为偶函数, 求实数 $m$ 的值; 
@@ -2359,7 +2359,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 
 又 $2 a+1>0$ 且 $2 a+2>0$ , 知 $a>- (1 )/(2 )$ , 
 
- $therefore - (1 )/(2 ) <a< sqrt(2 ) - 1$ , 即 $a in (- (1 )/(2 )$ , $sqrt(2 ) - 1 )$ ．
+ $therefore - (1 )/(2 ) <a< (sqrt(2 ) - 1 )$ , 即 $a in (- (1 )/(2 )$ , $sqrt(2 ) - 1 )$ ．
 
  $($ Ⅲ $)$ 当 $m>0$ 时, $y= log _(2 ) ( 4 ^(x ) + 1 )$ 在 $R$ 上单调递增, $y=m x$ 在 $R$ 上单调递增, 
 
@@ -2382,7 +2382,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 = 无锡市天一中学领军班
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5H43F9It4E6FhZu4IdhvDE0jjs8puOMiZ830pA1S5aiMdOHZx17D60
+// https://www.jyeoo.com/math2/ques/detail/5LoeH9bQ4L1GNCDMztxzDS00ZPx3nVXDvT3931aGae7FFP40j1ahCy
 已知 $a = (31 )/(32 )$ , $b = cos (1 )/(4 )$ , $c = 5 sin (1 )/(5 )$ , 则 #parentheses
 #choices(
   ([$a<b<c$], [$c<a<b$], [$b<a<c$], [$c<b<a$]),
@@ -2398,7 +2398,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 
 根据三角函数的定义有: $|B T|=sin x,|A P|=tan x$ , $l _(ˆ A B ) =x$ ,
 
-由图知 $S_("△" A O B)<S_("扇形" A O B)<S_("△" A O P)$ , 故 $(1 )/(2 )$ × $1$ × $|B T|< (1 )/(2 )$ × $1$ × $l _(ˆ A B ) < (1 )/(2 )$ × $1$ × $|A P|$ , 
+由图知 $S_( triangle A O B)<S_("扇形" A O B)<S_( triangle A O P)$ , 故 $(1 )/(2 ) times 1 times |B T|< (1 )/(2 ) times 1 times l _(ˆ A B ) < (1 )/(2 ) times 1 times |A P|$ , 
 
 所以 $sin x < x < tan x , x in ( 0 , ( pi )/(2 ) )$ , 
 
@@ -2413,7 +2413,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8MAwRebQ7OtYbkxzynEjMQ0nUWm3zRfGHz3JsUpboqUEgJiIx3NQp6
+// https://www.jyeoo.com/math2/ques/detail/57Qxse2B7xHJexvYWlOetK0TpD3QObiXMT3IPkHN5B3lJgiU736Rs0
 已知 $f(x)$ 为非常值函数, 若对任意实数 $x,y$ 均有 $f ( x + y ) = (f ( x ) + f ( y ) )/(1 + f ( x ) dot.op f ( y ) )$ , 且当 $x>0$ 时, $f(x)>0$ , 则下列说法正确的有 #parentheses
 #choices(
   ([$f(0)=1$], [$f(x)$ 为奇函数], [$|f(x)|<1$], [$f(x)$ 在 $(0, + infinity )$ 上单调递增]),
@@ -2460,7 +2460,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8Hw9K8Qp8MOdzCijezFSQZ8zW2GFwVQAIk7CZU2dYNBqkaB5CfR3GC
+// https://www.jyeoo.com/math2/ques/detail/8Px7j8sO8s2GGaF7AHR8308scY8dH0SUYw7Tc68MKiSLzAUEufRDtI
 已知函数 $f ( x ) = (8 )/(2 ^(x ) + 4 )$ , $g ( x ) = (1 )/(2 ) sin pi x + 1$ , 若 $y=f(x)$ 的图象与 $y=g(x)$ 的图象的交点分别为 $(x_(1)$ , $y_(1))$ , $(x_(2)$ , $y_(2))$ , $⋯$ , $(x_(n)$ , $y_(n))$ , 则 $x_(1)+x_(2)+⋯+x_(n)=$ #blank ．
 
 #solution[
@@ -2509,7 +2509,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6LhJH21k7eVIKJMisVP0uAfrwDN7OQrRWi09pWtDlZEH4ruGAd5nsm
+// https://www.jyeoo.com/math2/ques/detail/7LEkg2xo7TP2Va55eWBH4Af4gW21Yo67vH0WyOXYyC7O6tufnd63BA
 已知函数 $f(x)=x^(2)-(a+1)x+a-1$ , $g(x)=x^(2)-4 a x+3$ ．
 
  $(1)$ 若 $∃x in [1, 4]$ , 使得不等式 $f(x) <= -2$ 成立, 求实数 $a$ 的取值范围; 
@@ -2566,7 +2566,7 @@ $(1)∃x in [1, 4]$ , 使得不等式 $f(x) <= -2$ 成立,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/98iN9fE3aP0FayI90OZnD07i30EKimO2Vz37AmMxvANJxStnF4SVFo
+// https://www.jyeoo.com/math2/ques/detail/7MlzKfsHaYBEIjrmIcDjJj7zEAWSDnyuVs3nj4ezgMdSD00rc42plY
 对于两个定义域相同的函数 $f(x)$ , $g(x)$ , 若存在实数 $lambda$ , $mu$ , 使得 $h(x)= lambda f(x)+ mu g(x)$ , 则称函数 $h(x)$ 是由“基底函数” $f(x)$ 和 $g(x)$ 生成的．
 
  $(1)$ 以 $f ( x ) = sin ( x - ( pi )/(4 ) )$ , $g(x)=sin 2 x$ 为“基底函数”生成一个函数 $h(x)$ , 同时满足: ①定义域为 $R$ , ② $lambda = mu$ , ③ $h_(max)(x)=1$ ．求函数 $h(x)$ 的解析式; 

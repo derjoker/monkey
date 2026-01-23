@@ -245,7 +245,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 
 则 $f(1)f(0)=2$ , 即 $f(1)= (2 )/(f ( 0 ) ) = (2 )/(2 ^(0 ) ) = 2$ , 故 $A$ 错误; 
 
- $B$ : 由 $f(x+1)f(x)=2$ ⇒ $f(x) != 0$ , 
+ $B$ : 由 $f(x+1)f(x)=2 => f(x) != 0$ , 
 
 所以由 $f(x+1)f(x)=2$ , 
 
@@ -253,7 +253,7 @@ $A$ : 在 $f(x+1)f(x)=2$ 中, 令 $x=0$ 中,
 
 故 $f(x+2)=f(x)$ , 故 $B$ 正确; 
 
- $C$ : $x in [-1, 0)$ 时, $f ( x + 1 ) f ( x ) = 2 ⇒ f ( x ) = (2 )/(f ( x + 1 ) ) = (2 )/(2 ^(x + 1 ) ) = 2 ^(- x )$ , 而 $f(0)=1$ , 
+ $C$ : $x in [-1, 0)$ 时, $f ( x + 1 ) f ( x ) = 2 => f ( x ) = (2 )/(f ( x + 1 ) ) = (2 )/(2 ^(x + 1 ) ) = 2 ^(- x )$ , 而 $f(0)=1$ , 
 
 显然当 $x in [-1, 1]$ 时, 函数 $f(x)$ 为偶函数, 
 
@@ -319,13 +319,13 @@ $(1)$ 由已知可得该函数的最小正周期为 $T = 2 ( (11 pi )/(12 ) - (5
 
  又因为 $omega >0$ , 
 
-所以 $T = 2 ( (11 pi )/(12 ) - (5 pi )/(12 ) ) = (2 pi )/( omega ) ⇒ omega = 2 ⇒ f ( x ) = 2 sin ( 2 x + phi )$ , 
+所以 $T = 2 ( (11 pi )/(12 ) - (5 pi )/(12 ) ) = (2 pi )/( omega ) => omega = 2 => f ( x ) = 2 sin ( 2 x + phi )$ , 
 
-把 $( (5 pi )/(12 ) , 2 )$ 代入解析式中, 得 $f ( x ) = 2 sin ( 2 times (5 pi )/(12 ) + phi ) = 2 ⇒ (5 pi )/(6 ) + phi = 2 k pi + ( pi )/(2 ) ( k in Z ) ⇒ phi = 2 k pi - ( pi )/(3 ) ( k in Z )$ , 
+把 $( (5 pi )/(12 ) , 2 )$ 代入解析式中, 得 $f ( x ) = 2 sin ( 2 times (5 pi )/(12 ) + phi ) = 2 => (5 pi )/(6 ) + phi = 2 k pi + ( pi )/(2 ) ( k in Z ) => phi = 2 k pi - ( pi )/(3 ) ( k in Z )$ , 
 
 又因为 $- pi < phi <0$ , 所以令 $k=0$ , 即 $phi = - ( pi )/(3 )$ , 所以 $f ( x ) = 2 sin ( 2 x - ( pi )/(3 ) )$ ; 
 
- $(2) - ( pi )/(2 ) + 2 m pi <= 2 x - ( pi )/(3 ) <= ( pi )/(2 ) + 2 m pi ( m in Z ) ⇒ - ( pi )/(12 ) + m pi <= x <= (5 pi )/(12 ) + m pi ( m in Z )$ , 
+ $(2) - ( pi )/(2 ) + 2 m pi <= 2 x - ( pi )/(3 ) <= ( pi )/(2 ) + 2 m pi ( m in Z ) => - ( pi )/(12 ) + m pi <= x <= (5 pi )/(12 ) + m pi ( m in Z )$ , 
 
 令 $m=0$ , 得 $- ( pi )/(12 ) <= x <= (5 pi )/(12 )$ , 所以 $x in [ - ( pi )/(12 ) , (5 pi )/(12 ) ]$ , 而 $x in [0, pi ]$ , 
 
@@ -368,7 +368,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 因此函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$ 函数”; 
 
- $(2)$ 证明: 根据 $(9 )/(1 + 2 ^(x ) ) - 1 > 0 ⇒ x < 3$ , 
+ $(2)$ 证明: 根据 $(9 )/(1 + 2 ^(x ) ) - 1 > 0 => x < 3$ , 
 
 由于函数 $y = (9 )/(1 + 2 ^(x ) ) - 1$ 是实数集上的减函数, 函数 $y=log_(2)x$ 是正实数集上的增函数, 
 
@@ -378,11 +378,11 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 因此 $[f(b), f(a)] subset.eq [a,b]$ , 
 
-所以有 $cases(f ( a ) <= b, f ( b ) >= a) ⇒ cases(l o g _(2 ) ( (9 )/(1 + 2 ^(a ) ) - 1 ) <= b, l o g _(2 ) ( (9 )/(1 + 2 ^(b ) ) - 1 ) <= a) ⇒ cases((9 )/(1 + 2 ^(a ) ) - 1 <= 2 ^(b ), (9 )/(1 + 2 ^(b ) ) - 1 <= 2 ^(a )) ⇒ cases(( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) >= 9, ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) <= 9) ⇒ ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) = 9 ⇒ 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) + 1 = 9 ⇒ 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) = 8 ⇒ 2 sqrt(2 ^(a ) dot.op 2 ^(b ) ) + 2 ^(a + b ) <= 8$ 
+所以有 $cases(f ( a ) <= b, f ( b ) >= a) => cases(l o g _(2 ) ( (9 )/(1 + 2 ^(a ) ) - 1 ) <= b, l o g _(2 ) ( (9 )/(1 + 2 ^(b ) ) - 1 ) <= a) => cases((9 )/(1 + 2 ^(a ) ) - 1 <= 2 ^(b ), (9 )/(1 + 2 ^(b ) ) - 1 <= 2 ^(a )) => cases(( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) >= 9, ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) <= 9) => ( 1 + 2 ^(a ) ) ( 1 + 2 ^(b ) ) = 9 => 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) + 1 = 9 => 2 ^(a ) + 2 ^(b ) + 2 ^(a + b ) = 8 => 2 sqrt(2 ^(a ) dot.op 2 ^(b ) ) + 2 ^(a + b ) <= 8$ 
 
 当且仅当 $a=b$ 时取等号, 而 $a<b<3$ , 因此 $2 sqrt(2 ^(a ) dot.op 2 ^(b ) ) + 2 ^(a + b ) < 8$ , 
 
- $⇒ ( sqrt(2 ^(a + b ) ) + 4 ) ( sqrt(2 ^(a + b ) ) - 2 ) < 0 ⇒ sqrt(2 ^(a + b ) ) - 2 < 0 ⇒ 2 ^(a + b ) < 4 ⇒ a + b < 2$ ．
+ $=> ( sqrt(2 ^(a + b ) ) + 4 ) ( sqrt(2 ^(a + b ) ) - 2 ) < 0 => sqrt(2 ^(a + b ) ) - 2 < 0 => 2 ^(a + b ) < 4 => a + b < 2$ ．
 
  $(3)f(x)=(x-a)^(2)+b$ 的对称轴为 $x=a$ ,
 
@@ -390,7 +390,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 最大值为 $f(0)$ , $f(1)$ 中大的数, 记为 $max{f(0), f(1)}$ 
 
-因此有 $cases(f ( a ) >= 0, max { f ( 0 ) "," f ( 1 ) <= 1 })$ , 所以 $cases(b >= 0, a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b <= 1) ⇒ cases(- a ^(2 ) + 1 >= 0, - a ^(2 ) + 2 a >= 0) ⇒ 0 <= a <= 1$ , 
+因此有 $cases(f ( a ) >= 0, max { f ( 0 ) "," f ( 1 ) <= 1 })$ , 所以 $cases(b >= 0, a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b <= 1) => cases(- a ^(2 ) + 1 >= 0, - a ^(2 ) + 2 a >= 0) => 0 <= a <= 1$ , 
 
 而 $0<a<1$ , 因此 $0<a<1$ ; 
 
@@ -398,7 +398,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 如果 $f(x)=(x-a)^(2)+b$ 为 $[0, 1]$ 上的“ $T$ 函数”, 
 
-那么有 $cases(f ( 0 ) >= 0, f ( 1 ) <= 1)$ , 所以 $cases(a ^(2 ) + b >= 0, ( a - 1 ) ^(2 ) + b <= 1) ⇒ cases(a ^(2 ) + b >= 0, - ( a - 1 ) ^(2 ) - b >= - 1) ⇒ a ^(2 ) - a ^(2 ) + 2 a - 1 >= - 1 ⇒ a >= 0$ , 
+那么有 $cases(f ( 0 ) >= 0, f ( 1 ) <= 1)$ , 所以 $cases(a ^(2 ) + b >= 0, ( a - 1 ) ^(2 ) + b <= 1) => cases(a ^(2 ) + b >= 0, - ( a - 1 ) ^(2 ) - b >= - 1) => a ^(2 ) - a ^(2 ) + 2 a - 1 >= - 1 => a >= 0$ , 
 
 而 $a <= 0$ , 因此 $a=0$ , 所以存在 $a=0$ , 使得 $f(x)=(x-a)^(2)+b$ 为 $[0, 1]$ 上的“ $T$ 函数”; 
 
@@ -406,7 +406,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 如果 $f(x)=(x-a)^(2)+b$ 为 $[0, 1]$ 上的“ $T$ 函数”, 
 
-那么 $cases(f ( 0 ) <= 1, f ( 1 ) >= 0)$ , 所以 $cases(a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b >= 0) ⇒ cases(a ^(2 ) + b <= 1, - ( a - 1 ) ^(2 ) - b <= 0) ⇒ a ^(2 ) + b - ( a - 1 ) ^(2 ) - b <= 1 ⇒ a <= 1$ , 
+那么 $cases(f ( 0 ) <= 1, f ( 1 ) >= 0)$ , 所以 $cases(a ^(2 ) + b <= 1, ( a - 1 ) ^(2 ) + b >= 0) => cases(a ^(2 ) + b <= 1, - ( a - 1 ) ^(2 ) - b <= 0) => a ^(2 ) + b - ( a - 1 ) ^(2 ) - b <= 1 => a <= 1$ , 
 
 而 $a >= 1$ , 因此 $a=1$ ．
 
@@ -452,7 +452,7 @@ $(1)$ 函数 $f(x)=sin 2 x$ 是 $[ ( pi )/(12 ) , (5 pi )/(12 ) ]$ 上的“ $T$
 
 因为 $f(1)= (1 )/(4 )$ , 所以 $f ( 0 ) = (1 )/(2 )$ , 故 $A$ 正确; 
 
-令 $x=0$ , 得 $f(y)+f(-y)=2 f(y)$ ⇒ $f(-y)=f(y)$ , 故 $B$ 正确
+令 $x=0$ , 得 $f(y)+f(-y)=2 f(y) => f(-y)=f(y)$ , 故 $B$ 正确
 
 令 $x=y=1$ , 得 $f ( 2 ) = - (1 )/(4 )$ .再令 $x=2$ , $y=1$ 得 $f ( 3 ) = - (1 )/(2 ) != f ( 1 )$ , 故 $C$ 错误; 
 
@@ -561,7 +561,7 @@ $(1)$ 不是, 理由如下:
 
 所以函数 $f(x)=2^(x)+x-2$ 是实数集上的增函数, 
 
-因为 $f(0)f(1)=(-1)$ × $1<0$ , 
+因为 $f(0)f(1)=(-1) times 1<0$ , 
 
 所以函数 $f(x)$ 在 $(0, 1)$ 上有唯一零点, 
 
@@ -638,11 +638,11 @@ $(1)$ 不是, 理由如下:
 )
 
 #solution[
-$because f(x)=x^(1-ln x)$ ⇒ $ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ , 
+$because f(x)=x^(1-ln x) => ln f(x)=(1-ln x)ln x=ln x-(ln x)^(2)$ , 
 
-⇒ $(f ′ ( x ) )/(f ( x ) ) = (1 )/(x ) - (2 ln x )/(x )$ ⇒ $f ′ ( x ) = x ^(1 - ln x ) dot.op (1 - 2 ln x )/(x ) = ( 1 - 2 ln x ) x ^(- ln x )$ , 
+ $=> (f ′ ( x ) )/(f ( x ) ) = (1 )/(x ) - (2 ln x )/(x ) => f ′ ( x ) = x ^(1 - ln x ) dot.op (1 - 2 ln x )/(x ) = ( 1 - 2 ln x ) x ^(- ln x )$ , 
 
- $f$ ′ $(x)>0$ ⇒ $1-2 ln x>0$ ⇒ $0 < x < sqrt(e )$ , 
+ $f$ ′ $(x)>0 => 1-2 ln x>0 => 0 < x < sqrt(e )$ , 
 
  $therefore f(x)$ 在 $(1, sqrt(e ) )$ 上单调递增, 在 $( sqrt(e )$ , $e)$ 上单调递减, 
 
@@ -838,7 +838,7 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7WByq4uL2du0zZTXcoA1LV7TOCxxDyyedO1hR2nyStBmJSqCJfosCW
-已知函数 $f ( x ) = (e ^(2 x ) )/(e ^(x ) - 1 )$ , 若 $a=tan 1$ °, $b=-tan 136$ °, $c=tan 241$ °, 则 #parentheses
+已知函数 $f ( x ) = (e ^(2 x ) )/(e ^(x ) - 1 )$ , 若 $a=tan 1 degree$ , $b=-tan 136 degree$ , $c=tan 241 degree$ , 则 #parentheses
 #choices(
   ([$f(a)<f(c)<f(b)$], [$f(b)<f(c)<f(a)$], [$f(b)<f(a)<f(c)$], [$f(c)<f(b)<f(a)$]),
   colNum: 1
@@ -851,9 +851,9 @@ $(1)$ 当 $a=1$ 时, 由 $f(x)=-x$ 可得, $4^(x)-2^(x+1)+2=2^(x)$ ,
 
 所以根据对勾函数的性质可得 $f(x)$ 在 $(0, ln 2)$ 上单调递减, 在 $(ln 2, + infinity )$ 上单调递增, 
 
-又 $a=tan 1$ ° $approx 0$ , $b=-tan 136$ ° $=tan 44$ ° $approx 1$ , $c=tan 241$ ° $=tan 61$ ° $approx sqrt(3 )$ , 
+又 $a=tan 1 degree approx 0$ , $b=-tan 136 degree =tan 44 degree approx 1$ , $c=tan 241 degree =tan 61 degree approx sqrt(3 )$ , 
 
-所以 $f(a)$ → $+ infinity$ , $f(b)<f(c)$ , 
+所以 $f(a) arrow + infinity$ , $f(b)<f(c)$ , 
 
 所以 $f(b)<f(c)<f(a)$ ．
 
@@ -998,7 +998,7 @@ $(1)$ 当 $a=-5$ 时, $f ( x ) = log _(2 ) ( 4 ^(x ) - 5 dot.op 2 ^(x ) + 4 )$ �
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/63dV23H6c7XhciOJgDGEep4yVsSm3gxKZY7LuHO0XHwuR3hgef4yNU
-若两个集合 $A$ 和 $B$ 之间存在一一对应关系 $f$ : $A$ → $B$ , 则称 $A$ 和 $B$ 等势, 记为 $A$ ～ $B$ ．例如: 若集合 $A$ 为整数集, 集合 $B$ 为偶数集, 因为存在 $A$ 和 $B$ 之间的一一对应关系 $f$ : $x$ → $2 x$ ,所以 $A$ ～ $B$ ．
+若两个集合 $A$ 和 $B$ 之间存在一一对应关系 $f$ : $A arrow B$ , 则称 $A$ 和 $B$ 等势, 记为 $A$ ～ $B$ ．例如: 若集合 $A$ 为整数集, 集合 $B$ 为偶数集, 因为存在 $A$ 和 $B$ 之间的一一对应关系 $f$ : $x arrow 2 x$ ,所以 $A$ ～ $B$ ．
 
  $(1)$ 判断集合 $A={x|0<x<1}$ 和集合 $B={x|x>1}$ 是否等势, 并说明理由; 
 
@@ -1148,7 +1148,7 @@ $f ( x ) = (m x + n )/(x ^(2 ) + 4 )$ 是奇函数, 则 $f(0)=0$ , 解得 $n=0$ 
 
  $k=81$ 时, $n=4$ , 
 
-故 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=2$ × $0+6$ × $1+18$ × $2+54$ × $3+4=208$ ; 
+故 $[log_(3)1]+[log_(3)2]+[log_(3)3]+[log_(3)4]+$ … $+[log_(3)81]=2 times 0+6 times 1+18 times 2+54 times 3+4=208$ ; 
 
 作出函数 $f(x)$ 的图像, 
 
@@ -1203,7 +1203,7 @@ $(1)f(x)$ 为奇函数, 证明如下:
 
 令 $g(t)=-4 t^(2)+4 t+2$ , 则 $g(t)$ 的图象开口向下, 对称轴为 $t= (1 )/(2 )$ , 
 
-所以 $g(t)_(max)=g( (1 )/(2 ) )=-4$ × $(1 )/(4 ) +4$ × $(1 )/(2 ) +2=3$ , 
+所以 $g(t)_(max)=g( (1 )/(2 ) )=-4 times (1 )/(4 ) +4 times (1 )/(2 ) +2=3$ , 
 
 所以 $m >= 3$ , 即 $m$ 的取值范围是 $[3, + infinity )$ ．
 ]
@@ -1315,14 +1315,14 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/4qBAD3b78lz9jPsRU0W2lbajsmDnyZ504BfaNC0YdGS3BjVycbD94i
-在△ $A B C$ 中, $angle A C B=90$ °, $B C+2 A C=1$ , 则 #parentheses
+在 $triangle A B C$ 中, $angle A C B=90 degree$ , $B C+2 A C=1$ , 则 #parentheses
 #choices(
-  ([$0 < A C < (1 )/(2 )$], [$A B$ 的长可能为 $(2 )/(5 )$], [△ $A B C$ 的面积的最大值为 $(1 )/(16 )$], [$(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B )$]),
+  ([$0 < A C < (1 )/(2 )$], [$A B$ 的长可能为 $(2 )/(5 )$], [$triangle A B C$ 的面积的最大值为 $(1 )/(16 )$], [$(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B )$]),
   colNum: 1
 )
 
 #solution[
-对于选项 $A$ : 根据 $B C+2 A C=1$ ⇒ $0<2 A C<1$ ⇒ $0 < A C < (1 )/(2 )$ , 因此选项 $A$ 正确; 
+对于选项 $A$ : 根据 $B C+2 A C=1 => 0<2 A C<1 => 0 < A C < (1 )/(2 )$ , 因此选项 $A$ 正确; 
 
 对于选项 $B$ : 由于 $A B^(2)=A C^(2)+B C^(2)=A C^(2)+(1-2 A C)^(2)=5 A C^(2)-4 A C+1$ , $0 < A C < (1 )/(2 )$ ．
 
@@ -1330,13 +1330,13 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 
 因此 $A B >= (sqrt(5 ) )/(5 ) > (2 )/(5 )$ , 因此 $A B = (2 )/(5 )$ 不可能成立, 因此选项 $B$ 错误; 
 
-对于选项 $C$ : 由于 $1 = B C + 2 A C >= 2 sqrt(B C dot.op 2 A C )$ ⇒ $A C dot.op B C <= (1 )/(8 ) ($ 当且仅当 $B C = 2 A C = (1 )/(2 )$ , 即 $B C = (1 )/(2 )$ , $A C = (1 )/(4 )$ 时取等号 $)$ ．
+对于选项 $C$ : 由于 $1 = B C + 2 A C >= 2 sqrt(B C dot.op 2 A C ) => A C dot.op B C <= (1 )/(8 ) ($ 当且仅当 $B C = 2 A C = (1 )/(2 )$ , 即 $B C = (1 )/(2 )$ , $A C = (1 )/(4 )$ 时取等号 $)$ ．
 
 因此 $S _( triangle A B C ) = (1 )/(2 ) times A C times B C <= (1 )/(16 )$ , 因此选项 $C$ 正确; 
 
-对于选项 $D$ : 由于三角形 $A B C$ 为直角三角形, 且 $angle A C B=90$ °, 因此 $sin B = (A C )/(A B )$ , $sin A = (B C )/(A B )$ , 
+对于选项 $D$ : 由于三角形 $A B C$ 为直角三角形, 且 $angle A C B=90 degree$ , 因此 $sin B = (A C )/(A B )$ , $sin A = (B C )/(A B )$ , 
 
-又由于 $(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B )$ ⇔ $(2 A B )/(B C ) + (A B )/(A C ) >= (2 )/(A B )$ ⇔ $(2 A B ^(2 ) )/(B C ) + (A B ^(2 ) )/(A C ) >= 2$ ⇔ $(2 ( A C ^(2 ) + B C ^(2 ) ) )/(B C ) + (A C ^(2 ) + B C ^(2 ) )/(A C ) >= 2$ ．
+又由于 $(2 )/(sin A ) + (1 )/(sin B ) >= (2 )/(A B ) ⇔ (2 A B )/(B C ) + (A B )/(A C ) >= (2 )/(A B ) ⇔ (2 A B ^(2 ) )/(B C ) + (A B ^(2 ) )/(A C ) >= 2 ⇔ (2 ( A C ^(2 ) + B C ^(2 ) ) )/(B C ) + (A C ^(2 ) + B C ^(2 ) )/(A C ) >= 2$ ．
 
 因为 $(2 ( A C ^(2 ) + B C ^(2 ) ) )/(B C ) >= (2 times 2 A C dot.op B C )/(B C ) = 4 A C$ , $(A C ^(2 ) + B C ^(2 ) )/(A C ) >= (2 A C dot.op B C )/(A C ) = 2 B C .($ 当且仅当 $A C = B C = (1 )/(3 )$ 时取等号 $)$ 
 
@@ -1379,7 +1379,7 @@ $(1)$ 因为图象相邻两条对称轴之间的距离为 $( pi )/(2 )$ ,
 
  $(1)$ 若 $cos alpha = (1 )/(3 )$ , 求 $sin angle O N T$ ; 
 
- $(2)$ 设△ $O N T$ 的面积为 $S$ , 四边形 $O A M B$ 的面积为 $S_(O A M B)$ ．
+ $(2)$ 设 $triangle O N T$ 的面积为 $S$ , 四边形 $O A M B$ 的面积为 $S_(O A M B)$ ．
 
  $(i)$ 若 $S _(O A M B ) = (17 )/(26 )$ , 求 $S$ 和 $tan alpha$ ; 
 
@@ -1396,7 +1396,7 @@ $(1)$ 由题意可知 $M(cos alpha , sin alpha )$ , $O T=sin alpha$ ,
 
  $therefore$ 在直角三角形 $O N T$ 中 $sin angle O N T = (O T )/(O N ) = (O T )/(sqrt(O T ^(2 ) + T N ^(2 ) ) ) = (sin alpha )/(sqrt(s i n ^(2 ) alpha + 4 c o s ^(2 ) alpha ) ) = ((2 sqrt(2 ) )/(3 ) )/(3 ) = (sqrt(6 ) )/(3 )$ ; 
 
- $(2)$ △ $O N T$ 的面积 $S = (1 )/(2 ) O T times T N = (1 )/(2 ) sin alpha times 2 cos alpha = sin alpha cos alpha$ , 
+ $(2) triangle O N T$ 的面积 $S = (1 )/(2 ) O T times T N = (1 )/(2 ) sin alpha times 2 cos alpha = sin alpha cos alpha$ , 
 
  $(i) because S _(O A M B ) = S _( triangle O A M ) + S _( triangle O B M ) = (1 )/(2 ) O A times sin alpha + (1 )/(2 ) O B times cos alpha = (1 )/(2 ) ( sin alpha + cos alpha )$ , 
 
@@ -1481,7 +1481,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 因此 $f(x)$ 为周期为 $2$ 的周期函数, 
 
-因此 $f(2025)=f(2$ × $1012+1)=f(1)=2025$ ．
+因此 $f(2025)=f(2 times 1012+1)=f(1)=2025$ ．
 
  $(2)$ 因为 $∃ x _(0 ) in ( 0 , ( pi )/(2 ) )$ 是 $g(x)$ 的“ $( pi )/(2 ) -M-$ 泊点”, 
 
@@ -1503,7 +1503,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 ①当 $x>0$ 时, 则 $x+1>1$ , 
 
-因此 $2^(2 x)$ × $2^(2(x+1))=1$ , 因此 $2^(4 x+2)=1$ , 因此 $x = - (1 )/(2 ) < 0$ , 舍去; 
+因此 $2^(2 x) times 2^(2(x+1))=1$ , 因此 $2^(4 x+2)=1$ , 因此 $x = - (1 )/(2 ) < 0$ , 舍去; 
 
 ②当 $-1<x<0$ 时, 因此 $(1 )/(2 ^(x + 1 ) + t ) times 2 ^(2 ( x + 1 ) ) = 1$ , 
 
@@ -1511,7 +1511,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 ③当 $x<-1$ 时, $x+1<0$ , 
 
-因此 $(1 )/(2 ^(x + 1 ) + t ) times (1 )/(2 ^(x + 2 ) + t ) = 1$ , 因此 $2$ × $2^(2(x+1))+(2^(x+1)+2^(x+2))t+t^(2)-1=0(**)$ ; 
+因此 $(1 )/(2 ^(x + 1 ) + t ) times (1 )/(2 ^(x + 2 ) + t ) = 1$ , 因此 $2 times 2^(2(x+1))+(2^(x+1)+2^(x+2))t+t^(2)-1=0(**)$ ; 
 
 依据条件, $(**)$ 和 $(*)$ 共有 $2$ 个不同实数解; 
 
@@ -1568,17 +1568,17 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 #solution[
 #grid(columns: (1fr, 25%), gutter: 1em, [作 $D E tack.t A B$ 于 $E$ , 连接 $B D$ , 如图所示: 
 
-因为 $A B$ 为直径, 所以 $angle A D B=90$ °, 
+因为 $A B$ 为直径, 所以 $angle A D B=90 degree$ , 
 
-在 $R t$ △ $A D B$ 与 $R t$ △ $A E D$ 中, $angle A D B=90$ ° $= angle A E D$ , $angle B A D= angle D A E$ , 
+在 $R t triangle A D B$ 与 $R t triangle A E D$ 中, $angle A D B=90 degree = angle A E D$ , $angle B A D= angle D A E$ , 
 
-所以 $R t$ △ $A D B∽R t$ △ $A E D$ , 
+所以 $R t triangle A D B∽R t triangle A E D$ , 
 
 所以 $(A D )/(A B ) = (A E )/(A D )$ , 即 $A E= (A D ^(2 ) )/(A B )$ ．
 
 设 $A D=x,A B=4$ , 所以 $A E= (x ^(2 ) )/(4 )$ , 
 
-所以 $C D=4-2$ × $(x ^(2 ) )/(4 ) =4- (x ^(2 ) )/(2 )$ , 
+所以 $C D=4-2 times (x ^(2 ) )/(4 ) =4- (x ^(2 ) )/(2 )$ , 
 
 所以 $y=4+x+4- (x ^(2 ) )/(2 ) +x=- (1 )/(2 ) x^(2)+2 x+8$ , 
 
@@ -1588,7 +1588,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 故所求的函数为 $y=- (1 )/(2 ) x^(2)+2 x+8$ , 其中 $0<x<2 sqrt(2 )$ ．
 
-当 $x=2$ 时, $y$ 有最大值为 $y_(max)=- (1 )/(2 )$ × $4+2$ × $2+8=10$ ．
+当 $x=2$ 时, $y$ 有最大值为 $y_(max)=- (1 )/(2 ) times 4+2 times 2+8=10$ ．
 
 故选: $D$ ．
 ], [#align(center + top, image("dumb.png", width: 100%))])
@@ -1669,7 +1669,7 @@ $(1)$ 因为任意 $x in R$ , $f(x)f(x+1)=1$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/57Sw32aDe9nWMeNPL6nSXGbKZRcfdxTEI0dLOaUxsEBQhEUv99JZ4a
-#grid(columns: (1fr, 25%), gutter: 1em, [如图, 在直角坐标系 $x O y$ 中, 点 $P$ 是单位圆上的动点, 过点 $P$ 作 $x$ 轴的垂线, 垂足为 $M$ , 过 $O$ 作射线交 $M P$ 的延长线于点 $Q$ , 使得 $S_("△" O Q M)=2 S_("△" O P M)$ , 记 $angle M O P= alpha$ , $angle Q O M= beta$ , 且 $alpha in ( 0 , ( pi )/(2 ) )$ ．
+#grid(columns: (1fr, 25%), gutter: 1em, [如图, 在直角坐标系 $x O y$ 中, 点 $P$ 是单位圆上的动点, 过点 $P$ 作 $x$ 轴的垂线, 垂足为 $M$ , 过 $O$ 作射线交 $M P$ 的延长线于点 $Q$ , 使得 $S_( triangle O Q M)=2 S_( triangle O P M)$ , 记 $angle M O P= alpha$ , $angle Q O M= beta$ , 且 $alpha in ( 0 , ( pi )/(2 ) )$ ．
 
  $(1)$ 若 $sin alpha = (3 )/(5 )$ , 求 $(sin ( - beta ) + cos ( pi - beta ) )/(cos ( ( pi )/(2 ) - beta ) + sin ( (3 pi )/(2 ) + beta ) )$ 的值; 
 
@@ -1680,7 +1680,7 @@ $(1)$ 因为 $sin alpha = (3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $co
 
 由三角函数的定义可得 $P(cos alpha , sin alpha )=( (4 )/(5 )$ , $(3 )/(5 ) )$ , 
 
-又 $S_("△" O Q M)=2 S_("△" O P M)$ , 即 $(1 )/(2 ) |O M| dot.op |Q M|=2$ × $(1 )/(2 ) |O M||P M|$ , 得 $|Q M|=2|P M|$ , 
+又 $S_( triangle O Q M)=2 S_( triangle O P M)$ , 即 $(1 )/(2 ) |O M| dot.op |Q M|=2 times (1 )/(2 ) |O M||P M|$ , 得 $|Q M|=2|P M|$ , 
 
 所以 $Q( (4 )/(5 )$ , $(6 )/(5 ) )$ , 即 $|Q M|= (6 )/(5 )$ , 所以 $|O Q|= sqrt(| O M | ^(2 ) + | Q M | ^(2 ) ) = sqrt(( (4 )/(5 ) ) ^(2 ) + ( (6 )/(5 ) ) ^(2 ) ) = (2 sqrt(13 ) )/(5 )$ , 
 
@@ -1694,11 +1694,11 @@ $(1)$ 因为 $sin alpha = (3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $co
 
 所以原函数化为 $y=2 t^(2)-2 m t-2 m-1$ , 对称轴为 $t= (m )/(2 )$ , 
 
-当 $(m )/(2 ) <= (1 )/(2 )$ , 即 $m <= 1$ 时, $g(m)=2$ × $( (1 )/(2 ) ) ^(2 ) -m-2 m-1=-3 m- (1 )/(2 )$ ; 
+当 $(m )/(2 ) <= (1 )/(2 )$ , 即 $m <= 1$ 时, $g(m)=2 times ( (1 )/(2 ) ) ^(2 ) -m-2 m-1=-3 m- (1 )/(2 )$ ; 
 
-当 $(1 )/(2 ) < (m )/(2 ) < (sqrt(3 ) )/(2 )$ , 即 $1<m< sqrt(3 )$ 时, $g(m)=2$ × $(m ^(2 ) )/(4 ) -2 m dot.op (m )/(2 ) -2 m-1=- (1 )/(2 ) m^(2)-2 m-1$ ; 
+当 $(1 )/(2 ) < (m )/(2 ) < (sqrt(3 ) )/(2 )$ , 即 $1<m< sqrt(3 )$ 时, $g(m)=2 times (m ^(2 ) )/(4 ) -2 m dot.op (m )/(2 ) -2 m-1=- (1 )/(2 ) m^(2)-2 m-1$ ; 
 
-当 $(m )/(2 ) >= (sqrt(3 ) )/(2 )$ , 即 $m >= sqrt(3 )$ 时, $g(m)=2$ × $(3 )/(4 ) -2 m dot.op (sqrt(3 ) )/(2 ) -2 m-1=- sqrt(3 ) m-2 m+ (1 )/(2 )$ , 
+当 $(m )/(2 ) >= (sqrt(3 ) )/(2 )$ , 即 $m >= sqrt(3 )$ 时, $g(m)=2 times (3 )/(4 ) -2 m dot.op (sqrt(3 ) )/(2 ) -2 m-1=- sqrt(3 ) m-2 m+ (1 )/(2 )$ , 
 
 综上, $g(m)= cases(- 3 m - (1 )/(2 ) "," m <= 1, - (1 )/(2 ) m ^(2 ) - 2 m - 1 "," 1 < m < sqrt(3 ), - sqrt(3 ) m - 2 m + (1 )/(2 ) "," m >= sqrt(3 ))$ , 
 
@@ -1714,7 +1714,7 @@ $(1)$ 因为 $sin alpha = (3 )/(5 )$ , $alpha in (0, ( pi )/(2 ) )$ , 所以 $co
 
 此时 $y=2 t^(2)+ (2 )/(3 ) t- (1 )/(3 )$ , $t in [ (1 )/(2 )$ , $(sqrt(3 ) )/(2 ) ]$ , 对称轴为 $t= (m )/(2 ) =- (1 )/(6 )$ , 
 
-所以当 $t= (sqrt(3 ) )/(2 )$ 时, $y_(max)=2$ × $(3 )/(4 ) + (2 )/(3 )$ × $(sqrt(3 ) )/(2 ) - (1 )/(3 ) = (7 + 2 sqrt(3 ) )/(6 )$ , 
+所以当 $t= (sqrt(3 ) )/(2 )$ 时, $y_(max)=2 times (3 )/(4 ) + (2 )/(3 ) times (sqrt(3 ) )/(2 ) - (1 )/(3 ) = (7 + 2 sqrt(3 ) )/(6 )$ , 
 
 即此时 $f( alpha )$ 的最大值为 $(7 + 2 sqrt(3 ) )/(6 )$ ．
 ]
@@ -1855,7 +1855,7 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 所以 $f(-4-x)=-f(x+4)$ , 即 $f(-x)=-f(x)$ , 所以 $f(x)$ 为奇函数, 故 $C$ 正确; 
 
-若 $f(1)=1$ , 则根据 $f(x)$ 是周期为 $4$ 的周期函数以及 $f(x)$ 为奇函数, 有 $f(2023)=f(4$ × $506-1)=f(-1)=-f(1)=-1$ , 故 $D$ 正确．
+若 $f(1)=1$ , 则根据 $f(x)$ 是周期为 $4$ 的周期函数以及 $f(x)$ 为奇函数, 有 $f(2023)=f(4 times 506-1)=f(-1)=-f(1)=-1$ , 故 $D$ 正确．
 
 故选: $A C D$ ．
 ]
@@ -1882,11 +1882,11 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6RrXMe7n8CcF7tEFp4NMiC5CnSEW89laLOfK2LO1IVkF06HcSdYGAa
-#grid(columns: (1fr, 25%), gutter: 1em, [现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m$ ,若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角△ $E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
+#grid(columns: (1fr, 25%), gutter: 1em, [现有足够长的“ $L$ ”型的河道, 如图所示, 宽度分别为 $5 m$ 和 $5 sqrt(3 ) m$ ,若经过点 $A$ 拉一张网 $E F$ , 开辟如图的直角 $triangle E O F$ 用于养鱼, 设 $angle O E F= theta$ ．
 
  $(1)$ 求渔网长度 $E F$ , 用含有 $theta$ 的式子表示, 并写出定义域; 
 
- $(2)$ 求养殖面积 $S_("△" E O F)$ 的最小值, 及此时的 $theta$ 值; 
+ $(2)$ 求养殖面积 $S_( triangle E O F)$ 的最小值, 及此时的 $theta$ 值; 
 
  $(3)$ 若分别以 $A E$ , $A F$ 为直径制作两个圆形的遮阳蓬, 求两遮阳蓬面积和的最小值．], [#align(center + top, image("dumb.png", width: 100%))])
 
@@ -1903,11 +1903,11 @@ $(1)$ 因为 $f(x)+log_(2)(2+x)$ 为偶函数, $g(x)-log_(2)(2-x)$ 为奇函数�
 
 所以 $O E=O B+B E=5 sqrt(3 ) + (5 )/(tan theta )$ , $O F=O C+C F=5+5 sqrt(3 ) tan theta$ , 
 
-所以 $S_("△" E O F)= (1 )/(2 ) O E dot.op O F= (1 )/(2 )$ × $(5 sqrt(3 ) + (5 )/(tan theta ) )$ × $(5+5 sqrt(3 ) tan theta ) = (1 )/(2 )$ × $(50 sqrt(3 ) +75 tan theta + (25 )/(tan theta ) ) >= (1 )/(2 )$ × $(50 sqrt(3 ) +2 sqrt(75 tan theta dot.op (25 )/(tan theta ) ) ) = (1 )/(2 )$ × $(50 sqrt(3 ) +50 sqrt(3 ) )=50 sqrt(3 )$ , 
+所以 $S_( triangle E O F)= (1 )/(2 ) O E dot.op O F= (1 )/(2 ) times (5 sqrt(3 ) + (5 )/(tan theta ) ) times (5+5 sqrt(3 ) tan theta ) = (1 )/(2 ) times (50 sqrt(3 ) +75 tan theta + (25 )/(tan theta ) ) >= (1 )/(2 ) times (50 sqrt(3 ) +2 sqrt(75 tan theta dot.op (25 )/(tan theta ) ) ) = (1 )/(2 ) times (50 sqrt(3 ) +50 sqrt(3 ) )=50 sqrt(3 )$ , 
 
 当且仅当 $75 tan theta = (25 )/(tan theta )$ , 即 $tan theta = (sqrt(3 ) )/(3 )$ , $theta = ( pi )/(6 )$ 时取等号, 
 
-所以养殖面积 $S_("△" E O F)$ 的最小值为 $50 sqrt(3 )$ , 及此时的 $theta = ( pi )/(6 )$ ．
+所以养殖面积 $S_( triangle E O F)$ 的最小值为 $50 sqrt(3 )$ , 及此时的 $theta = ( pi )/(6 )$ ．
 
  $(3)$ 因为 $A E= (A B )/(sin theta ) = (5 )/(sin theta )$ , $A F= (A C )/(cos theta ) = (5 sqrt(3 ) )/(cos theta )$ , 
 
@@ -2359,7 +2359,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 
 又 $2 a+1>0$ 且 $2 a+2>0$ , 知 $a>- (1 )/(2 )$ , 
 
- $therefore - (1 )/(2 ) <a< sqrt(2 ) - 1$ , 即 $a in (- (1 )/(2 )$ , $sqrt(2 ) - 1 )$ ．
+ $therefore - (1 )/(2 ) <a< (sqrt(2 ) - 1 )$ , 即 $a in (- (1 )/(2 )$ , $sqrt(2 ) - 1 )$ ．
 
  $($ Ⅲ $)$ 当 $m>0$ 时, $y= log _(2 ) ( 4 ^(x ) + 1 )$ 在 $R$ 上单调递增, $y=m x$ 在 $R$ 上单调递增, 
 
@@ -2398,7 +2398,7 @@ $($ Ⅰ $) because f(x)$ 为偶函数, $therefore f(-x)=f(x)$ 恒成立,
 
 根据三角函数的定义有: $|B T|=sin x,|A P|=tan x$ , $l _(ˆ A B ) =x$ ,
 
-由图知 $S_("△" A O B)<S_("扇形" A O B)<S_("△" A O P)$ , 故 $(1 )/(2 )$ × $1$ × $|B T|< (1 )/(2 )$ × $1$ × $l _(ˆ A B ) < (1 )/(2 )$ × $1$ × $|A P|$ , 
+由图知 $S_( triangle A O B)<S_("扇形" A O B)<S_( triangle A O P)$ , 故 $(1 )/(2 ) times 1 times |B T|< (1 )/(2 ) times 1 times l _(ˆ A B ) < (1 )/(2 ) times 1 times |A P|$ , 
 
 所以 $sin x < x < tan x , x in ( 0 , ( pi )/(2 ) )$ , 
 

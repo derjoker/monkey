@@ -12,7 +12,7 @@
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     // UI Integration: Sidebar Button
@@ -28,10 +28,10 @@
 
     const btnWrapper = document.createElement('div');
     btnWrapper.className = 'qrcode-side';
-    
+
     // Position above 'Share' (分享)
     // Default fallback
-    let bottomPos = 245; 
+    let bottomPos = 245;
     const shareBtn = Array.from(document.querySelectorAll('.qrcode-side')).find(el => el.innerText.includes('分享'));
     if (shareBtn) {
         const shareBottom = parseInt(shareBtn.style.bottom || '173', 10);
@@ -40,23 +40,23 @@
         }
     }
     btnWrapper.style.bottom = bottomPos + 'px';
-    
+
     btnWrapper.style.cursor = 'pointer';
     btnWrapper.id = 'export-typst-wrapper';
 
     const inner = document.createElement('div');
     inner.className = 'show-paper prelative';
-    inner.style.textAlign = 'center'; 
+    inner.style.textAlign = 'center';
     inner.style.padding = '5px 0 2px 0'; // Reduced bottom padding
-    inner.style.backgroundColor = '#fff'; 
-    inner.style.borderRadius = '4px';     
+    inner.style.backgroundColor = '#fff';
+    inner.style.borderRadius = '4px';
     inner.style.width = '100%';           // Use full width of parent
-    inner.style.margin = '0 auto';  
+    inner.style.margin = '0 auto';
     // inner.style.width = '60px';        // Removed fixed width
 
     const icon = document.createElement('i');
     icon.className = 'icon i-download';
-    icon.style.display = 'block';     
+    icon.style.display = 'block';
     icon.style.margin = '5px auto 0'; // Center and add top margin
     // icon.style.fontSize = '28px';  // Ineffective for sprites
     icon.style.transform = 'scale(1.25)';
@@ -66,9 +66,9 @@
 
     const text = document.createElement('p');
     text.className = 'c999';
-    text.innerText = 'Typst';         
-    text.style.margin = '12px 0 0 0';  
-    text.style.fontSize = '12px';     
+    text.innerText = 'Typst';
+    text.style.margin = '12px 0 0 0';
+    text.style.fontSize = '12px';
     text.style.lineHeight = '1.2';
     // Fix overflow: enforce width and wrapping
     text.style.width = '100%';
@@ -84,9 +84,9 @@
 
     btnWrapper.onclick = convertPage;
     document.body.appendChild(btnWrapper);
-    
+
     // Reference for progress updates - we will update the TEXT element
-    const btn = text; 
+    const btn = text;
     // Note: The click handler is on the wrapper, but the progress logic updates `btn.innerText`.
     // So 'btn' variable now points to the text paragraph.
 
@@ -98,7 +98,7 @@
         // btn is now the <p> text element. btnWrapper is the container.
         const originalText = btn.innerText;
         btn.innerText = 'Init...';
-        
+
         // Disable interaction
         btnWrapper.style.pointerEvents = 'none';
         btnWrapper.style.opacity = '0.6';
@@ -108,30 +108,29 @@
             const headers = document.querySelectorAll('h3.ques-type');
             const totalQuestions = document.querySelectorAll('fieldset.quesborder').length;
             let processedCount = 0;
-            
+
             let typstContent = '';
             imagesToDownload.clear();
-            
+
             // Header
             typstContent += `#import "/conf.typ": \*\n`;
             typstContent += `#show: conf-rules\n`;
-            
+
             const titleEl = document.querySelector('h1.paper-title');
             const title = titleEl ? titleEl.innerText.trim() : 'Exported Questions';
             typstContent += `#title[${title}]\n\n`;
-    
+
             if (headers.length > 0) {
                 // Section-based extraction
                 for (const header of headers) {
                     let sectionTitle = header.innerText.trim();
                     sectionTitle = sectionTitle.replace(/^[\d一二三四五六七八九十]+\s*[、．.]\s*/, '');
                     sectionTitle = sectionTitle.replace(/\s*[（\(].*?共.*?题.*?[）\)]$/, '');
-                    
                     typstContent += `= ${sectionTitle}\n\n`;
-    
+
                     let questions = [];
                     let nextNode = header.nextElementSibling;
-                    
+
                     // Case 1: Questions in a UL immediately following
                     if (nextNode && nextNode.tagName === 'UL') {
                         const fieldsets = nextNode.querySelectorAll('fieldset.quesborder');
@@ -145,7 +144,7 @@
                             nextNode = nextNode.nextElementSibling;
                         }
                     }
-                    
+
                     const questionPromises = questions.map(async q => {
                         const res = await convertQuestion(q);
                         processedCount++;
@@ -167,19 +166,19 @@
                 const results = await Promise.all(questionPromises);
                 results.forEach(r => typstContent += r);
             }
-    
+
             console.log(`Conversion done. Found ${imagesToDownload.size} images. Downloading...`);
-            
+
             const zipData = {};
             zipData[title + ".typ"] = fflate.strToU8(typstContent);
-    
+
             // Create images folder object
             const imagesFolder = {};
-            
+
             if (imagesToDownload.size > 0) {
                 btn.innerText = `Img 0/${imagesToDownload.size}`;
                 let imgCount = 0;
-                
+
                 // Download images
                 const imagePromises = Array.from(imagesToDownload.entries()).map(([url, filename]) => {
                     return new Promise((resolve, reject) => {
@@ -187,7 +186,7 @@
                             method: "GET",
                             url: url,
                             responseType: "arraybuffer", // Important: ArrayBuffer for fflate
-                            onload: function(response) {
+                            onload: function (response) {
                                 imgCount++;
                                 btn.innerText = `Img ${imgCount}/${imagesToDownload.size}`;
                                 if (response.status === 200) {
@@ -200,7 +199,7 @@
                                     resolve(); // Resolve anyway to continue
                                 }
                             },
-                            onerror: function(err) {
+                            onerror: function (err) {
                                 imgCount++;
                                 console.error("Error downloading image:", url, err);
                                 resolve();
@@ -208,26 +207,26 @@
                         });
                     });
                 });
-    
+
                 await Promise.all(imagePromises);
-                
+
                 if (Object.keys(imagesFolder).length > 0) {
                     zipData["images"] = imagesFolder;
                 }
             }
-    
+
             console.log("All images downloaded. Zipping...");
             btn.innerText = 'Zipping...';
-            
+
             await new Promise(r => setTimeout(r, 100)); // Yield to UI
-            
+
             // Synchronous Zip Generation
             const zipped = fflate.zipSync(zipData);
-            
+
             // Save
-            const blob = new Blob([zipped], {type: "application/zip"});
+            const blob = new Blob([zipped], { type: "application/zip" });
             saveAs(blob, title + ".zip");
-            
+
         } catch (e) {
             console.error("Error generating zip:", e);
             alert("Error generating zip: " + e.message);
@@ -240,13 +239,13 @@
 
     async function convertQuestion(fieldset) {
         let content = '';
-        
+
         // Extract solution URL early
         const solutionUrl = extractSolutionUrl(fieldset);
         if (solutionUrl) {
             content += `// ${solutionUrl}\n`;
         }
-        
+
         // 1. Question Text (.pt1)
         const pt1 = fieldset.querySelector('.pt1');
         if (pt1) {
@@ -265,19 +264,46 @@
             labels.forEach(label => {
                 let optText = parseContent(label);
                 optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+                // Redundant parens check
+                if (/^\$\s*\(/.test(optText) && /\)\s*\$$/.test(optText)) {
+                    const inner = optText.replace(/^\$\s*\(\s*/, '').replace(/\s*\)\s*\$/, '');
+                    if (isBalanced(inner) && !hasTopLevelComma(inner)) {
+                        optText = '$' + inner.trim() + '$';
+                    }
+                }
                 options.push(`[${optText}]`);
             });
+
+            function isBalanced(str) {
+                let depth = 0;
+                for (const char of str) {
+                    if (char === '(' || char === '（' || char === '[' || char === '{') depth++;
+                    else if (char === ')' || char === '）' || char === ']' || char === '}') depth--;
+                    if (depth < 0) return false;
+                }
+                return depth === 0;
+            }
+
+            function hasTopLevelComma(str) {
+                let depth = 0;
+                for (const char of str) {
+                    if (char === '(' || char === '（' || char === '[' || char === '{') depth++;
+                    else if (char === ')' || char === '）' || char === ']' || char === '}') depth--;
+                    else if ((char === ',' || char === '，') && depth === 0) return true;
+                }
+                return false;
+            }
 
             if (options.length > 0) {
                 const totalLength = options.reduce((sum, opt) => sum + opt.length, 0);
                 let colNum = 4;
                 if (totalLength > 60) colNum = 1;
                 else if (totalLength > 30) colNum = 2;
-                
+
                 content += `\n#choices(\n  (${options.join(', ')}),\n  colNum: ${colNum}\n)`;
             }
         }
-        
+
         // 3. Solution / Analysis
         if (solutionUrl) {
             try {
@@ -301,29 +327,29 @@
 
         // Search siblings if not in fieldset
         if (container.parentElement) {
-             link = container.parentElement.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
-             if (link && link.innerText.includes('解析')) return link.href;
+            link = container.parentElement.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
+            if (link && link.innerText.includes('解析')) return link.href;
         }
 
         return null;
     }
-    
+
     function fetchQuestionDetail(url) {
         return new Promise((resolve) => {
-             GM_xmlhttpRequest({
+            GM_xmlhttpRequest({
                 method: "GET",
                 url: url,
-                onload: function(response) {
+                onload: function (response) {
                     if (response.status === 200) {
                         const tempDiv = document.createElement('div');
                         tempDiv.innerHTML = response.responseText;
-                        
+
                         // Look for .pt6 (Analysis content)
                         const pt6 = tempDiv.querySelector('.pt6');
                         if (pt6) {
                             resolve(processLayout(pt6, (t) => {
-                                 t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
-                                 return t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
+                                t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
+                                return t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
                             }));
                         } else {
                             resolve(null);
@@ -332,7 +358,7 @@
                         resolve(null);
                     }
                 },
-                onerror: function() {
+                onerror: function () {
                     resolve(null);
                 }
             });
@@ -348,7 +374,7 @@
         if (node.nodeType === Node.TEXT_NODE) {
             return segmentizeText(node.textContent);
         }
-        
+
         if (node.nodeType !== Node.ELEMENT_NODE) return [];
 
         if (node.style.display === 'none') return [];
@@ -357,6 +383,75 @@
         if (node.classList.contains('MathJye') || node.getAttribute('mathtag') === 'math') {
             let mathContent = parseMath(node);
             // User request: Treat as a whole, add spaces before and after.
+            if (mathContent.includes('/') || mathContent.includes('^') || mathContent.length > 3) {
+                const trimmed = mathContent.trim();
+
+                // Fix: Do not wrap equations/relations (contains =, <, >, approx)
+                if (/[=<>≈]/.test(trimmed)) {
+                    return [{ text: ' ' + mathContent + ' ', isMath: true }];
+                }
+
+                // Fix: Do not wrap single terms even if they have ^ (e.g. x^2, x_1^2, sin^2 x)
+                // If it has NO '/', NO '+', NO '-', it's likely a single term/product.
+                if (!/[+\-\/]/.test(trimmed)) {
+                    return [{ text: ' ' + mathContent + ' ', isMath: true }];
+                }
+
+                // Fix: Do not wrap sets { ... } or already parenthesized ( ... )
+                // Fix: Do not wrap sets { ... } or already parenthesized ( ... )
+                // Avoid using startsWith/endsWith due to Jyeoo's poisoned prototype
+                if ((trimmed.length > 0 && trimmed[0] === '(' && trimmed[trimmed.length - 1] === ')') ||
+                    (trimmed.length > 0 && trimmed[0] === '{' && trimmed[trimmed.length - 1] === '}') ||
+                    mathContent.includes(',')) {
+                    return [{ text: ' ' + mathContent + ' ', isMath: true }];
+                }
+
+                // Fix: Check for safe context (preceded by Chinese, =, comma, colon, etc.)
+                // If safe, we can allow fractions like "-17/8" without wrapping.
+                // We need to look at previousSibling.
+                let isSafeContext = false;
+                let prev = node.previousSibling;
+                // Skip empty text nodes
+                while (prev && prev.nodeType === 3 && !prev.textContent.trim()) {
+                    prev = prev.previousSibling;
+                }
+                if (!prev) {
+                    isSafeContext = true; // Start of block
+                } else if (prev.nodeType === 3) { // Text node
+                    const text = prev.textContent.trim();
+                    if (text.length > 0) {
+                        const lastChar = text[text.length - 1];
+                        // Chinese, =, :, ,, (, [, {
+                        if (/[\u4e00-\u9fa5=,：，:(\[{]/.test(lastChar)) {
+                            isSafeContext = true;
+                        }
+                    }
+                } else if (prev.nodeType === 1) {
+                    // If previous is an element (like br), maybe safe?
+                    if (prev.tagName === 'BR') isSafeContext = true;
+                }
+
+                if (isSafeContext) {
+                    return [{ text: ' ' + mathContent + ' ', isMath: true }];
+                }
+                // Check if it's a function call like sqrt(...) or sin(...)
+                // Simple check: starts with letters, followed by (, ends with )
+                if (/^[a-zA-Z]+\s*\(/.test(trimmed) && trimmed.length > 0 && trimmed[trimmed.length - 1] === ')') {
+                    return [{ text: ' ' + mathContent + ' ', isMath: true }];
+                }
+                // Check external context
+                if (node.previousSibling && node.previousSibling.textContent) {
+                    const prevText = node.previousSibling.textContent.trim();
+                    const pLen = prevText.length;
+                    if (pLen > 0) {
+                        const lastChar = prevText[pLen - 1];
+                        if (lastChar === '(' || lastChar === '（' || lastChar === ',' || lastChar === '，') {
+                            return [{ text: ' ' + mathContent + ' ', isMath: true }];
+                        }
+                    }
+                }
+                return [{ text: ` (${mathContent}) `, isMath: true }];
+            }
             return [{ text: ' ' + mathContent + ' ', isMath: true }];
         }
 
@@ -364,12 +459,12 @@
         if (node.tagName === 'IMG') {
             const src = node.src;
             if (src && !src.includes('icon') && !src.includes('button')) {
-                 let filename = src.substring(src.lastIndexOf('/') + 1);
-                 filename = filename.split('?')[0];
-                 if (!filename.includes('.')) filename += '.png';
-                 imagesToDownload.set(src, filename);
-                 
-                 return [{ text: ` #image("images/${filename}", width: 25%) `, isMath: false }];
+                let filename = src.substring(src.lastIndexOf('/') + 1);
+                filename = filename.split('?')[0];
+                if (!filename.includes('.')) filename += '.png';
+                imagesToDownload.set(src, filename);
+
+                return [{ text: ` #image("images/${filename}", width: 25%) `, isMath: false }];
             }
             return [];
         }
@@ -377,10 +472,10 @@
         if (node.tagName === 'TABLE') {
             const rows = Array.from(node.querySelectorAll('tr'));
             if (rows.length === 0) return [];
-            
+
             let maxCols = 0;
             const cells = [];
-            
+
             rows.forEach(row => {
                 const cols = Array.from(row.querySelectorAll('td, th'));
                 if (cols.length > maxCols) maxCols = cols.length;
@@ -392,10 +487,10 @@
             });
 
             if (maxCols === 0) return [];
-            
-            return [{ 
+
+            return [{
                 text: `\n#table(\n  columns: ${maxCols},\n  align: center + horizon,\n  ${cells.join(', ')}\n)\n`,
-                isMath: false 
+                isMath: false
             }];
         }
 
@@ -436,7 +531,7 @@
                 segments = segments.concat(traverse(child));
             }
             if (node.tagName !== 'SPAN') {
-                 segments.push({ text: '\n', isMath: false });
+                segments.push({ text: '\n', isMath: false });
             }
             return segments;
         }
@@ -455,26 +550,26 @@
 
         const mapping = new Map();
         let puaCode = 0xE000;
-        
+
         text = text.replace(/(\(\s+\))|(_+)/g, (match) => {
             const char = String.fromCharCode(puaCode++);
             mapping.set(char, match);
             return char;
         });
 
-        const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF]+)|([\.\,\:\;])/g;
-        
+        const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
+
         let lastIndex = 0;
         let match;
         const segments = [];
         let bracketDepth = 0;
-        
+
         while ((match = tokenRegex.exec(text)) !== null) {
             if (match.index > lastIndex) {
                 const txt = text.slice(lastIndex, match.index);
                 segments.push({ text: normalizeText(txt), isMath: false });
             }
-            
+
             if (match[1]) {
                 const original = mapping.get(match[1]);
                 if (original.includes('(')) segments.push({ text: ' #parentheses ', isMath: false });
@@ -486,21 +581,21 @@
                     else if (')]}'.includes(char)) bracketDepth = Math.max(0, bracketDepth - 1);
                 }
 
-                 if (m.startsWith('http') || m.startsWith('//') || m.startsWith('www')) {
-                     segments.push({ text: m, isMath: false });
-                 } else {
-                     segments.push({ text: processMathText(m), isMath: true });
-                 }
+                if (m.indexOf('http') === 0 || m.indexOf('//') === 0 || m.indexOf('www') === 0) {
+                    segments.push({ text: m, isMath: false });
+                } else {
+                    segments.push({ text: processMathText(m), isMath: true });
+                }
             } else if (match[3]) {
                 const p = match[3];
                 if (bracketDepth > 0) {
-                     segments.push({ text: p, isMath: true });
+                    segments.push({ text: p, isMath: true });
                 } else {
                     const nextChar = text[tokenRegex.lastIndex];
                     if (nextChar === undefined || /\s/.test(nextChar) || /[\u4e00-\u9fa5]/.test(nextChar)) {
-                         segments.push({ text: p, isMath: false });
+                        segments.push({ text: p, isMath: false });
                     } else {
-                         segments.push({ text: p, isMath: true });
+                        segments.push({ text: p, isMath: true });
                     }
                 }
             }
@@ -509,60 +604,60 @@
         if (lastIndex < text.length) {
             segments.push({ text: normalizeText(text.slice(lastIndex)), isMath: false });
         }
-        
+
         return segments;
     }
 
     function preprocessText(text) {
         return text.replace(/，/g, ', ')
-                   .replace(/。/g, '. ')
-                   .replace(/：/g, ': ')
-                   .replace(/；/g, '; ')
-                   .replace(/（/g, '(')
-                   .replace(/）/g, ')')
-                   .replace(/？/g, '?')
-                   .replace(/！/g, '!')
-                   .replace(/＞/g, '>')
-                   .replace(/＜/g, '<')
-                   .replace(/•/g, '⋅');
+            .replace(/。/g, '. ')
+            .replace(/：/g, ': ')
+            .replace(/；/g, '; ')
+            .replace(/（/g, '(')
+            .replace(/）/g, ')')
+            .replace(/？/g, '?')
+            .replace(/！/g, '!')
+            .replace(/＞/g, '>')
+            .replace(/＜/g, '<')
+            .replace(/•/g, '⋅');
     }
 
     function processLayout(element, textCleaner) {
         const clone = element.cloneNode(true);
-        const floatingImg = Array.from(clone.children).find(child => 
-            child.tagName === 'IMG' && 
+        const floatingImg = Array.from(clone.children).find(child =>
+            child.tagName === 'IMG' &&
             (child.style.float === 'right' || child.style.float === 'left')
         );
 
         if (floatingImg) {
-             const floatDir = floatingImg.style.float;
-             const src = floatingImg.src;
-             
-             if (src && !src.includes('icon') && !src.includes('button')) {
-                 let filename = src.substring(src.lastIndexOf('/') + 1);
-                 filename = filename.split('?')[0];
-                 if (!filename.includes('.')) filename += '.png';
-                 
-                 imagesToDownload.set(src, filename);
-                 
-                 floatingImg.remove();
-                 
-                 let text = renderSegments(traverse(clone));
-                 if (textCleaner) text = textCleaner(text);
-                 
-                 const imgTypst = `#align(center + top, image("images/${filename}", width: 100%))`;
-                 
-                 if (floatDir === 'right') {
-                     return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
-                 } else {
-                     return `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
-                 }
-             } else {
-                 floatingImg.remove(); 
-                 let text = renderSegments(traverse(clone));
-                 if (textCleaner) text = textCleaner(text);
-                 return text.trim();
-             }
+            const floatDir = floatingImg.style.float;
+            const src = floatingImg.src;
+
+            if (src && !src.includes('icon') && !src.includes('button')) {
+                let filename = src.substring(src.lastIndexOf('/') + 1);
+                filename = filename.split('?')[0];
+                if (!filename.includes('.')) filename += '.png';
+
+                imagesToDownload.set(src, filename);
+
+                floatingImg.remove();
+
+                let text = renderSegments(traverse(clone));
+                if (textCleaner) text = textCleaner(text);
+
+                const imgTypst = `#align(center + top, image("images/${filename}", width: 100%))`;
+
+                if (floatDir === 'right') {
+                    return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
+                } else {
+                    return `#grid(columns: (25%, 1fr), gutter: 1em, [${imgTypst}], [${text}])`;
+                }
+            } else {
+                floatingImg.remove();
+                let text = renderSegments(traverse(clone));
+                if (textCleaner) text = textCleaner(text);
+                return text.trim();
+            }
         } else {
             let text = renderSegments(traverse(clone));
             if (textCleaner) text = textCleaner(text);
@@ -573,7 +668,7 @@
     function renderSegments(segments) {
         let result = '';
         let currentMath = '';
-        
+
         const flushMath = () => {
             if (currentMath) {
                 result += ` $${currentMath.trim()}$ `;
@@ -583,25 +678,25 @@
 
         for (let i = 0; i < segments.length; i++) {
             const seg = segments[i];
-            
+
             if (seg.isMath) {
                 currentMath += seg.text;
             } else {
                 if (/^\s+$/.test(seg.text)) {
-                     let nextIsMath = false;
-                     for (let j = i + 1; j < segments.length; j++) {
-                         if (segments[j].text) {
-                             if (segments[j].isMath) nextIsMath = true;
-                             break;
-                         }
-                     }
-                     
-                     if (currentMath && nextIsMath) {
-                         currentMath += ' '; 
-                     } else {
-                         flushMath();
-                         result += seg.text;
-                     }
+                    let nextIsMath = false;
+                    for (let j = i + 1; j < segments.length; j++) {
+                        if (segments[j].text) {
+                            if (segments[j].isMath) nextIsMath = true;
+                            break;
+                        }
+                    }
+
+                    if (currentMath && nextIsMath) {
+                        currentMath += ' ';
+                    } else {
+                        flushMath();
+                        result += seg.text;
+                    }
                 } else {
                     flushMath();
                     result += seg.text;
@@ -634,34 +729,35 @@
     function processMathText(text) {
         if (!text) return '';
         text = preprocessText(text);
+        text = text.replace(/⇒/g, ' => '); // Convert implication arrow
 
         text = text.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
         text = text.replace(/([a-z])(?=[A-Z])/g, '$1 ');
         text = text.replace(/([a-z])(?=[a-z])/g, '$1 ');
         text = text.replace(/([A-Z])(?=[a-z])/g, '$1 ');
-        
+
         text = text.replace(/([0-9])(?=[a-zA-Z])/g, '$1 ');
         text = text.replace(/([a-zA-Z])(?=[0-9])/g, '$1 ');
 
         text = text.replace(/a\s+r\s+c\s+s\s+i\s+n/g, 'arcsin')
-                   .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
-                   .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
-                   .replace(/s\s+i\s+n\s+h/g, 'sinh')
-                   .replace(/c\s+o\s+s\s+h/g, 'cosh')
-                   .replace(/t\s+a\s+n\s+h/g, 'tanh')
-                   .replace(/s\s+i\s+n/g, 'sin')
-                   .replace(/c\s+o\s+s/g, 'cos')
-                   .replace(/t\s+a\s+n/g, 'tan')
-                   .replace(/c\s+o\s+t/g, 'cot')
-                   .replace(/l\s+n/g, 'ln')
-                   .replace(/l\s+o\s+g/g, 'log')
-                   .replace(/l\s+g/g, 'lg')
-                   .replace(/l\s+i\s+m/g, 'lim')
-                   .replace(/m\s+a\s+x/g, 'max')
-                   .replace(/m\s+i\s+n/g, 'min')
-                   .replace(/s\s+e\s+c/g, 'sec')
-                   .replace(/c\s+s\s+c/g, 'csc');
-        
+            .replace(/a\s+r\s+c\s+c\s+o\s+s/g, 'arccos')
+            .replace(/a\s+r\s+c\s+t\s+a\s+n/g, 'arctan')
+            .replace(/s\s+i\s+n\s+h/g, 'sinh')
+            .replace(/c\s+o\s+s\s+h/g, 'cosh')
+            .replace(/t\s+a\s+n\s+h/g, 'tanh')
+            .replace(/s\s+i\s+n/g, 'sin')
+            .replace(/c\s+o\s+s/g, 'cos')
+            .replace(/t\s+a\s+n/g, 'tan')
+            .replace(/c\s+o\s+t/g, 'cot')
+            .replace(/l\s+n/g, 'ln')
+            .replace(/l\s+o\s+g/g, 'log')
+            .replace(/l\s+g/g, 'lg')
+            .replace(/l\s+i\s+m/g, 'lim')
+            .replace(/m\s+a\s+x/g, 'max')
+            .replace(/m\s+i\s+n/g, 'min')
+            .replace(/s\s+e\s+c/g, 'sec')
+            .replace(/c\s+s\s+c/g, 'csc');
+
         const map = {
             '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
             '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
@@ -669,14 +765,14 @@
             '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
             'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
             'ω': 'omega', 'φ': 'phi', '→': 'arrow',
-            '∞': 'infinity', '∪': 'union', '∩': 'inter', 
+            '∞': 'infinity', '∪': 'union', '∩': 'inter',
             '∈': 'in', '∉': 'in.not', '⊆': 'subset.eq', '⊂': 'subset', '∅': 'emptyset'
         };
 
         for (const [key, val] of Object.entries(map)) {
             text = text.replaceAll(key, ` ${val} `);
         }
-        
+
         return text;
     }
 
@@ -719,9 +815,9 @@
                             }
                         }
                         lineMath = lineMath.trim();
-                        if (lineMath.endsWith('quad')) lineMath = lineMath.substring(0, lineMath.length - 4);
-                        if (lineMath.endsWith('","')) lineMath = lineMath.substring(0, lineMath.length - 3);
-                        if (lineMath.endsWith(',')) lineMath = lineMath.substring(0, lineMath.length - 1);
+                        if (lineMath.slice(-4) === 'quad') lineMath = lineMath.substring(0, lineMath.length - 4);
+                        if (lineMath.slice(-3) === '","') lineMath = lineMath.substring(0, lineMath.length - 3);
+                        if (lineMath.length > 0 && lineMath[lineMath.length - 1] === ',') lineMath = lineMath.substring(0, lineMath.length - 1);
 
                         return lineMath.trim();
                     });
@@ -731,7 +827,7 @@
                 }
             }
         }
-        
+
         if (node.classList && (node.classList.contains('math-letter') || node.classList.contains('math-letter-i') || node.classList.contains('mnormal') || node.classList.contains('mo'))) {
             let text = node.textContent.trim();
             if (!text) return '';
@@ -745,41 +841,41 @@
             const dVal = den ? parseMath(den) : '';
             return `(${nVal})/(${dVal})`;
         }
-        
+
         if (node.classList && (node.classList.contains('msubsup') || node.classList.contains('msub') || node.classList.contains('msup'))) {
             let base = '', sub = '', sup = '';
             for (let child of node.children) {
-                 if (child.classList.contains('msubsupCont')) base = parseMath(child);
-                 if (child.classList.contains('msub')) sub = parseMath(child);
-                 if (child.classList.contains('msup')) sup = parseMath(child);
+                if (child.classList.contains('msubsupCont')) base = parseMath(child);
+                if (child.classList.contains('msub')) sub = parseMath(child);
+                if (child.classList.contains('msup')) sup = parseMath(child);
             }
             if (base || sub || sup) {
-                 return `${base}${sub ? `_(${sub})` : ''}${sup ? `^(${sup})` : ''}`;
+                return `${base}${sub ? `_(${sub})` : ''}${sup ? `^(${sup})` : ''}`;
             }
         }
 
-        if (node.classList && node.classList.contains('msqrt')) { 
-             const box = node.querySelector('.msqrtBox');
-             if (box) {
-                 return `sqrt(${parseMath(box)})`;
-             }
-             return `sqrt(${parseMathChildren(node)})`;
+        if (node.classList && node.classList.contains('msqrt')) {
+            const box = node.querySelector('.msqrtBox');
+            if (box) {
+                return `sqrt(${parseMath(box)})`;
+            }
+            return `sqrt(${parseMathChildren(node)})`;
         }
-        
+
         if (node.tagName === 'SUP') {
-             return `^(${parseMathChildren(node)})`;
+            return `^(${parseMathChildren(node)})`;
         }
         if (node.tagName === 'SUB') {
-             return `_(${parseMathChildren(node)})`;
+            return `_(${parseMathChildren(node)})`;
         }
-        
+
         let result = '';
         for (let child of node.childNodes) {
-             if (child.nodeType === Node.TEXT_NODE) {
-                 result += processMathText(child.textContent) + ' ';
-             } else {
-                 result += parseMath(child) + ' '; 
-             }
+            if (child.nodeType === Node.TEXT_NODE) {
+                result += processMathText(child.textContent) + ' ';
+            } else {
+                result += parseMath(child) + ' ';
+            }
         }
         return result;
     }
@@ -787,8 +883,8 @@
     function parseMathChildren(node) {
         let res = '';
         for (let child of node.childNodes) {
-             if (child.nodeType === Node.TEXT_NODE) res += child.textContent;
-             else res += parseMath(child);
+            if (child.nodeType === Node.TEXT_NODE) res += child.textContent;
+            else res += parseMath(child);
         }
         return res;
     }
