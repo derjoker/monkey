@@ -2,74 +2,97 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 
-// --- Configuration ---
-const INPUT_PATH = process.argv[2]; // Can be file or folder
-if (!INPUT_PATH) {
-    console.error("Usage: node convert.js <html_file_or_folder>");
-    process.exit(1);
-}
+// --- Globals ---
+let htmlFile, baseName, solutionsDir, outputTypFile, dom, document, Node;
+const imagesToDownload = new Map();
+const OUTPUT_DIR = 'typst';
 
-// Determine Input File
-let htmlFile = INPUT_PATH;
-if (fs.statSync(INPUT_PATH).isDirectory()) {
-    // If folder, find first .html file usually named index.html or the paper name
-    const files = fs.readdirSync(INPUT_PATH).filter(f => f.slice(-5) === '.html');
-    if (files.length === 0) {
+// --- Main Loop ---
+async function main() {
+    const INPUT_PATH = process.argv[2];
+    if (!INPUT_PATH) {
+        console.error("Usage: node convert.js <folder_or_file>");
+        process.exit(1);
+    }
+
+    const tasks = findHtmlFiles(INPUT_PATH);
+    if (tasks.length === 0) {
         console.error(`No .html files found in ${INPUT_PATH}`);
         process.exit(1);
     }
-    // Prefer one that looks like the main page (not in solutions folder if accidentally pointed there)
-    // Assume flat or standard structure.
-    htmlFile = path.join(INPUT_PATH, files[0]);
-    if (files.includes('index.html')) htmlFile = path.join(INPUT_PATH, 'index.html');
+
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    }
+
+    // Generate dummy image once
+    const dumbPngPath = path.join(OUTPUT_DIR, 'dumb.png');
+    if (!fs.existsSync(dumbPngPath)) {
+        const base64Png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==';
+        fs.writeFileSync(dumbPngPath, Buffer.from(base64Png, 'base64'));
+        console.log(`Created dummy image at ${dumbPngPath}`);
+    }
+
+    for (const task of tasks) {
+        console.log(`\n--- Processing: ${task} ---`);
+        try {
+            await convertSingleFile(task);
+        } catch (e) {
+            console.error(`\nFailed to process ${task}:`, e);
+        }
+    }
+
+    console.log("\nAll tasks completed.");
 }
 
-// Determine Output Paths
-let baseName = path.basename(htmlFile, path.extname(htmlFile));
+function findHtmlFiles(inputPath) {
+    if (!fs.existsSync(inputPath)) return [];
+    if (fs.statSync(inputPath).isFile()) return [inputPath];
 
-// If input was a directory, use directory name. 
-// If input was a file "index.html" or similar generic name, use parent directory name.
-if (fs.statSync(INPUT_PATH).isDirectory()) {
-    baseName = path.basename(INPUT_PATH);
-} else if (baseName === 'index' || baseName === 'debug') {
-    baseName = path.basename(path.dirname(htmlFile));
+    const results = [];
+    function walk(dir) {
+        const items = fs.readdirSync(dir, { withFileTypes: true });
+        for (const item of items) {
+            const fullPath = path.join(dir, item.name);
+            if (item.isDirectory()) {
+                // Skip special folders
+                if (['solutions', 'typst', 'node_modules'].includes(item.name) || item.name.startsWith('.')) continue;
+                walk(fullPath);
+            } else if (item.name.endsWith('.html')) {
+                results.push(fullPath);
+            }
+        }
+    }
+    walk(inputPath);
+    return results;
 }
 
-const OUTPUT_DIR = 'typst';
-const outputTypFile = path.join(OUTPUT_DIR, `${baseName}.typ`);
+async function convertSingleFile(targetHtmlFile) {
+    htmlFile = targetHtmlFile;
+    baseName = path.basename(htmlFile, path.extname(htmlFile));
 
-if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    // If generic name, use parent directory
+    if (baseName === 'index' || baseName === 'debug') {
+        baseName = path.basename(path.dirname(htmlFile));
+    }
+
+    outputTypFile = path.join(OUTPUT_DIR, `${baseName}.typ`);
+    solutionsDir = path.join(path.dirname(htmlFile), 'solutions');
+
+    console.log(`Input: ${htmlFile}`);
+    console.log(`Solutions Dir: ${solutionsDir}`);
+    console.log(`Output: ${outputTypFile}`);
+
+    const html = fs.readFileSync(htmlFile, 'utf8');
+    dom = new JSDOM(html);
+    document = dom.window.document;
+    Node = dom.window.Node;
+
+    imagesToDownload.clear();
+
+    await runConversion();
 }
 
-// Generate dummy image
-const dumbPngPath = path.join(OUTPUT_DIR, 'dumb.png');
-if (!fs.existsSync(dumbPngPath)) {
-    // 1x1 transparent pixel or simple gray square
-    const base64Png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==';
-    fs.writeFileSync(dumbPngPath, Buffer.from(base64Png, 'base64'));
-    console.log(`Created dummy image at ${dumbPngPath}`);
-}
-
-// Solutions Directory (Assumed relative to htmlFile)
-const solutionsDir = path.join(path.dirname(htmlFile), 'solutions');
-
-console.log(`Input: ${htmlFile}`);
-console.log(`Solutions Dir: ${solutionsDir}`);
-console.log(`Output: ${outputTypFile}`);
-
-if (!fs.existsSync(htmlFile)) {
-    console.error(`File not found: ${htmlFile}`);
-    process.exit(1);
-}
-
-const html = fs.readFileSync(htmlFile, 'utf8');
-const dom = new JSDOM(html);
-const document = dom.window.document;
-const Node = dom.window.Node;
-
-// Mock window/global objects if needed
-const imagesToDownload = new Map();
 
 // --- Core Logic ---
 
@@ -82,8 +105,8 @@ async function runConversion() {
         let typstContent = '';
 
         // Header
-        typstContent += `#import "/conf.typ": *\n`;
-        typstContent += `#show: conf-rules\n`;
+        typstContent += `#import "/conf/exam.typ": *\n`;
+        typstContent += `#show: exam-rules\n`;
 
         const titleEl = document.querySelector('h1.paper-title');
         const title = titleEl ? titleEl.textContent.trim() : baseName;
@@ -898,4 +921,4 @@ function parseMathChildren(node) {
     return res;
 }
 
-runConversion();
+main();

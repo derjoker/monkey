@@ -113,8 +113,8 @@
             imagesToDownload.clear();
 
             // Header
-            typstContent += `#import "/conf.typ": \*\n`;
-            typstContent += `#show: conf-rules\n`;
+            typstContent += `#import "/conf/exam.typ": \*\n`;
+            typstContent += `#show: exam-rules\n`;
 
             const titleEl = document.querySelector('h1.paper-title');
             const title = titleEl ? titleEl.innerText.trim() : 'Exported Questions';

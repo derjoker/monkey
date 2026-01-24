@@ -1,5 +1,5 @@
-#import "/conf.typ": *
-#show: conf-rules
+#import "/conf/exam.typ": *
+#show: exam-rules
 #title[2024-2025学年江苏省高一（上）期末数学试卷]
 
 = 镇江市

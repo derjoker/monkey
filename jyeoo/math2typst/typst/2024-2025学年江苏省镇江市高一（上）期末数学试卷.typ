@@ -1,5 +1,5 @@
-#import "/conf.typ": *
-#show: conf-rules
+#import "/conf/exam.typ": *
+#show: exam-rules
 #title[2024-2025学年江苏省镇江市高一（上）期末数学试卷]
 
 = 选择题：本题共8小题，每小题5分，共40分.在每小题给出的四个选项中，只有一项是符合题目要求的。
