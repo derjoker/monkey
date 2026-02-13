@@ -761,7 +761,7 @@
         const map = {
             '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
             '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
-            '⊥': 'tack.t', '∥': '//', '△': 'triangle', '∠': 'angle',
+            '⊥': 'tack.t', '∥': 'parallel', '△': 'triangle', '∠': 'angle',
             '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
             'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
             'ω': 'omega', 'φ': 'phi', '→': 'arrow',
