@@ -4,8 +4,8 @@
 // @version      2026-01-04
 // @description  Convert Jyeoo Questions to Typst
 // @author       derjoker
-// @match        https://www.jyeoo.com/math2/paper/detail/*
-// @match        https://www.jyeoo.com/math2/report/detail/*
+// @match        https://www.jyeoo.com/math*/paper/detail/*
+// @match        https://www.jyeoo.com/math*/report/detail/*
 // @require      https://unpkg.com/fflate@0.8.2/umd/index.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js
 // @icon         https://www.jyeoo.com/api/photo/62956866
