@@ -118,7 +118,7 @@
 
             const titleEl = document.querySelector('h1.paper-title');
             const title = titleEl ? titleEl.innerText.trim() : 'Exported Questions';
-            typstContent += `#title[${title}]\n\n`;
+            typstContent += `#title[${preprocessText(title)}]\n\n`;
 
             if (headers.length > 0) {
                 // Section-based extraction
@@ -126,7 +126,7 @@
                     let sectionTitle = header.innerText.trim();
                     sectionTitle = sectionTitle.replace(/^[\d一二三四五六七八九十]+\s*[、．.]\s*/, '');
                     sectionTitle = sectionTitle.replace(/\s*[（\(].*?共.*?题.*?[）\)]$/, '');
-                    typstContent += `= ${sectionTitle}\n\n`;
+                    typstContent += `= ${preprocessText(sectionTitle)}\n\n`;
 
                     let questions = [];
                     let nextNode = header.nextElementSibling;
@@ -253,7 +253,7 @@
             const qseq = clone.querySelector('.qseq');
             if (qseq) qseq.remove();
 
-            content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim());
+            content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、,]\s*/, '').trim());
         }
 
         // 2. Options (.pt2)
@@ -263,7 +263,7 @@
             const labels = pt2.querySelectorAll('.selectoption label');
             labels.forEach(label => {
                 let optText = parseContent(label);
-                optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+                optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、,]\s*/, '').trim();
                 // Redundant parens check
                 if (/^\$\s*\(/.test(optText) && /\)\s*\$$/.test(optText)) {
                     const inner = optText.replace(/^\$\s*\(\s*/, '').replace(/\s*\)\s*\$/, '');
@@ -321,16 +321,13 @@
 
     function extractSolutionUrl(element) {
         let container = element;
-        // Strategy: Search inside fieldset first
         let link = container.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
-        if (link && link.innerText.includes('解析')) return link.href;
+        if (link && link.textContent.includes('解析')) return link.href;
 
-        // Search siblings if not in fieldset
         if (container.parentElement) {
             link = container.parentElement.querySelector('.fieldtip-right a[href*="/ques/detail/"]');
-            if (link && link.innerText.includes('解析')) return link.href;
+            if (link && link.textContent.includes('解析')) return link.href;
         }
-
         return null;
     }
 
@@ -348,7 +345,22 @@
                         const pt6 = tempDiv.querySelector('.pt6');
                         if (pt6) {
                             resolve(processLayout(pt6, (t) => {
-                                t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
+                                // Pattern: [解答] or 【解答】 or $[$ 解答 $]$ followed by optional "解:"
+                                t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*(?:(?:\$\[\$|\[|【).*?(?:\$\]\$|\]|】))[\s\n]*(?:解[:：])?[\s\n]*/, '$1');
+
+                                // Fix case like (1)$ 解: where $ is left over
+                                t = t.replace(/(\(\d+\))\$\s*解[:：]/g, '$1 解:');
+                                // Fix case like $(2) 解: where $ is at the start (handle optional space after $)
+                                t = t.replace(/^\s*\$\s*(\(\d+\))\s*解[:：]/g, '$1 解:');
+                                // Fix case where $ is before numbering
+                                t = t.replace(/\$\s*(\(\d+\))\s*解[:：]/g, '$1 解:');
+
+                                // Safety: Remove "" artifacts (consolidate to single quote)
+                                t = t.replace(/""/g, '"');
+
+                                // Safety: Deduplicate numbering (1)(1) -> (1)
+                                t = t.replace(/(\(\d+\))\1/g, '$1');
+
                                 return t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
                             }));
                         } else {
@@ -567,7 +579,7 @@
         while ((match = tokenRegex.exec(text)) !== null) {
             if (match.index > lastIndex) {
                 const txt = text.slice(lastIndex, match.index);
-                segments.push({ text: normalizeText(txt), isMath: false });
+                segments.push({ text: preprocessText(txt), isMath: false });
             }
 
             if (match[1]) {
@@ -576,6 +588,15 @@
                 else if (original.includes('_')) segments.push({ text: ' #blank ', isMath: false });
             } else if (match[2]) {
                 const m = match[2];
+
+                // Fix: Treat simple numbering like (1), (2) as text, not math.
+                // This prevents $(1)$ artifacts in numbering.
+                if (/^\(\d+\)$/.test(m) || /^（\d+）$/.test(m)) {
+                    segments.push({ text: m, isMath: false });
+                    lastIndex = tokenRegex.lastIndex; // Update lastIndex before continue!
+                    continue;
+                }
+
                 for (const char of m) {
                     if ('([{'.includes(char)) bracketDepth++;
                     else if (')]}'.includes(char)) bracketDepth = Math.max(0, bracketDepth - 1);
@@ -602,24 +623,36 @@
             lastIndex = tokenRegex.lastIndex;
         }
         if (lastIndex < text.length) {
-            segments.push({ text: normalizeText(text.slice(lastIndex)), isMath: false });
+            segments.push({ text: preprocessText(text.slice(lastIndex)), isMath: false });
         }
 
         return segments;
     }
 
     function preprocessText(text) {
-        return text.replace(/，/g, ', ')
-            .replace(/。/g, '. ')
+        if (!text) return '';
+        text = text.replace(/，/g, ', ')
+            .replace(/。|．/g, '. ')
             .replace(/：/g, ': ')
             .replace(/；/g, '; ')
             .replace(/（/g, '(')
             .replace(/）/g, ')')
+            .replace(/【/g, '[')
+            .replace(/】/g, ']')
+            .replace(/[“”]/g, '"')
+            .replace(/[‘’]/g, "'")
+            .replace(/、/g, ', ')
             .replace(/？/g, '?')
             .replace(/！/g, '!')
             .replace(/＞/g, '>')
             .replace(/＜/g, '<')
+            .replace(/⇒/g, ' => ')
             .replace(/•/g, '⋅');
+
+        // Final normalization (spacing)
+        text = text.replace(/\s+/g, ' ');
+
+        return text;
     }
 
     function processLayout(element, textCleaner) {
@@ -710,26 +743,29 @@
     function renderSegmentsRaw(segments) {
         return segments.map(s => {
             if (s.isMath) return s.text;
+
+            // If text contains non-math chars (like Chinese), quote it
             if (/[\u4e00-\u9fa5]/.test(s.text)) {
                 return `"${s.text}"`;
             }
+
             if (!s.text.trim()) return s.text;
-            return `"${s.text}"`;
+
+            // Quote non-empty text, stripping existing quotes to avoid double quoting
+            let cleanText = s.text.replace(/["“”]/g, '');
+            if (!cleanText.trim()) return '';
+
+            // Always quote Chinese or if it was originally quoted
+            return `"${cleanText}"`;
         }).join(' ');
     }
 
-    function normalizeText(text) {
-        if (!text) return '';
-        text = text.replace(/_+/g, ' #blank ');
-        text = text.replace(/\( +\)/g, ' #parentheses ');
-        text = text.replace(/⋅/g, ' $dot$ ');
-        return text.replace(/\s+/g, ' ');
-    }
+
 
     function processMathText(text) {
         if (!text) return '';
+        // preprocess if not already done (safe to repeat)
         text = preprocessText(text);
-        text = text.replace(/⇒/g, ' => '); // Convert implication arrow
 
         text = text.replace(/([A-Z])(?=[A-Z])/g, '$1 ');
         text = text.replace(/([a-z])(?=[A-Z])/g, '$1 ');

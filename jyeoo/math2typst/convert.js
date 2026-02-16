@@ -110,7 +110,7 @@ async function runConversion() {
 
         const titleEl = document.querySelector('h1.paper-title');
         const title = titleEl ? titleEl.textContent.trim() : baseName;
-        typstContent += `#title[${title}]\n\n`;
+        typstContent += `#title[${preprocessText(title)}]\n\n`;
 
         if (headers.length > 0) {
             // Section-based extraction
@@ -119,7 +119,7 @@ async function runConversion() {
                 sectionTitle = sectionTitle.replace(/^[\d一二三四五六七八九十]+\s*[、．.]\s*/, '');
                 sectionTitle = sectionTitle.replace(/\s*[（\(].*?共.*?题.*?[）\)]$/, '');
 
-                typstContent += `= ${sectionTitle}\n\n`;
+                typstContent += `= ${preprocessText(sectionTitle)}\n\n`;
 
                 let questions = [];
                 let nextNode = header.nextElementSibling;
@@ -186,7 +186,7 @@ async function convertQuestion(fieldset) {
         if (qseq) qseq.remove();
 
         // processLayout handles floating images and text extraction
-        content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、]\s*/, '').trim());
+        content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、,]\s*/, '').trim());
     }
 
     // 2. Options (.pt2)
@@ -196,7 +196,7 @@ async function convertQuestion(fieldset) {
         const labels = pt2.querySelectorAll('.selectoption label');
         labels.forEach(label => {
             let optText = parseContent(label);
-            optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、]\s*/, '').trim();
+            optText = optText.replace(/^\s*(?:(?:\$\s*)?[A-D](?:\s*\$)?)\s*[．.、,]\s*/, '').trim();
             // Redundant parens check
             if (/^\$\s*\(/.test(optText) && /\)\s*\$$/.test(optText)) {
                 const inner = optText.replace(/^\$\s*\(\s*/, '').replace(/\s*\)\s*\$/, '');
@@ -266,7 +266,23 @@ async function convertQuestion(fieldset) {
                     const pt6 = solutionDoc.querySelector('.pt6');
                     if (pt6) {
                         let solText = processLayout(pt6, (t) => {
-                            t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*【.*?】[\s\n]*(解[:：])?[\s\n]*/, '$1');
+                            // Pattern: [解答] or 【解答】 or $[$ 解答 $]$ followed by optional "解:"
+                            // Handle Typst math delimiters $ [ $ and $ ] $
+                            t = t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*(?:(?:\$\[\$|\[|【).*?(?:\$\]\$|\]|】))[\s\n]*(?:解[:：])?[\s\n]*/, '$1');
+
+                            // Fix case like (1)$ 解: where $ is left over
+                            t = t.replace(/(\(\d+\))\$\s*解[:：]/g, '$1 解:');
+                            // Fix case like $(2) 解: where $ is at the start (handle optional space after $)
+                            t = t.replace(/^\s*\$\s*(\(\d+\))\s*解[:：]/g, '$1 解:');
+                            // Fix case where $ is before numbering
+                            t = t.replace(/\$\s*(\(\d+\))\s*解[:：]/g, '$1 解:');
+
+                            // Safety: Remove "" artifacts (consolidate to single quote)
+                            t = t.replace(/""/g, '"');
+
+                            // Safety: Deduplicate numbering (1)(1) -> (1)
+                            t = t.replace(/(\(\d+\))\1/g, '$1');
+
                             return t.replace(/^(\s*(?:#align\(.*?\))?[\s\n]*#image\(.*?\)\s*)?[\s\n]*解[:：][\s\n]*/, '$1');
                         });
                         content += `\n\n#solution[\n${solText}\n]`;
@@ -557,7 +573,7 @@ function segmentizeText(text) {
         // Text before match?
         if (match.index > lastIndex) {
             const txt = text.slice(lastIndex, match.index);
-            segments.push({ text: normalizeText(txt), isMath: false });
+            segments.push({ text: preprocessText(txt), isMath: false });
         }
 
         if (match[1]) {
@@ -568,6 +584,14 @@ function segmentizeText(text) {
         } else if (match[2]) {
             // Definite Math
             const m = match[2];
+
+            // Fix: Treat simple numbering like (1), (2) as text, not math.
+            // This prevents $(1)$ artifacts in numbering.
+            if (/^\(\d+\)$/.test(m) || /^（\d+）$/.test(m)) {
+                segments.push({ text: m, isMath: false });
+                lastIndex = tokenRegex.lastIndex; // Update lastIndex before continue!
+                continue;
+            }
 
             // Update bracket depth
             for (const char of m) {
@@ -604,25 +628,36 @@ function segmentizeText(text) {
     }
     // Tail
     if (lastIndex < text.length) {
-        segments.push({ text: normalizeText(text.slice(lastIndex)), isMath: false });
+        segments.push({ text: preprocessText(text.slice(lastIndex)), isMath: false });
     }
 
     return segments;
 }
 
 function preprocessText(text) {
-    return text.replace(/，/g, ', ')
-        .replace(/。/g, '. ')
+    if (!text) return '';
+    text = text.replace(/，/g, ', ')
+        .replace(/。|．/g, '. ')
         .replace(/：/g, ': ')
         .replace(/；/g, '; ')
         .replace(/（/g, '(')
         .replace(/）/g, ')')
+        .replace(/【/g, '[')
+        .replace(/】/g, ']')
+        .replace(/[“”]/g, '"')
+        .replace(/[‘’]/g, "'")
+        .replace(/、/g, ', ')
         .replace(/？/g, '?')
         .replace(/！/g, '!')
         .replace(/＞/g, '>')
         .replace(/＜/g, '<')
-        .replace(/⇒/g, ' => ') // Convert implication arrow
-        .replace(/•/g, '⋅'); // Convert bullet to dot operator for math matching
+        .replace(/⇒/g, ' => ')
+        .replace(/•/g, '⋅');
+
+    // Final normalization (spacing)
+    text = text.replace(/\s+/g, ' ');
+
+    return text;
 }
 
 function processLayout(element, textCleaner) {
@@ -717,24 +752,17 @@ function renderSegmentsRaw(segments) {
         // if text is just whitespace, don't quote.
         if (!s.text.trim()) return s.text;
 
-        // Quote non-empty text
-        return `"${s.text}"`;
+        // Quote non-empty text, stripping existing quotes to avoid double quoting
+        let cleanText = s.text.replace(/["“”]/g, '');
+        if (!cleanText.trim()) return '';
+
+        // Always quote Chinese or if it was originally quoted
+        return `"${cleanText}"`;
     }).join(' ');
 }
 
 
-function normalizeText(text) {
-    if (!text) return '';
 
-    // Parentheses/Blanks are handled by protection logic, but just in case
-    text = text.replace(/_+/g, ' #blank ');
-    text = text.replace(/\( +\)/g, ' #parentheses ');
-
-    // Special markers
-    text = text.replace(/⋅/g, ' $dot$ ');
-
-    return text.replace(/\s+/g, ' ');
-}
 
 // Reusable math text processor for text segments AND math nodes
 function processMathText(text) {
@@ -794,7 +822,6 @@ function processMathText(text) {
 
 function parseMath(node) {
     // MathJye parsing
-
     let result = '';
 
     // Handle Cases / Piecewise (stretchVBox with braces)

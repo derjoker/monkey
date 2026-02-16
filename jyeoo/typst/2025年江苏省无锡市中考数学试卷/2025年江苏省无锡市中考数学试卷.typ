@@ -5,7 +5,7 @@
 = 选择题
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6dyE64VHfjBI0cTo09SOOBecdIpKOsJ3JF7JGMMSrqEan42q23dpLs
+// https://www.jyeoo.com/math/ques/detail/68T6H4CgfHRtRlzSSWA8Wce7Pd7afqiIOy7Doqg8ihls5l1hz3DTuq
 $(3$ 分 $)$ 计算 $-2+3$ 的结果为 #parentheses
 #choices(
   ([$-5$], [$-1$], [$1$], [$5$]),
@@ -15,27 +15,27 @@ $(3$ 分 $)$ 计算 $-2+3$ 的结果为 #parentheses
 #solution[
 $-2+3=1$ , 
 
-故选: $C$ ．
+故选: $C$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5oguc93B8UX07pZkFwZJpU4vGn7GlH783n82MDyJv2BBSpPbVbwyS8
-$(3$ 分 $)2025$ 年春节期间, 无锡市 $65$ 家备案博物馆接待游客总数约 $819000$ 人次．数据 $819000$ 用科学记数法表示为 #parentheses
+// https://www.jyeoo.com/math/ques/detail/7efUu9Dp8bJFsKgILS04Nb4ih5jg67wqVk8sgOLUjIUerrkzFbYGUy
+$(3$ 分 $)2025$ 年春节期间, 无锡市 $65$ 家备案博物馆接待游客总数约 $819000$ 人次. 数据 $819000$ 用科学记数法表示为 #parentheses
 #choices(
   ([$8.19 times 10^(5)$], [$81.9 times 10^(4)$], [$0.819 times 10^(5)$], [$0.819 times 10^(6)$]),
   colNum: 1
 )
 
 #solution[
-$819000=8.19 times 10^(5)$ ．
+$819000=8.19 times 10^(5)$ . 
 
-故选: $A$ ．
+故选: $A$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5meDgc4342SQ5BQnXxH8Ns6ll9hiPCOeSr3mEw7nNRDtIaPzV5JDea
+// https://www.jyeoo.com/math/ques/detail/7WwwicsK4pvj6MzXmUUQbC6Z1FDbAmsTG73HuR0XqUowUGlqA51llA
 $(3$ 分 $)$ 下列运算正确的是 #parentheses
 #choices(
   ([$a^(2)+a^(4)=a^(6)$], [$a^(2) dot.op a^(4)=a^(6)$], [$(a^(2))^(4)=a^(6)$], [$a^(4)÷a=a^(4)$]),
@@ -57,14 +57,14 @@ $because a^(2)$ 与 $a^(4)$ 不是同类项, 不能合并,
 
  $because a^(4)÷a=a^(3)$ , 
 
- $therefore D$ 选项运算不正确, 不符合题意．
+ $therefore D$ 选项运算不正确, 不符合题意. 
 
-故选: $B$ ．
+故选: $B$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6rQDzf1h8iL2tdRUHDUXPc1XkRWJDuoncF6ZPZmvGTxTn4ug96pJb6
+// https://www.jyeoo.com/math/ques/detail/5ZMl5fK68E6WCy59JOfano1pFl7uKcoC6B6NKH5HC8kHV856v6noi8
 $(3$ 分 $)$ 一组数据: $13$ , $14$ , $14$ , $16$ , $18$ , 这组数据的平均数和众数分别是 #parentheses
 #choices(
   ([$15$ , $14$], [$14$ , $15$], [$14$ , $14$], [$15$ , $15$]),
@@ -74,33 +74,33 @@ $(3$ 分 $)$ 一组数据: $13$ , $14$ , $14$ , $16$ , $18$ , 这组数据的平
 #solution[
 平均数为: $(13+14+14+16+18)÷5=15$ ; 
 
- $14$ 出现的次数最多, 故众数为 $14$ ．
+ $14$ 出现的次数最多, 故众数为 $14$ . 
 
-故选: $A$ ．
+故选: $A$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8Eser34r9413M1KCtdLINi0EcFzJVDQm2aeTAJnrL2C8e4vwX7kXaa
-$(3$ 分 $)$ 在 $triangle A B C$ 中, $D$ 、 $E$ 分别是 $A B$ 、 $A C$ 的中点．若 $D E=4$ , 则 $B C$ 的长为 #parentheses
+// https://www.jyeoo.com/math/ques/detail/5ORyh3Dl9PgL23mAKOgCru0L3pZhEnvHS9e8grEndZn40yZXa7V4T2
+$(3$ 分 $)$ 在 $triangle A B C$ 中, $D$ , $E$ 分别是 $A B$ , $A C$ 的中点. 若 $D E=4$ , 则 $B C$ 的长为 #parentheses
 #choices(
   ([$2$], [$4$], [$6$], [$8$]),
   colNum: 4
 )
 
 #solution[
-$because D$ 、 $E$ 分别是 $A B$ 、 $A C$ 的中点, 
+$because D$ , $E$ 分别是 $A B$ , $A C$ 的中点, 
 
  $therefore D E$ 是 $triangle A B C$ 的中位线, 
 
- $therefore B C=2 D E=2 times 4=8$ ．
+ $therefore B C=2 D E=2 times 4=8$ . 
 
-故选: $D$ ．
+故选: $D$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8fXHJax4fDOCtVDFwOPp5u8gahRBJioknEcOyo6RBfhG7HxTbevzSS
+// https://www.jyeoo.com/math/ques/detail/7PMCIaORfhRTHXCmsHD2n28qQ4C2xyVA3Bc4FyR3HWaUI5qGNejPjk
 $(3$ 分 $)$ 已知圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为 $90 degree$ , 则这条弧的长为 #parentheses
 #choices(
   ([$2 pi$], [$3 pi$], [$4 pi$], [$6 pi$]),
@@ -110,14 +110,14 @@ $(3$ 分 $)$ 已知圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为
 #solution[
 $because$ 圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为 $90 degree$ , 
 
- $therefore$ 这条弧的长 $= (90 pi times 6 )/(180 ) =3 pi$ ．
+ $therefore$ 这条弧的长 $= (90 pi times 6 )/(180 ) =3 pi$ . 
 
-故选: $B$ ．
+故选: $B$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6eI1v9Oy7z0xsKtrOKXdVbaJyfCe4OAls9cTxAxkTJ23BJwTD1BJzM
+// https://www.jyeoo.com/math/ques/detail/4rQ6g9Rw7O1m2Dz9e1zIV0amGQQJNnu4Mlc0S2GrNVHJWwv7z1l7sO
 $(3$ 分 $)$ 分解因式 $a^(3)-4 a$ 的结果是 #parentheses
 #choices(
   ([$a(a^(2)+4)$], [$a(a-4)$], [$a(a+2)(a-2)$], [$a(a^(2)-1)$]),
@@ -127,12 +127,12 @@ $(3$ 分 $)$ 分解因式 $a^(3)-4 a$ 的结果是 #parentheses
 #solution[
 原式 $=a(a^(2)-4) =a(a+2)(a-2)$ , 
 
-故选: $C$ ．
+故选: $C$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/55674cEdcBTMiMMMWc0nG1b8QJXlDx0W95cEcSxQxtPcxeUjl7gRP6
+// https://www.jyeoo.com/math/ques/detail/95aYqcflc8IiWuyX0ts9fcbas8ib6XYmqwcxcHvzBkVNUvOfR7K8xc
 $(3$ 分 $)$ 小亮与小红周末去十里明珠堤的环湖绿道上骑行, 小亮的速度是小红速度的 $1.2$ 倍, 两人各自骑行了 $6 k m$ ,小亮骑行时间比小红少用了 $4 min$ .设小红的骑行速度为 $x k m/h$ ,则可列方程为 #parentheses
 #choices(
   ([$(6 )/(1 . 2 x ) + (4 )/(60 ) = (6 )/(x )$], [$(6 )/(1 . 2 x ) + 4 = (6 )/(x )$], [$(6 )/(1 . 2 x ) - (4 )/(60 ) = (6 )/(x )$], [$(6 )/(1 . 2 x ) - 4 = (6 )/(x )$]),
@@ -144,13 +144,13 @@ $(3$ 分 $)$ 小亮与小红周末去十里明珠堤的环湖绿道上骑行, �
 
 根据两人各自骑行了 $6 k m$ ,小亮的骑行时间 $+4 min=$ 小红的骑行时间列得方程为 $(6 )/(1 . 2 x ) + (4 )/(60 ) = (6 )/(x )$ , 
 
-故选: $A$ ．
+故选: $A$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6kDnqdaD4W1hovoc6FK75ofLoYDu3Kz9dQ7QapXn1IUJfCyIqemLbs
-#grid(columns: (1fr, 25%), gutter: 1em, [$(3$ 分 $)$ 如图, 在平面直角坐标系中, $O$ 为坐标原点, $R t triangle O B A$ 的直角边 $O B$ 在 $x$ 轴上, $A O$ 、 $A B$ 分别与反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象相交于点 $C$ 、 $D$ , 且 $C$ 为 $A O$ 的中点, 过点 $C$ 作 $x$ 轴的垂线, 垂足为 $E$ , 连接 $D E$ ．若 $triangle B D E$ 的面积为 $(5 )/(4 )$ , 则 $k$ 的值为 #parentheses], [#align(center + top, image("images/dd4b6462.png", width: 100%))])
+// https://www.jyeoo.com/math/ques/detail/4tKnsdtz4BM2JfeHiZ83gifTK0F7bCvPCv7DYJ7Q5GP50KqVceLXhw
+#grid(columns: (1fr, 25%), gutter: 1em, [$(3$ 分 $)$ 如图, 在平面直角坐标系中, $O$ 为坐标原点, $R t triangle O B A$ 的直角边 $O B$ 在 $x$ 轴上, $A O$ , $A B$ 分别与反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象相交于点 $C$ , $D$ , 且 $C$ 为 $A O$ 的中点, 过点 $C$ 作 $x$ 轴的垂线, 垂足为 $E$ , 连接 $D E$ . 若 $triangle B D E$ 的面积为 $(5 )/(4 )$ , 则 $k$ 的值为 #parentheses], [#align(center + top, image("images/dd4b6462.png", width: 100%))])
 #choices(
   ([$(5 )/(4 )$], [$(5 )/(2 )$], [$5$], [$10$]),
   colNum: 2
@@ -203,13 +203,13 @@ $because$ 点 $C$ 在反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象上,
 
 因此 $C E parallel A B$ , 
 
-由“三角形中位线定理”, $E$ 是 $O B$ 的中点 $(C E$ 是 $triangle A O B$ 的中位线 $)$ , 
+由"三角形中位线定理", $E$ 是 $O B$ 的中点 $(C E$ 是 $triangle A O B$ 的中位线 $)$ , 
 
 因为 $E$ 是 $O B$ 的中点, 
 
 所以 $O E=E B$ , 
 
- $triangle B D E$ 和 $triangle O D E$ 以 $E B$ 、 $O E$ 为底时, 高相同, 因此面积相等．
+ $triangle B D E$ 和 $triangle O D E$ 以 $E B$ , $O E$ 为底时, 高相同, 因此面积相等. 
 
 已知 $S_( triangle B D E)= (5 )/(4 )$ , 故 $S_( triangle O D E)= (5 )/(4 )$ , 
 
@@ -223,21 +223,21 @@ $because$ 点 $C$ 在反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象上,
 
 解得 $k=5$ , 
 
-故选: $C$ ．
+故选: $C$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8LlUCaDe1gAVRP4ABZPgnFdoFnNL12DgZ6ajdytnXiKROXXXw96X5s
-$(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图象上存在点 $Q$ , 且 $P$ 、 $Q$ 关于 $y$ 轴对称, 则称函数 $y_(1)$ 和 $y_(2)$ 具有“对偶关系”, 此时点 $P$ 或点 $Q$ 的纵坐标称为“对偶值”．下列结论: 
+// https://www.jyeoo.com/math/ques/detail/5tmFRaZ61dbPpo5b1HFEGQdQIQj42QOWbZaW4nfkAGsIdTezJ9jI0G
+$(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图象上存在点 $Q$ , 且 $P$ , $Q$ 关于 $y$ 轴对称, 则称函数 $y_(1)$ 和 $y_(2)$ 具有"对偶关系", 此时点 $P$ 或点 $Q$ 的纵坐标称为"对偶值". 下列结论: 
 
-①函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 不具有“对偶关系”; 
+①函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 不具有"对偶关系"; 
 
-②函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 的“对偶值”为 $-1$ ; 
+②函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 的"对偶值"为 $-1$ ; 
 
-③若 $1$ 是函数 $y_(1)=k x+3$ 与函数 $y_(2)= (1 )/(x )$ 的“对偶值”, 则 $k=2$ ; 
+③若 $1$ 是函数 $y_(1)=k x+3$ 与函数 $y_(2)= (1 )/(x )$ 的"对偶值", 则 $k=2$ ; 
 
-④若函数 $y_(1)=-2 x+b(-2 <= x <= -1)$ 与函数 $y_(2)= (1 )/(x ) (x>0)$ 具有“对偶关系”, 则 $3 <= b <= (9 )/(2 )$ ．
+④若函数 $y_(1)=-2 x+b(-2 <= x <= -1)$ 与函数 $y_(2)= (1 )/(x ) (x>0)$ 具有"对偶关系", 则 $3 <= b <= (9 )/(2 )$ . 
 
 其中正确的是 #parentheses
 #choices(
@@ -248,7 +248,7 @@ $(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图
 #solution[
 ①设函数 $y_(1)=2 x+3$ 上点 $P$ 坐标轴为 $(m,2 m+3)$ , 
 
- $because P$ 、 $Q$ 关于 $y$ 轴对称, 
+ $because P$ , $Q$ 关于 $y$ 轴对称, 
 
  $therefore Q$ 点坐标为 $(-m,m+1)$ , 
 
@@ -258,9 +258,9 @@ $(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图
 
 解得: $m=-2$ , 
 
-则存在这样的点 $P$ 、 $Q$ , 使得他们关于 $y$ 轴对称, 
+则存在这样的点 $P$ , $Q$ , 使得他们关于 $y$ 轴对称, 
 
- $therefore$ 函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 具有“对偶关系”; 
+ $therefore$ 函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 具有"对偶关系"; 
 
 故①错误, 不符合题意; 
 
@@ -278,7 +278,7 @@ $(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图
 
 解得 $x=1$ ; 
 
-因为是函数 $y_(1)=k x+3$ 与函数 $y _(2 ) = (1 )/(x )$ 的“对偶值”, 
+因为是函数 $y_(1)=k x+3$ 与函数 $y _(2 ) = (1 )/(x )$ 的"对偶值", 
 
 所以函数 $y_(1)=k x+3$ 的 $x=-1$ , 
 
@@ -290,7 +290,7 @@ $(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图
 
 ④设点 $P$ 坐标为 $(m,-2 m+b)$ , 则点 $Q$ 坐标为 $( - m ,- (1 )/(m ) )$ , 
 
- $because P$ 、 $Q$ 横坐标是相反数关系, 纵坐标相等, 
+ $because P$ , $Q$ 横坐标是相反数关系, 纵坐标相等, 
 
  $therefore - 2 m + b = - (1 )/(m )$ , 
 
@@ -306,74 +306,74 @@ $(3$ 分 $)$ 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图
 
 故④错误, 不符合题意; 
 
-故选: $B$ ．
+故选: $B$ .
 ]
 ]
 
 = 填空题
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5DFbB99Y4L4X9TsqN7ThQN8slliBm8HQ7V2vcsHbLfVbAWr8x1Wrc8
-$(3$ 分 $)|-3|=$ #blank ．
+// https://www.jyeoo.com/math/ques/detail/4zoTF9w94fKVeZJQ680RAx8hjGyCDgaZtU2D8t1RSTRdC4RxI1d5JA
+$(3$ 分 $)|-3|=$ #blank .
 
 #solution[
-$|-3|=3$ ．
+$|-3|=3$ . 
 
-故答案为: $3$ ．
+故答案为: $3$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6owvNbnq6J64xJTZ2A9jzgabeV6rKlxv8e774NG04BXnv4NYU3evKa
-$(3$ 分 $)$ 函数 $y= (1 )/(x - 4 )$ 中的自变量 $x$ 的取值范围 #blank ．
+// https://www.jyeoo.com/math/ques/detail/6LuVibAj63U2NJXK7ZM7DgaBzSeGqeU5kw7nJEo7Go9KUqTVH39PMW
+$(3$ 分 $)$ 函数 $y= (1 )/(x - 4 )$ 中的自变量 $x$ 的取值范围 #blank .
 
 #solution[
 根据题意得: $x-4 != 0$ , 
 
-解得: $x != 4$ ．
+解得: $x != 4$ . 
 
-故答案为: $x != 4$ ．
+故答案为: $x != 4$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/7Lgft7NF2OZsVWJH3v2JucdrN0j6TEOFCk2SQnCHzMYpVnjbVdEbuy
-$(3$ 分 $)$ 请写出单项式 $a^(2)b$ 的一个同类项: #blank ．
+// https://www.jyeoo.com/math/ques/detail/7917f7I22tdGxTu8SiIYh5dUTg2obBepdW25p0CVTYv39oOSxdzxaK
+$(3$ 分 $)$ 请写出单项式 $a^(2)b$ 的一个同类项: #blank .
 
 #solution[
 答案不唯一, 如 $11 a^(2)b$ .
 
-故答案为: $11 a^(2)b($ 答案不唯一 $)$ ．
+故答案为: $11 a^(2)b($ 答案不唯一 $)$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/4amYR9MT9MmEpF5FvB5Goo8EYdK0pfvow549KjbUzImchBNSr8jwpM
-$(3$ 分 $)$ 请写出命题“若 $a>b$ ,则 $a+1>b+1$ ”的逆命题: #blank ．
+// https://www.jyeoo.com/math/ques/detail/6qzEp9iv9QpMBOUUmBU2Qs8qa33OoQXHfM4Et0dF6gfCDrMuP8JMRc
+$(3$ 分 $)$ 请写出命题"若 $a>b$ ,则 $a+1>b+1$ "的逆命题: #blank .
 
 #solution[
-“若 $a>b$ ,则 $a+1>b+1$ ”的逆命题是“若 $a+1>b+1$ , 则 $a>b$ ”; 
+"若 $a>b$ ,则 $a+1>b+1$ "的逆命题是"若 $a+1>b+1$ , 则 $a>b$ "; 
 
 故答案为: 若 $a+1>b+1$ , 则 $a>b$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8bPQ77dW9lSZntFY9pV15Xe41Ktt4E2CV2eevC3DWcbwv45N18vmq0
-$(3$ 分 $)$ 正七边形的内角和为 #blank 度．
+// https://www.jyeoo.com/math/ques/detail/4vVNr7o89jysCrXIAN4sSjeczuiyif1WmSeWEBQsTxKkibHFw8e6Vc
+$(3$ 分 $)$ 正七边形的内角和为 #blank 度.
 
 #solution[
 $(7-2) times 180 degree =900 degree$ , 
 
 即正七边形的内角和为 $900$ 度, 
 
-故答案为: $900$ ．
+故答案为: $900$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5QlF72c0f86Thg1ZYR5UI46Jjs16imImhu12GKoMzp2hnPk92c54XQ
-#grid(columns: (1fr, 25%), gutter: 1em, [$(3$ 分 $)$ 如图, $A B$ 与 $⊙O$ 相切于点 $B$ , 连接 $B O$ , 过点 $O$ 作 $B O$ 的垂线 $O C$ , 交 $⊙O$ 于点 $C$ , 连接 $A C$ , 交线段 $O B$ 于点 $D$ ．若 $A B=3$ , $O C=2$ , 则 $tan A$ 的值为 #blank ．], [#align(center + top, image("images/048f5981.png", width: 100%))])
+// https://www.jyeoo.com/math/ques/detail/8DWiW2vZfgoV45eQ2djgjd6rx7pX1Wzssv1GsQPBNG5z7pWuycKEPQ
+#grid(columns: (1fr, 25%), gutter: 1em, [$(3$ 分 $)$ 如图, $A B$ 与 $⊙O$ 相切于点 $B$ , 连接 $B O$ , 过点 $O$ 作 $B O$ 的垂线 $O C$ , 交 $⊙O$ 于点 $C$ , 连接 $A C$ , 交线段 $O B$ 于点 $D$ . 若 $A B=3$ , $O C=2$ , 则 $tan A$ 的值为 #blank .], [#align(center + top, image("images/048f5981.png", width: 100%))])
 
 #solution[
 $because A B$ 与 $⊙O$ 相切于点 $B$ , 
@@ -392,17 +392,17 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore (2 - B D )/(B D ) = (2 )/(3 )$ , 
 
- $therefore B D= (6 )/(5 )$ ．
+ $therefore B D= (6 )/(5 )$ . 
 
- $therefore tan A= (B D )/(A B ) = ((6 )/(5 ) )/(5 ) = (2 )/(5 )$ ．
+ $therefore tan A= (B D )/(A B ) = ((6 )/(5 ) )/(5 ) = (2 )/(5 )$ . 
 
-故答案为: $(2 )/(5 )$ ．
+故答案为: $(2 )/(5 )$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/4bgBz0zR1OGTbgucO1fxmh7mskW06TJn5jc3O9SsmuacHS6q5dUiWm
-#grid(columns: (1fr, 25%), gutter: 1em, [$(3$ 分 $)$ 如图, 菱形 $A B C D$ 的边长为 $2$ , $angle A B C=60 degree$ , 对角线 $A C$ 、 $B D$ 相交于点 $M$ ．过点 $D$ 作 $A C$ 的平行线交 $B C$ 的延长线于点 $N$ , 连接 $M N$ ．则 $M N$ 的长为 #blank ．], [#align(center + top, image("images/aa645740.png", width: 100%))])
+// https://www.jyeoo.com/math/ques/detail/4yA3h0B415defDyGTObyqM7y5hsaRk7wefc9LIxaR7X7vSOzsdj7AW
+#grid(columns: (1fr, 25%), gutter: 1em, [$(3$ 分 $)$ 如图, 菱形 $A B C D$ 的边长为 $2$ , $angle A B C=60 degree$ , 对角线 $A C$ , $B D$ 相交于点 $M$ . 过点 $D$ 作 $A C$ 的平行线交 $B C$ 的延长线于点 $N$ , 连接 $M N$ . 则 $M N$ 的长为 #blank .], [#align(center + top, image("images/aa645740.png", width: 100%))])
 
 #solution[
 #grid(columns: (1fr, 25%), gutter: 1em, [过 $M$ 作 $M H tack.t N B$ 于 $H$ , 
@@ -437,16 +437,16 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore N H=C H+C N= (5 )/(2 )$ , 
 
- $therefore M N= sqrt(M H ^(2 ) + N H ^(2 ) ) = sqrt(7 )$ ．
+ $therefore M N= sqrt(M H ^(2 ) + N H ^(2 ) ) = sqrt(7 )$ . 
 
-故答案为: $sqrt(7 )$ ．
+故答案为: $sqrt(7 )$ . 
 ], [#align(center + top, image("images/12b594ee.png", width: 100%))])
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8fMPk7iL2RqHTbYGQKGa1XaWPRh2f4Z1034qkUMpQDRcpFCztaUWXY
-$(3$ 分 $)$ 在平行四边形纸片 $A B C D$ 中, $angle A B C=60 degree$ , $A B=4$ , $B C=8$ ．现将该纸片折叠, 折痕与纸片 $A B C D$ 的两边交于点 $E$ 、 $F$ ．若 $E$ 与 $A$ 重合, $F$ 在 $B C$ 上, 且 $E F tack.t B C$ , 则被折痕分成的 $triangle E B F$ 与四边形 $E F C D$ 的面积的比为 #blank ; 若折痕 $E F$ 将纸片 $A B C D$ 分成两个四边形, 且被分成的两个四边形的面积的比为 $1$ : $3$ , 则折痕 $E F$ 长的取值范围是 #blank ．
+// https://www.jyeoo.com/math/ques/detail/80uoO7TS2GhS2pCNOjdFCOaIFibpbt8cC14delC3ZMm0ZVYDVaIuci
+$(3$ 分 $)$ 在平行四边形纸片 $A B C D$ 中, $angle A B C=60 degree$ , $A B=4$ , $B C=8$ . 现将该纸片折叠, 折痕与纸片 $A B C D$ 的两边交于点 $E$ , $F$ . 若 $E$ 与 $A$ 重合, $F$ 在 $B C$ 上, 且 $E F tack.t B C$ , 则被折痕分成的 $triangle E B F$ 与四边形 $E F C D$ 的面积的比为 #blank ; 若折痕 $E F$ 将纸片 $A B C D$ 分成两个四边形, 且被分成的两个四边形的面积的比为 $1$ : $3$ , 则折痕 $E F$ 长的取值范围是 #blank .
 
 #solution[
 如图 $1$ , 
@@ -515,17 +515,17 @@ $(3$ 分 $)$ 在平行四边形纸片 $A B C D$ 中, $angle A B C=60 degree$ , $
 
  $therefore 2 sqrt(13 ) < E F < 2 sqrt(21 )$ , 
 
-故答案为: $1$ : $7$ , $2 sqrt(3 ) <= E F < 4 sqrt(3 )$ 或 $2 sqrt(13 ) < E F < 2 sqrt(21 )$ ．
+故答案为: $1$ : $7$ , $2 sqrt(3 ) <= E F < 4 sqrt(3 )$ 或 $2 sqrt(13 ) < E F < 2 sqrt(21 )$ .
 ]
 ]
 
 = 解答题
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/4oaJkdD4eUHjlDn6zRfQC67DJA2aQkHNUT2ZfEf6V2x4ra1OheHsFU
+// https://www.jyeoo.com/math/ques/detail/6b7y3dcSed9xHzKUpznBNH7IRRc2HR7xYn2eMjL2iZ9HBHkzRe3O2i
 $(8$ 分 $)(1)$ 解方程: $x^(2)-2 x-2=0$ ; 
 
- $(2)$ 解不等式组: $cases(2 x < 6, 3 x - 1 >= x + 1)$ ．
+(2)解不等式组: $cases(2 x < 6, 3 x - 1 >= x + 1)$ .
 
 #solution[
 $(1)x^(2)-2 x-2=0$ , 
@@ -534,40 +534,40 @@ $(1)x^(2)-2 x-2=0$ ,
 
  $x-1= ± sqrt(3 )$ , 
 
- $therefore x _(1 ) = 1 + sqrt(3 )$ ; $x_(2)=1 (- sqrt(3 ) )$ ．
+ $therefore x _(1 ) = 1 + sqrt(3 )$ ; $x_(2)=1 (- sqrt(3 ) )$ . 
 
- $(2)$ 由 $2 x<6$ , 
+(2)由 $2 x<6$ , 
 
 得 $x<3$ ; 
 
 由 $3 x-1 >= x+1$ , 
 
-得 $x >= 1$ ．
+得 $x >= 1$ . 
 
- $therefore$ 不等式组的解集为: $1 <= x<3$ ．
+ $therefore$ 不等式组的解集为: $1 <= x<3$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8ZCYyfd184VVAOx9YdeWAu8txwPUHPmU3n2ufuOx7ARTNyyHtd7KVM
-$(8$ 分 $)$ 先化简, 再求值: $(1 )/(m - 1 ) + (m ^(2 ) - 2 m )/(m - 1 )$ , 其中 $m=3$ ．
+// https://www.jyeoo.com/math/ques/detail/5FxiVfIM8qqMogTtoXn1ml8AwUrLIflUMs2uaO90aVNTpetKzdaS2a
+$(8$ 分 $)$ 先化简, 再求值: $(1 )/(m - 1 ) + (m ^(2 ) - 2 m )/(m - 1 )$ , 其中 $m=3$ .
 
 #solution[
-原式 $= (1 + m ^(2 ) - 2 m )/(m - 1 ) = (( m - 1 ) ^(2 ) )/(m - 1 ) =m-1$ ．
+原式 $= (1 + m ^(2 ) - 2 m )/(m - 1 ) = (( m - 1 ) ^(2 ) )/(m - 1 ) =m-1$ . 
 
 当 $m=3$ 时, 
 
-原式 $=3-1=2$ ．
+原式 $=3-1=2$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/58Vdx9cB8rLItCFVF2Cam7f6T4WJ2erglRb6ntO5ziMl2CuE62Mcd6
-#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 如图, 在矩形 $A B C D$ 中, 点 $E$ 在 $C B$ 延长线上, 点 $F$ 在 $B C$ 延长线上, 且 $B E=C F$ , 连接 $A E$ 、 $D F$ ．
+// https://www.jyeoo.com/math/ques/detail/8tugZ9sN8M8Wxd9xxHCGqLf43aV5AysqnRbDTNBKxXiDWXzdp2wlCS
+#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 如图, 在矩形 $A B C D$ 中, 点 $E$ 在 $C B$ 延长线上, 点 $F$ 在 $B C$ 延长线上, 且 $B E=C F$ , 连接 $A E$ , $D F$ . 
 
 求证: $(1) triangle A B E≌ triangle D C F$ ; 
 
- $(2) angle E A D= angle F D A$ ．], [#align(center + top, image("images/e405def8.png", width: 100%))])
+ $(2) angle E A D= angle F D A$ .], [#align(center + top, image("images/e405def8.png", width: 100%))])
 
 #solution[
 证明: $(1) because$ 四边形 $A B C D$ 为矩形, 
@@ -590,17 +590,17 @@ $(8$ 分 $)$ 先化简, 再求值: $(1 )/(m - 1 ) + (m ^(2 ) - 2 m )/(m - 1 )$ ,
 
  $therefore angle B A D+ angle E A B= angle C D A+ angle F D C$ , 
 
- $therefore angle E A D= angle F D A$ ．
+ $therefore angle E A D= angle F D A$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6m7hs0PZ0brpPiLB3HoqKD1A4vY6jgR2Jf4crXtt9SAwNIye47WS1I
-$(10$ 分 $)$ 一只不透明的袋子中装有标号分别为 $1$ , $2$ , $3$ , $4$ 的 $4$ 个球, 这些球除标号外都相同．
+// https://www.jyeoo.com/math/ques/detail/6vAJ10XG02NkR4gW3t8ueY1z3QeWBfzGHe4yfS0A7w0J3d2cs7f0NM
+$(10$ 分 $)$ 一只不透明的袋子中装有标号分别为 $1$ , $2$ , $3$ , $4$ 的 $4$ 个球, 这些球除标号外都相同. 
 
- $(1)$ 将球搅匀, 从中任意摸出 $1$ 个球, 摸到标号为 $2$ 的球的概率是 #blank ; 
+(1)将球搅匀, 从中任意摸出 $1$ 个球, 摸到标号为 $2$ 的球的概率是 #blank ; 
 
- $(2)$ 将球搅匀, 从中任意摸出 $1$ 个球, 记录标号后不放回, 再从袋子中任意摸出 $1$ 个球, 记录标号．求两次摸到的球标号均小于 $3$ 的概率． $($ 请用“画树状图”或“列表”等方法写出分析过程 $)$
+(2)将球搅匀, 从中任意摸出 $1$ 个球, 记录标号后不放回, 再从袋子中任意摸出 $1$ 个球, 记录标号. 求两次摸到的球标号均小于 $3$ 的概率. $($ 请用"画树状图"或"列表"等方法写出分析过程 $)$
 
 #solution[
 $(1) because$ 一只不透明的袋子中装有标号分别为 $1$ , $2$ , $3$ , $4$ 的 $4$ 个球, 
@@ -609,30 +609,32 @@ $(1) because$ 一只不透明的袋子中装有标号分别为 $1$ , $2$ , $3$ ,
 
 故答案为: $(1 )/(4 )$ ; 
 
- $(2)$ 画树状图如下: 
+(2)画树状图如下: 
 
  #image("images/c085e61d.png", width: 25%) 
 
 共有 $12$ 种等可能的结果, 其中两次摸到的球标号均小于 $3$ 的结果有 $2$ 种, 
 
- $therefore$ 两次摸到的球标号均小于 $3$ 的概率为 $(2 )/(12 ) = (1 )/(6 )$ ．
+ $therefore$ 两次摸到的球标号均小于 $3$ 的概率为 $(2 )/(12 ) = (1 )/(6 )$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/69bi9cvxek1DQSNMBDkHd119uIycqsBijy41cR5kfTdRur9ye1WDKq
-$(10$ 分 $)2025$ 年 $1$ 月 $14$ 日, 教育部办公厅印发了《中小学科学教育工作指南》 $($ 以下简称《指南》 $)$ , 旨在推动中小学科学教育更加重视激发学生好奇心、想象力、探求欲, 培育具备科学家潜质、愿意献身科学研究事业的青少年群体．某校为落实《指南》要求, 准备在七年级开设“ $3 D$ 打印”“航模”“机器人”“无人机”共四类科技社团 $($ 每名学生必选且仅选一个社团 $)$ ．为了解学生参加各社团的意向, 现随机抽取七年级部分学生进行问卷调查, 并对问卷数据进行收集、整理、描述和分析, 部分信息如下: 
+// https://www.jyeoo.com/math/ques/detail/5IkGZcqHe3PWOnofyK7Km61Jv4COK8nnq54UQQmpuHpJsa4KG1lWAC
+$(10$ 分 $)2025$ 年 $1$ 月 $14$ 日, 教育部办公厅印发了《中小学科学教育工作指南》 $($ 以下简称《指南》 $)$ , 旨在推动中小学科学教育更加重视激发学生好奇心, 想象力, 探求欲, 培育具备科学家潜质, 愿意献身科学研究事业的青少年群体. 某校为落实《指南》要求, 准备在七年级开设" $3 D$ 打印""航模""机器人""无人机"共四类科技社团 $($ 每名学生必选且仅选一个社团 $)$ . 为了解学生参加各社团的意向, 现随机抽取七年级部分学生进行问卷调查, 并对问卷数据进行收集, 整理, 描述和分析, 部分信息如下: 
 
  #image("images/72c83ed4.png", width: 25%) 
 
 请根据以上信息, 解答下列问题: 
 
- $(1)$ 本次调查的样本容量为 #blank , 并将条形统计图补充完整; $($ 画图后请标注相应的数据 $) (2)$ 若该校七年级共有 $1000$ 名学生, 请估计计划参加“机器人”社团的学生人数; 
+(1)本次调查的样本容量为 #blank , 并将条形统计图补充完整; $($ 画图后请标注相应的数据 $)$ 
 
- $(3)$ 根据上述统计分析情况, 请你为该校科技社团活动的顺利开展给出一条合理建议．
+(2)若该校七年级共有 $1000$ 名学生, 请估计计划参加"机器人"社团的学生人数; 
+
+(3)根据上述统计分析情况, 请你为该校科技社团活动的顺利开展给出一条合理建议.
 
 #solution[
-$(1)$ 本次调查的样本容量为 $11÷22%=50$ , 无人机社团人数为 $50-(11+8+16)=15($ 人 $)$ , 
+(1)本次调查的样本容量为 $11÷22%=50$ , 无人机社团人数为 $50-(11+8+16)=15($ 人 $)$ , 
 
 补全图形如下: 
 
@@ -642,22 +644,24 @@ $(1)$ 本次调查的样本容量为 $11÷22%=50$ , 无人机社团人数为 $50
 
  $(2)1000 times 32%=320($ 人 $)$ , 
 
-答: 估计计划参加“机器人”社团的学生人数约为 $320$ 人; 
+答: 估计计划参加"机器人"社团的学生人数约为 $320$ 人; 
 
- $(3)$ 开展形式多样的航模与 $3 D$ 打印活动 $($ 答案不唯一 $)$ ．
+(3)开展形式多样的航模与 $3 D$ 打印活动 $($ 答案不唯一 $)$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6ouVlcKC9AWCe9X4mMHRkR8TgFeAISrhYF5huMsKDLUf0qyfOaGNFY
-#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 如图, $A C$ 为正方形 $A B C D$ 的对角线．
+// https://www.jyeoo.com/math/ques/detail/50g2Oc0g9Y37n63V0U8mfq8BrBEuZEbWzD5qNvvykx35GpyemarHOK
+#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 如图, $A C$ 为正方形 $A B C D$ 的对角线. 
 
- $(1)$ 尺规作图: 作 $A D$ 的垂直平分线 $l$ 交 $A D$ 于点 $E$ , 在 $l$ 上确定点 $F$ , 使得点 $F$ 到 $angle B A C$ 的两边距离相等; $($ 不写作法 $,$ 保留痕迹 $) (2)$ 在 $(1)$ 的条件下, 求 $angle E F A$ 的度数．
+(1)尺规作图: 作 $A D$ 的垂直平分线 $l$ 交 $A D$ 于点 $E$ , 在 $l$ 上确定点 $F$ , 使得点 $F$ 到 $angle B A C$ 的两边距离相等; $($ 不写作法 $,$ 保留痕迹 $)$ 
+
+(2)在(1)的条件下, 求 $angle E F A$ 的度数. 
 
  $($ 请直接写出 $angle E F A$ 的度数 $)$], [#align(center + top, image("images/a16e5f2a.png", width: 100%))])
 
 #solution[
-$(1)$ 如图所示, 直线 $l$ 和点 $F$ 即为所求; 
+(1)如图所示, 直线 $l$ 和点 $F$ 即为所求; 
 
  #image("images/cfca968d.png", width: 25%) 
 
@@ -673,20 +677,20 @@ $(1)$ 如图所示, 直线 $l$ 和点 $F$ 即为所求;
 
  $because$ 直线 $l tack.t A D$ , 即 $angle A E F=90 degree$ , 
 
- $therefore angle E F A=22.5 degree$ ．
+ $therefore angle E F A=22.5 degree$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6usADc9x3OtNr4vD2kDxQb7TTFK3cCW7uZ6ikwAO79fsADqya0by88
-#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 如图, $A B$ 是 $⊙O$ 的直径, $D$ 是弦 $A C$ 延长线上的一点, 且 $C D=C A$ , $D B$ 的延长线交 $⊙O$ 于点 $E$ ．
+// https://www.jyeoo.com/math/ques/detail/8dhHuc0X38Dtv8KFS6OUzv76ZW4e5J31646CDV6WrKe1yWafd0s2M4
+#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 如图, $A B$ 是 $⊙O$ 的直径, $D$ 是弦 $A C$ 延长线上的一点, 且 $C D=C A$ , $D B$ 的延长线交 $⊙O$ 于点 $E$ . 
 
- $(1)$ 求证: $A B=B D$ ; 
+(1)求证: $A B=B D$ ; 
 
- $(2)$ 若 $A B=3$ , $cos angle A B E= (1 )/(3 )$ , 求 $A D$ 的长．], [#align(center + top, image("images/bd484816.png", width: 100%))])
+(2)若 $A B=3$ , $cos angle A B E= (1 )/(3 )$ , 求 $A D$ 的长.], [#align(center + top, image("images/bd484816.png", width: 100%))])
 
 #solution[
-#grid(columns: (1fr, 25%), gutter: 1em, [$(1)$ 证明: 连接 $B C$ , 
+#grid(columns: (1fr, 25%), gutter: 1em, [(1)证明: 连接 $B C$ , 
 
  $because A B$ 是圆的直径, 
 
@@ -700,7 +704,7 @@ $(1)$ 如图所示, 直线 $l$ 和点 $F$ 即为所求;
 
  $therefore A B=B D$ ; 
 
- $(2)$ 解: 连接 $A E$ , 
+(2)解: 连接 $A E$ , 
 
  $because A B$ 是圆的直径, 
 
@@ -712,41 +716,41 @@ $(1)$ 如图所示, 直线 $l$ 和点 $F$ 即为所求;
 
  $therefore A E^(2)=A B^(2)-B E^(2)=8$ , 
 
-由 $(1)$ 知 $B D=A B=3$ , 
+由(1)知 $B D=A B=3$ , 
 
  $therefore D E=B D+B E=4$ , 
 
- $therefore A D= sqrt(A E ^(2 ) + D E ^(2 ) ) =2 sqrt(6 )$ ．
+ $therefore A D= sqrt(A E ^(2 ) + D E ^(2 ) ) =2 sqrt(6 )$ . 
 ], [#align(center + top, image("images/4dc84ec8.png", width: 100%))])
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6DxeYfOt3bpQKOp9x2iuDh86QVlTWyypYrb5VNALJWRdXNg0gafOsq
-#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 某校数学研究性学习小组为测量物体的高度, 开展了如下综合与实践活动．
+// https://www.jyeoo.com/math/ques/detail/6S84WfOA3zxVCmkFw65dtJ83aSNyFOWo3xbE9hsg4OVdDEx8OaYJhQ
+#grid(columns: (1fr, 25%), gutter: 1em, [$(10$ 分 $)$ 某校数学研究性学习小组为测量物体的高度, 开展了如下综合与实践活动. 
 
-【活动主题】测量物体的高度
+ $[$ 活动主题 $]$ 测量物体的高度
 
-【测量工具】卷尺、标杆
+ $[$ 测量工具 $]$ 卷尺, 标杆
 
-【活动过程】
+ $[$ 活动过程 $]$ 
 
 活动 $1$ : 测量校内旗杆的高度
 
-该小组在校内进行了旗杆高度的测量活动 $($ 示意图 $1)$ ．在点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ 、旗杆顶 $M$ 在同一条直线上．已知旗杆底端 $N$ 与 $F$ 、 $Q$ 在同一条直线上, $E F=2.8 m,P Q=1.4 m,Q F=2 m,F N=16 m$ .
+该小组在校内进行了旗杆高度的测量活动 $($ 示意图 $1)$ . 在点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ , 旗杆顶 $M$ 在同一条直线上. 已知旗杆底端 $N$ 与 $F$ , $Q$ 在同一条直线上, $E F=2.8 m,P Q=1.4 m,Q F=2 m,F N=16 m$ .
 
- $(1)$ 求旗杆 $M N$ 的高度．
+(1)求旗杆 $M N$ 的高度. 
 
 活动 $2$ : 测量南禅寺妙光塔的高度
 
-南禅寺妙光塔, 简称“妙光塔”, 始建于北宋雍熙年间, 是无锡著名的文物保护单位之一．该小组为全面了解本土历史文物, 决定走出校园去测量妙光塔的高度．他们到达妙光塔后, 发现塔顶 $A$ 和塔底中心 $B$ 均无法到达．经研究, 设计并实施了如下测量活动 $($ 示意图 $2)$ ．在地面一条水平步道上的点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ 、塔顶 $A$ 在同一条直线上．小军沿 $F Q$ 的方向走到点 $Q$ ′处, 此时标杆 $E$ ′ $F$ ′竖立于 $F$ ′处, 从点 $P$ ′处看到标杆顶 $E$ ′、塔顶 $A$ 在同一条直线上．已知 $A B$ 、 $E F$ 、 $P Q$ 、 $E$ ′ $F$ ′和 $P$ ′ $Q$ ′在同一平面内, 点 $B$ 、 $F$ 、 $Q$ 、 $F$ ′、 $Q$ ′在同一条直线上, $E F=E$ ′ $F$ ′ $=2.8 m,P Q=P$ ′ $Q$ ′ $=1.4 m,F Q=1.2 m,F$ ′ $Q$ ′ $=2.2 m,Q Q$ ′ $=30 m$ .
+南禅寺妙光塔, 简称"妙光塔", 始建于北宋雍熙年间, 是无锡著名的文物保护单位之一. 该小组为全面了解本土历史文物, 决定走出校园去测量妙光塔的高度. 他们到达妙光塔后, 发现塔顶 $A$ 和塔底中心 $B$ 均无法到达. 经研究, 设计并实施了如下测量活动 $($ 示意图 $2)$ . 在地面一条水平步道上的点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ , 塔顶 $A$ 在同一条直线上. 小军沿 $F Q$ 的方向走到点 $Q$ ′处, 此时标杆 $E$ ′ $F$ ′竖立于 $F$ ′处, 从点 $P$ ′处看到标杆顶 $E$ ′, 塔顶 $A$ 在同一条直线上. 已知 $A B$ , $E F$ , $P Q$ , $E$ ′ $F$ ′和 $P$ ′ $Q$ ′在同一平面内, 点 $B$ , $F$ , $Q$ , $F$ ′, $Q$ ′在同一条直线上, $E F=E$ ′ $F$ ′ $=2.8 m,P Q=P$ ′ $Q$ ′ $=1.4 m,F Q=1.2 m,F$ ′ $Q$ ′ $=2.2 m,Q Q$ ′ $=30 m$ .
 
- $(2)$ 求妙光塔 $A B$ 的高度．
+(2)求妙光塔 $A B$ 的高度. 
 
  #image("images/0ad08597.png", width: 25%)], [#align(center + top, image("images/5148b840.png", width: 100%))])
 
 #solution[
-$(1)$ 过点 $P$ 作 $P H tack.t M N$ 于点 $H$ , 交 $E F$ 于点 $K$ , 如图, 
+(1)过点 $P$ 作 $P H tack.t M N$ 于点 $H$ , 交 $E F$ 于点 $K$ , 如图, 
 
  #image("images/b96e987a.png", width: 25%) 
 
@@ -764,13 +768,13 @@ $(1)$ 过点 $P$ 作 $P H tack.t M N$ 于点 $H$ , 交 $E F$ 于点 $K$ , 如图
 
  $therefore (2 )/(18 ) = (1 . 4 )/(M H )$ , 
 
- $therefore M H=12.6(m)$ ．
+ $therefore M H=12.6(m)$ . 
 
- $therefore M N=M H+H N=14(m)$ ．
+ $therefore M N=M H+H N=14(m)$ . 
 
 答: 旗杆 $M N$ 的高度为 $14 m$ .
 
- $(2)$ 连接 $E E$ ′并延长交 $A B$ 于点 $M$ , 连接 $P P$ ′并延长交 $A B$ 于点 $N$ , 交 $E F$ 于点 $H$ , 交 $E$ ′ $F$ ′于点 $K$ , 如图, 
+(2)连接 $E E$ ′并延长交 $A B$ 于点 $M$ , 连接 $P P$ ′并延长交 $A B$ 于点 $N$ , 交 $E F$ 于点 $H$ , 交 $E$ ′ $F$ ′于点 $K$ , 如图, 
 
  #image("images/f3a00140.png", width: 25%) 
 
@@ -788,7 +792,7 @@ $(1)$ 过点 $P$ 作 $P H tack.t M N$ 于点 $H$ , 交 $E F$ 于点 $K$ , 如图
 
  $therefore (P H )/(P N ) = (H E )/(A N )$ , 
 
- $therefore (1 . 2 )/(1 . 2 + x ) = (1 . 4 )/(y + 1 . 4 )$ ．
+ $therefore (1 . 2 )/(1 . 2 + x ) = (1 . 4 )/(y + 1 . 4 )$ . 
 
  $because E$ ′ $F$ ′ $parallel A B$ , 
 
@@ -800,30 +804,30 @@ $(1)$ 过点 $P$ 作 $P H tack.t M N$ 于点 $H$ , 交 $E F$ 于点 $K$ , 如图
 
  $therefore (1 . 2 )/(1 . 2 + x ) = (2 . 2 )/(31 . 2 + x )$ , 
 
- $therefore x=34.8$ ．
+ $therefore x=34.8$ . 
 
  $therefore (1 . 2 )/(1 . 2 + 34 . 8 ) = (1 . 4 )/(y + 1 . 4 )$ , 
 
- $therefore y=40.6$ ．
+ $therefore y=40.6$ . 
 
- $therefore A B=A M+B M=43.4(m)$ ．
+ $therefore A B=A M+B M=43.4(m)$ . 
 
 答: 妙光塔 $A B$ 的高度 $43.4 m$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8veSTdp18zhpnKaA7wmXaf77QEeQOzYjiZ6y05sJl1KcQuu69ewM6q
-$(10$ 分 $)$ 已知二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m(m != 0)$ 图象的顶点为 $A$ , 与 $y$ 轴交于点 $B$ , 对称轴与 $x$ 轴交于点 $C$ ．
+// https://www.jyeoo.com/math/ques/detail/6gBEed5j8f9zQOWo5J2Sea7LqRggEmLTqn6P1L2AWUm9EocRQexSNM
+$(10$ 分 $)$ 已知二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m(m != 0)$ 图象的顶点为 $A$ , 与 $y$ 轴交于点 $B$ , 对称轴与 $x$ 轴交于点 $C$ . 
 
- $(1)$ 若该函数图象经过点 $( 0 , sqrt(3 ) )$ , 求点 $A$ 的横坐标; 
+(1)若该函数图象经过点 $( 0 , sqrt(3 ) )$ , 求点 $A$ 的横坐标; 
 
- $(2)$ 若 $m<3$ , 点 $P(2, y_(1))$ 和 $Q(4, y_(2))$ 在该函数图象上, 证明: $y_(1)>y_(2)$ ; 
+(2)若 $m<3$ , 点 $P(2, y_(1))$ 和 $Q(4, y_(2))$ 在该函数图象上, 证明: $y_(1)>y_(2)$ ; 
 
- $(3)$ 若 $triangle A B C$ 是等腰三角形, 求 $m$ 的值．
+(3)若 $triangle A B C$ 是等腰三角形, 求 $m$ 的值.
 
 #solution[
-$(1)$ 解: $because$ 二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m$ 图象经过点 $( 0 , sqrt(3 ) )$ , $therefore (sqrt(3 ) )/(3 ) m= sqrt(3 )$ , 
+(1)解: $because$ 二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m$ 图象经过点 $( 0 , sqrt(3 ) )$ , $therefore (sqrt(3 ) )/(3 ) m= sqrt(3 )$ , 
 
 解得 $m=3$ , 
 
@@ -833,7 +837,7 @@ $(1)$ 解: $because$ 二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 
 
  $therefore$ 点 $A$ 的横坐标为 $3$ ; 
 
- $(2)$ 证明: $because$ 点 $P(2, y_(1))$ 和 $Q(4, y_(2))$ 在二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m$ 图象上, 
+(2)证明: $because$ 点 $P(2, y_(1))$ 和 $Q(4, y_(2))$ 在二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m$ 图象上, 
 
  $therefore y_(1)=-2+2 m+ (sqrt(3 ) )/(3 ) m,y_(2)=-8+4 m+ (sqrt(3 ) )/(3 ) m$ ,
 
@@ -843,7 +847,7 @@ $(1)$ 解: $because$ 二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 
 
  $therefore y_(1)>y_(2)$ ; 
 
- $(3)$ 解: 在 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m$ 中, 令 $x=0$ 得 $y= (sqrt(3 ) )/(3 ) m$ ,
+(3)解: 在 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m$ 中, 令 $x=0$ 得 $y= (sqrt(3 ) )/(3 ) m$ ,
 
  $therefore B(0, (sqrt(3 ) )/(3 ) m)$ , 
 
@@ -863,34 +867,34 @@ $(1)$ 解: $because$ 二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 
 
 解得 $m=0($ 舍去 $)$ 或 $m=-2 sqrt(3 )$ 或 $m= (2 sqrt(3 ) )/(3 )$ ; 
 
-综上所述, $m$ 的值为 $(2 sqrt(3 ) )/(3 )$ 或 $-2 sqrt(3 )$ ．
+综上所述, $m$ 的值为 $(2 sqrt(3 ) )/(3 )$ 或 $-2 sqrt(3 )$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5lV2P0K0e6abg7NVHJKPcY9aQIK24lOeVCe4ghKkWkxLtPKex9h2fo
-$(10$ 分 $)$ 【数学发现】
+// https://www.jyeoo.com/math/ques/detail/8I2i20O1ecmrJauTjgeDgk9d4hq1y4TbpWeKSzF8sWpqkJp6n9Gf5M
+$(10$ 分 $)[$ 数学发现 $]$ 
 
-某校数学兴趣小组进行了如下探究: 以 $triangle A B C$ 内部任意一点 $O$ 为中心, 画出与 $triangle A B C$ 成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′．当点 $O$ 处于不同位置时, 从“形”的角度发现两个三角形的重叠部分只可能有两种情况: 如图 $1$ 所示的平行四边形, 如图 $2$ 所示的有三组对边分别平行的六边形 $($ 称为“平行六边形” $)$ ; 从“数”的角度发现两个三角形重叠部分的面积在不断变化．
+某校数学兴趣小组进行了如下探究: 以 $triangle A B C$ 内部任意一点 $O$ 为中心, 画出与 $triangle A B C$ 成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′. 当点 $O$ 处于不同位置时, 从"形"的角度发现两个三角形的重叠部分只可能有两种情况: 如图 $1$ 所示的平行四边形, 如图 $2$ 所示的有三组对边分别平行的六边形 $($ 称为"平行六边形" $)$ ; 从"数"的角度发现两个三角形重叠部分的面积在不断变化. 
 
  #image("images/36c1500d.png", width: 25%) 
 
-【问题解决】
+ $[$ 问题解决 $]$ 
 
-组员小明选择面积为 $1$ 的 $triangle A B C$ , 以其内部任意一点 $O$ 为中心, 画出与之成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′, 探究了下列问题, 请你帮他解答．
+组员小明选择面积为 $1$ 的 $triangle A B C$ , 以其内部任意一点 $O$ 为中心, 画出与之成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′, 探究了下列问题, 请你帮他解答. 
 
- $(1)$ 如图 $3$ , $B C=2$ , 当点 $A$ 关于点 $O$ 的对称点 $A$ ′落在边 $B C$ 上时, 两个三角形重叠部分为▱ $A Q A$ ′ $P$ ．
+(1)如图 $3$ , $B C=2$ , 当点 $A$ 关于点 $O$ 的对称点 $A$ ′落在边 $B C$ 上时, 两个三角形重叠部分为▱ $A Q A$ ′ $P$ . 
 
 ①若 $A A$ ′ $tack.t B C$ , 求 $A O$ 的长; $($ 请直接写出答案 $)$ 
 
-②若▱ $A Q A$ ′ $P$ 的面积为 $(1 )/(4 )$ , 求 $A$ ′ $C$ 的长．
+②若▱ $A Q A$ ′ $P$ 的面积为 $(1 )/(4 )$ , 求 $A$ ′ $C$ 的长. 
 
- $(2)$ 如图 $4$ , 点 $D$ 为 $B C$ 的中点, 点 $O$ 在 $A D$ 上, 若两个三角形的重叠部分为“平行六边形” $E F G H M N$ , 求“平行六边形” $E F G H M N$ 面积的最大值, 并指出此时点 $O$ 的位置．
+(2)如图 $4$ , 点 $D$ 为 $B C$ 的中点, 点 $O$ 在 $A D$ 上, 若两个三角形的重叠部分为"平行六边形" $E F G H M N$ , 求"平行六边形" $E F G H M N$ 面积的最大值, 并指出此时点 $O$ 的位置. 
 
  #image("images/4252793e.png", width: 25%)
 
 #solution[
-$(1)$ ① $because S= (1 )/(2 ) B C dot.op h=1$ , 
+(1)① $because S= (1 )/(2 ) B C dot.op h=1$ , 
 
  $therefore h=1$ , 
 
@@ -928,7 +932,7 @@ $(1)$ ① $because S= (1 )/(2 ) B C dot.op h=1$ ,
 
  $therefore A$ ' $C= (2 )/(k + 1 ) = (2 ± sqrt(2 ) )/(2 )$ ; 
 
- $(2)$ 如图, 设 $A D$ 与 $B$ ' $C$ '交于点 $L$ , 
+(2)如图, 设 $A D$ 与 $B$ ' $C$ '交于点 $L$ , 
 
  #image("images/72d0e2a1.png", width: 25%) 
 
@@ -978,11 +982,11 @@ $(1)$ ① $because S= (1 )/(2 ) B C dot.op h=1$ ,
 
 同理可得 $S_( triangle F G C)=S_( triangle B N E)=m^(2)$ , 
 
- $therefore S_("“平行六边形”" E F G H M N)=S_( triangle A B C)-S_( triangle A M H)-S_( triangle B N E)-S_( triangle F G C) =1-(1-2 m)^(2)-m^(2)-m^(2) =-6 m^(2)+4 m =-6(m- (1 )/(3 ) )^(2)+ (2 )/(3 )$ , 
+ $therefore S_("平行六边形" E F G H M N)=S_( triangle A B C)-S_( triangle A M H)-S_( triangle B N E)-S_( triangle F G C) =1-(1-2 m)^(2)-m^(2)-m^(2) =-6 m^(2)+4 m =-6(m- (1 )/(3 ) )^(2)+ (2 )/(3 )$ , 
 
-故当 $m= (1 )/(3 )$ 时, “平行六边形” $E F G H M N$ 面积的最大值为 $(2 )/(3 )$ , 
+故当 $m= (1 )/(3 )$ 时, "平行六边形" $E F G H M N$ 面积的最大值为 $(2 )/(3 )$ , 
 
-此时 $(O D )/(A D ) = (1 )/(3 )$ , 则点 $O$ 为 $triangle A B C$ 的重心．
+此时 $(O D )/(A D ) = (1 )/(3 )$ , 则点 $O$ 为 $triangle A B C$ 的重心.
 ]
 ]
 
