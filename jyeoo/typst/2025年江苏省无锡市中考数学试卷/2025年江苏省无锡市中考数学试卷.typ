@@ -5,7 +5,7 @@
 = 选择题
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6FZbK4vCfeKyurwcw02WLze44ShVYZQANj7uz0U549GrXSujl3xqmO
+// https://www.jyeoo.com/math/ques/detail/70Vul4ZUfSGHePh7ABe1VDevbYt1pOOXnq7jPhEJdbWqQ4VIY325UO
 (3分) 计算 $-2+3$ 的结果为 #parentheses
 #choices(
   ([$-5$], [$-1$], [$1$], [$5$]),
@@ -20,7 +20,7 @@ $-2+3=1$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/67ZGr9T48aDV8a8uGA77oI43z9b0T9AT0W8sM739JXEHf1IVwbLJuC
+// https://www.jyeoo.com/math/ques/detail/4qkix9ft88GC5KJ06DY39E4OTE1Cdhdi2G8T5PC37InAx0zN4bHxGS
 (3分) $2025$ 年春节期间, 无锡市 $65$ 家备案博物馆接待游客总数约 $819000$ 人次. 数据 $819000$ 用科学记数法表示为 #parentheses
 #choices(
   ([$8.19 times 10^(5)$], [$81.9 times 10^(4)$], [$0.819 times 10^(5)$], [$0.819 times 10^(6)$]),
@@ -35,7 +35,7 @@ $819000=8.19 times 10^(5)$ .
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6sKD8cvw4Oj7tdY5vaTQLw64GbPW3iGrG53yjknKvXfq0uzmI5B57o
+// https://www.jyeoo.com/math/ques/detail/84IUYcAg4x44Rfpm006Cs86qAmJTWSpDV83B1gXZKMmGrvSR95Oh9s
 (3分) 下列运算正确的是 #parentheses
 #choices(
   ([$a^(2)+a^(4)=a^(6)$], [$a^(2) dot.op a^(4)=a^(6)$], [$(a^(2))^(4)=a^(6)$], [$a^(4)÷a=a^(4)$]),
@@ -64,7 +64,7 @@ $because a^(2)$ 与 $a^(4)$ 不是同类项, 不能合并,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/4lYzRfe88kfqgvlEutTcp51AG0UvZ1Y8Cn6988UbdkVogdOPy6kPSa
+// https://www.jyeoo.com/math/ques/detail/8efwtfkG865Mk6vmd9jhct1vfRu0u37Iph6omtqLTQJowGOFn61boe
 (3分) 一组数据: $13$ , $14$ , $14$ , $16$ , $18$ , 这组数据的平均数和众数分别是 #parentheses
 #choices(
   ([$15$ , $14$], [$14$ , $15$], [$14$ , $14$], [$15$ , $15$]),
@@ -81,7 +81,7 @@ $because a^(2)$ 与 $a^(4)$ 不是同类项, 不能合并,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/7hNiQ3Ym9KyzWqWFij30Bb0bBznrYq1UN6eCZVoc09UImEaoS7lSy0
+// https://www.jyeoo.com/math/ques/detail/6UkvK3Am9pJxt0cb9G907x0FcVRTm8k4WWern2TXxS9yfgKgI7MGMy
 (3分) 在 $triangle A B C$ 中, $D$ , $E$ 分别是 $A B$ , $A C$ 的中点. 若 $D E=4$ , 则 $B C$ 的长为 #parentheses
 #choices(
   ([$2$], [$4$], [$6$], [$8$]),
@@ -100,7 +100,7 @@ $because D$ , $E$ 分别是 $A B$ , $A C$ 的中点,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6nIKOajufArTFQnlVGaxoE84vuFe2ErAAyciRWBxK1xhwgrXte7RgG
+// https://www.jyeoo.com/math/ques/detail/7H46OavgfG2mOcb9VNkSoI8cOC1T1tYzrVc5dsn4aXUHS7ReReq7hg
 (3分) 已知圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为 $90 degree$ , 则这条弧的长为 #parentheses
 #choices(
   ([$2 pi$], [$3 pi$], [$4 pi$], [$6 pi$]),
@@ -117,7 +117,7 @@ $because$ 圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为 $90 degr
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5jxmw9Lc7TtBFCbpP7jEs6aXYeBHWBqf2bc9NAzcHrYZFU2Ss1ZQUC
+// https://www.jyeoo.com/math/ques/detail/6sVSJ9zX7yh1IQEwEAOyI5aGZHlBYuOO39csIKL2XsBzdVDn51snrc
 (3分) 分解因式 $a^(3)-4 a$ 的结果是 #parentheses
 #choices(
   ([$a(a^(2)+4)$], [$a(a-4)$], [$a(a+2)(a-2)$], [$a(a^(2)-1)$]),
@@ -132,7 +132,7 @@ $because$ 圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为 $90 degr
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/7pBQzcIOcNyTQ6GkY4iUdGbFEBc78Wsu3qcCvaXfhwgRQWD3e74B6W
+// https://www.jyeoo.com/math/ques/detail/7O8jWcLlczl74rKtzT3abebpHlxM0myB7McLlG2pqaSovwy0J7Ss7c
 (3分) 小亮与小红周末去十里明珠堤的环湖绿道上骑行, 小亮的速度是小红速度的 $1.2$ 倍, 两人各自骑行了 $6 k m$ ,小亮骑行时间比小红少用了 $4 min$ .设小红的骑行速度为 $x k m/h$ ,则可列方程为 #parentheses
 #choices(
   ([$(6 )/(1 . 2 x ) + (4 )/(60 ) = (6 )/(x )$], [$(6 )/(1 . 2 x ) + 4 = (6 )/(x )$], [$(6 )/(1 . 2 x ) - (4 )/(60 ) = (6 )/(x )$], [$(6 )/(1 . 2 x ) - 4 = (6 )/(x )$]),
@@ -149,7 +149,7 @@ $because$ 圆弧所在圆的半径为 $6$ , 该弧所对的圆心角为 $90 degr
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/7UDXudMV4XJgGfJl4UlouNfvPyxDO3rr6J7kGXBJGubWd35VvePGTI
+// https://www.jyeoo.com/math/ques/detail/8inRJdLI4GLMngqEm8MHHHfw7g7nKY0UJM79jbs94XT4znrMHexQQK
 #grid(columns: (1fr, 25%), gutter: 1em, [(3分) 如图, 在平面直角坐标系中, $O$ 为坐标原点, $R t triangle O B A$ 的直角边 $O B$ 在 $x$ 轴上, $A O$ , $A B$ 分别与反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象相交于点 $C$ , $D$ , 且 $C$ 为 $A O$ 的中点, 过点 $C$ 作 $x$ 轴的垂线, 垂足为 $E$ , 连接 $D E$ . 若 $triangle B D E$ 的面积为 $(5 )/(4 )$ , 则 $k$ 的值为 #parentheses], [#align(center + top, image("images/dd4b6462.png", width: 100%))])
 #choices(
   ([$(5 )/(4 )$], [$(5 )/(2 )$], [$5$], [$10$]),
@@ -228,7 +228,7 @@ $because$ 点 $C$ 在反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象上,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8CCc7aRd1UejJwKav91CX3dMwAetW0RK69awprEo2Mnl9LYw39UUy0
+// https://www.jyeoo.com/math/ques/detail/8XhWraIP15RIFlGoHCR2kUdyy03b0T8gTYa1o3AulyueBGpy29ghLk
 (3分) 若函数 $y_(1)$ 的图象上存在点 $P$ , 函数 $y_(2)$ 的图象上存在点 $Q$ , 且 $P$ , $Q$ 关于 $y$ 轴对称, 则称函数 $y_(1)$ 和 $y_(2)$ 具有 "对偶关系", 此时点 $P$ 或点 $Q$ 的纵坐标称为 "对偶值". 下列结论: 
 
 ①函数 $y_(1)=2 x+3$ 与函数 $y_(2)=-x+1$ 不具有 "对偶关系"; 
@@ -313,7 +313,7 @@ $because$ 点 $C$ 在反比例函数 $y= (k )/(x ) (k>0, x>0)$ 的图象上,
 = 填空题
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5FmIZ9w74Dtf6604jppXN38w5jvhUzw7JJ2CV5C6rcGOV5dlm1XEpM
+// https://www.jyeoo.com/math/ques/detail/7KG6w9OJ4qRckHprENRXwe8iWhQLwnHlUZ2zQPzqmwswaydc11LF5c
 (3分) $|-3|=$ #blank .
 
 #solution[
@@ -324,7 +324,7 @@ $|-3|=3$ .
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8r2PsbVf6gMstvfCADEKysatY1OarLlUoE7lddnBvWseocASa3rVaq
+// https://www.jyeoo.com/math/ques/detail/70uK2bXT6rLxaXCz4HSGvDarLNfZc6dqAV7M0QCQB0JFkynGS3ezke
 (3分) 函数 $y= (1 )/(x - 4 )$ 中的自变量 $x$ 的取值范围 #blank .
 
 #solution[
@@ -337,7 +337,7 @@ $|-3|=3$ .
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/4btfp7TZ2efGGU6l1Foba8dJkkZwy0q2Q82gYsUD8FPo3orC7dGLzs
+// https://www.jyeoo.com/math/ques/detail/8dTh77pm2iKiiIyzH0pIfIdOUV3RE7QMVJ2p37oaBoDfgIhCzdGhBQ
 (3分) 请写出单项式 $a^(2)b$ 的一个同类项: #blank .
 
 #solution[
@@ -348,7 +348,7 @@ $|-3|=3$ .
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8uPsv9239FtQ8hbDj55HbQ8l30oBJPjZ844HsQK3fw3AhJjpX8y85Q
+// https://www.jyeoo.com/math/ques/detail/8LHcJ9UE9DdnmIt2xe9F64825yhCUrgH8D4G68kDvH5cj3Cwm86kc4
 (3分) 请写出命题 "若 $a>b$ ,则 $a+1>b+1$" 的逆命题: #blank .
 
 #solution[
@@ -359,7 +359,7 @@ $|-3|=3$ .
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8OWmQ7D399AxK6IYwkKkrdeCbys7lXwsqKenBYYR7i8qdu8Uk8fYm0
+// https://www.jyeoo.com/math/ques/detail/8F26L7rZ9OmxMuboJc21t2etWJeHwy0iYeeeXUQrgVGiH6p2z8JhEu
 (3分) 正七边形的内角和为 #blank 度.
 
 #solution[
@@ -372,7 +372,7 @@ $(7-2) times 180 degree =900 degree$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/74NiV215ffTBrJzFHpGely6GkSH9qVkqq114zx40giBiVCD3rcRbs0
+// https://www.jyeoo.com/math/ques/detail/8UWGr29Df5GXopfzqPHOAz6ztjHnYyp1oi1idDLmX59to7YVHcAL3I
 #grid(columns: (1fr, 25%), gutter: 1em, [(3分) 如图, $A B$ 与 $⊙O$ 相切于点 $B$ , 连接 $B O$ , 过点 $O$ 作 $B O$ 的垂线 $O C$ , 交 $⊙O$ 于点 $C$ , 连接 $A C$ , 交线段 $O B$ 于点 $D$ . 若 $A B=3$ , $O C=2$ , 则 $tan A$ 的值为 #blank .], [#align(center + top, image("images/048f5981.png", width: 100%))])
 
 #solution[
@@ -401,7 +401,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/7WHfj0Ix1pKt5EZyz9yzmB7yFtxfOSSiNkc8xqymIOOrXAr8RduW5Q
+// https://www.jyeoo.com/math/ques/detail/6PnwU0LX14YcRjrty29Bjz7qq1wT7GIPHNcD0dDAONZWGPU3XdXMzw
 #grid(columns: (1fr, 25%), gutter: 1em, [(3分) 如图, 菱形 $A B C D$ 的边长为 $2$ , $angle A B C=60 degree$ , 对角线 $A C$ , $B D$ 相交于点 $M$ . 过点 $D$ 作 $A C$ 的平行线交 $B C$ 的延长线于点 $N$ , 连接 $M N$ . 则 $M N$ 的长为 #blank .], [#align(center + top, image("images/aa645740.png", width: 100%))])
 
 #solution[
@@ -445,7 +445,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5vw0D7RV2WvaoffIGdq7FfaBHr92wS5pAd4VkBcfiHwRqRCx5afkCu
+// https://www.jyeoo.com/math/ques/detail/5fZ0z7oH28S2jBLbD5kYGyaFjSlVw0CCei4fncivO9GdkJsXOaa1a4
 (3分) 在平行四边形纸片 $A B C D$ 中, $angle A B C=60 degree$ , $A B=4$ , $B C=8$ . 现将该纸片折叠, 折痕与纸片 $A B C D$ 的两边交于点 $E$ , $F$ . 若 $E$ 与 $A$ 重合, $F$ 在 $B C$ 上, 且 $E F tack.t B C$ , 则被折痕分成的 $triangle E B F$ 与四边形 $E F C D$ 的面积的比为 #blank ; 若折痕 $E F$ 将纸片 $A B C D$ 分成两个四边形, 且被分成的两个四边形的面积的比为 $1$ : $3$ , 则折痕 $E F$ 长的取值范围是 #blank .
 
 #solution[
@@ -505,13 +505,13 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore E F= sqrt(F G ^(2 ) + D G ^(2 ) ) = sqrt(6 ^(2 ) + ( 4 sqrt(3 ) ) ^(2 ) ) =2 sqrt(21 )$ , 
 
-当点 $E$ 在 $A$ 点, $($ 图中 $E$ ′ $)$ , $F$ 是 $C D$ 中点时 $($ 图中 $F$ ′ $)$ , 作 $F$ ′ $Q tack.t A D$ 于 $Q$ , 
+当点 $E$ 在 $A$ 点, $($ 图中 $E')$ , $F$ 是 $C D$ 中点时 $($ 图中 $F')$ , 作 $F'Q tack.t A D$ 于 $Q$ , 
 
-则 $D Q= (1 )/(2 ) D F$ ′ $=1$ , $F$ ′ $Q= (sqrt(3 ) )/(2 ) F$ ′ $Q= sqrt(3 )$ , 
+则 $D Q= (1 )/(2 ) D F'=1$ , $F'Q= (sqrt(3 ) )/(2 ) F'Q= sqrt(3 )$ , 
 
  $therefore A Q=A D-D Q=7$ , 
 
- $therefore A F$ ′ $= sqrt(F ′ Q ^(2 ) + A Q ^(2 ) ) = sqrt(( sqrt(3 ) ) ^(2 ) + 7 ^(2 ) ) =2 sqrt(13 )$ , 
+ $therefore A F'= sqrt(F ' Q ^(2 ) + A Q ^(2 ) ) = sqrt(( sqrt(3 ) ) ^(2 ) + 7 ^(2 ) ) =2 sqrt(13 )$ , 
 
  $therefore 2 sqrt(13 ) < E F < 2 sqrt(21 )$ , 
 
@@ -522,7 +522,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 = 解答题
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/5xVI6dj8eEbJfZmyfV5rbq7SaJ4impwUHY2xbs2mcR1S6e1waetxtw
+// https://www.jyeoo.com/math/ques/detail/6pIftdyceRHDONitjEeQk47W9EkZQvwZJw2eKlQOgQbGLSRspe5bUW
 (8分) (1)解方程: $x^(2)-2 x-2=0$ ; 
 
 (2) 解不等式组: $cases(2 x < 6, 3 x - 1 >= x + 1)$ .
@@ -549,7 +549,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6yBBmfYj8Nk3edtNJJVazT8xEb72I2ntVH22fZ9Un4dYMvmJWdJjiS
+// https://www.jyeoo.com/math/ques/detail/7smCyfVa8HbmqEV2rN8sid8mSQYW5W2puW2tcicIOAgIjdGY9dff3Q
 (8分) 先化简, 再求值: $(1 )/(m - 1 ) + (m ^(2 ) - 2 m )/(m - 1 )$ , 其中 $m=3$ .
 
 #solution[
@@ -562,7 +562,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6Cfxh9wX86zgcpzOJpP6YTfwtq82a2gfYXbeQ2sK7ULTiYOtw2f1EW
+// https://www.jyeoo.com/math/ques/detail/6VmkA9oe8troEoSxg1JoFvfMrYk1ieNc9YbxivbSqwLHYogNT2PPOa
 #grid(columns: (1fr, 25%), gutter: 1em, [(10分) 如图, 在矩形 $A B C D$ 中, 点 $E$ 在 $C B$ 延长线上, 点 $F$ 在 $B C$ 延长线上, 且 $B E=C F$ , 连接 $A E$ , $D F$ . 
 
 求证: $(1) triangle A B E≌ triangle D C F$ ; 
@@ -595,7 +595,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/7eaBm04Q0d4Qx0W8JfbJFF1B6wxKsHAubf4q38PNFQLimbCBL7s6LI
+// https://www.jyeoo.com/math/ques/detail/65xRE0EP0GYGMjk6sHDNlL1c7EzD6uGBz043HXjo6dX2IKa2s7pMfo
 (10分) 一只不透明的袋子中装有标号分别为 $1$ , $2$ , $3$ , $4$ 的 $4$ 个球, 这些球除标号外都相同. 
 
 (1) 将球搅匀, 从中任意摸出 $1$ 个球, 摸到标号为 $2$ 的球的概率是 #blank ; 
@@ -620,7 +620,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/81uZbcxTeKC2Qrn7w6q2no1BrIY5rOmsex4FhcOuSGG7HAx3i1dBnE
+// https://www.jyeoo.com/math/ques/detail/6iQgJcRBexlwbpPG1uT1hX1MMU96t98zT844N7jP3gWsXb9bg1O8em
 (10分) $2025$ 年 $1$ 月 $14$ 日, 教育部办公厅印发了《中小学科学教育工作指南》 $($ 以下简称《指南》 $)$ , 旨在推动中小学科学教育更加重视激发学生好奇心, 想象力, 探求欲, 培育具备科学家潜质, 愿意献身科学研究事业的青少年群体. 某校为落实《指南》要求, 准备在七年级开设 "$3 D$ 打印""航模""机器人""无人机" 共四类科技社团 $($ 每名学生必选且仅选一个社团 $)$ . 为了解学生参加各社团的意向, 现随机抽取七年级部分学生进行问卷调查, 并对问卷数据进行收集, 整理, 描述和分析, 部分信息如下: 
 
  #image("images/72c83ed4.png", width: 25%) 
@@ -651,7 +651,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/6PRTtc9Y9Go0QTHQYJZjII8yAfSKTVXT7U5SHlEMCCe13XdsfazrbE
+// https://www.jyeoo.com/math/ques/detail/7vz54c809rEftyXvZHuq3z8D3GnLMRWWh25gj85NMBv0LnQYkaqUts
 #grid(columns: (1fr, 25%), gutter: 1em, [(10分) 如图, $A C$ 为正方形 $A B C D$ 的对角线. 
 
 (1) 尺规作图: 作 $A D$ 的垂直平分线 $l$ 交 $A D$ 于点 $E$ , 在 $l$ 上确定点 $F$ , 使得点 $F$ 到 $angle B A C$ 的两边距离相等; $($ 不写作法 $,$ 保留痕迹 $)$ 
@@ -682,7 +682,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/78EG3clF3IEq3EWBPpPxUi7s38EVCNL0dz6oT68YMb2fh19f30EAxk
+// https://www.jyeoo.com/math/ques/detail/8iMK8cDx3zGqyfMRXdPqpw7HX5HWNS3B826Knj4w6D4YODo8p0ojmC
 #grid(columns: (1fr, 25%), gutter: 1em, [(10分) 如图, $A B$ 是 $⊙O$ 的直径, $D$ 是弦 $A C$ 延长线上的一点, 且 $C D=C A$ , $D B$ 的延长线交 $⊙O$ 于点 $E$ . 
 
 (1) 求证: $A B=B D$ ; 
@@ -726,7 +726,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8ZsMcfey3FyThv1OWiE2ki8Yz34RJOeKmXbVu1nUfTPp8neQoa66qW
+// https://www.jyeoo.com/math/ques/detail/64rIFfXk3fGwkocxa32UOH84YZaiCGgJX1b2ClL3Azmzp5BaDaSuxc
 #grid(columns: (1fr, 25%), gutter: 1em, [(10分) 某校数学研究性学习小组为测量物体的高度, 开展了如下综合与实践活动. 
 
  $[$ 活动主题 $]$ 测量物体的高度
@@ -743,7 +743,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
 活动 $2$ : 测量南禅寺妙光塔的高度
 
-南禅寺妙光塔, 简称 "妙光塔", 始建于北宋雍熙年间, 是无锡著名的文物保护单位之一. 该小组为全面了解本土历史文物, 决定走出校园去测量妙光塔的高度. 他们到达妙光塔后, 发现塔顶 $A$ 和塔底中心 $B$ 均无法到达. 经研究, 设计并实施了如下测量活动 $($ 示意图 $2)$ . 在地面一条水平步道上的点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ , 塔顶 $A$ 在同一条直线上. 小军沿 $F Q$ 的方向走到点 $Q$ ′处, 此时标杆 $E$ ′ $F$ ′竖立于 $F$ ′处, 从点 $P$ ′处看到标杆顶 $E$ ′, 塔顶 $A$ 在同一条直线上. 已知 $A B$ , $E F$ , $P Q$ , $E$ ′ $F$ ′和 $P$ ′ $Q$ ′在同一平面内, 点 $B$ , $F$ , $Q$ , $F$ ′, $Q$ ′在同一条直线上, $E F=E$ ′ $F$ ′ $=2.8 m,P Q=P$ ′ $Q$ ′ $=1.4 m,F Q=1.2 m,F$ ′ $Q$ ′ $=2.2 m,Q Q$ ′ $=30 m$ .
+南禅寺妙光塔, 简称 "妙光塔", 始建于北宋雍熙年间, 是无锡著名的文物保护单位之一. 该小组为全面了解本土历史文物, 决定走出校园去测量妙光塔的高度. 他们到达妙光塔后, 发现塔顶 $A$ 和塔底中心 $B$ 均无法到达. 经研究, 设计并实施了如下测量活动 $($ 示意图 $2)$ . 在地面一条水平步道上的点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ , 塔顶 $A$ 在同一条直线上. 小军沿 $F Q$ 的方向走到点 $Q'$ 处, 此时标杆 $E'F'$ 竖立于 $F'$ 处, 从点 $P'$ 处看到标杆顶 $E'$ , 塔顶 $A$ 在同一条直线上. 已知 $A B$ , $E F$ , $P Q$ , $E'F'$ 和 $P'Q'$ 在同一平面内, 点 $B$ , $F$ , $Q$ , $F'$ , $Q'$ 在同一条直线上, $E F=E'F'=2.8 m,P Q=P'Q'=1.4 m,F Q=1.2 m,F'Q'=2.2 m,Q Q'=30 m$ .
 
 (2) 求妙光塔 $A B$ 的高度. 
 
@@ -774,17 +774,17 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
 答: 旗杆 $M N$ 的高度为 $14 m$ .
 
-(2) 连接 $E E$ ′并延长交 $A B$ 于点 $M$ , 连接 $P P$ ′并延长交 $A B$ 于点 $N$ , 交 $E F$ 于点 $H$ , 交 $E$ ′ $F$ ′于点 $K$ , 如图, 
+(2) 连接 $E E'$ 并延长交 $A B$ 于点 $M$ , 连接 $P P'$ 并延长交 $A B$ 于点 $N$ , 交 $E F$ 于点 $H$ , 交 $E'F'$ 于点 $K$ , 如图, 
 
  #image("images/f3a00140.png", width: 25%) 
 
-则四边形 $B M E F$ , 四边形 $B N P Q$ , 四边形 $P$ ′ $Q$ ′ $B N$ , 四边形 $B N K F$ , 四边形 $P Q Q$ ′ $P$ ′为矩形, 
+则四边形 $B M E F$ , 四边形 $B N P Q$ , 四边形 $P'Q'B N$ , 四边形 $B N K F$ , 四边形 $P Q Q'P'$ 为矩形, 
 
- $therefore B M=E F=E$ ′ $F$ ′ $=2.8 m,H F=K F$ ′ $=B N=P Q=P$ ′ $Q=1.4 m,H P=F Q=1.2 m,Q Q$ ′ $=P P$ ′ $=30 m,P$ ′ $K=F$ ′ $Q$ ′ $=2.2 m$ ,
+ $therefore B M=E F=E'F'=2.8 m,H F=K F'=B N=P Q=P'Q=1.4 m,H P=F Q=1.2 m,Q Q'=P P'=30 m,P'K=F'Q'=2.2 m$ ,
 
- $therefore M N=H E=K E$ ′ $=E F-H F=1.4 m$ ,
+ $therefore M N=H E=K E'=E F-H F=1.4 m$ ,
 
-设 $H N=x m,A M=y m$ ,则 $P N=H N+H P=(1.2+x)m,A N=A M+M N=(1.4+y)m,P$ ′ $N=P P$ ′ $+P N=(31.2+x)m$ ,
+设 $H N=x m,A M=y m$ ,则 $P N=H N+H P=(1.2+x)m,A N=A M+M N=(1.4+y)m,P'N=P P'+P N=(31.2+x)m$ ,
 
  $because E F parallel A B$ , 
 
@@ -794,11 +794,11 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore (1 . 2 )/(1 . 2 + x ) = (1 . 4 )/(y + 1 . 4 )$ . 
 
- $because E$ ′ $F$ ′ $parallel A B$ , 
+ $because E'F' parallel A B$ , 
 
- $therefore triangle P E K∽ triangle P$ ′ $A N$ , 
+ $therefore triangle P E K∽ triangle P'A N$ , 
 
- $therefore (P ′ K )/(P ′ N ) = (E ′ K )/(A N )$ , 
+ $therefore (P ' K )/(P ' N ) = (E ' K )/(A N )$ , 
 
  $therefore (2 . 2 )/(31 . 2 + x ) = (1 . 4 )/(y + 1 . 4 )$ , 
 
@@ -817,7 +817,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8nHB3dJT8WnljSRD3wju3R7eOre7P6Zu4I6gLfntCMpt0R89LeVvtI
+// https://www.jyeoo.com/math/ques/detail/8o8zDdLb8nraPvGv51irFd7UW0ZQwBWEBF6SJiQ6zRlNtNCZPeRe6K
 (10分) 已知二次函数 $y=- (1 )/(2 ) x ^(2 ) + m x + (sqrt(3 ) )/(3 ) m(m != 0)$ 图象的顶点为 $A$ , 与 $y$ 轴交于点 $B$ , 对称轴与 $x$ 轴交于点 $C$ . 
 
 (1) 若该函数图象经过点 $( 0 , sqrt(3 ) )$ , 求点 $A$ 的横坐标; 
@@ -872,22 +872,22 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math/ques/detail/8gSvk0KmeBWFy2Aw83YFNt92ZPdnvtgzZ1eCpgEpy8hhWrkV19WwC0
+// https://www.jyeoo.com/math/ques/detail/7XtwZ0w6ejBZil2fISvWOx94iiEoqPz36re5T0WCEGbNkQFaF97Gme
 (10分) $[$ 数学发现 $]$ 
 
-某校数学兴趣小组进行了如下探究: 以 $triangle A B C$ 内部任意一点 $O$ 为中心, 画出与 $triangle A B C$ 成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′. 当点 $O$ 处于不同位置时, 从 "形" 的角度发现两个三角形的重叠部分只可能有两种情况: 如图 $1$ 所示的平行四边形, 如图 $2$ 所示的有三组对边分别平行的六边形 $($ 称为 "平行六边形" $)$ ; 从 "数" 的角度发现两个三角形重叠部分的面积在不断变化. 
+某校数学兴趣小组进行了如下探究: 以 $triangle A B C$ 内部任意一点 $O$ 为中心, 画出与 $triangle A B C$ 成中心对称的 $triangle A'B'C'$ . 当点 $O$ 处于不同位置时, 从 "形" 的角度发现两个三角形的重叠部分只可能有两种情况: 如图 $1$ 所示的平行四边形, 如图 $2$ 所示的有三组对边分别平行的六边形 $($ 称为 "平行六边形" $)$ ; 从 "数" 的角度发现两个三角形重叠部分的面积在不断变化. 
 
  #image("images/36c1500d.png", width: 25%) 
 
  $[$ 问题解决 $]$ 
 
-组员小明选择面积为 $1$ 的 $triangle A B C$ , 以其内部任意一点 $O$ 为中心, 画出与之成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′, 探究了下列问题, 请你帮他解答. 
+组员小明选择面积为 $1$ 的 $triangle A B C$ , 以其内部任意一点 $O$ 为中心, 画出与之成中心对称的 $triangle A'B'C'$ , 探究了下列问题, 请你帮他解答. 
 
-(1) 如图 $3$ , $B C=2$ , 当点 $A$ 关于点 $O$ 的对称点 $A$ ′落在边 $B C$ 上时, 两个三角形重叠部分为▱ $A Q A$ ′ $P$ . 
+(1) 如图 $3$ , $B C=2$ , 当点 $A$ 关于点 $O$ 的对称点 $A'$ 落在边 $B C$ 上时, 两个三角形重叠部分为▱ $A Q A'P$ . 
 
-①若 $A A$ ′ $tack.t B C$ , 求 $A O$ 的长; $($ 请直接写出答案 $)$ 
+①若 $A A' tack.t B C$ , 求 $A O$ 的长; $($ 请直接写出答案 $)$ 
 
-②若▱ $A Q A$ ′ $P$ 的面积为 $(1 )/(4 )$ , 求 $A$ ′ $C$ 的长. 
+②若▱ $A Q A'P$ 的面积为 $(1 )/(4 )$ , 求 $A'C$ 的长. 
 
 (2) 如图 $4$ , 点 $D$ 为 $B C$ 的中点, 点 $O$ 在 $A D$ 上, 若两个三角形的重叠部分为 "平行六边形" $E F G H M N$ , 求 "平行六边形" $E F G H M N$ 面积的最大值, 并指出此时点 $O$ 的位置. 
 
@@ -898,41 +898,41 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore h=1$ , 
 
-当 $A A$ ' $tack.t B C$ 时, $A A$ ' $=h=1$ , 
+当 $A A' tack.t B C$ 时, $A A'=h=1$ , 
 
- $therefore A O= (1 )/(2 ) A A ′ = (1 )/(2 )$ ; 
+ $therefore A O= (1 )/(2 ) A A ' = (1 )/(2 )$ ; 
 
-②由题可知 $A B parallel A$ ' $B$ ', $B C parallel B$ ' $C$ ', $A C parallel A$ ' $C$ ', 
+②由题可知 $A B parallel A'B'$ , $B C parallel B'C'$ , $A C parallel A'C'$ , 
 
- $therefore triangle P A$ ' $C∽ triangle Q B A$ ', 
+ $therefore triangle P A'C∽ triangle Q B A'$ , 
 
- $therefore$ 设 $(A ′ C )/(A ′ B ) = (P C )/(A ′ Q ) = (A ′ P )/(Q B ) = (1 )/(k )$ , 
+ $therefore$ 设 $(A ' C )/(A ' B ) = (P C )/(A ' Q ) = (A ' P )/(Q B ) = (1 )/(k )$ , 
 
  $therefore (P C )/(A P ) = (A Q )/(B Q ) = (1 )/(k )$ , 
 
- $because$ ▱ $A Q A$ ′ $P$ 的面积为 $(1 )/(4 )$ , 
+ $because$ ▱ $A Q A'P$ 的面积为 $(1 )/(4 )$ , 
 
- $therefore S_( triangle A A "'" P)= (1 )/(8 )$ , 
+ $therefore S_( triangle A A'P)= (1 )/(8 )$ , 
 
- $because (S _( triangle A ′ P C ) )/(S _( triangle A A ′ P ) ) = (P C )/(A P ) = (1 )/(k )$ , 
+ $because (S _( triangle A ' P C ) )/(S _( triangle A A ' P ) ) = (P C )/(A P ) = (1 )/(k )$ , 
 
- $therefore S_( triangle A "'" P C)= (1 )/(8 k )$ , 
+ $therefore S_( triangle A'P C)= (1 )/(8 k )$ , 
 
-同理可得 $S_( triangle B Q A)$ ' $= (k )/(8 )$ , 
+同理可得 $S_( triangle B Q A)'= (k )/(8 )$ , 
 
- $because S_( triangle A "'" P C)+S_( triangle B Q A)$ ' $=S_( triangle A B C)-S_("▱" A Q A "′" P)=1- (1 )/(4 ) = (3 )/(4 )$ , 
+ $because S_( triangle A'P C)+S_( triangle B Q A)'=S_( triangle A B C)-S_("▱" A Q A'P)=1- (1 )/(4 ) = (3 )/(4 )$ , 
 
  $therefore (k )/(8 ) + (1 )/(8 k ) = (3 )/(4 )$ , 
 
 解得 $k=3$ ± $2 sqrt(2 )$ , 
 
- $because (A ′ C )/(B A ′ ) = (1 )/(k )$ , 
+ $because (A ' C )/(B A ' ) = (1 )/(k )$ , 
 
- $therefore (A ′ C )/(B C ) = (1 )/(k + 1 )$ , 
+ $therefore (A ' C )/(B C ) = (1 )/(k + 1 )$ , 
 
- $therefore A$ ' $C= (2 )/(k + 1 ) = (2 ± sqrt(2 ) )/(2 )$ ; 
+ $therefore A'C= (2 )/(k + 1 ) = (2 ± sqrt(2 ) )/(2 )$ ; 
 
-(2) 如图, 设 $A D$ 与 $B$ ' $C$ '交于点 $L$ , 
+(2) 如图, 设 $A D$ 与 $B'C'$ 交于点 $L$ , 
 
  #image("images/72d0e2a1.png", width: 25%) 
 
@@ -954,7 +954,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
 连接 $E M$ , $F H$ , 
 
- $because B B$ ' $parallel B C$ , 
+ $because B B' parallel B C$ , 
 
  $therefore (M L )/(B D ) = (A L )/(A D ) = (H L )/(C D )$ , 
 

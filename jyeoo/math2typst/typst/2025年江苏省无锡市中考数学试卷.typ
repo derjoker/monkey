@@ -505,13 +505,13 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore E F= sqrt(F G ^(2 ) + D G ^(2 ) ) = sqrt(6 ^(2 ) + ( 4 sqrt(3 ) ) ^(2 ) ) =2 sqrt(21 )$ , 
 
-当点 $E$ 在 $A$ 点, $($ 图中 $E$ ′ $)$ , $F$ 是 $C D$ 中点时 $($ 图中 $F$ ′ $)$ , 作 $F$ ′ $Q tack.t A D$ 于 $Q$ , 
+当点 $E$ 在 $A$ 点, $($ 图中 $E')$ , $F$ 是 $C D$ 中点时 $($ 图中 $F')$ , 作 $F'Q tack.t A D$ 于 $Q$ , 
 
-则 $D Q= (1 )/(2 ) D F$ ′ $=1$ , $F$ ′ $Q= (sqrt(3 ) )/(2 ) F$ ′ $Q= sqrt(3 )$ , 
+则 $D Q= (1 )/(2 ) D F'=1$ , $F'Q= (sqrt(3 ) )/(2 ) F'Q= sqrt(3 )$ , 
 
  $therefore A Q=A D-D Q=7$ , 
 
- $therefore A F$ ′ $= sqrt(F ′ Q ^(2 ) + A Q ^(2 ) ) = sqrt(( sqrt(3 ) ) ^(2 ) + 7 ^(2 ) ) =2 sqrt(13 )$ , 
+ $therefore A F'= sqrt(F ' Q ^(2 ) + A Q ^(2 ) ) = sqrt(( sqrt(3 ) ) ^(2 ) + 7 ^(2 ) ) =2 sqrt(13 )$ , 
 
  $therefore 2 sqrt(13 ) < E F < 2 sqrt(21 )$ , 
 
@@ -743,7 +743,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
 活动 $2$ : 测量南禅寺妙光塔的高度
 
-南禅寺妙光塔, 简称 "妙光塔", 始建于北宋雍熙年间, 是无锡著名的文物保护单位之一. 该小组为全面了解本土历史文物, 决定走出校园去测量妙光塔的高度. 他们到达妙光塔后, 发现塔顶 $A$ 和塔底中心 $B$ 均无法到达. 经研究, 设计并实施了如下测量活动 $($ 示意图 $2)$ . 在地面一条水平步道上的点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ , 塔顶 $A$ 在同一条直线上. 小军沿 $F Q$ 的方向走到点 $Q$ ′处, 此时标杆 $E$ ′ $F$ ′竖立于 $F$ ′处, 从点 $P$ ′处看到标杆顶 $E$ ′, 塔顶 $A$ 在同一条直线上. 已知 $A B$ , $E F$ , $P Q$ , $E$ ′ $F$ ′和 $P$ ′ $Q$ ′在同一平面内, 点 $B$ , $F$ , $Q$ , $F$ ′, $Q$ ′在同一条直线上, $E F=E$ ′ $F$ ′ $=2.8 m,P Q=P$ ′ $Q$ ′ $=1.4 m,F Q=1.2 m,F$ ′ $Q$ ′ $=2.2 m,Q Q$ ′ $=30 m$ .
+南禅寺妙光塔, 简称 "妙光塔", 始建于北宋雍熙年间, 是无锡著名的文物保护单位之一. 该小组为全面了解本土历史文物, 决定走出校园去测量妙光塔的高度. 他们到达妙光塔后, 发现塔顶 $A$ 和塔底中心 $B$ 均无法到达. 经研究, 设计并实施了如下测量活动 $($ 示意图 $2)$ . 在地面一条水平步道上的点 $F$ 处竖立标杆 $E F$ , 直立在点 $Q$ 处的小军从点 $P$ 处看到标杆顶 $E$ , 塔顶 $A$ 在同一条直线上. 小军沿 $F Q$ 的方向走到点 $Q'$ 处, 此时标杆 $E'F'$ 竖立于 $F'$ 处, 从点 $P'$ 处看到标杆顶 $E'$ , 塔顶 $A$ 在同一条直线上. 已知 $A B$ , $E F$ , $P Q$ , $E'F'$ 和 $P'Q'$ 在同一平面内, 点 $B$ , $F$ , $Q$ , $F'$ , $Q'$ 在同一条直线上, $E F=E'F'=2.8 m,P Q=P'Q'=1.4 m,F Q=1.2 m,F'Q'=2.2 m,Q Q'=30 m$ .
 
 (2) 求妙光塔 $A B$ 的高度. 
 
@@ -774,17 +774,17 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
 答: 旗杆 $M N$ 的高度为 $14 m$ .
 
-(2) 连接 $E E$ ′并延长交 $A B$ 于点 $M$ , 连接 $P P$ ′并延长交 $A B$ 于点 $N$ , 交 $E F$ 于点 $H$ , 交 $E$ ′ $F$ ′于点 $K$ , 如图, 
+(2) 连接 $E E'$ 并延长交 $A B$ 于点 $M$ , 连接 $P P'$ 并延长交 $A B$ 于点 $N$ , 交 $E F$ 于点 $H$ , 交 $E'F'$ 于点 $K$ , 如图, 
 
  #image("dumb.png", width: 25%) 
 
-则四边形 $B M E F$ , 四边形 $B N P Q$ , 四边形 $P$ ′ $Q$ ′ $B N$ , 四边形 $B N K F$ , 四边形 $P Q Q$ ′ $P$ ′为矩形, 
+则四边形 $B M E F$ , 四边形 $B N P Q$ , 四边形 $P'Q'B N$ , 四边形 $B N K F$ , 四边形 $P Q Q'P'$ 为矩形, 
 
- $therefore B M=E F=E$ ′ $F$ ′ $=2.8 m,H F=K F$ ′ $=B N=P Q=P$ ′ $Q=1.4 m,H P=F Q=1.2 m,Q Q$ ′ $=P P$ ′ $=30 m,P$ ′ $K=F$ ′ $Q$ ′ $=2.2 m$ ,
+ $therefore B M=E F=E'F'=2.8 m,H F=K F'=B N=P Q=P'Q=1.4 m,H P=F Q=1.2 m,Q Q'=P P'=30 m,P'K=F'Q'=2.2 m$ ,
 
- $therefore M N=H E=K E$ ′ $=E F-H F=1.4 m$ ,
+ $therefore M N=H E=K E'=E F-H F=1.4 m$ ,
 
-设 $H N=x m,A M=y m$ ,则 $P N=H N+H P=(1.2+x)m,A N=A M+M N=(1.4+y)m,P$ ′ $N=P P$ ′ $+P N=(31.2+x)m$ ,
+设 $H N=x m,A M=y m$ ,则 $P N=H N+H P=(1.2+x)m,A N=A M+M N=(1.4+y)m,P'N=P P'+P N=(31.2+x)m$ ,
 
  $because E F parallel A B$ , 
 
@@ -794,11 +794,11 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore (1 . 2 )/(1 . 2 + x ) = (1 . 4 )/(y + 1 . 4 )$ . 
 
- $because E$ ′ $F$ ′ $parallel A B$ , 
+ $because E'F' parallel A B$ , 
 
- $therefore triangle P E K∽ triangle P$ ′ $A N$ , 
+ $therefore triangle P E K∽ triangle P'A N$ , 
 
- $therefore (P ′ K )/(P ′ N ) = (E ′ K )/(A N )$ , 
+ $therefore (P ' K )/(P ' N ) = (E ' K )/(A N )$ , 
 
  $therefore (2 . 2 )/(31 . 2 + x ) = (1 . 4 )/(y + 1 . 4 )$ , 
 
@@ -875,19 +875,19 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 // https://www.jyeoo.com/math/ques/detail/5DSmT0FYe2uHKrmmTeCyhu9T05VZSHqIbNes8kQYhAztuqAt89MIHg
 (10分) $[$ 数学发现 $]$ 
 
-某校数学兴趣小组进行了如下探究: 以 $triangle A B C$ 内部任意一点 $O$ 为中心, 画出与 $triangle A B C$ 成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′. 当点 $O$ 处于不同位置时, 从 "形" 的角度发现两个三角形的重叠部分只可能有两种情况: 如图 $1$ 所示的平行四边形, 如图 $2$ 所示的有三组对边分别平行的六边形 $($ 称为 "平行六边形" $)$ ; 从 "数" 的角度发现两个三角形重叠部分的面积在不断变化. 
+某校数学兴趣小组进行了如下探究: 以 $triangle A B C$ 内部任意一点 $O$ 为中心, 画出与 $triangle A B C$ 成中心对称的 $triangle A'B'C'$ . 当点 $O$ 处于不同位置时, 从 "形" 的角度发现两个三角形的重叠部分只可能有两种情况: 如图 $1$ 所示的平行四边形, 如图 $2$ 所示的有三组对边分别平行的六边形 $($ 称为 "平行六边形" $)$ ; 从 "数" 的角度发现两个三角形重叠部分的面积在不断变化. 
 
  #image("dumb.png", width: 25%) 
 
  $[$ 问题解决 $]$ 
 
-组员小明选择面积为 $1$ 的 $triangle A B C$ , 以其内部任意一点 $O$ 为中心, 画出与之成中心对称的 $triangle A$ ′ $B$ ′ $C$ ′, 探究了下列问题, 请你帮他解答. 
+组员小明选择面积为 $1$ 的 $triangle A B C$ , 以其内部任意一点 $O$ 为中心, 画出与之成中心对称的 $triangle A'B'C'$ , 探究了下列问题, 请你帮他解答. 
 
-(1) 如图 $3$ , $B C=2$ , 当点 $A$ 关于点 $O$ 的对称点 $A$ ′落在边 $B C$ 上时, 两个三角形重叠部分为▱ $A Q A$ ′ $P$ . 
+(1) 如图 $3$ , $B C=2$ , 当点 $A$ 关于点 $O$ 的对称点 $A'$ 落在边 $B C$ 上时, 两个三角形重叠部分为▱ $A Q A'P$ . 
 
-①若 $A A$ ′ $tack.t B C$ , 求 $A O$ 的长; $($ 请直接写出答案 $)$ 
+①若 $A A' tack.t B C$ , 求 $A O$ 的长; $($ 请直接写出答案 $)$ 
 
-②若▱ $A Q A$ ′ $P$ 的面积为 $(1 )/(4 )$ , 求 $A$ ′ $C$ 的长. 
+②若▱ $A Q A'P$ 的面积为 $(1 )/(4 )$ , 求 $A'C$ 的长. 
 
 (2) 如图 $4$ , 点 $D$ 为 $B C$ 的中点, 点 $O$ 在 $A D$ 上, 若两个三角形的重叠部分为 "平行六边形" $E F G H M N$ , 求 "平行六边形" $E F G H M N$ 面积的最大值, 并指出此时点 $O$ 的位置. 
 
@@ -898,41 +898,41 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore h=1$ , 
 
-当 $A A$ ' $tack.t B C$ 时, $A A$ ' $=h=1$ , 
+当 $A A' tack.t B C$ 时, $A A'=h=1$ , 
 
- $therefore A O= (1 )/(2 ) A A ′ = (1 )/(2 )$ ; 
+ $therefore A O= (1 )/(2 ) A A ' = (1 )/(2 )$ ; 
 
-②由题可知 $A B parallel A$ ' $B$ ', $B C parallel B$ ' $C$ ', $A C parallel A$ ' $C$ ', 
+②由题可知 $A B parallel A'B'$ , $B C parallel B'C'$ , $A C parallel A'C'$ , 
 
- $therefore triangle P A$ ' $C∽ triangle Q B A$ ', 
+ $therefore triangle P A'C∽ triangle Q B A'$ , 
 
- $therefore$ 设 $(A ′ C )/(A ′ B ) = (P C )/(A ′ Q ) = (A ′ P )/(Q B ) = (1 )/(k )$ , 
+ $therefore$ 设 $(A ' C )/(A ' B ) = (P C )/(A ' Q ) = (A ' P )/(Q B ) = (1 )/(k )$ , 
 
  $therefore (P C )/(A P ) = (A Q )/(B Q ) = (1 )/(k )$ , 
 
- $because$ ▱ $A Q A$ ′ $P$ 的面积为 $(1 )/(4 )$ , 
+ $because$ ▱ $A Q A'P$ 的面积为 $(1 )/(4 )$ , 
 
- $therefore S_( triangle A A "'" P)= (1 )/(8 )$ , 
+ $therefore S_( triangle A A'P)= (1 )/(8 )$ , 
 
- $because (S _( triangle A ′ P C ) )/(S _( triangle A A ′ P ) ) = (P C )/(A P ) = (1 )/(k )$ , 
+ $because (S _( triangle A ' P C ) )/(S _( triangle A A ' P ) ) = (P C )/(A P ) = (1 )/(k )$ , 
 
- $therefore S_( triangle A "'" P C)= (1 )/(8 k )$ , 
+ $therefore S_( triangle A'P C)= (1 )/(8 k )$ , 
 
-同理可得 $S_( triangle B Q A)$ ' $= (k )/(8 )$ , 
+同理可得 $S_( triangle B Q A)'= (k )/(8 )$ , 
 
- $because S_( triangle A "'" P C)+S_( triangle B Q A)$ ' $=S_( triangle A B C)-S_("▱" A Q A "′" P)=1- (1 )/(4 ) = (3 )/(4 )$ , 
+ $because S_( triangle A'P C)+S_( triangle B Q A)'=S_( triangle A B C)-S_("▱" A Q A'P)=1- (1 )/(4 ) = (3 )/(4 )$ , 
 
  $therefore (k )/(8 ) + (1 )/(8 k ) = (3 )/(4 )$ , 
 
 解得 $k=3$ ± $2 sqrt(2 )$ , 
 
- $because (A ′ C )/(B A ′ ) = (1 )/(k )$ , 
+ $because (A ' C )/(B A ' ) = (1 )/(k )$ , 
 
- $therefore (A ′ C )/(B C ) = (1 )/(k + 1 )$ , 
+ $therefore (A ' C )/(B C ) = (1 )/(k + 1 )$ , 
 
- $therefore A$ ' $C= (2 )/(k + 1 ) = (2 ± sqrt(2 ) )/(2 )$ ; 
+ $therefore A'C= (2 )/(k + 1 ) = (2 ± sqrt(2 ) )/(2 )$ ; 
 
-(2) 如图, 设 $A D$ 与 $B$ ' $C$ '交于点 $L$ , 
+(2) 如图, 设 $A D$ 与 $B'C'$ 交于点 $L$ , 
 
  #image("dumb.png", width: 25%) 
 
@@ -954,7 +954,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
 连接 $E M$ , $F H$ , 
 
- $because B B$ ' $parallel B C$ , 
+ $because B B' parallel B C$ , 
 
  $therefore (M L )/(B D ) = (A L )/(A D ) = (H L )/(C D )$ , 
 

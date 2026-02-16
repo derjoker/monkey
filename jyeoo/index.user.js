@@ -568,10 +568,10 @@
 
         // Groups:
         // 1. (\(\s+\)) -> Empty parens
-        // 2. (_+)      -> Underscores
+        // 2. (__+)     -> Underscores (at least 2)
         // 3. (\(\s*\d+\s*分\s*\)) -> Score (e.g. (5 分))
         // 4. ((?:^|[\n\r])\s*\(\s*\d+\s*\)) -> Numbering at start of line/text (e.g. (1))
-        text = text.replace(/(\(\s+\))|(_+)|(\(\s*\d+\s*分\s*\))|((?:^|[\n\r])\s*\(\s*\d+\s*\))/g, (match) => {
+        text = text.replace(/(\(\s+\))|(__+)|(\(\s*\d+\s*分\s*\))|((?:^|[\n\r])\s*\(\s*\d+\s*\))/g, (match) => {
             const char = String.fromCharCode(puaCode++);
             mapping.set(char, match);
             return char;
@@ -588,7 +588,7 @@
         // Capturing groups: 1=PUA, 2=DefiniteMath, 3=Punctuation(.,:;)
         // Added \u2200-\u22FF (Math Operators: infinity, union, element of, etc.)
         // Added \u00B0(°), \u00D7(×), \u00F7(÷), \u2190-\u21FF(Arrows), \u25B3(△)
-        const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
+        const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\'\_\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
 
         let lastIndex = 0;
         let match;
@@ -679,7 +679,7 @@
             .replace(/【/g, '[')
             .replace(/】/g, ']')
             .replace(/[“”]/g, '"')
-            .replace(/[‘’]/g, "'")
+            .replace(/[‘’′]/g, "'")
             .replace(/、/g, ', ')
             .replace(/？/g, '?')
             .replace(/！/g, '!')
@@ -890,6 +890,15 @@
             '∞': 'infinity', '∪': 'union', '∩': 'inter',
             '∈': 'in', '∉': 'in.not', '⊆': 'subset.eq', '⊂': 'subset', '∅': 'emptyset'
         };
+
+        // Context-aware Delta mapping
+        // If Δ is followed by 3 uppercase letters (vertices), it's a triangle.
+        // Note: Letters are already spaced by previous rules (e.g. "A B C")
+        // Regex looks for Δ followed by optional spaces and 3 letters.
+        text = text.replace(/Δ(?=\s*[A-Z]\s*[A-Z]\s*[A-Z])/g, ' triangle ');
+
+        // Default remaining Δ to Delta
+        text = text.replace(/Δ/g, ' Delta ');
 
         for (const [key, val] of Object.entries(map)) {
             text = text.replaceAll(key, ` ${val} `);

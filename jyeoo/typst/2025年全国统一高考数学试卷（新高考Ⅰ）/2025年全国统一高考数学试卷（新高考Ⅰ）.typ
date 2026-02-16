@@ -5,7 +5,7 @@
 = 选择题: 本大题共8小题, 每小题5分, 共计40分. 每小题给出的四个选项中, 只有一个选项是正确的. 请把正确的选项填涂在答题卡相应的位置上. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7Iv5KcxUen09THs9KGP4SKbZBna0dfxLobfVlpM1tUnqb0xaR9c88m
+// https://www.jyeoo.com/math2/ques/detail/7dhMmcuEeQMfXRRSdQDA8YbirVsvDse7fWf9aX4rWYHwKuQPv9J8Ii
 (5分) $(1+5 i)i$ 的虚部为 #parentheses
 #choices(
   ([$-1$], [$0$], [$1$], [$6$]),
@@ -22,7 +22,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/55f0q4smaWtRxS45OIcwQCfmUpSv5wWfrZ0A4jVv7Se21oox9eexNI
+// https://www.jyeoo.com/math2/ques/detail/4x75A4Q6aifOqKu5TuU5HVfnug3DwkZs2T0apeWxnYGjSbH3veM3Rg
 (5分) 设全集 $U={x|x$ 是小于 $9$ 的正整数 $}$ , 集合 $A={1, 3, 5}$ , 则 $∁_(U)A$ 中元素个数为 #parentheses
 #choices(
   ([$2$], [$3$], [$5$], [$8$]),
@@ -39,7 +39,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6GogF4BA8X8k3e7OgFGfaX3aXHwczLkqSYacFdGaJDEBBMpWw5mXlw
+// https://www.jyeoo.com/math2/ques/detail/8Wq7M4N18eykSc0UgbxqCi312zM1lfY11paxzcBSooVuS3IdQ5WPOC
 (5分) 若双曲线 $C$ 的虚轴长为实轴长的 $sqrt(7 )$ 倍, 则 $C$ 的离心率为 #parentheses
 #choices(
   ([$sqrt(2 )$], [$2$], [$sqrt(7 )$], [$2 sqrt(2 )$]),
@@ -58,7 +58,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/737SP4eS5DxAXy1pblKNKe2SLT33dqFBP4bWSqBvn1hg5jHaR6BR8C
+// https://www.jyeoo.com/math2/ques/detail/8LcUH4sM58pjrJkML5lmIt2D8VaE4qSlcMbEx8KOFsd6eMRUJ6bbMG
 (5分) 若点 $(a,0)(a>0)$ 是函数 $y=2 tan(x- ( pi )/(3 ) )$ 的图象的一个对称中心, 则 $a$ 的最小值为 #parentheses
 #choices(
   ([$( pi )/(4 )$], [$( pi )/(2 )$], [$( pi )/(3 )$], [$(4 pi )/(3 )$]),
@@ -75,7 +75,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7Vw6g2L58BK1gJvADrhy3CfWC9ypq4hdVj6IpJ5z6gFaeT67J7tCLY
+// https://www.jyeoo.com/math2/ques/detail/666yl2rV8lNmn5M7OSzhJKfYJPTZRDOVSy6zWOHxwcG7dszLZ7M6me
 (5分) 设 $f(x)$ 是定义在 $R$ 上且周期为 $2$ 的偶函数, 当 $2 <= x <= 3$ 时, $f(x)=5-2 x$ ,则 $f(- (3 )/(4 ) )=$ #parentheses
 #choices(
   ([$- (1 )/(2 )$], [$- (1 )/(4 )$], [$(1 )/(4 )$], [$(1 )/(2 )$]),
@@ -90,7 +90,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/89DDe0k38weyDsqdhwszPIa8lLaJQhYy317mxzcRpB9XljNwu32Ekq
+// https://www.jyeoo.com/math2/ques/detail/5ZlrY0L88C8LnWXxxXt6Y6abBmk8jHhC4O79llEhrZWAaIJ533g4Wm
 #grid(columns: (1fr, 25%), gutter: 1em, [(5分) 帆船比赛中, 运动员可借助风力计测定风速的大小和方向, 测出的结果在航海学中称为视风风速, 视风风速对应的向量是真风风速对应的向量与船行风速对应的向量之和, 其中船行风速对应的向量与船速对应的向量大小相等, 方向相反. 如表给出了部分风力等级, 名称与风速大小的对应关系. 已知某帆船运动员在某时刻测得的视风风速对应的向量与船速对应的向量如图 $($ 风速的大小和向量的大小相同 $,$ 单位 $m/s)$ , 则真风为 #parentheses 
 
 
@@ -98,7 +98,7 @@
  columns: 3,
  align: center + horizon,
  [等级], [风速大小 $m/s$], [名称], [$2$], [$1.1$ ～ $3.3$], [轻风], [$3$], [$3.4$ ～ $5.4$], [微风], [$4$], [$5.5$ ～ $7.9$], [和风], [$5$], [$8.0$ ～ $10.1$], [劲风]
-)], [#align(center + top, image("dumb.png", width: 100%))])
+)], [#align(center + top, image("images/605fdbb8.png", width: 100%))])
 #choices(
   ([轻风], [微风], [和风], [劲风]),
   colNum: 4
@@ -107,7 +107,7 @@
 #solution[
 如图: 视风风速对应向量的坐标为 $v _(1 ) = ( - 3 , - 1 )$ , 
 
- #image("dumb.png", width: 25%) 
+ #image("images/50cf3bd0.png", width: 25%) 
 
 船速对应向量的坐标为 $v _(2 ) =(1, 3)$ , 
 
@@ -126,7 +126,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8aanwfUkcheV9GkBwQRXhf0vUSxwcQOLns2mlR42eV1M4qk5N0Ek5o
+// https://www.jyeoo.com/math2/ques/detail/7WhBqfqicH9UAfNoS2WvaU0uTRQteE42ks2LXSilSMSolLmaC0SAvg
 (5分) 若圆 $x^(2)+(y+2)^(2)=r^(2)(r>0)$ 上到直线 $y= sqrt(3 ) x+2$ 的距离为 $1$ 的点有且仅有 $2$ 个, 则 $r$ 的取值范围是 #parentheses
 #choices(
   ([$(0, 1)$], [$(1, 3)$], [$(3, + infinity )$], [$(0, + infinity )$]),
@@ -147,7 +147,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8ipL60C1fvX4klfAWHPIaG6qrOfvFIceto2cvxl7yqmQtqXPudFXxA
+// https://www.jyeoo.com/math2/ques/detail/4qvT30aNf3Ww0JExlJNnje6FyQFVOA9px02vRw5ZVWvthZDIRdIxA8
 (5分) 若实数 $x,y,z$ 满足 $2+log_(2)x=3+log_(3)y=5+log_(5)z$ ,则 $x,y,z$ 的大小关系不可能是 #parentheses
 #choices(
   ([$x>y>z$], [$x>z>y$], [$y>x>z$], [$y>z>x$]),
@@ -172,7 +172,7 @@
 = 选择题: 本题共3小题, 每小题6分, 共18分. 在每小题给出的选项中, 有多项符合题目要求. 全部选对的得6分, 部分选对的得部分分, 有选错的得0分. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6Fcgk894aAOSH5R0hEGxKiatqtJoe8b5Kg1hbO1slR4xgzN8872GTA
+// https://www.jyeoo.com/math2/ques/detail/7JHkL8gwaG8lC0SUjSCFfYaS2KNcAjYSIb1h7ThpRieDKjcIO7C2fg
 (6分) 在正三棱柱 $A B C-A_(1)B_(1)C_(1)$ 中, $D$ 为 $B C$ 中点, 则 #parentheses
 #choices(
   ([$A D tack.t A_(1)C$], [$B C tack.t$ 平面 $A A_(1)D$], [$C C_(1) parallel$ 平面 $A A_(1)D$], [$A D parallel A_(1)B_(1)$]),
@@ -197,12 +197,12 @@
  $therefore A D$ 与 $A_(1)B_(1)$ 不平行, 故 $D$ 错误. 
 
 故选: $B C$ . 
-], [#align(center + top, image("dumb.png", width: 100%))])
+], [#align(center + top, image("images/82dcaaeb.png", width: 100%))])
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6RFsWexV9n6Dpt0bESj3mw3qYPSkFVd3FtbWjUZlfhFk8d6HY5S9FQ
+// https://www.jyeoo.com/math2/ques/detail/7DrrHeQL9GhqFCBvUaSwKj3SDsK15eyuPgbONeDee2Iq9qTzU52IU4
 (6分) 设抛物线 $C$ : $y^(2)=6 x$ 的焦点为 $F$ , 过 $F$ 的直线交 $C$ 于 $A$ , $B$ , 过 $F$ 且垂直于 $A B$ 的直线交准线 $l$ : $x=- (3 )/(2 )$ 于 $E$ , 过点 $A$ 作准线 $l$ 的垂线, 垂足为 $D$ , 则 #parentheses
 #choices(
   ([$|A D|=|A F|$], [$|A E|=|A B|$], [$|A B| >= 6$], [$|A E| dot.op |B E| >= 18$]),
@@ -220,7 +220,7 @@
 
 由 $cases(x = m y + (3 )/(2 ), y ^(2 ) = 6 x)$ , 
 
- #image("dumb.png", width: 25%) 
+ #image("images/71e6c56a.png", width: 25%) 
 
 消 $x$ 可得 $y^(2)-6 m y-9=0$ , 
 
@@ -251,7 +251,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7TQnYeAy90p5oykxHuAl6K1nNsgkIt4XMc1L3lcO8D1bU5Xyb5Fc1I
+// https://www.jyeoo.com/math2/ques/detail/4mbAyetj9EaYMXU8edKbQv1oWaWQkeOzID18gYrYwaCE1RYQh5YBQe
 (6分) 已知 $triangle A B C$ 的面积为 $(1 )/(4 )$ , 若 $cos 2 A+cos 2 B+2 sin C=2$ , $cos A cos B sin C= (1 )/(4 )$ , 则 #parentheses
 #choices(
   ([$sin C=sin^(2)A+sin^(2)B$], [$A B= sqrt(2 )$], [$sin A+sin B= (sqrt(6 ) )/(2 )$], [$A C^(2)+B C^(2)=3$]),
@@ -300,7 +300,7 @@
 = 填空题: 本大题共3小题, 每小题5分, 共计15分. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5J0Im12H0ZclVMIHb1FVy15u51uvvl84mYdiKyTOp7eJ0SGq5fmw3E
+// https://www.jyeoo.com/math2/ques/detail/83Ubc1B40hjOUJYsWuNnMG53EPetvvU9egdHFPOeDpKHW6kF2fDuW8
 (5分) 若直线 $y=2 x+5$ 是曲线 $y=e^(x)+x+a$ 的切线, 则 $a=$ #blank .
 
 #solution[
@@ -317,7 +317,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6q90jaPO339WduT5vPZ89c1SpppOTNnse24TI9MnY9kfqOSF66DX9s
+// https://www.jyeoo.com/math2/ques/detail/87LiyaC23MkJTYmpIhAk0o19nIdVWtQJMg4I3fnA5g3wN4hvj6tHvs
 (5分) 若一个正项等比数列的前 $4$ 项和为 $4$ , 前 $8$ 项和为 $68$ , 则该等比数列的公比为 #blank .
 
 #solution[
@@ -332,7 +332,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5fOZpew3cRZEnYboZACWzEdbQcpEPJbAQO5sMq9N26x4KH3jf1trVo
+// https://www.jyeoo.com/math2/ques/detail/7z62reLXctY5FfIFNdDyond64L7cqnmDhy5cYWUiaH5uhGiMu14bNw
 (5分) 一个箱子里有 $5$ 个相同的球, 分别以 $1∼5$ 标号, 若每次取一颗, 有放回地取三次, 记至少被取出一次的球的个数为 $X$ , 则数学期望 $E(X)=$ #blank .
 
 #solution[
@@ -353,7 +353,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 = 解答题: 本题共5小题, 共77分. 解答应写出文字说明, 证明过程或演算步骤. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/85NIp8LlaTOyykVJf3aZrG07C44Vh7rVnZ2omuU9bSiVQcMlH7k9Am
+// https://www.jyeoo.com/math2/ques/detail/6gLHi8jEafvF3CZGJTOJ6v0Dz4gjruFXNM2ip4OBfCOpaXApE7qbEe
 (13分) 为研究某疾病与超声波检查结果的关系, 从做过超声波检查的人群中随机调查了 $1000$ 人, 得到如下列联表: 
 
 
@@ -393,7 +393,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8itHEcMzfP3bUywrPZwABn6kCnsHdlUAwM9XauCJtgWaUD2b97ZcMy
+// https://www.jyeoo.com/math2/ques/detail/8WudNcyXfTSmrYa3JsmqwJ6HT0o9ZwwgQh9Ay4ZdrYLJJwFjm7vr7Y
 (15分) 设数列 ${a_(n)}$ 满足 $a_(1)=3$ , $(a _(n + 1 ) )/(n ) = (a _(n ) )/(n + 1 ) + (1 )/(n ( n + 1 ) )$ . 
 
 (1) 证明: ${n a_(n)}$ 为等差数列; 
@@ -424,7 +424,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5D9BEdE94yigGXgTR08RkZ9A4zsnPHJxHX3wotIMPmOMVF6kr5vCXA
+// https://www.jyeoo.com/math2/ques/detail/7OYOFd3248e22gsaj4qdu99KlLY8Fb5MbI3pn3pGRsA6nYRg958AGe
 #grid(columns: (1fr, 25%), gutter: 1em, [(15分) 如图所示的四棱锥 $P-A B C D$ 中, $P A tack.t$ 平面 $A B C D$ , $B C parallel A D$ , $A B tack.t A D$ . 
 
 (1) 证明: 平面 $P A B tack.t$ 平面 $P A D$ ; 
@@ -433,7 +433,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
  $(i)$ 证明: $O$ 在平面 $A B C D$ 上; 
 
- $(i i)$ 求直线 $A C$ 与直线 $P O$ 所成角的余弦值.], [#align(center + top, image("dumb.png", width: 100%))])
+ $(i i)$ 求直线 $A C$ 与直线 $P O$ 所成角的余弦值.], [#align(center + top, image("images/3122cee4.png", width: 100%))])
 
 #solution[
 (1)证明: $because P A tack.t$ 平面 $A B C D$ , $A B subset$ 平面 $A B C D$ , 
@@ -450,7 +450,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
 (2) $(i)$ 证明: 由题意, $A B$ , $A D$ , $A P$ 两两垂直, 分别以 $A B$ , $A D$ , $A P$ 为 $x,y,z$ 轴, 建立空间直角坐标系 $A-x y z$ ,
 
- #image("dumb.png", width: 25%) 
+ #image("images/2ffaf95c.png", width: 25%) 
 
 则 $B ( sqrt(2 ) , 0 , 0 )$ , $C ( sqrt(2 ) , 2 , 0 )$ , $D ( 0 , sqrt(3 ) + 1 , 0 )$ , $P ( 0 , 0 , sqrt(2 ) )$ , 
 
@@ -469,7 +469,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6WBHM1TX5jEiXDq7A9Mta55rhe6ZHs54OW5EKb3bpgego9IYl8pUcy
+// https://www.jyeoo.com/math2/ques/detail/4rqJU14A5JHtmXW2bgxVlJ58JdTGYlf6Qg51aF9rcieYpwPZh87n3g
 (17分) 已知椭圆 $C$ : $(x ^(2 ) )/(a ^(2 ) ) + (y ^(2 ) )/(b ^(2 ) ) =1(a>b>0)$ 的离心率为 $(2 sqrt(2 ) )/(3 )$ , 椭圆下顶点为 $A$ , 右顶点为 $B$ , $|A B|= sqrt(10 )$ . 
 
 (1) 求椭圆的标准方程; 
@@ -520,7 +520,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/9Aytr4H35z7RwlT1UwFARe18fecD4gMuuIeSkzQjOL2fFxyBb7Ti7M
+// https://www.jyeoo.com/math2/ques/detail/7jxal4mH5cqJuartfbYCn811g0RVeclq3YewJXbIDMHquiFLY7gzfk
 (17分) 设函数 $f(x)=5 cos x-cos 5 x$ .
 
 (1) 求 $f(x)$ 在 $[0, ( pi )/(4 ) ]$ 的最大值; 
@@ -560,7 +560,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
 法二: 因为 $cos y <= cos theta$ , 
 
- #image("dumb.png", width: 25%) 
+ #image("images/fc2d02f6.png", width: 25%) 
 
 所以需要满足 $2 k pi + theta <= y <= 2 k pi +2 pi - theta$ , 
 
@@ -568,7 +568,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
 所以需满足 $[a- theta , a+ theta ] inter [2 k pi + theta , 2 k pi +2 pi - theta ] != emptyset$ , 
 
- #image("dumb.png", width: 25%) 
+ #image("images/9cf8f83a.png", width: 25%) 
 
 据图分析, $[a- theta , a+ theta ] inter [2 k pi + theta , 2 k pi +2 pi - theta ] != emptyset$ 显然成立, 
 
@@ -618,7 +618,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
 ① $- ( phi )/(4 ) < ( pi )/(2 ) - ( phi )/(4 ) < pi - ( phi )/(4 ) < (3 pi )/(2 ) - ( phi )/(4 )$ , 分别对应 $x_(1)<x_(2)<x_(3)<x_(4)$ , 
 
- $g( (k pi )/(2 ) - ( phi )/(4 ) )_(max)=max{4 cos ( phi )/(4 )$ , $4 sin ( phi )/(4 ) }$ , #image("dumb.png", width: 25%) 
+ $g( (k pi )/(2 ) - ( phi )/(4 ) )_(max)=max{4 cos ( phi )/(4 )$ , $4 sin ( phi )/(4 ) }$ , #image("images/0a9781ac.png", width: 25%) 
 
 ② $k=0$ , $1$ , $2$ , $3$ , $4$ , $5$ , 
 
@@ -626,7 +626,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
  $x_(6)-x_(1)= (5 pi )/(3 )$ , $- ( pi )/(6 ) <x_(1) < ( pi )/(6 )$ , $(3 pi )/(2 ) <x_(6) < (11 pi )/(6 )$ , 
 
- #image("dumb.png", width: 25%) 
+ #image("images/6c16d41c.png", width: 25%) 
 
 根据图象可得在 $x_(1)$ 处取得最大值, 
 
