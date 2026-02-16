@@ -742,7 +742,54 @@ function renderSegments(segments) {
         }
     }
     flushMath();
-    return result.replace(/ +/g, ' ');
+    result = result.replace(/ +/g, ' ');
+    return fixQuoteSpacing(result);
+}
+
+function fixQuoteSpacing(text) {
+    if (!text) return text;
+
+    // Use split-based parity to distinguish Open vs Close quotes
+    const parts = text.split('"');
+    let result = parts[0];
+
+    for (let i = 1; i < parts.length; i++) {
+        let seg = parts[i];
+
+        if (i % 2 !== 0) {
+            // Odd index -> Just passed an OPEN quote. (Current seg is INSIDE)
+
+            // 1. Spacing for Outside -> Open Quote
+            // If the text before (result) ends with Chinese, add space.
+            if (/[\u4e00-\u9fa5]$/.test(result)) {
+                result += ' ';
+            }
+
+            result += '"'; // Append Open Quote
+
+            // 2. Spacing for Open Quote -> Inside
+            // Trim leading space of inside content (User wants "$..." not " $...")
+            result += seg.trimStart();
+
+        } else {
+            // Even index -> Just passed a CLOSE quote. (Current seg is OUTSIDE)
+
+            // 3. Spacing for Inside -> Close Quote
+            // Trim trailing space of inside content (which is currently at end of result)
+            result = result.trimEnd();
+
+            result += '"'; // Append Close Quote
+
+            // 4. Spacing for Close Quote -> Outside
+            // If the text after (seg) starts with Chinese, add space.
+            if (/^[\u4e00-\u9fa5]/.test(seg)) {
+                result += ' ';
+            }
+
+            result += seg;
+        }
+    }
+    return result;
 }
 
 // Render segments without wrapping in $, for inside SUP/SUB or other math contexts
