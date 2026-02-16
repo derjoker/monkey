@@ -947,8 +947,11 @@ function parseMath(node) {
     }
 
     if (node.classList && node.classList.contains('mfrac')) {
-        const num = node.querySelector('.fracZi');
-        const den = node.querySelector('.fracMu');
+        let num, den;
+        for (let child of node.children) {
+            if (child.classList.contains('fracZi')) num = child;
+            if (child.classList.contains('fracMu')) den = child;
+        }
         const nVal = num ? parseMath(num) : '';
         const dVal = den ? parseMath(den) : '';
         return `(${nVal})/(${dVal})`;
@@ -973,7 +976,13 @@ function parseMath(node) {
     }
 
     if (node.classList && node.classList.contains('msqrt')) {
-        const box = node.querySelector('.msqrtBox');
+        let box;
+        for (let child of node.children) {
+            if (child.classList.contains('msqrtBox')) {
+                box = child;
+                break;
+            }
+        }
         if (box) {
             return `sqrt(${parseMath(box)})`;
         }

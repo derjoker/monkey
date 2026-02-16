@@ -5,7 +5,7 @@
 = 选择题: 本题共8小题, 每小题5分, 共40分.在每小题给出的四个选项中, 只有一项是符合题目要求的. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/68s4Rar5erJ3oYug1f5awKa5VmIvZNuNPSch3xVusGVS86SpF2bRwW
+// https://www.jyeoo.com/math2/ques/detail/685ZuavXeO41JtQppmWVCMaNQ4J4l6JbNNcdoOr4dubaFFNB12cflw
 (5分) 已知集合 $U={x|1 <= x <= 6, x in N}$ , 集合 $A={1, 2, 3, 4}$ , 集合 $B={1, 3, 5}$ , 则 $A inter ∁_(U)B=$ #parentheses
 #choices(
   ([${2, 4}$], [${2, 6}$], [${3, 4}$], [${3, 6}$]),
@@ -22,7 +22,7 @@ $U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8ApbU5D0f6JinHMDdniIFv50cXsL4qORmo8ienG0ro37aVojid8x96
+// https://www.jyeoo.com/math2/ques/detail/6Ku7s5tsfeTWVRN4qTc4z95o0kx6w2x2H48PZbJW09OnOqjmBdc6D2
 (5分) 以原点为圆心的单位圆上一点 $P$ 从 $(1, 0)$ 出发, 沿逆时针方向运动 $(2 pi )/(3 )$ 弧长到达点 $Q$ , 则点 $Q$ 的坐标为 #parentheses
 #choices(
   ([$(- (sqrt(3 ) )/(2 ) , - (1 )/(2 ) )$], [$( - (1 )/(2 ) , - (sqrt(3 ) )/(2 ) )$], [$( - (sqrt(3 ) )/(2 ) , (1 )/(2 ) )$], [$(- (1 )/(2 ) , (sqrt(3 ) )/(2 ) )$]),
@@ -41,8 +41,8 @@ $U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5PzOx2nh4MUrcAbiLEIQOW3993xfUK9ILJ0U1kZj88miZgnPI4XhGy
-(5分) 已知 $A>0$ , $B>0$ , 则" $lg A>lg B$ "是" $sin A>sin B$ "的 #parentheses
+// https://www.jyeoo.com/math2/ques/detail/6owMG2Qq4kCLYj9neRNtfj31M6Cx07PGg70Lp9xEhawadD2TF40z7A
+(5分) 已知 $A>0$ , $B>0$ , 则 "$lg A>lg B$" 是 "$sin A>sin B$" 的 #parentheses
 #choices(
   ([充分且不必要条件], [必要且不充分条件], [充要条件], [既不充分也不必要条件]),
   colNum: 2
@@ -55,14 +55,14 @@ $U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)
 
 必要性: 因为正弦函数不单调, 所以即使 $sin A>sin B$ , 也不能保证 $A>B$ , 进而无法保证 $1 g A>1 g B$ , 必要性不成立, 
 
-因此, " $lg A>lg B$ "既不是" $sin A>sin B$ "的充分条件, 也不是必要条件. 
+因此, "$lg A>lg B$" 既不是 "$sin A>sin B$" 的充分条件, 也不是必要条件. 
 
 故选: $D$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8rRxness4NMGtbkOsxco662LLhRJZdX8lo68RmWrRYXFmzQMNaYDk8
+// https://www.jyeoo.com/math2/ques/detail/73KYZedP4XkvF5fqMsMv2Y27SZ2fGJPygg65Zuwl88uK3c428abrKy
 (5分) 已知函数 $f(x)=ln x+x-5$ 的零点在区间 $(n,n+1)(n in N)$ 内, 则 $n=$ #parentheses
 #choices(
   ([$1$], [$2$], [$3$], [$4$]),
@@ -87,7 +87,7 @@ $U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5iwTKcL87rEm8qtXGWBHeCdHM0XTaVR499ca54Upy1OyXTu9fe1vTk
+// https://www.jyeoo.com/math2/ques/detail/8CsPkc6E7W7ZWnmI8xM20zdM5dIfFEuJG3cM6iam9NUFUza7UeeHAG
 (5分) 求值: $cos 2025 degree =$ #parentheses
 #choices(
   ([$- (sqrt(2 ) )/(2 )$], [$- (1 )/(2 )$], [$(1 )/(2 )$], [$(sqrt(2 ) )/(2 )$]),
@@ -102,8 +102,8 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8Dy4Q8Ud8DmHXMsVoMvCI84FsWD6bftHJe6TsBA2ccQ07xssh8gnZY
-(5分) 《九章算术》中有这样的一个问题: "今有宛田, 下周三十步, 径十六步. 问为田几何?"意思是说: 现有一块扇形田, 弧长 $30$ 步, 扇形所在圆的直径为 $16$ 步, 则这块扇形田的面积 $($ 单位 $:$ 平方步 $)$ 是 #parentheses
+// https://www.jyeoo.com/math2/ques/detail/8KgfF8zz8a9di4EdD03UZd4M4ZYkEcLcs86NVx1jVn0CVHNWP8jP4y
+(5分) 《九章算术》中有这样的一个问题: "今有宛田, 下周三十步, 径十六步. 问为田几何?" 意思是说: 现有一块扇形田, 弧长 $30$ 步, 扇形所在圆的直径为 $16$ 步, 则这块扇形田的面积 $($ 单位 $:$ 平方步 $)$ 是 #parentheses
 #choices(
   ([$100$], [$110$], [$120$], [$130$]),
   colNum: 4
@@ -119,7 +119,7 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8bAsR7JO9e9W4lTrWQLp9E46PsOh4S9v146O5blZlHDifyGqV7fVxI
+// https://www.jyeoo.com/math2/ques/detail/8b37A7jn9xdLt2j6CS9Oxm46u7e9SAv06w6wdMuOs17uiyY237RLfc
 (5分) 已知函数 $f ( x ) = cases(3 x - 1 "," x < 1, 2 x ^(2 ) "," x >= 1)$ 则不等式 $f(x^(2)+x-2)>f(x-1)$ 的解集是 #parentheses
 #choices(
   ([$(-1, 1)$], [$(- infinity , -1) union (1, + infinity )$], [$(-2, 1)$], [$(-1, 2)$]),
@@ -142,7 +142,7 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6NslG87YeODhK8DQRKM8JyeXV5MjsEfPQh6EX76zUQn4IWIDk7SD7w
+// https://www.jyeoo.com/math2/ques/detail/6L1Bn84ze6TpKm46Q2UdZJedgPiCDU7onL6h1NsTxtHluRwAC7OauW
 #grid(columns: (1fr, 25%), gutter: 1em, [(5分) 如图, 摩天轮的半径为 $40 m$ ,摩天轮的中心点 $O$ 距地面的高度为 $50 m$ ,摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处. 则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + top, image("images/72db5b19.png", width: 100%))])
 #choices(
   ([$10 min$], [$12 min$], [$14 min$], [$16 min$]),
@@ -167,7 +167,7 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 = 选择题: 本题共3小题, 每小题6分, 共18分.在每小题给出的选项中, 有多项符合题目要求.全部选对的得6分, 部分选对的得部分分, 有选错的得0分. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6iMpX1fj6D4a4Cb0Gjp2JQ8gmpXiawi5zDaoUW2gNdGhn4CPg8eZHM
+// https://www.jyeoo.com/math2/ques/detail/8XkYo1yC65XF9onRPRCDOC8TYRm76ikbPWad7Il0zw8uIIKdJ8kJmq
 (6分) 下列命题为真命题的是 #parentheses
 #choices(
   ([若 $a>b>0$ , 则 $a c^(2)>b c^(2)$], [若 $a>b>0$ , 则 $a^(2)>b^(2)$], [若 $a<b<0$ , 则 $a^(2)<a b<b^(2)$], [若 $a<b<0$ , 则 $(1 )/(a ) > (1 )/(b )$]),
@@ -188,7 +188,7 @@ $a>b>0$ , 当 $c=0$ 时, $a c^(2)>b c^(2)$ 不成立, $A$ 错,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/557NB5HD8E8deTLKRdr2F20OYJAucskm0I4CVDIw97ot9sYUldhmWe
+// https://www.jyeoo.com/math2/ques/detail/7mEHH5uO8LgJ8lm91Oxd970fUV2SAXxI1r4evyzwZR9eM30F6d86D2
 (6分) 下列函数最小值为 $2$ 的有 #parentheses
 #choices(
   ([$f ( x ) = sin x + (1 )/(sin x )$], [$f(x)=x^(2024)+x^(-2024)$], [$f(x)=a^(x)+a^(-x)(a>0,$ 且 $a != 1)$], [$f(x)=x^(3)-3 x(x >= 2)$]),
@@ -211,7 +211,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6ag4y24D2ZeeIhTRbHkHGm4WzqshCQ6kFf6jhpx4ODDsLWiMb41vN2
+// https://www.jyeoo.com/math2/ques/detail/6RScx2Si2QYqUerZfOq0fj48KbCWBADwaD6bdICdMI2ZT4tvH4oCRc
 (6分) 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
 #choices(
   ([当 $x in [-1, 1]$ 时, $f(x)$ 的取值范围为 $[2-a,2+a]$], [$x _(1 ) in [ (3 - sqrt(5 ) )/(2 ) , 1 ]$], [当且仅当 $x >= (3 + sqrt(5 ) )/(2 )$ 时, $f(x) >= 0$ 恒成立], [$(2 x _(2 ) - a )/(a x _(1 ) - x _(1 )^(2 ) ) in [ 0 , sqrt(5 ) ]$]),
@@ -280,7 +280,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 = 填空题: 本题共3小题, 每小题5分, 共15分. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6GFoCddldh5S303FKDcomJbTSdDiivPHfxbZJFdSN1noyTRkH5TJKq
+// https://www.jyeoo.com/math2/ques/detail/6w8budzsdgepKZSnis6d15bTzbEsOZLNbxbQdo4kCFJgKiXNC5xo80
 (5分) 计算 $(lg 2)^(2)+lg 2 dot.op lg 50+lg 25=$ #blank .
 
 #solution[
@@ -291,7 +291,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5445w8Tx7exw7H5xAwpMp36cOXLDd8tT251NhsxGmft2l4LhQ5iRtY
+// https://www.jyeoo.com/math2/ques/detail/5HAud8eJ7tcSvxRWndJ5HQ66YxG4XUYsxf1Ue5cjMdhwob45N5kTRY
 (5分) 请写出一个同时满足以下性质①②的非常数函数 $f(x)=$ #blank . 
 
 ① $f(-x)-f(x)=0$ , ② $f(x+ pi )-f(x)=0$ .
@@ -312,7 +312,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5eNLo1LE578OzFZux7Fqyi8w5wEZJDRDHgbk8WMVVmo6Y2kS41FjhQ
+// https://www.jyeoo.com/math2/ques/detail/6MV4o1eX5Jv2rYT5rNt2n48ODIzly1nELJbXgWuJweH4nDgJ01pDiS
 (5分) 已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$ . 甲: 当 $x in ( 0 , ( pi )/(4 ) )$ 时, 函数 $f(x)$ 单调递减; 乙: 函数 $f(x)$ 的图象关于直线 $x = ( pi )/(3 )$ 对称; 丙: 函数 $y=f(x)$ 图象的一个对称中心为 $( ( pi )/(6 ) , 0 )$ . 甲, 乙, 丙三人对函数 $f(x)$ 的论述中有且只有一人正确, 则 $theta =$ #blank .
 
 #solution[
@@ -327,7 +327,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 = 解答题: 本题共5小题, 共77分.解答应写出文字说明, 证明过程或演算步骤. 
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5w7UJ1Ok3X2vI4z1oa273s1X08oFCTu1vuaycRkJzIlBwLJdj0p55U
+// https://www.jyeoo.com/math2/ques/detail/5BuZ81fP350hg19F9Aem76159A4wGtpjI7aZ9dL0FGCDGQKRd0dzTk
 (13分) 已知 $alpha$ 是第三象限角, 且 $tan alpha =2$ . 
 
 (1) 求 $sin alpha$ 的值; 
@@ -348,7 +348,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/86Dsb4RT8l4SEqfQPVNZyM3rLeKPwpbjRV5zjLTxQC4kJZzP28Qlkm
+// https://www.jyeoo.com/math2/ques/detail/78Kkr4wC8KbLkkVdERrecH3zM4zF27iVv95EY4bingP9uG5Gh8itVI
 (15分) (1)已知 $a>0$ , $b>0$ , 且 $a+b=a b$ ,求 $a+b$ 的最小值; 
 
 (2) 已知 $a>0$ , $b>0$ , 证明: $(a )/(sqrt(b ) ) + (b )/(sqrt(a ) ) >= sqrt(a ) + sqrt(b )$ .
@@ -371,7 +371,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7nmZo14seW15PR2uL2eL8DbuoQczLkvNk93TLUNUgQSq2KUTtevBx2
+// https://www.jyeoo.com/math2/ques/detail/6VynD1opejSVPTei5Gylh5bRBBFyvzWT5H33e4h6JodnFjMeFeHNY0
 #grid(columns: (1fr, 25%), gutter: 1em, [(15分) 如图, 互相垂直的两条小路 $A M$ , $A N$ 旁有一长方形花坛 $A B C D$ , 其中 $A B=30 m,A D=20 m$ .现欲经过点 $C$ 修一条直路 $l,l$ 交小路 $A M$ , $A N$ 分别为点 $P$ , $Q$ . 计划准备将长方形花坛 $A B C D$ 其扩建成一个更大的三角形花坛 $A P Q$ . 要求 $A P$ 的长不小于 $40 m$ 且不大于 $90 m$ .记三角形花园 $A P Q$ 的面积为 $S m^(2)$ . 
 
 (1) 设 $D Q=x m$ ,试用 $x$ 表示 $A P$ , 并求 $x$ 的取值范围; 
@@ -404,12 +404,12 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/5ntp63xIexQq7N6KQVRYtdfbRQ99iYA8rJaKZoSmPClUkqjiMeqhJw
+// https://www.jyeoo.com/math2/ques/detail/5Fk163rBe5Xk2coQn48pmPf11v9cER6WXNa84W0BmzEmeE7nqeMd4y
 (17分) 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ ; ② $f ( - ( pi )/(6 ) ) = 0$ ; ③对任意的 $x in R$ , $f ( x ) <= f ( ( pi )/(12 ) )$ . 请从这三个条件中任选一个将下面的题目补充完整, 并解答该题. 
 
 已知函数 $f ( x ) = sin ( omega x + ( pi )/(3 ) ) ( 0 < omega < 3 )$ , 且满足 #blank . 
 
-(1) 求 $omega$ 的值; 并用"五点法"作出函数 $y=f(x)$ 在一个周期内的图象; 
+(1) 求 $omega$ 的值; 并用 "五点法" 作出函数 $y=f(x)$ 在一个周期内的图象; 
 
 (2) 将函数 $f(x)$ 的图象向右平移 $( pi )/(3 )$ 个单位后, 再将此时图象上各点的纵坐标不变, 横坐标变为原来的 $2$ 倍, 得到函数 $y=g(x)$ 的图象, 若关于 $x$ 的方程 $g(x)-k=0$ , 在区间 $[0, pi ]$ 上有且只有一个实数解, 求实数 $k$ 的取值范围.
 
@@ -451,8 +451,8 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8ZveD3Gd9ejBXY4DuVxm046zrJwTvQjeud2WJzPUuuELRz5Lb7pTua
-(17分) 著名的"悬链线拱桥问题"与数学中的双曲函数相关. 函数 $f(x)= (e ^(x ) - e ^(- x ) )/(2 )$ 叫做双曲正弦函数, 函数 $g(x)= (e ^(x ) + e ^(- x ) )/(2 )$ 叫做双曲余弦函数, 其中 $e approx 2.71828$ …是自然对数的底数. 
+// https://www.jyeoo.com/math2/ques/detail/73Ryz39y9a9q6rnoe8tHBa69F3SoCdcbWp2rozwVaI66Ayyhi7HEjA
+(17分) 著名的 "悬链线拱桥问题" 与数学中的双曲函数相关. 函数 $f(x)= (e ^(x ) - e ^(- x ) )/(2 )$ 叫做双曲正弦函数, 函数 $g(x)= (e ^(x ) + e ^(- x ) )/(2 )$ 叫做双曲余弦函数, 其中 $e approx 2.71828$ …是自然对数的底数. 
 
 (1) 下列两个命题中至少有一个为真命题, 并证明其中的一个真命题: 
 

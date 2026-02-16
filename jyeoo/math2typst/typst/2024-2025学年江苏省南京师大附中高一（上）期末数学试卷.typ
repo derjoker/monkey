@@ -327,7 +327,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 
  $therefore sin alpha + cos alpha = sqrt(s i n ^(2 ) alpha + c o s ^(2 ) alpha + 2 sin alpha dot.op cos alpha ) = (sqrt(7 ) )/(2 )$ , 
 
-所以 $f ( alpha ) = (sin alpha + cos alpha )/(- sin alpha + cos alpha ) = ((sqrt(7 ) )/(2 ) )/(2 ) = - sqrt(7 )$ .
+所以 $f ( alpha ) = (sin alpha + cos alpha )/(- sin alpha + cos alpha ) = ((sqrt(7 ) )/(2 ) )/(- (1 )/(2 ) ) = - sqrt(7 )$ .
 ]
 ]
 

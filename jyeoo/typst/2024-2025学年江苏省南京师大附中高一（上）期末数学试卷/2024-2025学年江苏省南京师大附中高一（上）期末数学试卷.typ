@@ -5,7 +5,7 @@
 = 单选题
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7clnf1o0678vPtm1OJgfO16Emb4rWOlsK4buxATDIgozvxrHC0DTpw
+// https://www.jyeoo.com/math2/ques/detail/97tMt1uA629n21RPM3HP0P6NU9tGdgIgXnbEtzLC9imNmGuh70xe4m
 已知集合 $A={x|(x+2)(x-1)<0}$ , $B={x|log_(3)x<1}$ , 则 $A inter B=$ #parentheses
 #choices(
   ([${x|-2<x<3}$], [${x|-2<x<0}$], [${x|0<x<1}$], [${x|1<x<3}$]),
@@ -24,7 +24,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/89O1i4ZV29zGSHnGGjulkm2u2qB4zwt6Mm96sbP9FLQZ9ZTZj7ffEG
+// https://www.jyeoo.com/math2/ques/detail/8YyRy4Tj29DABNUI68Quun22dyLa5P6KZZ9XetCTjLIGNbsJf7PZ8S
 命题 "$∃x in R$ , $e^(x)<x+1$" 的否定为 #parentheses
 #choices(
   ([$∃x in R$ , $e^(x) >= x+1$], [$∀x in R$ , $e^(x)>x+1$], [$∃x in R$ , $e^(x)>x+1$], [$∀x in R$ , $e^(x) >= x+1$]),
@@ -39,7 +39,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/74wLt5Rd9nIEf7Qb3lAhAJ511bftf8ljY73T7cDT4XqoPgOEv4bG8e
+// https://www.jyeoo.com/math2/ques/detail/5YxGw5XZ9djQuL4ddA9zmn5uCxtYn0cOTS3T64no4c3Cvx6QQ4MGTA
 "$alpha = (2 pi )/(3 ) + 2 k pi , k in Z$" 是 "$cos alpha = - (1 )/(2 )$" 的 #parentheses
 #choices(
   ([充分不必要条件], [必要不充分条件], [充要条件], [既不充分也不必要条件]),
@@ -58,7 +58,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/4lad33dqbSXTDjrKn0AwXe4vWX2zA5OLSD1NtxosJ4FYkvpOaabfKi
+// https://www.jyeoo.com/math2/ques/detail/7V7bs3tFbNrNX8x1Ezpep84xuYwzulai221VF1aqj9mOeeMzDa7JTs
 已知角 $alpha$ 的始边与 $x$ 轴非负半轴重合, 终边经过点 $P(1, x)$ , 且 $sin alpha = (sqrt(3 ) )/(2 )$ , 则 $x=$ #parentheses
 #choices(
   ([$± sqrt(3 )$], [$sqrt(3 )$], [$(sqrt(3 ) )/(3 )$], [$(sqrt(3 ) )/(2 )$]),
@@ -77,7 +77,7 @@
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7mggs4qR2bqZCzgK3WqEjceeY4m9CzfDrHcciikVpSS6CWQ213Bw8m
+// https://www.jyeoo.com/math2/ques/detail/557Y14mi2yEyO9SmtCPHJlepTe1i0RpEfkcDjgQ6pO1QKVd5U3EE2y
 已知点 $( 3 , (1 )/(3 ) )$ 在幂函数 $f(x)=x^( alpha )$ 的图象上, 设 $a = f ( l o g _(2 ) (1 )/(5 ) ) , b = f ( sin 50 degree ) , c = f ( 2 ^(- sqrt(3 ) ) )$ , 则 $a,b,c$ 的大小关系为 #parentheses
 #choices(
   ([$a>b>c$], [$b>c>a$], [$c>a>b$], [$c>b>a$]),
@@ -102,7 +102,7 @@ $because$ 点 $(3, (1 )/(3 ) )$ 在幂函数 $f(x)=x^( alpha )$ 的图象上,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8clC11WD3R4Z42E2aO32Zeawb29vdLAbUW92btUrMhdp4N5yA8cGw4
+// https://www.jyeoo.com/math2/ques/detail/7nlwR1453YEkH2ym9COkHPatuTt887m4Gx9CwOxBR0LrwExjX8Uefo
 将函数 $f ( x ) = sin ( 2 x + ( pi )/(3 ) )$ 的图象上各点的横坐标变为原来的 $2$ 倍, 再将得到的图象向右平移 $( pi )/(3 )$ 个单位长度, 所得图象的解析式为 #parentheses
 #choices(
   ([$y=-sin 4 x$], [$y=sin x$], [$y = sin ( x - ( pi )/(3 ) )$], [$y = sin ( 4 x - ( pi )/(3 ) )$]),
@@ -119,7 +119,7 @@ $because$ 点 $(3, (1 )/(3 ) )$ 在幂函数 $f(x)=x^( alpha )$ 的图象上,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/99Wk19Vi4wKHcdksJhxZoyfqf9Hl1ptECybqn0n9HvZmC5Ep9bc7SS
+// https://www.jyeoo.com/math2/ques/detail/50sYN9AR4q32hmnLCobjkHfLM7blk4mexjbP2oc6VW4SVkVkTb7g36
 已知函数 $f ( x ) = cases(| ln x | "," x > 0, x ^(2 ) + 4 x + 1 "," x <= 0)$ , $g(x)=f(x)-a$ ,若函数 $g(x)$ 有四个零点, 则 $a$ 的取值范围 #parentheses
 #choices(
   ([$(0, 1)$], [$(0, 2]$], [$[0, 1]$], [$(0, 1]$]),
@@ -138,7 +138,7 @@ $f(x)$ 图象如图, $x=0$ 时, $f(0)=1$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6tFJQbgXdPiSLUY2crLEIW1b0FAiLZCfer5SRgfjRj7NLAlSRePGu8
+// https://www.jyeoo.com/math2/ques/detail/8Y9jWbzrdWt7xR4cCV4Zih1UtqIMhcLpT75DyQ7YRpl0m1KAee2odM
 设 $f(x)$ 是定义在 $R$ 上的函数, 若 $f(x)+sin x$ 是偶函数, $f(x)+cos x$ 是奇函数, 则 $f ( ( pi )/(4 ) )$ 的值为 #parentheses
 #choices(
   ([$- sqrt(2 )$], [$sqrt(2 )$], [$- 2 sqrt(2 )$], [$2 sqrt(2 )$]),
@@ -163,7 +163,7 @@ $f(x)$ 图象如图, $x=0$ 时, $f(0)=1$ ,
 = 多选题
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7ZlrA02I7Upa8akV0JYKUY2Z7bZFu2MWJXch70eRXpogArz3s8HE6S
+// https://www.jyeoo.com/math2/ques/detail/5tFPy0ps7UKW8aIfM3TJGk24ZBLMqte0Xhc9Eu2pyES0bBUlT8Mh8a
 设 $a,b$ 为实数, 若 $10^(a)=5$ , $10^(b)=20$ , 则 #parentheses
 #choices(
   ([$a+b=2$], [$b-a>lg 5$], [$a b<2(lg 5)^(2)$], [$l o g _(25 ) 8 = (3 b - 3 )/(2 a )$]),
@@ -186,7 +186,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6EPE0bRY48weeKZLvjuC3M8iSBi48Q2r2B976Pd4NLxOYddUi8FNSK
+// https://www.jyeoo.com/math2/ques/detail/7kjGuboW4I5xAvILQVWL5g82YC11OJr3NG95WofOqHrl6bnJp8SzQG
 已知函数 $f ( x ) = (sin x + 1 )/(sin x - 2 )$ , 则 #parentheses
 #choices(
   ([$f(x)$ 的定义域为 $R$], [$f(x)$ 的图象关于点 $( - ( pi )/(2 ) , 0 )$ 中心对称], [$f(x)$ 的值域为 $[-2, 0]$], [$f(x)$ 在区间 $( ( pi )/(4 ) , ( pi )/(2 ) )$ 上单调递增]),
@@ -213,7 +213,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8JYaWdanextAnoyNFkYu7P9OEEfS2u3qiP5ZNUWGzQ7awTuTtaGh6G
+// https://www.jyeoo.com/math2/ques/detail/8wEC4d6oeY58QW9z76yMfu9oag7JqjiBp45yVS6bmkRxjiqg6aXaHw
 已知定义在 $R$ 上的函数 $f(x)$ 满足: $f ( 1 ) = (1 )/(4 ) , f ( x + y ) + f ( x - y ) = 4 f ( x ) f ( y )$ , 则 #parentheses
 #choices(
   ([$f ( 0 ) = (1 )/(2 )$], [$f(x)$ 为偶函数], [$f(x)$ 的图象关于直线 $x=2$ 对称], [$f(x+6)=f(x)$]),
@@ -244,7 +244,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 = 填空题
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8trgm9iNevvygMKG0xYPfc2GDasxln0Zb22A1mc4TE8Pgn5Zu7pwO0
+// https://www.jyeoo.com/math2/ques/detail/7WPJo9dqedXmATJVQjGeEC2jfKYS6g78fz2sCFBxVoDjRU19e7H6WG
 #grid(columns: (1fr, 25%), gutter: 1em, [如图, 弦 $A B$ 将圆 $O$ 分割成两个弓形区域. 已知圆 $O$ 的半径为 $2 sqrt(3 ) c m , angle A O B = (2 pi )/(3 )$ , 则图中面积较小的弓形区域的面积为 #blank $c m^(2)$ .], [#align(center + top, image("images/0cc4a7f3.png", width: 100%))])
 
 #solution[
@@ -267,7 +267,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7E4N29HKfuysGxWSYrcTNDdlbTuiD3nyvq9HGwfUe6E19FFov8jBqK
+// https://www.jyeoo.com/math2/ques/detail/8DtUQ9Xqf3G6RayAYClmxLd4YuSvhh7Vsk9hjzTElIwhIRa918gu00
 设 $m$ 为实数, 若函数 $f(x)=sin pi x$ 在区间 $( (2 )/(3 ) , m ]$ 上既有最大值, 又有最小值, 则 $m$ 的最小值为 #blank .
 
 #solution[
@@ -280,7 +280,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6muTG2050TOuYIjOgoL3Ml44bngImrmElc9l0GhjzVEIY8NIU8Uyhs
+// https://www.jyeoo.com/math2/ques/detail/6yepS2C70Z8JqP2FqHcFK54Hj9fWQLhKHw9GAH0km3ViyTte68hdGy
 设 $t$ 为实数, 已知函数 $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) ) , g ( x ) = 4 ^(x ) + t dot.op 2 ^(x )$ , 若存在实数 $a,b$ 同时满足 $f(a)+f(b)=0$ 和 $g(a)+g(b)=0$ , 则实数 $t$ 的取值范围是 #blank .
 
 #solution[
@@ -305,7 +305,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 = 解答题
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/9AGEi3V00DhdVh5WxoYY7H8LAojFoNRAkF277xOIo7zng0zl8dCKPY
+// https://www.jyeoo.com/math2/ques/detail/5lKSv32U0O5e2jIO1mrQmF8nrrvxQnsDhF2ccbEKxeVil3QYidp9CC
 已知 $f ( alpha ) = (sin ( pi - alpha ) + cos ( 2 pi + alpha ) )/(sin ( - alpha ) + sin ( ( pi )/(2 ) + alpha ) )$ . 
 
 (1) 若 $f( alpha )=-2$ , 求 $tan alpha$ 的值; 
@@ -327,12 +327,12 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 
  $therefore sin alpha + cos alpha = sqrt(s i n ^(2 ) alpha + c o s ^(2 ) alpha + 2 sin alpha dot.op cos alpha ) = (sqrt(7 ) )/(2 )$ , 
 
-所以 $f ( alpha ) = (sin alpha + cos alpha )/(- sin alpha + cos alpha ) = ((sqrt(7 ) )/(2 ) )/(2 ) = - sqrt(7 )$ .
+所以 $f ( alpha ) = (sin alpha + cos alpha )/(- sin alpha + cos alpha ) = ((sqrt(7 ) )/(2 ) )/(- (1 )/(2 ) ) = - sqrt(7 )$ .
 ]
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/7zFWU7841kfPqaZqV20WItebfDjfGTZyCeeNBBTXCQywapoFwcX0sq
+// https://www.jyeoo.com/math2/ques/detail/6dNcE7FB1ZHxV6XmRTPTpqeA0fbQXgAFq0etaPThI7c1MZbPOcYiY4
 #grid(columns: (1fr, 25%), gutter: 1em, [已知函数 $f(x)=A sin( omega x+ phi )(A>0, omega >0, 0< phi < pi )$ 的部分图象如图所示. 
 
 (1) 求 $f(x)$ 的解析式; 
@@ -369,7 +369,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6GG0Vc1uaHiDKHaOOpDTzu45oWBBSzxqmc3MH1mLiSiXBE0wp9WArI
+// https://www.jyeoo.com/math2/ques/detail/59Q5tc6xaslutSM2d07yjJ4soQrfHXvirG3YIvxdvfplv3rWb9ED8y
 设定义在 $R$ 上的奇函数 $f(x)$ 和偶函数 $g(x)$ , 满足 $f ( x ) + g ( x ) = (2 )/(3 ^(x ) )$ . 
 
 (1) $f(1)$ , $g(1)$ 的值; 
@@ -406,7 +406,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/8a3vB8BddzQOtdn4YaUz5r7gxEVJE82hVpcTRiTLFjj1YnBiU4zamO
+// https://www.jyeoo.com/math2/ques/detail/8Cwlw8BEdsrGcX11OdChSu72xoeiYb9c6gc8xtf7pN7N9uHHz475kG
 设 $a$ 为实数, 已知函数 $f(x)=x^(2)-x|x-a|-2 a$ .
 
 (1) 若 $f(x)$ 是 $R$ 上的单调函数, 求 $a$ 的取值范围; 
@@ -459,7 +459,7 @@ $(1) because f ( x ) = cases(2 x ^(2 ) - a x - 2 a "," x < a, a x - 2 a "," x >=
 ]
 
 #example[
-// https://www.jyeoo.com/math2/ques/detail/6X4tQ4AD0GZXFyqnd70hXu3VEVZE8ytHUv8xc1IjXvfPXe1GE0Gu6C
+// https://www.jyeoo.com/math2/ques/detail/8sKwC4X70lVWl5Dk5AWfbR344hkXSBVTsb8asVRcoAMPFw19h0dfyy
 若函数 $f(x)$ 和 $g(x)$ 的零点相同, 则称 $f(x)$ 和 $g(x)$ 是 "$Z$ 函数对". 
 
 (1) 已知 $x in [0, + infinity )$ , 判断 $f(x)=2^(x)+x-2$ 与 $g ( x ) = cos x - (1 )/(2 ) x$ 是否为 "$Z$ 函数对", 并说明理由; 
