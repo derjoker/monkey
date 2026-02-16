@@ -567,7 +567,7 @@ function segmentizeText(text) {
     // Capturing groups: 1=PUA, 2=DefiniteMath, 3=Punctuation(.,:;)
     // Added \u2200-\u22FF (Math Operators: infinity, union, element of, etc.)
     // Added \u00B0(°), \u00D7(×), \u00F7(÷), \u2190-\u21FF(Arrows), \u25B3(△)
-    const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
+    const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\'\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
 
     let lastIndex = 0;
     let match;
@@ -658,7 +658,7 @@ function preprocessText(text) {
         .replace(/【/g, '[')
         .replace(/】/g, ']')
         .replace(/[“”]/g, '"')
-        .replace(/[‘’]/g, "'")
+        .replace(/[‘’′]/g, "'")
         .replace(/、/g, ', ')
         .replace(/？/g, '?')
         .replace(/！/g, '!')
