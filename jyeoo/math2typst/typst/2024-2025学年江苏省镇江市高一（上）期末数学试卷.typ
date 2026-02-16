@@ -6,7 +6,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/5ClqZa9aetomvIqj84wgaRaEstG4RIw09ecoWCFOzF0wVHZXI2rJ4a
-$(5$ 分 $)$ 已知集合 $U={x|1 <= x <= 6, x in N}$ , 集合 $A={1, 2, 3, 4}$ , 集合 $B={1, 3, 5}$ , 则 $A inter ∁_(U)B=$ #parentheses
+(5分) 已知集合 $U={x|1 <= x <= 6, x in N}$ , 集合 $A={1, 2, 3, 4}$ , 集合 $B={1, 3, 5}$ , 则 $A inter ∁_(U)B=$ #parentheses
 #choices(
   ([${2, 4}$], [${2, 6}$], [${3, 4}$], [${3, 6}$]),
   colNum: 2
@@ -23,7 +23,7 @@ $U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6MRQl5N4fba6Ykl5zqgK3m5Sbwd75sy4eL8Mnd02VlkV7kA85dZAPI
-$(5$ 分 $)$ 以原点为圆心的单位圆上一点 $P$ 从 $(1, 0)$ 出发, 沿逆时针方向运动 $(2 pi )/(3 )$ 弧长到达点 $Q$ , 则点 $Q$ 的坐标为 #parentheses
+(5分) 以原点为圆心的单位圆上一点 $P$ 从 $(1, 0)$ 出发, 沿逆时针方向运动 $(2 pi )/(3 )$ 弧长到达点 $Q$ , 则点 $Q$ 的坐标为 #parentheses
 #choices(
   ([$(- (sqrt(3 ) )/(2 ) , - (1 )/(2 ) )$], [$( - (1 )/(2 ) , - (sqrt(3 ) )/(2 ) )$], [$( - (sqrt(3 ) )/(2 ) , (1 )/(2 ) )$], [$(- (1 )/(2 ) , (sqrt(3 ) )/(2 ) )$]),
   colNum: 1
@@ -42,7 +42,7 @@ $(5$ 分 $)$ 以原点为圆心的单位圆上一点 $P$ 从 $(1, 0)$ 出发, �
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8pDM62VN4d1fqqhT8TAfk93MgBenRoOXOr0wWCVCa2fIXW0in4HLm4
-$(5$ 分 $)$ 已知 $A>0$ , $B>0$ , 则" $lg A>lg B$ "是" $sin A>sin B$ "的 #parentheses
+(5分) 已知 $A>0$ , $B>0$ , 则" $lg A>lg B$ "是" $sin A>sin B$ "的 #parentheses
 #choices(
   ([充分且不必要条件], [必要且不充分条件], [充要条件], [既不充分也不必要条件]),
   colNum: 2
@@ -63,7 +63,7 @@ $(5$ 分 $)$ 已知 $A>0$ , $B>0$ , 则" $lg A>lg B$ "是" $sin A>sin B$ "的 #p
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/84sjyeqC4tMNdvM77eVOnW2Mn4d8mem0ZM6wjNy8U62esHwQya65RI
-$(5$ 分 $)$ 已知函数 $f(x)=ln x+x-5$ 的零点在区间 $(n,n+1)(n in N)$ 内, 则 $n=$ #parentheses
+(5分) 已知函数 $f(x)=ln x+x-5$ 的零点在区间 $(n,n+1)(n in N)$ 内, 则 $n=$ #parentheses
 #choices(
   ([$1$], [$2$], [$3$], [$4$]),
   colNum: 4
@@ -88,7 +88,7 @@ $(5$ 分 $)$ 已知函数 $f(x)=ln x+x-5$ 的零点在区间 $(n,n+1)(n in N)$ �
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8nOnScbb70rZAv1u5YUVMWdvIepLb7EJXwc8g42TyGHDb5S89eBxxI
-$(5$ 分 $)$ 求值: $cos 2025 degree =$ #parentheses
+(5分) 求值: $cos 2025 degree =$ #parentheses
 #choices(
   ([$- (sqrt(2 ) )/(2 )$], [$- (1 )/(2 )$], [$(1 )/(2 )$], [$(sqrt(2 ) )/(2 )$]),
   colNum: 1
@@ -103,7 +103,7 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/5vJgo8ij8z5xN0jvU3T7nH4hkwhdpLyYx36OKieUxcwBzp68l8kevI
-$(5$ 分 $)$ 《九章算术》中有这样的一个问题: "今有宛田, 下周三十步, 径十六步. 问为田几何?"意思是说: 现有一块扇形田, 弧长 $30$ 步, 扇形所在圆的直径为 $16$ 步, 则这块扇形田的面积 $($ 单位 $:$ 平方步 $)$ 是 #parentheses
+(5分) 《九章算术》中有这样的一个问题: "今有宛田, 下周三十步, 径十六步. 问为田几何?"意思是说: 现有一块扇形田, 弧长 $30$ 步, 扇形所在圆的直径为 $16$ 步, 则这块扇形田的面积 $($ 单位 $:$ 平方步 $)$ 是 #parentheses
 #choices(
   ([$100$], [$110$], [$120$], [$130$]),
   colNum: 4
@@ -120,7 +120,7 @@ $(5$ 分 $)$ 《九章算术》中有这样的一个问题: "今有宛田, 下�
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/5M65Q7n39N6ijqKxDkEg0Y4CSqUl67VqLb6nlPJrR7CCk6zsL7699E
-$(5$ 分 $)$ 已知函数 $f ( x ) = cases(3 x - 1 "," x < 1, 2 x ^(2 ) "," x >= 1)$ 则不等式 $f(x^(2)+x-2)>f(x-1)$ 的解集是 #parentheses
+(5分) 已知函数 $f ( x ) = cases(3 x - 1 "," x < 1, 2 x ^(2 ) "," x >= 1)$ 则不等式 $f(x^(2)+x-2)>f(x-1)$ 的解集是 #parentheses
 #choices(
   ([$(-1, 1)$], [$(- infinity , -1) union (1, + infinity )$], [$(-2, 1)$], [$(-1, 2)$]),
   colNum: 1
@@ -143,7 +143,7 @@ $(5$ 分 $)$ 已知函数 $f ( x ) = cases(3 x - 1 "," x < 1, 2 x ^(2 ) "," x >=
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6i7bw84PeZoHq9cuwHwcf8etiHA8on3F1y6jNYc3P9BBJ31hM7PXxw
-#grid(columns: (1fr, 25%), gutter: 1em, [$(5$ 分 $)$ 如图, 摩天轮的半径为 $40 m$ ,摩天轮的中心点 $O$ 距地面的高度为 $50 m$ ,摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处. 则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + top, image("dumb.png", width: 100%))])
+#grid(columns: (1fr, 25%), gutter: 1em, [(5分) 如图, 摩天轮的半径为 $40 m$ ,摩天轮的中心点 $O$ 距地面的高度为 $50 m$ ,摩天轮做匀速转动, 每 $36 min$ 转一圈, 摩天轮上点 $P$ 的起始位置在最低点处. 则在摩天轮转动的一圈内, 点 $P$ 距离地面超过 $70 m$ 的时长为 #parentheses], [#align(center + top, image("dumb.png", width: 100%))])
 #choices(
   ([$10 min$], [$12 min$], [$14 min$], [$16 min$]),
   colNum: 2
@@ -168,7 +168,7 @@ $(5$ 分 $)$ 已知函数 $f ( x ) = cases(3 x - 1 "," x < 1, 2 x ^(2 ) "," x >=
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8xPHB1rQ6hYilaX4bG8sgB8Dk2S5AcALh8a1pNkXKbHVjIyS28fKoy
-$(6$ 分 $)$ 下列命题为真命题的是 #parentheses
+(6分) 下列命题为真命题的是 #parentheses
 #choices(
   ([若 $a>b>0$ , 则 $a c^(2)>b c^(2)$], [若 $a>b>0$ , 则 $a^(2)>b^(2)$], [若 $a<b<0$ , 则 $a^(2)<a b<b^(2)$], [若 $a<b<0$ , 则 $(1 )/(a ) > (1 )/(b )$]),
   colNum: 1
@@ -189,7 +189,7 @@ $a>b>0$ , 当 $c=0$ 时, $a c^(2)>b c^(2)$ 不成立, $A$ 错,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8RVVt5c18d9Z4606dRZ6DF0bdDO5PyrO5U45L3Kep5APTUXK5d7n5k
-$(6$ 分 $)$ 下列函数最小值为 $2$ 的有 #parentheses
+(6分) 下列函数最小值为 $2$ 的有 #parentheses
 #choices(
   ([$f ( x ) = sin x + (1 )/(sin x )$], [$f(x)=x^(2024)+x^(-2024)$], [$f(x)=a^(x)+a^(-x)(a>0,$ 且 $a != 1)$], [$f(x)=x^(3)-3 x(x >= 2)$]),
   colNum: 1
@@ -212,7 +212,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8qoT42OS2xtrCnwSxcPIhd4fWahcBiR4Ax6Za3mL7qXG2D9jh4qawq
-$(6$ 分 $)$ 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
+(6分) 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
 #choices(
   ([当 $x in [-1, 1]$ 时, $f(x)$ 的取值范围为 $[2-a,2+a]$], [$x _(1 ) in [ (3 - sqrt(5 ) )/(2 ) , 1 ]$], [当且仅当 $x >= (3 + sqrt(5 ) )/(2 )$ 时, $f(x) >= 0$ 恒成立], [$(2 x _(2 ) - a )/(a x _(1 ) - x _(1 )^(2 ) ) in [ 0 , sqrt(5 ) ]$]),
   colNum: 1
@@ -281,7 +281,7 @@ $(6$ 分 $)$ 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6z0dEdHUdIEpvQKg4t4vslbUIs4nGA5KxvbZ27VxduUkFGtm1592IK
-$(5$ 分 $)$ 计算 $(lg 2)^(2)+lg 2 dot.op lg 50+lg 25=$ #blank .
+(5分) 计算 $(lg 2)^(2)+lg 2 dot.op lg 50+lg 25=$ #blank .
 
 #solution[
 原式 $=2 lg 5+lg 2 dot.op (1+lg 5)+(lg 2)^(2)=2 lg 5+lg 2(1+lg 5+lg 2) =2 lg 5+2 lg 2=2$ ; 
@@ -292,7 +292,7 @@ $(5$ 分 $)$ 计算 $(lg 2)^(2)+lg 2 dot.op lg 50+lg 25=$ #blank .
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8dGxy8uQ77CxcyinQufgcm6GmXbZEOlsR31jLD6AB8LYxZa6q5dltg
-$(5$ 分 $)$ 请写出一个同时满足以下性质①②的非常数函数 $f(x)=$ #blank . 
+(5分) 请写出一个同时满足以下性质①②的非常数函数 $f(x)=$ #blank . 
 
 ① $f(-x)-f(x)=0$ , ② $f(x+ pi )-f(x)=0$ .
 
@@ -313,7 +313,7 @@ $(5$ 分 $)$ 请写出一个同时满足以下性质①②的非常数函数 $f(
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8fGLP1iX55bJBgSzuJ4Oet8FXy1wcaQFO4bbyuUAEeJc6ex8x1g2ee
-$(5$ 分 $)$ 已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$ . 甲: 当 $x in ( 0 , ( pi )/(4 ) )$ 时, 函数 $f(x)$ 单调递减; 乙: 函数 $f(x)$ 的图象关于直线 $x = ( pi )/(3 )$ 对称; 丙: 函数 $y=f(x)$ 图象的一个对称中心为 $( ( pi )/(6 ) , 0 )$ . 甲, 乙, 丙三人对函数 $f(x)$ 的论述中有且只有一人正确, 则 $theta =$ #blank .
+(5分) 已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$ . 甲: 当 $x in ( 0 , ( pi )/(4 ) )$ 时, 函数 $f(x)$ 单调递减; 乙: 函数 $f(x)$ 的图象关于直线 $x = ( pi )/(3 )$ 对称; 丙: 函数 $y=f(x)$ 图象的一个对称中心为 $( ( pi )/(6 ) , 0 )$ . 甲, 乙, 丙三人对函数 $f(x)$ 的论述中有且只有一人正确, 则 $theta =$ #blank .
 
 #solution[
 由正切函数型函数的单调性和对称轴可知, 只有丙同学的论述正确, 
@@ -328,11 +328,11 @@ $(5$ 分 $)$ 已知函数 $f(x)=tan(x+ theta )$ , $theta in ( 0 , ( pi )/(2 ) )$
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8cf8V1hJ35qJTrQJ1xvKPP1UUNTUBNBiFuaHDzS1z4FjMRUaQ0sKHY
-$(13$ 分 $)$ 已知 $alpha$ 是第三象限角, 且 $tan alpha =2$ . 
+(13分) 已知 $alpha$ 是第三象限角, 且 $tan alpha =2$ . 
 
-(1)求 $sin alpha$ 的值; 
+(1) 求 $sin alpha$ 的值; 
 
-(2)求 $(2 sin ( pi - alpha ) cos ( - 2 pi - alpha ) )/(s i n ^(2 ) ( (3 pi )/(2 ) + alpha ) - s i n ^(2 ) ( - alpha ) )$ 的值.
+(2) 求 $(2 sin ( pi - alpha ) cos ( - 2 pi - alpha ) )/(s i n ^(2 ) ( (3 pi )/(2 ) + alpha ) - s i n ^(2 ) ( - alpha ) )$ 的值.
 
 #solution[
 (1)因为 $alpha$ 是第三象限角, 且 $tan alpha = (sin alpha )/(cos alpha ) =2$ , 
@@ -349,16 +349,16 @@ $(13$ 分 $)$ 已知 $alpha$ 是第三象限角, 且 $tan alpha =2$ .
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/4z8Bl4ng8a9w55TIIbKQgM3Zu6NwcBCX2x5yo9ZPNSuGRfeHM8ZaW8
-$(15$ 分 $)(1)$ 已知 $a>0$ , $b>0$ , 且 $a+b=a b$ ,求 $a+b$ 的最小值; 
+(15分) (1)已知 $a>0$ , $b>0$ , 且 $a+b=a b$ ,求 $a+b$ 的最小值; 
 
-(2)已知 $a>0$ , $b>0$ , 证明: $(a )/(sqrt(b ) ) + (b )/(sqrt(a ) ) >= sqrt(a ) + sqrt(b )$ .
+(2) 已知 $a>0$ , $b>0$ , 证明: $(a )/(sqrt(b ) ) + (b )/(sqrt(a ) ) >= sqrt(a ) + sqrt(b )$ .
 
 #solution[
-(1)解: $a>0$ , $b>0$ , 且 $a+b=a b <= ( (a + b )/(2 ) )^(2)$ , 解得 $a+b >= 4$ , 
+(1) 解: $a>0$ , $b>0$ , 且 $a+b=a b <= ( (a + b )/(2 ) )^(2)$ , 解得 $a+b >= 4$ , 
 
 可得 $a+b$ 的最小值为 $4$ ; 
 
-(2)证明: $(a )/(sqrt(b ) ) + (b )/(sqrt(a ) ) -( sqrt(a ) + sqrt(b ) )= (( sqrt(a ) ) ^(3 ) + ( sqrt(b ) ) ^(3 ) )/(sqrt(a b ) ) -( sqrt(a ) + sqrt(b ) )= (( sqrt(a ) + sqrt(b ) ) ( a + b - sqrt(a b ) ) )/(sqrt(a b ) ) -( sqrt(a ) + sqrt(b ) ) = (( sqrt(a ) + sqrt(b ) ) ( a + b - 2 sqrt(a b ) ) )/(sqrt(a b ) ) = (( sqrt(a ) + sqrt(b ) ) ( sqrt(a ) - sqrt(b ) ) ^(2 ) )/(sqrt(a b ) )$ , 
+(2) 证明: $(a )/(sqrt(b ) ) + (b )/(sqrt(a ) ) -( sqrt(a ) + sqrt(b ) )= (( sqrt(a ) ) ^(3 ) + ( sqrt(b ) ) ^(3 ) )/(sqrt(a b ) ) -( sqrt(a ) + sqrt(b ) )= (( sqrt(a ) + sqrt(b ) ) ( a + b - sqrt(a b ) ) )/(sqrt(a b ) ) -( sqrt(a ) + sqrt(b ) ) = (( sqrt(a ) + sqrt(b ) ) ( a + b - 2 sqrt(a b ) ) )/(sqrt(a b ) ) = (( sqrt(a ) + sqrt(b ) ) ( sqrt(a ) - sqrt(b ) ) ^(2 ) )/(sqrt(a b ) )$ , 
 
 因为 $a>0$ , $b>0$ , 可得 $sqrt(a ) + sqrt(b ) >0$ , $sqrt(a b ) >0$ , $( sqrt(a ) - sqrt(b ) )^(2) >= 0$ , 
 
@@ -372,11 +372,11 @@ $(15$ 分 $)(1)$ 已知 $a>0$ , $b>0$ , 且 $a+b=a b$ ,求 $a+b$ 的最小值;
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/91yIz1WSewRPc2bcCrnZWIbdLumyMibxDp3EZQSVuX9z1kjP0eeOa8
-#grid(columns: (1fr, 25%), gutter: 1em, [$(15$ 分 $)$ 如图, 互相垂直的两条小路 $A M$ , $A N$ 旁有一长方形花坛 $A B C D$ , 其中 $A B=30 m,A D=20 m$ .现欲经过点 $C$ 修一条直路 $l,l$ 交小路 $A M$ , $A N$ 分别为点 $P$ , $Q$ . 计划准备将长方形花坛 $A B C D$ 其扩建成一个更大的三角形花坛 $A P Q$ . 要求 $A P$ 的长不小于 $40 m$ 且不大于 $90 m$ .记三角形花园 $A P Q$ 的面积为 $S m^(2)$ . 
+#grid(columns: (1fr, 25%), gutter: 1em, [(15分) 如图, 互相垂直的两条小路 $A M$ , $A N$ 旁有一长方形花坛 $A B C D$ , 其中 $A B=30 m,A D=20 m$ .现欲经过点 $C$ 修一条直路 $l,l$ 交小路 $A M$ , $A N$ 分别为点 $P$ , $Q$ . 计划准备将长方形花坛 $A B C D$ 其扩建成一个更大的三角形花坛 $A P Q$ . 要求 $A P$ 的长不小于 $40 m$ 且不大于 $90 m$ .记三角形花园 $A P Q$ 的面积为 $S m^(2)$ . 
 
-(1)设 $D Q=x m$ ,试用 $x$ 表示 $A P$ , 并求 $x$ 的取值范围; 
+(1) 设 $D Q=x m$ ,试用 $x$ 表示 $A P$ , 并求 $x$ 的取值范围; 
 
-(2)当 $D Q$ 的长度是多少时, $S$ 取最小值?最小值是多少?], [#align(center + top, image("dumb.png", width: 100%))])
+(2) 当 $D Q$ 的长度是多少时, $S$ 取最小值?最小值是多少?], [#align(center + top, image("dumb.png", width: 100%))])
 
 #solution[
 (1)由题意可得: $triangle D C Q∽ triangle B P C$ , 
@@ -395,7 +395,7 @@ $(15$ 分 $)(1)$ 已知 $a>0$ , $b>0$ , 且 $a+b=a b$ ,求 $a+b$ 的最小值;
 
 即 $A P= 30 + (600 )/(x )$ , $10 <= x <= 60$ ; 
 
-(2)由(1)可得: $S = (1 )/(2 ) B P dot.op A Q = (1 )/(2 ) ( 30 + (600 )/(x ) ) ( 20 + x ) = (15 ( x + 20 ) ^(2 ) )/(x ) >= (15 dot.op ( 2 sqrt(20 x ) ) ^(2 ) )/(x ) =1200$ , 
+(2) 由(1)可得: $S = (1 )/(2 ) B P dot.op A Q = (1 )/(2 ) ( 30 + (600 )/(x ) ) ( 20 + x ) = (15 ( x + 20 ) ^(2 ) )/(x ) >= (15 dot.op ( 2 sqrt(20 x ) ) ^(2 ) )/(x ) =1200$ , 
 
 当且仅当 $x=20$ 时取等号, 
 
@@ -405,13 +405,13 @@ $(15$ 分 $)(1)$ 已知 $a>0$ , $b>0$ , 且 $a+b=a b$ ,求 $a+b$ 的最小值;
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/9B6zT3OseW0aTRjqk6VyTgfPFZXRHpTluDahxJ6cegUwSrONDe4nSa
-$(17$ 分 $)$ 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ ; ② $f ( - ( pi )/(6 ) ) = 0$ ; ③对任意的 $x in R$ , $f ( x ) <= f ( ( pi )/(12 ) )$ . 请从这三个条件中任选一个将下面的题目补充完整, 并解答该题. 
+(17分) 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ ; ② $f ( - ( pi )/(6 ) ) = 0$ ; ③对任意的 $x in R$ , $f ( x ) <= f ( ( pi )/(12 ) )$ . 请从这三个条件中任选一个将下面的题目补充完整, 并解答该题. 
 
 已知函数 $f ( x ) = sin ( omega x + ( pi )/(3 ) ) ( 0 < omega < 3 )$ , 且满足 #blank . 
 
-(1)求 $omega$ 的值; 并用"五点法"作出函数 $y=f(x)$ 在一个周期内的图象; 
+(1) 求 $omega$ 的值; 并用"五点法"作出函数 $y=f(x)$ 在一个周期内的图象; 
 
-(2)将函数 $f(x)$ 的图象向右平移 $( pi )/(3 )$ 个单位后, 再将此时图象上各点的纵坐标不变, 横坐标变为原来的 $2$ 倍, 得到函数 $y=g(x)$ 的图象, 若关于 $x$ 的方程 $g(x)-k=0$ , 在区间 $[0, pi ]$ 上有且只有一个实数解, 求实数 $k$ 的取值范围.
+(2) 将函数 $f(x)$ 的图象向右平移 $( pi )/(3 )$ 个单位后, 再将此时图象上各点的纵坐标不变, 横坐标变为原来的 $2$ 倍, 得到函数 $y=g(x)$ 的图象, 若关于 $x$ 的方程 $g(x)-k=0$ , 在区间 $[0, pi ]$ 上有且只有一个实数解, 求实数 $k$ 的取值范围.
 
 #solution[
 (1)若选①: 函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ , 
@@ -432,7 +432,7 @@ $(17$ 分 $)$ 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻
 
  #image("dumb.png", width: 25%) 
 
-(2)将函数 $f(x)$ 的图象向右平移 $( pi )/(3 )$ 个单位后, 可得 $y=sin[2(x- ( pi )/(3 ) )+ ( pi )/(3 ) ]=sin(2 x- ( pi )/(3 ) )$ , 
+(2) 将函数 $f(x)$ 的图象向右平移 $( pi )/(3 )$ 个单位后, 可得 $y=sin[2(x- ( pi )/(3 ) )+ ( pi )/(3 ) ]=sin(2 x- ( pi )/(3 ) )$ , 
 
 再将此时图象上各点的纵坐标不变, 横坐标变为原来的 $2$ 倍, 得到函数 $y=g(x)$ 的图象, 可得 $g(x)=sin(x- ( pi )/(3 ) )$ , 
 
@@ -452,13 +452,13 @@ $(17$ 分 $)$ 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7P15y3Ms98PG47dEjfAHxA6zXgLvdQM5RU2NbHLUMB6wNVCZ27iDnE
-$(17$ 分 $)$ 著名的"悬链线拱桥问题"与数学中的双曲函数相关. 函数 $f(x)= (e ^(x ) - e ^(- x ) )/(2 )$ 叫做双曲正弦函数, 函数 $g(x)= (e ^(x ) + e ^(- x ) )/(2 )$ 叫做双曲余弦函数, 其中 $e approx 2.71828$ …是自然对数的底数. 
+(17分) 著名的"悬链线拱桥问题"与数学中的双曲函数相关. 函数 $f(x)= (e ^(x ) - e ^(- x ) )/(2 )$ 叫做双曲正弦函数, 函数 $g(x)= (e ^(x ) + e ^(- x ) )/(2 )$ 叫做双曲余弦函数, 其中 $e approx 2.71828$ …是自然对数的底数. 
 
-(1)下列两个命题中至少有一个为真命题, 并证明其中的一个真命题: 
+(1) 下列两个命题中至少有一个为真命题, 并证明其中的一个真命题: 
 
 ① $[g(x)]^(2)+[f(x)]^(2)=1$ ; ② $g(2 x)=[g(x)]^(2)+[f(x)]^(2)$ ; 
 
-(2)证明: 函数 $F(x)=ln x+sin ( pi )/(6 ) x$ 在 $(0, + infinity )$ 上有且仅有一个零点 $x_(0)$ , 且 $f ( sin ( pi )/(6 ) x _(0 ) ) < (3 )/(4 )$ .
+(2) 证明: 函数 $F(x)=ln x+sin ( pi )/(6 ) x$ 在 $(0, + infinity )$ 上有且仅有一个零点 $x_(0)$ , 且 $f ( sin ( pi )/(6 ) x _(0 ) ) < (3 )/(4 )$ .
 
 #solution[
 (1)经判断①不是真命题, ②是真命题; 
@@ -467,7 +467,7 @@ $(17$ 分 $)$ 著名的"悬链线拱桥问题"与数学中的双曲函数相关.
 
 代入可得 $[ g ( x ) ] ^(2 ) + [ f ( x ) ] ^(2 ) = (e ^(2 x ) + e ^(- 2 x ) + 2 )/(4 ) + (e ^(2 x ) + e ^(- 2 x ) - 2 )/(4 ) = (e ^(2 x ) + e ^(- 2 x ) )/(2 ) = g ( 2 x )$ ; 
 
-(2)证明: ①当 $x in (0, 3]$ 时, $( pi )/(6 ) x in ( 0 , ( pi )/(2 ) ]$ , 
+(2) 证明: ①当 $x in (0, 3]$ 时, $( pi )/(6 ) x in ( 0 , ( pi )/(2 ) ]$ , 
 
 所以 $F ( x ) = ln x + sin ( pi )/(6 ) x$ 在 $(0, 3]$ 内单调递增, 
 

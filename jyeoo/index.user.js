@@ -558,35 +558,65 @@
     function segmentizeText(text) {
         if (!text) return [];
 
+        // 1. Preprocess punctuation (Full-width to Half-width, etc.)
         text = preprocessText(text);
 
+        // 2. Protect patterns like (   ), ______, (5 分), and numbering (1) at start
+        // Use PUA codes to protect. E000 range.
         const mapping = new Map();
         let puaCode = 0xE000;
 
-        text = text.replace(/(\(\s+\))|(_+)/g, (match) => {
+        // Groups:
+        // 1. (\(\s+\)) -> Empty parens
+        // 2. (_+)      -> Underscores
+        // 3. (\(\s*\d+\s*分\s*\)) -> Score (e.g. (5 分))
+        // 4. ((?:^|[\n\r])\s*\(\s*\d+\s*\)) -> Numbering at start of line/text (e.g. (1))
+        text = text.replace(/(\(\s+\))|(_+)|(\(\s*\d+\s*分\s*\))|((?:^|[\n\r])\s*\(\s*\d+\s*\))/g, (match) => {
             const char = String.fromCharCode(puaCode++);
             mapping.set(char, match);
             return char;
         });
 
+        // 3. Regex for math-like text
+        // Includes: Alphanumeric, Greek, Operators, Parens/Brackets, Dot, Comma, etc.
+        // Explicitly add common math symbols.
+        // ALSO include PUA range for protected patterns so they are split out.
+        const mathRegex = /([a-zA-Z0-9\+\-\=\<\>\/\%\.\,\:\;\u0370-\u03FF\(\)\[\]\{\}\|\^\*\~\⋅\uE000-\uF8FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)/;
+
+        // 3. Regex for math-like text
+        // Exclude .,:; from the main block so we can check context
+        // Capturing groups: 1=PUA, 2=DefiniteMath, 3=Punctuation(.,:;)
+        // Added \u2200-\u22FF (Math Operators: infinity, union, element of, etc.)
+        // Added \u00B0(°), \u00D7(×), \u00F7(÷), \u2190-\u21FF(Arrows), \u25B3(△)
         const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
 
         let lastIndex = 0;
         let match;
         const segments = [];
-        let bracketDepth = 0;
+        let bracketDepth = 0; // Track depth for context-aware punctuation
 
         while ((match = tokenRegex.exec(text)) !== null) {
+            // Text before match?
             if (match.index > lastIndex) {
                 const txt = text.slice(lastIndex, match.index);
                 segments.push({ text: preprocessText(txt), isMath: false });
             }
 
             if (match[1]) {
+                // PUA (Protected)
                 const original = mapping.get(match[1]);
-                if (original.includes('(')) segments.push({ text: ' #parentheses ', isMath: false });
-                else if (original.includes('_')) segments.push({ text: ' #blank ', isMath: false });
+
+                // Check for empty parens explicitly
+                if (/^\(\s+\)$/.test(original)) {
+                    segments.push({ text: ' #parentheses ', isMath: false });
+                } else if (/^_+$/.test(original)) {
+                    segments.push({ text: ' #blank ', isMath: false });
+                } else {
+                    // Protected content (Score or Numbering), return as-is text with a trailing space
+                    segments.push({ text: original + ' ', isMath: false });
+                }
             } else if (match[2]) {
+                // Definite Math
                 const m = match[2];
 
                 // Fix: Treat simple numbering like (1), (2) as text, not math.
@@ -597,6 +627,7 @@
                     continue;
                 }
 
+                // Update bracket depth
                 for (const char of m) {
                     if ('([{'.includes(char)) bracketDepth++;
                     else if (')]}'.includes(char)) bracketDepth = Math.max(0, bracketDepth - 1);
@@ -608,20 +639,28 @@
                     segments.push({ text: processMathText(m), isMath: true });
                 }
             } else if (match[3]) {
+                // Punctuation (.,:;)
+                // Check context: 
+                // 1. If inside brackets/parens (depth > 0), treat as Math (intervals, tuples).
+                // 2. Else check whitespace/EOF for Text.
                 const p = match[3];
+
                 if (bracketDepth > 0) {
                     segments.push({ text: p, isMath: true });
                 } else {
-                    const nextChar = text[tokenRegex.lastIndex];
+                    const nextChar = text[tokenRegex.lastIndex]; // Peek next char
+                    // If next char is undefined (EOF) or whitespace, treat as Text Punctuation
                     if (nextChar === undefined || /\s/.test(nextChar) || /[\u4e00-\u9fa5]/.test(nextChar)) {
                         segments.push({ text: p, isMath: false });
                     } else {
+                        // Followed by non-space (e.g. digit, letter), likely math (3.14, f(x,y))
                         segments.push({ text: p, isMath: true });
                     }
                 }
             }
             lastIndex = tokenRegex.lastIndex;
         }
+        // Tail
         if (lastIndex < text.length) {
             segments.push({ text: preprocessText(text.slice(lastIndex)), isMath: false });
         }

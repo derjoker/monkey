@@ -540,13 +540,18 @@ function segmentizeText(text) {
     // 1. Preprocess punctuation (Full-width to Half-width, etc.)
     text = preprocessText(text);
 
-    // 2. Protect patterns like (   ) and ______
+    // 2. Protect patterns like (   ), ______, (5 分), and numbering (1) at start
     // Use PUA codes to protect. E000 range.
     const mapping = new Map();
     let puaCode = 0xE000;
 
-    text = text.replace(/(\(\s+\))|(_+)/g, (match) => {
-        const char = String.fromCharCode(puaCode++); // Unique char for this match
+    // Groups:
+    // 1. (\(\s+\)) -> Empty parens
+    // 2. (_+)      -> Underscores
+    // 3. (\(\s*\d+\s*分\s*\)) -> Score (e.g. (5 分))
+    // 4. ((?:^|[\n\r])\s*\(\s*\d+\s*\)) -> Numbering at start of line/text (e.g. (1))
+    text = text.replace(/(\(\s+\))|(_+)|(\(\s*\d+\s*分\s*\))|((?:^|[\n\r])\s*\(\s*\d+\s*\))/g, (match) => {
+        const char = String.fromCharCode(puaCode++);
         mapping.set(char, match);
         return char;
     });
@@ -579,8 +584,16 @@ function segmentizeText(text) {
         if (match[1]) {
             // PUA (Protected)
             const original = mapping.get(match[1]);
-            if (original.includes('(')) segments.push({ text: ' #parentheses ', isMath: false });
-            else if (original.includes('_')) segments.push({ text: ' #blank ', isMath: false });
+
+            // Check for empty parens explicitly
+            if (/^\(\s+\)$/.test(original)) {
+                segments.push({ text: ' #parentheses ', isMath: false });
+            } else if (/^_+$/.test(original)) {
+                segments.push({ text: ' #blank ', isMath: false });
+            } else {
+                // Protected content (Score or Numbering), return as-is text with a trailing space
+                segments.push({ text: original + ' ', isMath: false });
+            }
         } else if (match[2]) {
             // Definite Math
             const m = match[2];
