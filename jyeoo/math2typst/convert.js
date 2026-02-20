@@ -566,8 +566,8 @@ function segmentizeText(text) {
     // Exclude .,:; from the main block so we can check context
     // Capturing groups: 1=PUA, 2=DefiniteMath, 3=Punctuation(.,:;)
     // Added \u2200-\u22FF (Math Operators: infinity, union, element of, etc.)
-    // Added \u00B0(°), \u00D7(×), \u00F7(÷), \u2190-\u21FF(Arrows), \u25B3(△)
-    const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\'\_\u0370-\u03FF\u2200-\u22FF\u00B0\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
+    // Added \u00B0(°), \u00B1(±), \u00D7(×), \u00F7(÷), \u2190-\u21FF(Arrows), \u25B3(△)
+    const tokenRegex = /([\uE000-\uF8FF])|([a-zA-Z0-9\+\-\=\<\>\/\%\(\)\[\]\{\}\|\^\*\~\⋅\'\_\u0370-\u03FF\u2200-\u22FF\u00B0\u00B1\u00D7\u00F7\u2190-\u21FF\u25B3]+)|([\.\,\:\;])/g;
 
     let lastIndex = 0;
     let match;
@@ -863,7 +863,8 @@ function processMathText(text) {
 
     // Map text representation to Typst symbols
     const map = {
-        '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op',
+        '∵': 'because', '∴': 'therefore', '×': 'times', '⋅': 'dot.op', '÷': 'div',
+        '±': 'plus.minus', '∓': 'minus.plus',
         '≥': '>=', '≤': '<=', '≠': '!=', '≈': 'approx',
         '⊥': 'tack.t', '∥': 'parallel', '△': 'triangle', '∠': 'angle',
         '°': 'degree', 'π': 'pi', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma', 'θ': 'theta',
