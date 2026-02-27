@@ -25,14 +25,14 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7ubjp42I26qrwWyNl6sZ6i2mU17xqZnx499R5Nhq3TIzbBz277jLfs
-命题 "$∃x in R$ , $e^(x)<x+1$" 的否定为 #parentheses
+命题 "$exists x in RR$ , $e^(x)<x+1$" 的否定为 #parentheses
 #choices(
-  ([$∃x in R$ , $e^(x) >= x+1$], [$∀x in R$ , $e^(x)>x+1$], [$∃x in R$ , $e^(x)>x+1$], [$∀x in R$ , $e^(x) >= x+1$]),
+  ([$exists x in RR$ , $e^(x) >= x+1$], [$forall x in RR$ , $e^(x)>x+1$], [$exists x in RR$ , $e^(x)>x+1$], [$forall x in RR$ , $e^(x) >= x+1$]),
   colNum: 1
 )
 
 #solution[
-命题 "$∃x in R$ , $e^(x)<x+1$" 的否定为: "$∀x in R$ , $e^(x) >= x+1$". 
+命题 "$exists x in RR$ , $e^(x)<x+1$" 的否定为: "$forall x in RR$ , $e^(x) >= x+1$". 
 
 故选: $D$ .
 ]
@@ -40,18 +40,18 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/5EWUD5Rm9J7mFsjymNUdjS5cAsRRsanE7A3qbtEQMOL3uP5xU4rYBs
-"$alpha = (2 pi )/(3 ) + 2 k pi , k in Z$" 是 "$cos alpha = - (1 )/(2 )$" 的 #parentheses
+"$alpha = (2 pi )/(3 ) + 2 k pi , k in ZZ$" 是 "$cos alpha = - (1 )/(2 )$" 的 #parentheses
 #choices(
   ([充分不必要条件], [必要不充分条件], [充要条件], [既不充分也不必要条件]),
   colNum: 2
 )
 
 #solution[
-若 $alpha = (2 pi )/(3 ) + 2 k pi , k in Z$ , 则 $cos alpha = cos ( (2 pi )/(3 ) + 2 k pi ) = cos (2 pi )/(3 ) = - (1 )/(2 )$ , 
+若 $alpha = (2 pi )/(3 ) + 2 k pi , k in ZZ$ , 则 $cos alpha = cos ( (2 pi )/(3 ) + 2 k pi ) = cos (2 pi )/(3 ) = - (1 )/(2 )$ , 
 
-若 $cos alpha = - (1 )/(2 )$ , 则 $alpha = (2 pi )/(3 ) +2 k pi$ 或 $alpha = (4 pi )/(3 ) +2 k pi$ , $k in Z$ , 
+若 $cos alpha = - (1 )/(2 )$ , 则 $alpha = (2 pi )/(3 ) +2 k pi$ 或 $alpha = (4 pi )/(3 ) +2 k pi$ , $k in ZZ$ , 
 
-所以 "$alpha = (2 pi )/(3 ) + 2 k pi , k in Z$" 是 "$cos alpha = - (1 )/(2 )$" 的充分不必要条件. 
+所以 "$alpha = (2 pi )/(3 ) + 2 k pi , k in ZZ$" 是 "$cos alpha = - (1 )/(2 )$" 的充分不必要条件. 
 
 故选: $A$ .
 ]
@@ -61,7 +61,7 @@
 // https://www.jyeoo.com/math2/ques/detail/4uaLN3YRbAqJnSVgt6nQm64z0vcs4tPA6Q1Zo050kZB92UNi6ab0pk
 已知角 $alpha$ 的始边与 $x$ 轴非负半轴重合, 终边经过点 $P(1, x)$ , 且 $sin alpha = (sqrt(3 ) )/(2 )$ , 则 $x=$ #parentheses
 #choices(
-  ([$± sqrt(3 )$], [$sqrt(3 )$], [$(sqrt(3 ) )/(3 )$], [$(sqrt(3 ) )/(2 )$]),
+  ([$plus.minus sqrt(3 )$], [$sqrt(3 )$], [$(sqrt(3 ) )/(3 )$], [$(sqrt(3 ) )/(2 )$]),
   colNum: 1
 )
 
@@ -194,7 +194,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 )
 
 #solution[
-选项 $A$ , 易知 $sin x in [ - 1 , 1 ]$ , 所以对 $∀ x in R$ , $sin x - 2 != 0$ , 即 $f ( x ) = (sin x + 1 )/(sin x - 2 )$ 的定义域为 $R$ , 故选项 $A$ 正确, 
+选项 $A$ , 易知 $sin x in [ - 1 , 1 ]$ , 所以对 $forall x in RR$ , $sin x - 2 != 0$ , 即 $f ( x ) = (sin x + 1 )/(sin x - 2 )$ 的定义域为 $R$ , 故选项 $A$ 正确, 
 
 选项 $B$ , 因为 $f ( - pi ) = (sin ( - pi ) + 1 )/(sin ( - pi ) - 2 ) = - (1 )/(2 )$ , $f ( 0 ) = (sin 0 + 1 )/(sin 0 - 2 ) = - (1 )/(2 ) = f ( - pi ) != 0$ , 
 
@@ -348,7 +348,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 
 由 $f ( - ( pi )/(12 ) ) = 2 sin ( - ( pi )/(6 ) + phi ) = 2$ , 得 $sin ( - ( pi )/(6 ) + phi ) = 1$ , 
 
-则 $- ( pi )/(6 ) + phi = 2 k pi + ( pi )/(2 ) , phi = 2 k pi + (2 pi )/(3 ) , k in Z$ , 
+则 $- ( pi )/(6 ) + phi = 2 k pi + ( pi )/(2 ) , phi = 2 k pi + (2 pi )/(3 ) , k in ZZ$ , 
 
 由于 $0< phi < pi$ , 
 
@@ -356,7 +356,7 @@ $f ( x ) = ln ( x + sqrt(x ^(2 ) + 1 ) )$ , 所以 $f ( - x ) = ln ( - x + sqrt(
 
 可得 $f ( x ) = 2 sin ( 2 x + (2 pi )/(3 ) )$ ; 
 
-(2) 由于 $- ( pi )/(2 ) + 2 k pi <= 2 x + (2 pi )/(3 ) <= ( pi )/(2 ) + 2 k pi => - (7 pi )/(12 ) + k pi <= x <= - ( pi )/(12 ) + k pi , k in Z$ , 
+(2) 由于 $- ( pi )/(2 ) + 2 k pi <= 2 x + (2 pi )/(3 ) <= ( pi )/(2 ) + 2 k pi => - (7 pi )/(12 ) + k pi <= x <= - ( pi )/(12 ) + k pi , k in ZZ$ , 
 
 要使 $x in [0, pi ]$ , 则令 $k=1$ , 可得 $(5 pi )/(12 ) <= x <= (7 pi )/(12 )$ , 
 
@@ -489,13 +489,13 @@ $(1) because f ( x ) = cases(2 x ^(2 ) - a x - 2 a "," x < a, a x - 2 a "," x >=
 
 所以 $f(x)$ 和 $g(x)$ 不是 "$Z$ 函数对"; 
 
-(2) 由 $f(x)=0$ , 得 $x=k pi$ , $k in Z$ , 
+(2) 由 $f(x)=0$ , 得 $x=k pi$ , $k in ZZ$ , 
 
  $f(f(k pi ))=f(0)=0$ , 
 
 所以 $f(x)$ 的零点是 $f(f(x))$ 的零点, 
 
-由 $f(f(x))=0$ , 得 $x=k pi$ , $k in Z$ , 
+由 $f(f(x))=0$ , 得 $x=k pi$ , $k in ZZ$ , 
 
 当 $x=k pi$ 时, $0=k pi$ , 
 
@@ -505,7 +505,7 @@ $(1) because f ( x ) = cases(2 x ^(2 ) - a x - 2 a "," x < a, a x - 2 a "," x >=
 
 否则 $f(f(x))$ 的一些零点不能使得 $f(x)=0$ , 
 
-所以 $x=| (k pi )/(a ) |>1$ 对 $∀k in Z$ , $k != 0$ 成立, 
+所以 $x=| (k pi )/(a ) |>1$ 对 $forall k in ZZ$ , $k != 0$ 成立, 
 
 所以 $( pi )/(a ) >1$ , 得 $a< pi$ , 
 

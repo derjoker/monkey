@@ -38,7 +38,7 @@ $819000=8.19 times 10^(5)$ .
 // https://www.jyeoo.com/math/ques/detail/6asyVcUJ4qDwrSSYbOQVpG6V3GG3WIel4h3Ma2q0y7SvBHUUu5GzJo
 (3分) 下列运算正确的是 #parentheses
 #choices(
-  ([$a^(2)+a^(4)=a^(6)$], [$a^(2) dot.op a^(4)=a^(6)$], [$(a^(2))^(4)=a^(6)$], [$a^(4)÷a=a^(4)$]),
+  ([$a^(2)+a^(4)=a^(6)$], [$a^(2) dot.op a^(4)=a^(6)$], [$(a^(2))^(4)=a^(6)$], [$a^(4) div a=a^(4)$]),
   colNum: 1
 )
 
@@ -55,7 +55,7 @@ $because a^(2)$ 与 $a^(4)$ 不是同类项, 不能合并,
 
  $therefore C$ 选项运算不正确, 不符合题意; 
 
- $because a^(4)÷a=a^(3)$ , 
+ $because a^(4) div a=a^(3)$ , 
 
  $therefore D$ 选项运算不正确, 不符合题意. 
 
@@ -72,7 +72,7 @@ $because a^(2)$ 与 $a^(4)$ 不是同类项, 不能合并,
 )
 
 #solution[
-平均数为: $(13+14+14+16+18)÷5=15$ ; 
+平均数为: $(13+14+14+16+18) div 5=15$ ; 
 
  $14$ 出现的次数最多, 故众数为 $14$ . 
 
@@ -532,7 +532,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $(x-1)^(2)=3$ , 
 
- $x-1= ± sqrt(3 )$ , 
+ $x-1= plus.minus sqrt(3 )$ , 
 
  $therefore x _(1 ) = 1 + sqrt(3 )$ ; $x_(2)=1 (- sqrt(3 ) )$ . 
 
@@ -634,7 +634,7 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 (3) 根据上述统计分析情况, 请你为该校科技社团活动的顺利开展给出一条合理建议.
 
 #solution[
-(1) 本次调查的样本容量为 $11÷22%=50$ , 无人机社团人数为 $50-(11+8+16)=15($ 人 $)$ , 
+(1) 本次调查的样本容量为 $11 div 22%=50$ , 无人机社团人数为 $50-(11+8+16)=15($ 人 $)$ , 
 
 补全图形如下: 
 
@@ -924,13 +924,13 @@ $because A B$ 与 $⊙O$ 相切于点 $B$ ,
 
  $therefore (k )/(8 ) + (1 )/(8 k ) = (3 )/(4 )$ , 
 
-解得 $k=3$ ± $2 sqrt(2 )$ , 
+解得 $k=3 plus.minus 2 sqrt(2 )$ , 
 
  $because (A ' C )/(B A ' ) = (1 )/(k )$ , 
 
  $therefore (A ' C )/(B C ) = (1 )/(k + 1 )$ , 
 
- $therefore A'C= (2 )/(k + 1 ) = (2 ± sqrt(2 ) )/(2 )$ ; 
+ $therefore A'C= (2 )/(k + 1 ) = (2 plus.minus sqrt(2 ) )/(2 )$ ; 
 
 (2) 如图, 设 $A D$ 与 $B'C'$ 交于点 $L$ , 
 

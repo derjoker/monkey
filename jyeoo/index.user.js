@@ -743,7 +743,9 @@
 
         const flushMath = () => {
             if (currentMath) {
-                result += ` $${currentMath.trim()}$ `;
+                let mathText = currentMath.trim();
+                mathText = mathText.replace(/\b(in|in\.not)\s+([RZNQC])(?=\s|$|\^|_|\)|\}|\]|,|\.)/g, '$1 $2$2');
+                result += ` $${mathText}$ `;
                 currentMath = '';
             }
         };
@@ -827,7 +829,7 @@
     }
 
     function renderSegmentsRaw(segments) {
-        return segments.map(s => {
+        let raw = segments.map(s => {
             if (s.isMath) return s.text;
 
             // If text contains non-math chars (like Chinese), quote it
@@ -844,6 +846,9 @@
             // Always quote Chinese or if it was originally quoted
             return `"${cleanText}"`;
         }).join(' ');
+
+        raw = raw.replace(/\b(in|in\.not)\s+([RZNQC])(?=\s|$|\^|_|\)|\}|\]|,|\.)/g, '$1 $2$2');
+        return raw;
     }
 
 

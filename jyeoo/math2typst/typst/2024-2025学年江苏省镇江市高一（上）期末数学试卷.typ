@@ -6,14 +6,14 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/5ClqZa9aetomvIqj84wgaRaEstG4RIw09ecoWCFOzF0wVHZXI2rJ4a
-(5分) 已知集合 $U={x|1 <= x <= 6, x in N}$ , 集合 $A={1, 2, 3, 4}$ , 集合 $B={1, 3, 5}$ , 则 $A inter ∁_(U)B=$ #parentheses
+(5分) 已知集合 $U={x|1 <= x <= 6, x in NN}$ , 集合 $A={1, 2, 3, 4}$ , 集合 $B={1, 3, 5}$ , 则 $A inter ∁_(U)B=$ #parentheses
 #choices(
   ([${2, 4}$], [${2, 6}$], [${3, 4}$], [${3, 6}$]),
   colNum: 2
 )
 
 #solution[
-$U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)B={2, 4, 6}$ , 
+$U={x|1 <= x <= 6, x in NN}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)B={2, 4, 6}$ , 
 
 又 $A={1, 2, 3, 4}$ , 所以 $A inter ∁_(U)B={2, 4}$ . 
 
@@ -63,7 +63,7 @@ $U={x|1 <= x <= 6, x in N}={1, 2, 3, 4, 5, 6}$ , $B={1, 3, 5}$ , 所以 $∁_(U)
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/84sjyeqC4tMNdvM77eVOnW2Mn4d8mem0ZM6wjNy8U62esHwQya65RI
-(5分) 已知函数 $f(x)=ln x+x-5$ 的零点在区间 $(n,n+1)(n in N)$ 内, 则 $n=$ #parentheses
+(5分) 已知函数 $f(x)=ln x+x-5$ 的零点在区间 $(n,n+1)(n in NN)$ 内, 则 $n=$ #parentheses
 #choices(
   ([$1$], [$2$], [$3$], [$4$]),
   colNum: 4
@@ -152,7 +152,7 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 #solution[
 设函数 $y=A sin( omega x+ phi )+B$ , 则 $A=40$ , $B=50$ , $T=36$ , 所以 $omega = (2 pi )/(T ) = ( pi )/(18 )$ , 
 
- $x=0$ 时, $y=40 sin phi +50=10$ , 解得 $sin phi =-1$ , 所以 $phi =- ( pi )/(2 ) +2 k pi$ , $k in Z$ ; 
+ $x=0$ 时, $y=40 sin phi +50=10$ , 解得 $sin phi =-1$ , 所以 $phi =- ( pi )/(2 ) +2 k pi$ , $k in ZZ$ ; 
 
 所以 $y=40 sin( ( pi )/(18 ) x- ( pi )/(2 ) )+50$ , 令 $y >= 70$ , 得 $sin( ( pi )/(18 ) x- ( pi )/(2 ) ) >= (1 )/(2 )$ , 
 
@@ -200,7 +200,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 
  $B$ 中, 令 $t=x^(2024)>0$ , 所以 $y=t+ (1 )/(t ) >= 2 sqrt(t dot.op (1 )/(t ) ) =2$ , 当且仅当 $t= (1 )/(t )$ , 即 $t=1$ 时, 取等号, 
 
-即 $x^(2024)=1$ , 即 $x=$ ± $1$ 时取等号, 所以 $f(x)$ 的最小值为 $2$ , 所以 $B$ 正确; 
+即 $x^(2024)=1$ , 即 $x= plus.minus 1$ 时取等号, 所以 $f(x)$ 的最小值为 $2$ , 所以 $B$ 正确; 
 
  $C$ 中, 因为 $a^(x)>0$ , 可得 $f(x)=a^(x)+ (1 )/(a ^(x ) ) >= 2 sqrt(a ^(x ) dot.op a ^(- x ) ) =2$ , 当且仅当 $a^(x)=a^(-x)$ , 即 $x=1$ 时取等号, 所以 $C$ 正确; 
 
@@ -318,7 +318,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 #solution[
 由正切函数型函数的单调性和对称轴可知, 只有丙同学的论述正确, 
 
-所以 $( pi )/(6 ) + theta = (k pi )/(2 )$ , $k in Z$ , 又因为 $theta in (0, ( pi )/(2 ) )$ , 可得 $theta = ( pi )/(3 )$ . 
+所以 $( pi )/(6 ) + theta = (k pi )/(2 )$ , $k in ZZ$ , 又因为 $theta in (0, ( pi )/(2 ) )$ , 可得 $theta = ( pi )/(3 )$ . 
 
 故答案为: $( pi )/(3 )$ .
 ]
@@ -405,7 +405,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/9B6zT3OseW0aTRjqk6VyTgfPFZXRHpTluDahxJ6cegUwSrONDe4nSa
-(17分) 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ ; ② $f ( - ( pi )/(6 ) ) = 0$ ; ③对任意的 $x in R$ , $f ( x ) <= f ( ( pi )/(12 ) )$ . 请从这三个条件中任选一个将下面的题目补充完整, 并解答该题. 
+(17分) 给出以下三个条件: ①函数 $y=f(x)$ 图象的两条相邻对称轴之间的距离为 $( pi )/(2 )$ ; ② $f ( - ( pi )/(6 ) ) = 0$ ; ③对任意的 $x in RR$ , $f ( x ) <= f ( ( pi )/(12 ) )$ . 请从这三个条件中任选一个将下面的题目补充完整, 并解答该题. 
 
 已知函数 $f ( x ) = sin ( omega x + ( pi )/(3 ) ) ( 0 < omega < 3 )$ , 且满足 #blank . 
 
@@ -418,11 +418,11 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 
 可得 $(T )/(2 ) = ( pi )/(2 )$ , 可得 $T= pi = (2 pi )/( omega )$ , 可得 $omega =2$ ; 
 
-若选②: $f ( - ( pi )/(6 ) ) = 0$ , 可得 $omega dot.op (- ( pi )/(6 ) )+ ( pi )/(3 ) =k pi$ , $k in Z$ , 而 $0< omega <3$ , 解得 $omega =2$ ; 
+若选②: $f ( - ( pi )/(6 ) ) = 0$ , 可得 $omega dot.op (- ( pi )/(6 ) )+ ( pi )/(3 ) =k pi$ , $k in ZZ$ , 而 $0< omega <3$ , 解得 $omega =2$ ; 
 
-若选③: 对任意的 $x in R$ , $f ( x ) <= f ( ( pi )/(12 ) )$ , 可得 $f( ( pi )/(12 ) )=sin( ( pi )/(12 ) omega + ( pi )/(3 ) )$ , 
+若选③: 对任意的 $x in RR$ , $f ( x ) <= f ( ( pi )/(12 ) )$ , 可得 $f( ( pi )/(12 ) )=sin( ( pi )/(12 ) omega + ( pi )/(3 ) )$ , 
 
-则 $( pi )/(12 ) omega + ( pi )/(3 ) = ( pi )/(2 ) +2 k pi$ , $k in Z$ , 而 $0< omega <3$ , 解得 $omega =2$ ; 
+则 $( pi )/(12 ) omega + ( pi )/(3 ) = ( pi )/(2 ) +2 k pi$ , $k in ZZ$ , 而 $0< omega <3$ , 解得 $omega =2$ ; 
 #table(
  columns: 6,
  align: center + horizon,

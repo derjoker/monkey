@@ -372,8 +372,6 @@ function traverse(node) {
         // Or I will just add parens to ALL MathJye segments that are inline (not display)?
         // MathJye doesn't distinguish nicely.
 
-        // Let's interpret "前后加空格" literally first: pad with spaces.
-        // But also looking at the target `$sin (pi/6) x$`, I see parens.
         // I will add parens.
 
         if (mathContent.includes('/') || mathContent.includes('^') || mathContent.length > 3) {
@@ -707,8 +705,10 @@ function renderSegments(segments) {
 
     const flushMath = () => {
         if (currentMath) {
+            let mathText = currentMath.trim();
+            mathText = mathText.replace(/\b(in|in\.not)\s+([RZNQC])(?=\s|$|\^|_|\)|\}|\]|,|\.)/g, '$1 $2$2');
             // Trim to avoid block math (which requires spaces inside $)
-            result += ` $${currentMath.trim()}$ `;
+            result += ` $${mathText}$ `;
             currentMath = '';
         }
     };
@@ -794,7 +794,7 @@ function fixQuoteSpacing(text) {
 
 // Render segments without wrapping in $, for inside SUP/SUB or other math contexts
 function renderSegmentsRaw(segments) {
-    return segments.map(s => {
+    let raw = segments.map(s => {
         if (s.isMath) return s.text;
         // If text contains non-math chars (like Chinese), quote it
         // Or if it's text, safe to quote always? 
@@ -819,6 +819,9 @@ function renderSegmentsRaw(segments) {
         // Always quote Chinese or if it was originally quoted
         return `"${cleanText}"`;
     }).join(' ');
+
+    raw = raw.replace(/\b(in|in\.not)\s+([RZNQC])(?=\s|$|\^|_|\)|\}|\]|,|\.)/g, '$1 $2$2');
+    return raw;
 }
 
 

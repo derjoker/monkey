@@ -66,7 +66,7 @@
 )
 
 #solution[
-由已知, $a- ( pi )/(3 ) = (k )/(2 ) pi$ , $k in Z$ , 所以 $a= (k )/(2 ) pi + ( pi )/(3 )$ , $k in Z$ , 
+由已知, $a- ( pi )/(3 ) = (k )/(2 ) pi$ , $k in ZZ$ , 所以 $a= (k )/(2 ) pi + ( pi )/(3 )$ , $k in ZZ$ , 
 
 因为 $a>0$ , 所以取 $k=0$ 时, 得 $a$ 的最小值为 $60 degree = ( pi )/(3 )$ . 
 
@@ -582,7 +582,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
 令 $h'(x)=0$ , $sin(5 x+ phi )=sin x$ ,所以 $5 x+ phi =x+2 k_(1) pi$ 或 $5 x+ phi = pi -x+2 k_(2) pi$ , 
 
-所以 $x = - ( phi )/(4 ) + (k _(1 ) pi )/(2 )$ 或 $x = ( pi )/(6 ) - ( phi )/(6 ) + (k _(2 ) pi )/(3 ) ( k _(1 ) , k _(2 ) in Z )$ , 
+所以 $x = - ( phi )/(4 ) + (k _(1 ) pi )/(2 )$ 或 $x = ( pi )/(6 ) - ( phi )/(6 ) + (k _(2 ) pi )/(3 ) ( k _(1 ) , k _(2 ) in ZZ )$ , 
 
 当 $x = - ( phi )/(4 ) + (k _(1 ) pi )/(2 )$ 时, $h ( x ) = 5 cos x - cos x = 4 cos x = 4 cos ( - ( phi )/(4 ) + (k _(1 ) )/(2 ) pi )$ , 
 
@@ -600,7 +600,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
 所以 $b >= 5 cos x-cos(5 x+ phi )$ , 所以 $b >= q ( phi ) _(min ) = 3 sqrt(3 )$ , 
 
-此时 $h ( x ) <= 3 sqrt(3 )$ 恒成立, 且 $x =± ( pi )/(6 )$ 时取等号, 所以 $b$ 的最小值为 $3 sqrt(3 )$ . 
+此时 $h ( x ) <= 3 sqrt(3 )$ 恒成立, 且 $x = plus.minus ( pi )/(6 )$ 时取等号, 所以 $b$ 的最小值为 $3 sqrt(3 )$ . 
 
 法二: $g(x)=5 cos x-cos(5 x+ phi )$ , $g(x)_(max)=h( phi )$ , 故只需 $h( phi ) <= b$ 成立, 
 
@@ -608,7 +608,7 @@ $X$ 的可能取值为 $1$ , $2$ , $3$ ,
 
  $g'(x)=-5 sin x+5 sin(5 x+ phi )=0$ , 
 
- $5 x+ phi =x+2 k pi$ 或 $5 x+ phi = pi -x+2 k pi$ , $k in Z$ , 
+ $5 x+ phi =x+2 k pi$ 或 $5 x+ phi = pi -x+2 k pi$ , $k in ZZ$ , 
 
  $x= (k pi )/(2 ) - ( phi )/(4 )$ 或 $x= (k pi )/(3 ) + ( pi - phi )/(6 )$ ; 
 
