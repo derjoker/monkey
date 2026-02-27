@@ -889,7 +889,8 @@
             'λ': 'lambda', 'μ': 'mu', 'ρ': 'rho', 'σ': 'sigma',
             'ω': 'omega', 'φ': 'phi', '→': 'arrow',
             '∞': 'infinity', '∪': 'union', '∩': 'inter',
-            '∈': 'in', '∉': 'in.not', '⊆': 'subset.eq', '⊂': 'subset', '∅': 'emptyset'
+            '∈': 'in', '∉': 'in.not', '⊆': 'subset.eq', '⊂': 'subset', '∅': 'emptyset',
+            '∀': 'forall', '∃': 'exists'
         };
 
         // Context-aware Delta mapping
