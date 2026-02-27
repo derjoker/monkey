@@ -164,7 +164,7 @@ $f(x)$ 图象如图, $x=0$ 时, $f(0)=1$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/55kZ20We7TDfLl7RsdzChH2YzXqPBIWRpHcU2pfz5AQkWZC8n84pyy
-设 $a,b$ 为实数, 若 $10^(a)=5$ , $10^(b)=20$ , 则 #parentheses
+(多选) 设 $a,b$ 为实数, 若 $10^(a)=5$ , $10^(b)=20$ , 则 #parentheses
 #choices(
   ([$a+b=2$], [$b-a>lg 5$], [$a b<2(lg 5)^(2)$], [$l o g _(25 ) 8 = (3 b - 3 )/(2 a )$]),
   colNum: 1
@@ -187,7 +187,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8pFivbXV4O1xdfnnfjqytr8MGbhVCRuAKd9xkDrtIVKfg7bJ68i1yK
-已知函数 $f ( x ) = (sin x + 1 )/(sin x - 2 )$ , 则 #parentheses
+(多选) 已知函数 $f ( x ) = (sin x + 1 )/(sin x - 2 )$ , 则 #parentheses
 #choices(
   ([$f(x)$ 的定义域为 $R$], [$f(x)$ 的图象关于点 $( - ( pi )/(2 ) , 0 )$ 中心对称], [$f(x)$ 的值域为 $[-2, 0]$], [$f(x)$ 在区间 $( ( pi )/(4 ) , ( pi )/(2 ) )$ 上单调递增]),
   colNum: 1
@@ -214,7 +214,7 @@ $because 10^(a)=5$ , $10^(b)=20$ , $therefore a=lg 5$ , $b=lg 20$ ,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8drgOda2eOshVI86L9HpBr98A5VcLKvflb5gZuotBCLzAPYXbaM7l2
-已知定义在 $R$ 上的函数 $f(x)$ 满足: $f ( 1 ) = (1 )/(4 ) , f ( x + y ) + f ( x - y ) = 4 f ( x ) f ( y )$ , 则 #parentheses
+(多选) 已知定义在 $R$ 上的函数 $f(x)$ 满足: $f ( 1 ) = (1 )/(4 ) , f ( x + y ) + f ( x - y ) = 4 f ( x ) f ( y )$ , 则 #parentheses
 #choices(
   ([$f ( 0 ) = (1 )/(2 )$], [$f(x)$ 为偶函数], [$f(x)$ 的图象关于直线 $x=2$ 对称], [$f(x+6)=f(x)$]),
   colNum: 1

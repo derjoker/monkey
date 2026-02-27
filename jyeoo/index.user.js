@@ -253,7 +253,17 @@
             const qseq = clone.querySelector('.qseq');
             if (qseq) qseq.remove();
 
-            content += processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、,]\s*/, '').trim());
+            const isMultipleChoice = fieldset.getAttribute('data-cate') === '3';
+            let qText = processLayout(clone, (t) => t.replace(/^\s*(?:(?:\$\s*)?\d+(?:\s*\$)?)\s*[．.、,]\s*/, '').trim());
+
+            // Remove existing (多选) if present in the text to avoid duplication
+            qText = qText.replace(/^\s*[\(（]多选[\)）]\s*/, '');
+
+            if (isMultipleChoice) {
+                qText = '(多选) ' + qText;
+            }
+
+            content += qText;
         }
 
         // 2. Options (.pt2)

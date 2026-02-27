@@ -168,7 +168,7 @@ $cos 2025 degree =cos(360 degree times 6-135 degree )=cos 135 degree =-cos 45 de
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8xPHB1rQ6hYilaX4bG8sgB8Dk2S5AcALh8a1pNkXKbHVjIyS28fKoy
-(6分) 下列命题为真命题的是 #parentheses
+(多选) (6分) 下列命题为真命题的是 #parentheses
 #choices(
   ([若 $a>b>0$ , 则 $a c^(2)>b c^(2)$], [若 $a>b>0$ , 则 $a^(2)>b^(2)$], [若 $a<b<0$ , 则 $a^(2)<a b<b^(2)$], [若 $a<b<0$ , 则 $(1 )/(a ) > (1 )/(b )$]),
   colNum: 1
@@ -189,7 +189,7 @@ $a>b>0$ , 当 $c=0$ 时, $a c^(2)>b c^(2)$ 不成立, $A$ 错,
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8RVVt5c18d9Z4606dRZ6DF0bdDO5PyrO5U45L3Kep5APTUXK5d7n5k
-(6分) 下列函数最小值为 $2$ 的有 #parentheses
+(多选) (6分) 下列函数最小值为 $2$ 的有 #parentheses
 #choices(
   ([$f ( x ) = sin x + (1 )/(sin x )$], [$f(x)=x^(2024)+x^(-2024)$], [$f(x)=a^(x)+a^(-x)(a>0,$ 且 $a != 1)$], [$f(x)=x^(3)-3 x(x >= 2)$]),
   colNum: 1
@@ -212,7 +212,7 @@ $A$ 中, 当 $sin x<0$ 时, $f(x)$ 无最小值, 所以 $A$ 不正确;
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/8qoT42OS2xtrCnwSxcPIhd4fWahcBiR4Ax6Za3mL7qXG2D9jh4qawq
-(6分) 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
+(多选) (6分) 已知函数 $f(x)=x^(2)-a x+1(2 <= a <= 3)$ 的两个零点为 $x_(1)$ , $x_(2)(x_(1) <= x_(2))$ , 则 #parentheses
 #choices(
   ([当 $x in [-1, 1]$ 时, $f(x)$ 的取值范围为 $[2-a,2+a]$], [$x _(1 ) in [ (3 - sqrt(5 ) )/(2 ) , 1 ]$], [当且仅当 $x >= (3 + sqrt(5 ) )/(2 )$ 时, $f(x) >= 0$ 恒成立], [$(2 x _(2 ) - a )/(a x _(1 ) - x _(1 )^(2 ) ) in [ 0 , sqrt(5 ) ]$]),
   colNum: 1

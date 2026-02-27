@@ -173,7 +173,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6Fcgk894aAOSH5R0hEGxKiatqtJoe8b5Kg1hbO1slR4xgzN8872GTA
-(6分) 在正三棱柱 $A B C-A_(1)B_(1)C_(1)$ 中, $D$ 为 $B C$ 中点, 则 #parentheses
+(多选) (6分) 在正三棱柱 $A B C-A_(1)B_(1)C_(1)$ 中, $D$ 为 $B C$ 中点, 则 #parentheses
 #choices(
   ([$A D tack.t A_(1)C$], [$B C tack.t$ 平面 $A A_(1)D$], [$C C_(1) parallel$ 平面 $A A_(1)D$], [$A D parallel A_(1)B_(1)$]),
   colNum: 1
@@ -203,7 +203,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/6RFsWexV9n6Dpt0bESj3mw3qYPSkFVd3FtbWjUZlfhFk8d6HY5S9FQ
-(6分) 设抛物线 $C$ : $y^(2)=6 x$ 的焦点为 $F$ , 过 $F$ 的直线交 $C$ 于 $A$ , $B$ , 过 $F$ 且垂直于 $A B$ 的直线交准线 $l$ : $x=- (3 )/(2 )$ 于 $E$ , 过点 $A$ 作准线 $l$ 的垂线, 垂足为 $D$ , 则 #parentheses
+(多选) (6分) 设抛物线 $C$ : $y^(2)=6 x$ 的焦点为 $F$ , 过 $F$ 的直线交 $C$ 于 $A$ , $B$ , 过 $F$ 且垂直于 $A B$ 的直线交准线 $l$ : $x=- (3 )/(2 )$ 于 $E$ , 过点 $A$ 作准线 $l$ 的垂线, 垂足为 $D$ , 则 #parentheses
 #choices(
   ([$|A D|=|A F|$], [$|A E|=|A B|$], [$|A B| >= 6$], [$|A E| dot.op |B E| >= 18$]),
   colNum: 1
@@ -252,7 +252,7 @@
 
 #example[
 // https://www.jyeoo.com/math2/ques/detail/7TQnYeAy90p5oykxHuAl6K1nNsgkIt4XMc1L3lcO8D1bU5Xyb5Fc1I
-(6分) 已知 $triangle A B C$ 的面积为 $(1 )/(4 )$ , 若 $cos 2 A+cos 2 B+2 sin C=2$ , $cos A cos B sin C= (1 )/(4 )$ , 则 #parentheses
+(多选) (6分) 已知 $triangle A B C$ 的面积为 $(1 )/(4 )$ , 若 $cos 2 A+cos 2 B+2 sin C=2$ , $cos A cos B sin C= (1 )/(4 )$ , 则 #parentheses
 #choices(
   ([$sin C=sin^(2)A+sin^(2)B$], [$A B= sqrt(2 )$], [$sin A+sin B= (sqrt(6 ) )/(2 )$], [$A C^(2)+B C^(2)=3$]),
   colNum: 1
