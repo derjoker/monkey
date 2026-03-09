@@ -461,7 +461,7 @@ function traverse(node) {
             imagesToDownload.set(src, filename);
 
             // Images are not math, and break math context
-            return [{ text: ` #image("dumb.png", width: 25%) `, isMath: false }];
+            return [{ text: ` #image("dumb.png", width: 40%) `, isMath: false }];
         }
         return [];
     }
@@ -694,7 +694,7 @@ function processLayout(element, textCleaner) {
         let text = renderSegments(traverse(clone));
         if (textCleaner) text = textCleaner(text);
 
-        const imgTypst = `#align(center + top, image("dumb.png", width: 100%))`;
+        const imgTypst = `#align(center + top, image("dumb.png", width: 80%))`;
 
         if (floatDir === 'right') {
             return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;

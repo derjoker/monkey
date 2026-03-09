@@ -486,7 +486,7 @@
                 if (!filename.includes('.')) filename += '.png';
                 imagesToDownload.set(src, filename);
 
-                return [{ text: ` #image("images/${filename}", width: 25%) `, isMath: false }];
+                return [{ text: ` #image("images/${filename}", width: 40%) `, isMath: false }];
             }
             return [];
         }
@@ -727,7 +727,7 @@
                 let text = renderSegments(traverse(clone));
                 if (textCleaner) text = textCleaner(text);
 
-                const imgTypst = `#align(center + top, image("images/${filename}", width: 100%))`;
+                const imgTypst = `#align(center + top, image("images/${filename}", width: 80%))`;
 
                 if (floatDir === 'right') {
                     return `#grid(columns: (1fr, 25%), gutter: 1em, [${text}], [${imgTypst}])`;
