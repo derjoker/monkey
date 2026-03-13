@@ -107,6 +107,8 @@ async function runConversion() {
         // Header
         typstContent += `#import "/conf/exam.typ": *\n`;
         typstContent += `#show: exam-rules\n`;
+        typstContent += `// #show: exam-analysis-rules\n`;
+        typstContent += `// #let solution = hide_call(solution)\n`;
 
         const titleEl = document.querySelector('h1.paper-title');
         const title = titleEl ? titleEl.textContent.trim() : baseName;
